@@ -40,12 +40,13 @@ export default function LoginPage() {
 
       const data = await response.json();
 
-      if (!response.ok) {
-        throw new Error(data.message || "Login failed");
+      if (data.success) {
+        // Redirect to dashboard on successful login
+        router.push("/dashboard");
+        router.refresh();
+      } else {
+        throw new Error(data.error || "Login failed");
       }
-
-      // Redirect to dashboard on successful login
-      router.push("/dashboard");
     } catch (err) {
       setError(err instanceof Error ? err.message : "An error occurred during login");
     } finally {

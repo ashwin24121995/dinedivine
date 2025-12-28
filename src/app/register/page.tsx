@@ -202,12 +202,13 @@ export default function RegisterPage() {
 
       const data = await response.json();
 
-      if (!response.ok) {
-        throw new Error(data.message || "Registration failed");
+      if (data.success) {
+        // Redirect to dashboard on successful registration (user is auto-logged in)
+        router.push("/dashboard");
+        router.refresh();
+      } else {
+        throw new Error(data.error || "Registration failed");
       }
-
-      // Redirect to login on successful registration
-      router.push("/login?registered=true");
     } catch (err) {
       setError(
         err instanceof Error ? err.message : "An error occurred during registration"

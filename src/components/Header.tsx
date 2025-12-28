@@ -1,10 +1,47 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+interface User {
+  id: number;
+  email: string;
+  fullName: string;
+  mobile: string;
+}
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [user, setUser] = useState<User | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Check if user is logged in
+    const checkAuth = async () => {
+      try {
+        const response = await fetch("/api/auth/me");
+        const data = await response.json();
+        if (data.success) {
+          setUser(data.user);
+        }
+      } catch {
+        setUser(null);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    checkAuth();
+  }, []);
+
+  const handleLogout = async () => {
+    try {
+      await fetch("/api/auth/logout", { method: "POST" });
+      setUser(null);
+      window.location.href = "/";
+    } catch {
+      console.error("Logout failed");
+    }
+  };
 
   const navLinks = [
     { href: "/", label: "Home" },
@@ -46,18 +83,39 @@ const Header = () => {
 
           {/* Auth Buttons - Desktop */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Link
-              href="/login"
-              className="text-green-600 hover:text-green-700 font-medium transition-colors duration-200"
-            >
-              Login
-            </Link>
-            <Link
-              href="/register"
-              className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 font-medium transition-colors duration-200"
-            >
-              Register
-            </Link>
+            {isLoading ? (
+              <div className="w-20 h-8 bg-gray-200 animate-pulse rounded-lg"></div>
+            ) : user ? (
+              <>
+                <Link
+                  href="/dashboard"
+                  className="text-green-600 hover:text-green-700 font-medium transition-colors duration-200"
+                >
+                  Dashboard
+                </Link>
+                <button
+                  onClick={handleLogout}
+                  className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 font-medium transition-colors duration-200"
+                >
+                  Logout
+                </button>
+              </>
+            ) : (
+              <>
+                <Link
+                  href="/login"
+                  className="text-green-600 hover:text-green-700 font-medium transition-colors duration-200"
+                >
+                  Login
+                </Link>
+                <Link
+                  href="/register"
+                  className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 font-medium transition-colors duration-200"
+                >
+                  Register
+                </Link>
+              </>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -101,20 +159,43 @@ const Header = () => {
                 </Link>
               ))}
               <div className="flex flex-col space-y-2 pt-4 border-t border-gray-200">
-                <Link
-                  href="/login"
-                  className="text-green-600 hover:text-green-700 font-medium py-2 transition-colors duration-200"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Login
-                </Link>
-                <Link
-                  href="/register"
-                  className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 font-medium text-center transition-colors duration-200"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Register
-                </Link>
+                {user ? (
+                  <>
+                    <Link
+                      href="/dashboard"
+                      className="text-green-600 hover:text-green-700 font-medium py-2 transition-colors duration-200"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Dashboard
+                    </Link>
+                    <button
+                      onClick={() => {
+                        handleLogout();
+                        setIsMenuOpen(false);
+                      }}
+                      className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 font-medium text-center transition-colors duration-200"
+                    >
+                      Logout
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <Link
+                      href="/login"
+                      className="text-green-600 hover:text-green-700 font-medium py-2 transition-colors duration-200"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Login
+                    </Link>
+                    <Link
+                      href="/register"
+                      className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 font-medium text-center transition-colors duration-200"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Register
+                    </Link>
+                  </>
+                )}
               </div>
             </nav>
           </div>
