@@ -1,0 +1,15 @@
+[phases.setup]
+aptPkgs = ["libatomic1"]
+
+[phases.install]
+cmds = ["pnpm install --frozen-lockfile"]
+
+[phases.build]
+cmds = ["pnpm run build"]
+
+[start]
+cmd = "pnpm run start"
+
+# Environment variables are runtime only, not needed at build time
+[variables]
+NODE_ENV = "production"
