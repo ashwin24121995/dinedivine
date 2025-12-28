@@ -2,12 +2,13 @@ import { SignJWT, jwtVerify } from "jose";
 import bcrypt from "bcryptjs";
 import { cookies } from "next/headers";
 
-// JWT Secret - should be set in environment variables
-const JWT_SECRET = new TextEncoder().encode(
-  process.env.JWT_SECRET || "dinedivine-secret-key-change-in-production-2024"
-);
-
 const COOKIE_NAME = "dinedivine_auth";
+
+// Get JWT secret at runtime (not at build time)
+function getJwtSecret(): Uint8Array {
+  const secret = process.env.JWT_SECRET || "dinedivine-default-secret-key-2024";
+  return new TextEncoder().encode(secret);
+}
 
 export interface UserPayload {
   id: number;
@@ -37,7 +38,7 @@ export async function generateToken(user: UserPayload): Promise<string> {
     .setProtectedHeader({ alg: "HS256" })
     .setIssuedAt()
     .setExpirationTime("7d") // Token expires in 7 days
-    .sign(JWT_SECRET);
+    .sign(getJwtSecret());
 
   return token;
 }
@@ -45,7 +46,7 @@ export async function generateToken(user: UserPayload): Promise<string> {
 // Verify JWT token
 export async function verifyToken(token: string): Promise<UserPayload | null> {
   try {
-    const { payload } = await jwtVerify(token, JWT_SECRET);
+    const { payload } = await jwtVerify(token, getJwtSecret());
     return {
       id: payload.id as number,
       email: payload.email as string,

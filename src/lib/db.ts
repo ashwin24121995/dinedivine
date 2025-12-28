@@ -1,16 +1,20 @@
 import mysql from "mysql2/promise";
 
-// Database connection configuration
-const dbConfig = {
-  uri: process.env.DATABASE_URL || "mysql://root:hesKScPnfMSIJUxgAPNemuNKGaMuSMYz@metro.proxy.rlwy.net:32817/railway",
-};
-
 // Create a connection pool for better performance
 let pool: mysql.Pool | null = null;
 
+// Get database URL at runtime (not at build time)
+function getDatabaseUrl(): string {
+  const url = process.env.DATABASE_URL;
+  if (!url) {
+    throw new Error("DATABASE_URL environment variable is not set");
+  }
+  return url;
+}
+
 export function getPool(): mysql.Pool {
   if (!pool) {
-    pool = mysql.createPool(dbConfig.uri);
+    pool = mysql.createPool(getDatabaseUrl());
   }
   return pool;
 }

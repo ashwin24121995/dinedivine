@@ -12,13 +12,22 @@ import {
   isMatchToday,
 } from "./types";
 
-const API_KEY = process.env.CRICKET_API_KEY || "1a822521-d7e0-46ff-98d3-3e51020863f3";
 const BASE_URL = "https://api.cricapi.com/v1";
+
+// Get API key at runtime (not at build time)
+function getApiKey(): string {
+  return process.env.CRICKET_API_KEY || "";
+}
 
 // Generic fetch function with error handling
 async function fetchAPI<T>(endpoint: string, params: Record<string, string> = {}): Promise<APIResponse<T>> {
+  const apiKey = getApiKey();
+  if (!apiKey) {
+    throw new Error("CRICKET_API_KEY is not configured");
+  }
+  
   const url = new URL(`${BASE_URL}/${endpoint}`);
-  url.searchParams.append("apikey", API_KEY);
+  url.searchParams.append("apikey", apiKey);
   
   Object.entries(params).forEach(([key, value]) => {
     url.searchParams.append(key, value);
@@ -172,8 +181,13 @@ export function filterMatchesByStatus(matches: Match[], status: "upcoming" | "li
 // Fetch live matches with no cache (for real-time updates)
 export async function fetchLiveMatchesNoCache(): Promise<Match[]> {
   try {
+    const apiKey = getApiKey();
+    if (!apiKey) {
+      throw new Error("CRICKET_API_KEY is not configured");
+    }
+    
     const url = new URL(`${BASE_URL}/currentMatches`);
-    url.searchParams.append("apikey", API_KEY);
+    url.searchParams.append("apikey", apiKey);
     url.searchParams.append("offset", "0");
 
     const response = await fetch(url.toString(), {
