@@ -1,20 +1,11 @@
 import Link from "next/link";
-import { getCurrentMatches } from "@/lib/cricketApi";
-import { isMatchLive, isMatchUpcoming, isMatchCompleted } from "@/lib/types";
-import MatchCard from "@/components/MatchCard";
 import LiveMatchesSection from "@/components/LiveMatchesSection";
+import UpcomingMatchesSection from "@/components/UpcomingMatchesSection";
+import CompletedMatchesSection from "@/components/CompletedMatchesSection";
 
 export const revalidate = 60; // Revalidate every 60 seconds
 
-export default async function Home() {
-  // Fetch real-time matches from Cricket API
-  const allMatches = await getCurrentMatches();
-  
-  // Categorize matches
-  const liveMatches = allMatches.filter((m) => isMatchLive(m));
-  const upcomingMatches = allMatches.filter((m) => isMatchUpcoming(m));
-  const completedMatches = allMatches.filter((m) => isMatchCompleted(m));
-
+export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -44,90 +35,14 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Live Matches Section - Auto-updates every 3 seconds */}
-      <LiveMatchesSection initialMatches={liveMatches} refreshInterval={3000} />
+      {/* Live Matches Section - Auto-updates every 3 seconds using eCricScore API */}
+      <LiveMatchesSection refreshInterval={3000} />
 
-      {/* Upcoming Matches Section */}
-      {upcomingMatches.length > 0 && (
-        <section className="py-12 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center mb-8">
-              <div className="flex items-center gap-3">
-                <h2 className="text-2xl font-bold text-gray-900">Upcoming Matches</h2>
-                <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-medium">
-                  {upcomingMatches.length} Upcoming
-                </span>
-              </div>
-              <Link
-                href="/matches"
-                className="hidden sm:inline-flex items-center text-green-600 hover:text-green-700 font-medium"
-              >
-                View All Matches
-                <svg
-                  className="w-5 h-5 ml-1"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </Link>
-            </div>
+      {/* Upcoming Matches Section - Uses eCricScore API with ms="fixture" filter */}
+      <UpcomingMatchesSection limit={6} />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {upcomingMatches.slice(0, 6).map((match) => (
-                <MatchCard key={match.id} match={match} />
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Completed Matches Section */}
-      {completedMatches.length > 0 && (
-        <section className="py-12 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center mb-8">
-              <div className="flex items-center gap-3">
-                <h2 className="text-2xl font-bold text-gray-900">Recent Results</h2>
-                <span className="bg-gray-200 text-gray-600 px-3 py-1 rounded-full text-sm font-medium">
-                  {completedMatches.length} Completed
-                </span>
-              </div>
-              <Link
-                href="/matches"
-                className="hidden sm:inline-flex items-center text-green-600 hover:text-green-700 font-medium"
-              >
-                View All Matches
-                <svg
-                  className="w-5 h-5 ml-1"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </Link>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {completedMatches.slice(0, 6).map((match) => (
-                <MatchCard key={match.id} match={match} />
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+      {/* Completed Matches Section - Uses eCricScore API with ms="result" filter */}
+      <CompletedMatchesSection limit={6} />
 
       {/* Features Section */}
       <section className="py-16 bg-white">

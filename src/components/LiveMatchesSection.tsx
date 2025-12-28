@@ -1,50 +1,91 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import LiveMatchCard from "./LiveMatchCard";
-import { Match, isMatchLive } from "@/lib/types";
+import CricScoreMatchCard from "./CricScoreMatchCard";
+import { CricScoreMatch } from "@/lib/types";
 
 interface LiveMatchesSectionProps {
-  initialMatches: Match[];
   refreshInterval?: number; // in milliseconds, default 3000 (3 seconds)
 }
 
 export default function LiveMatchesSection({ 
-  initialMatches, 
   refreshInterval = 3000 
 }: LiveMatchesSectionProps) {
-  const [matches, setMatches] = useState<Match[]>(initialMatches.filter(m => isMatchLive(m)));
-  const [isLoading, setIsLoading] = useState(false);
+  const [matches, setMatches] = useState<CricScoreMatch[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [lastUpdated, setLastUpdated] = useState<Date>(new Date());
+  const [error, setError] = useState<string | null>(null);
 
   const fetchLiveMatches = useCallback(async () => {
     try {
-      setIsLoading(true);
-      const response = await fetch("/api/matches?status=live", {
+      // Use eCricScore API with status=live filter (ms === "live")
+      const response = await fetch("/api/matches?status=live&nocache=true", {
         cache: "no-store",
       });
       
       if (response.ok) {
         const data = await response.json();
         if (data.success) {
-          const liveMatches = (data.data || []).filter((m: Match) => isMatchLive(m));
-          setMatches(liveMatches);
+          setMatches(data.data || []);
           setLastUpdated(new Date());
+          setError(null);
+        } else {
+          setError(data.error || "Failed to fetch matches");
         }
+      } else {
+        setError("Failed to fetch live matches");
       }
-    } catch (error) {
-      console.error("Error fetching live matches:", error);
+    } catch (err) {
+      console.error("Error fetching live matches:", err);
+      setError(err instanceof Error ? err.message : "Unknown error");
     } finally {
       setIsLoading(false);
     }
   }, []);
 
+  // Initial fetch
   useEffect(() => {
-    // Set up auto-refresh interval
+    fetchLiveMatches();
+  }, [fetchLiveMatches]);
+
+  // Auto-refresh every 3 seconds
+  useEffect(() => {
     const intervalId = setInterval(fetchLiveMatches, refreshInterval);
-    
     return () => clearInterval(intervalId);
   }, [fetchLiveMatches, refreshInterval]);
+
+  if (isLoading && matches.length === 0) {
+    return (
+      <section className="py-12 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-center gap-3 mb-8">
+            <h2 className="text-2xl font-bold text-gray-900">Live Matches</h2>
+            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-green-600"></div>
+          </div>
+          <div className="text-center text-gray-500">Loading live matches...</div>
+        </div>
+      </section>
+    );
+  }
+
+  if (error && matches.length === 0) {
+    return (
+      <section className="py-12 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Live Matches</h2>
+            <p className="text-red-600">{error}</p>
+            <button
+              onClick={fetchLiveMatches}
+              className="mt-4 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
+            >
+              Try Again
+            </button>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   if (matches.length === 0) {
     return (
@@ -59,6 +100,9 @@ export default function LiveMatchesSection({
             </div>
             <p className="text-gray-600">
               There are no live matches at the moment. Check back later!
+            </p>
+            <p className="text-xs text-gray-400 mt-2">
+              Last checked: {lastUpdated.toLocaleTimeString("en-IN", { timeZone: "Asia/Kolkata" })} IST
             </p>
           </div>
         </div>
@@ -85,17 +129,16 @@ export default function LiveMatchesSection({
               </svg>
             )}
             <span>
-              Auto-updating every {refreshInterval / 1000}s | Last: {lastUpdated.toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit", second: "2-digit" })} IST
+              Auto-updating every {refreshInterval / 1000}s | Last: {lastUpdated.toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit", second: "2-digit", timeZone: "Asia/Kolkata" })} IST
             </span>
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {matches.map((match) => (
-            <LiveMatchCard 
+            <CricScoreMatchCard 
               key={match.id} 
-              match={match} 
-              refreshInterval={refreshInterval}
+              match={match}
             />
           ))}
         </div>
