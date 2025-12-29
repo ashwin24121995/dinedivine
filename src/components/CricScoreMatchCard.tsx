@@ -1,6 +1,6 @@
 "use client";
 
-import { CricScoreMatch, formatMatchDateTime, formatMatchType, parseTeamName } from "@/lib/types";
+import { CricScoreMatch, formatMatchDateTime, formatMatchType, parseTeamName, getActualMatchStatus, getTimeUntilMatch } from "@/lib/types";
 import Image from "next/image";
 
 interface CricScoreMatchCardProps {
@@ -12,9 +12,13 @@ export default function CricScoreMatchCard({ match, showSeries = true }: CricSco
   const team1 = parseTeamName(match.t1);
   const team2 = parseTeamName(match.t2);
 
-  // Determine status badge color
+  // Get actual status based on API status and current time
+  const actualStatus = getActualMatchStatus(match.ms, match.dateTimeGMT);
+  const timeUntil = getTimeUntilMatch(match.dateTimeGMT);
+
+  // Determine status badge color based on actual status
   const getStatusBadge = () => {
-    switch (match.ms) {
+    switch (actualStatus) {
       case "live":
         return (
           <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800 animate-pulse">
@@ -22,13 +26,13 @@ export default function CricScoreMatchCard({ match, showSeries = true }: CricSco
             LIVE
           </span>
         );
-      case "fixture":
+      case "upcoming":
         return (
           <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
             UPCOMING
           </span>
         );
-      case "result":
+      case "completed":
         return (
           <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
             COMPLETED
@@ -39,10 +43,31 @@ export default function CricScoreMatchCard({ match, showSeries = true }: CricSco
     }
   };
 
+  // Get countdown or status text
+  const getTimeDisplay = () => {
+    if (actualStatus === "live") {
+      return <span className="text-red-600 font-medium">Match in Progress</span>;
+    } else if (actualStatus === "completed") {
+      return <span className="text-gray-600">{match.status}</span>;
+    } else {
+      // Upcoming
+      if (timeUntil.hours > 24) {
+        const days = Math.floor(timeUntil.hours / 24);
+        return <span className="text-blue-600">Starts in {days} day{days > 1 ? 's' : ''}</span>;
+      } else if (timeUntil.hours > 0) {
+        return <span className="text-blue-600">Starts in {timeUntil.hours}h {timeUntil.minutes}m</span>;
+      } else if (timeUntil.minutes > 0) {
+        return <span className="text-orange-600 font-medium">Starts in {timeUntil.minutes} min</span>;
+      } else {
+        return <span className="text-red-600 font-medium animate-pulse">Starting soon</span>;
+      }
+    }
+  };
+
   return (
     <div className={`bg-white rounded-lg shadow-md p-4 border-l-4 ${
-      match.ms === "live" ? "border-red-500" : 
-      match.ms === "fixture" ? "border-blue-500" : "border-gray-400"
+      actualStatus === "live" ? "border-red-500" : 
+      actualStatus === "upcoming" ? "border-blue-500" : "border-gray-400"
     }`}>
       {/* Header: Series, Match Type, Status */}
       <div className="flex justify-between items-start mb-3">
@@ -123,8 +148,8 @@ export default function CricScoreMatchCard({ match, showSeries = true }: CricSco
 
       {/* Status / Result */}
       <div className="mt-4 pt-3 border-t border-gray-100">
-        <p className={`text-sm ${match.ms === "live" ? "text-red-600 font-medium" : "text-gray-600"}`}>
-          {match.status}
+        <p className="text-sm">
+          {getTimeDisplay()}
         </p>
         <p className="text-xs text-gray-400 mt-1">
           {formatMatchDateTime(match.dateTimeGMT)} IST

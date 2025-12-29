@@ -76,6 +76,48 @@ export function formatMatchDateTime(dateTimeGMT: string): string {
   });
 }
 
+// Check if match start time has passed (match should be live or completed)
+export function hasMatchStarted(dateTimeGMT: string): boolean {
+  const matchStartTime = new Date(dateTimeGMT);
+  const now = new Date();
+  return now >= matchStartTime;
+}
+
+// Get the actual match status based on API status and time
+export function getActualMatchStatus(apiStatus: string, dateTimeGMT: string): 'live' | 'upcoming' | 'completed' {
+  const matchStarted = hasMatchStarted(dateTimeGMT);
+  
+  // If API says it's live, trust it
+  if (apiStatus === 'live') return 'live';
+  
+  // If API says it's completed/result, trust it
+  if (apiStatus === 'result') return 'completed';
+  
+  // If API says fixture but time has passed, it should be live
+  if (apiStatus === 'fixture' && matchStarted) {
+    return 'live';
+  }
+  
+  // Otherwise it's upcoming
+  return 'upcoming';
+}
+
+// Get time until match starts (for countdown)
+export function getTimeUntilMatch(dateTimeGMT: string): { hours: number; minutes: number; isStarted: boolean } {
+  const matchStartTime = new Date(dateTimeGMT);
+  const now = new Date();
+  const diff = matchStartTime.getTime() - now.getTime();
+  
+  if (diff <= 0) {
+    return { hours: 0, minutes: 0, isStarted: true };
+  }
+  
+  const hours = Math.floor(diff / (1000 * 60 * 60));
+  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  
+  return { hours, minutes, isStarted: false };
+}
+
 // Format match type display
 export function formatMatchType(matchType: string): string {
   const types: Record<string, string> = {
@@ -139,13 +181,22 @@ export interface CricScoreMatch {
   series: string; // Series name
 }
 
-// eCricScore filter functions
+// eCricScore filter functions - now check actual time for accurate status
 export function isCricScoreLive(match: CricScoreMatch): boolean {
-  return match.ms === "live";
+  // If API says live, it's live
+  if (match.ms === "live") return true;
+  
+  // If API says fixture but time has passed, consider it live
+  if (match.ms === "fixture" && hasMatchStarted(match.dateTimeGMT)) {
+    return true;
+  }
+  
+  return false;
 }
 
 export function isCricScoreUpcoming(match: CricScoreMatch): boolean {
-  return match.ms === "fixture";
+  // Only upcoming if fixture AND time hasn't passed
+  return match.ms === "fixture" && !hasMatchStarted(match.dateTimeGMT);
 }
 
 export function isCricScoreCompleted(match: CricScoreMatch): boolean {
