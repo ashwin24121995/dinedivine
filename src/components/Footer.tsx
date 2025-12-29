@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -19,35 +20,44 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-[#0a0f1a] border-t border-[#22c55e]/10">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-green-400">DineDivine</h3>
+            <div className="flex items-center gap-2">
+              <Image
+                src="/favicon.png"
+                alt="DineDivine"
+                width={32}
+                height={32}
+                className="rounded-lg"
+              />
+              <h3 className="text-2xl font-bold text-[#22c55e]">DineDivine</h3>
+            </div>
             <p className="text-gray-400 text-sm">
               The Leading Entertainment Platform for Games & Social Fun. A free
               to play platform built for entertainment only.
             </p>
             <div className="text-gray-400 text-sm space-y-1">
               <p>
-                <strong className="text-white">Company:</strong> DINEDIVINE
+                <strong className="text-gray-300">Company:</strong> DINEDIVINE
                 VENTURES PRIVATE LIMITED
               </p>
               <p>
-                <strong className="text-white">CIN:</strong>{" "}
+                <strong className="text-gray-300">CIN:</strong>{" "}
                 U56102HR2024PTC123713
               </p>
               <p>
-                <strong className="text-white">GST:</strong> 06AALCD0239Q1ZA
+                <strong className="text-gray-300">GST:</strong> 06AALCD0239Q1ZA
               </p>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-green-400">
+            <h4 className="text-lg font-semibold mb-4 text-[#22c55e]">
               Quick Links
             </h4>
             <ul className="space-y-2">
@@ -55,7 +65,7 @@ const Footer = () => {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 hover:text-green-400 transition-colors duration-200"
+                    className="text-gray-400 hover:text-[#22c55e] transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -66,13 +76,13 @@ const Footer = () => {
 
           {/* Legal Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-green-400">Legal</h4>
+            <h4 className="text-lg font-semibold mb-4 text-[#22c55e]">Legal</h4>
             <ul className="space-y-2">
               {legalLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 hover:text-green-400 transition-colors duration-200"
+                    className="text-gray-400 hover:text-[#22c55e] transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -83,22 +93,22 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-green-400">
+            <h4 className="text-lg font-semibold mb-4 text-[#22c55e]">
               Contact Us
             </h4>
             <div className="text-gray-400 text-sm space-y-2">
               <p>
-                <strong className="text-white">Address:</strong>
+                <strong className="text-gray-300">Address:</strong>
               </p>
               <p>
                 C/O PARDEEP SAGGAR, 20-P DSC, SEC-23A, Shivaji Nagar (Gurgaon),
                 Shivaji Nagar, Gurgaon- 122001, Haryana, India
               </p>
               <p className="pt-2">
-                <strong className="text-white">Website:</strong>{" "}
+                <strong className="text-gray-300">Website:</strong>{" "}
                 <a
                   href="https://www.dinedivine.com"
-                  className="text-green-400 hover:underline"
+                  className="text-[#22c55e] hover:underline"
                 >
                   www.dinedivine.com
                 </a>
@@ -109,10 +119,10 @@ const Footer = () => {
       </div>
 
       {/* Age Restriction Banner */}
-      <div className="bg-red-600 py-3">
+      <div className="bg-gradient-to-r from-red-600 to-red-700 py-3">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-center text-white font-semibold text-sm">
-            🔞 This platform is strictly for users aged 18 years and above.
+            This platform is strictly for users aged 18 years and above.
             Users from Telangana, Andhra Pradesh, Assam, and Odisha are not
             allowed.
           </p>
@@ -120,12 +130,12 @@ const Footer = () => {
       </div>
 
       {/* Disclaimer Section */}
-      <div className="bg-gray-800 py-6">
+      <div className="bg-[#111827] py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h5 className="text-sm font-semibold text-yellow-400 mb-2">
             DISCLAIMER
           </h5>
-          <p className="text-gray-400 text-xs leading-relaxed">
+          <p className="text-gray-500 text-xs leading-relaxed">
             DineDivine is a free-to-play fantasy sports platform designed purely
             for entertainment purposes. This platform does not involve any real
             money gaming, betting, or gambling. No real money rewards, cash
@@ -140,9 +150,9 @@ const Footer = () => {
       </div>
 
       {/* Copyright */}
-      <div className="bg-gray-950 py-4">
+      <div className="bg-[#050810] py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-gray-500 text-sm">
+          <p className="text-center text-gray-600 text-sm">
             © {currentYear} DINEDIVINE VENTURES PRIVATE LIMITED. All rights
             reserved.
           </p>

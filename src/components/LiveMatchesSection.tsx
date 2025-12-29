@@ -56,13 +56,13 @@ export default function LiveMatchesSection({
 
   if (isLoading && matches.length === 0) {
     return (
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-[#0a0f1a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center gap-3 mb-8">
-            <h2 className="text-2xl font-bold text-gray-900">Live Matches</h2>
-            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-green-600"></div>
+            <h2 className="text-2xl font-bold text-white">Live Matches</h2>
+            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-[#22c55e]"></div>
           </div>
-          <div className="text-center text-gray-500">Loading live matches...</div>
+          <div className="text-center text-gray-400">Loading live matches...</div>
         </div>
       </section>
     );
@@ -70,14 +70,14 @@ export default function LiveMatchesSection({
 
   if (error && matches.length === 0) {
     return (
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-[#0a0f1a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Live Matches</h2>
-            <p className="text-red-600">{error}</p>
+            <h2 className="text-2xl font-bold text-white mb-4">Live Matches</h2>
+            <p className="text-red-400">{error}</p>
             <button
               onClick={fetchLiveMatches}
-              className="mt-4 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
+              className="mt-4 px-6 py-2 bg-[#22c55e] text-white rounded-lg hover:bg-[#16a34a] transition-colors"
             >
               Try Again
             </button>
@@ -89,19 +89,19 @@ export default function LiveMatchesSection({
 
   if (matches.length === 0) {
     return (
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-[#0a0f1a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <h2 className="text-2xl font-bold text-gray-900">Live Matches</h2>
-              <span className="flex items-center gap-1 bg-gray-200 text-gray-600 px-3 py-1 rounded-full text-sm font-medium">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <h2 className="text-2xl font-bold text-white">Live Matches</h2>
+              <span className="flex items-center gap-1 bg-[#1a2332] text-gray-400 px-3 py-1 rounded-full text-sm font-medium border border-gray-700">
                 No Live Matches
               </span>
             </div>
-            <p className="text-gray-600">
+            <p className="text-gray-400">
               There are no live matches at the moment. Check back later!
             </p>
-            <p className="text-xs text-gray-400 mt-2">
+            <p className="text-xs text-gray-500 mt-2">
               Last checked: {lastUpdated.toLocaleTimeString("en-IN", { timeZone: "Asia/Kolkata" })} IST
             </p>
           </div>
@@ -111,17 +111,17 @@ export default function LiveMatchesSection({
   }
 
   return (
-    <section className="py-12 bg-gradient-to-b from-red-50 to-gray-50">
+    <section className="py-12 bg-gradient-to-b from-[#0a0f1a] to-[#111827]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
           <div className="flex items-center gap-3">
-            <h2 className="text-2xl font-bold text-gray-900">Live Matches</h2>
-            <span className="flex items-center gap-1 bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-medium">
+            <h2 className="text-2xl font-bold text-white">Live Matches</h2>
+            <span className="flex items-center gap-1 bg-red-500/20 text-red-400 px-3 py-1 rounded-full text-sm font-medium border border-red-500/30">
               <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
               {matches.length} Live
             </span>
           </div>
-          <div className="flex items-center gap-2 text-sm text-gray-500">
+          <div className="flex items-center gap-2 text-sm text-gray-400">
             {isLoading && (
               <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import CricScoreMatchCard from "./CricScoreMatchCard";
 import { CricScoreMatch } from "@/lib/types";
 
@@ -49,13 +50,13 @@ export default function UpcomingMatchesSection({ limit = 6 }: UpcomingMatchesSec
 
   if (isLoading) {
     return (
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-[#111827]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center gap-3 mb-8">
-            <h2 className="text-2xl font-bold text-gray-900">Upcoming Matches</h2>
-            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-blue-600"></div>
+            <h2 className="text-2xl font-bold text-white">Upcoming Matches</h2>
+            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-[#22c55e]"></div>
           </div>
-          <div className="text-center text-gray-500">Loading upcoming matches...</div>
+          <div className="text-center text-gray-400">Loading upcoming matches...</div>
         </div>
       </section>
     );
@@ -63,11 +64,11 @@ export default function UpcomingMatchesSection({ limit = 6 }: UpcomingMatchesSec
 
   if (error) {
     return (
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-[#111827]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Upcoming Matches</h2>
-            <p className="text-red-600">{error}</p>
+            <h2 className="text-2xl font-bold text-white mb-4">Upcoming Matches</h2>
+            <p className="text-red-400">{error}</p>
           </div>
         </div>
       </section>
@@ -76,11 +77,11 @@ export default function UpcomingMatchesSection({ limit = 6 }: UpcomingMatchesSec
 
   if (matches.length === 0) {
     return (
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-[#111827]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Upcoming Matches</h2>
-            <p className="text-gray-600">No upcoming matches scheduled at the moment.</p>
+            <h2 className="text-2xl font-bold text-white mb-4">Upcoming Matches</h2>
+            <p className="text-gray-400">No upcoming matches scheduled at the moment.</p>
           </div>
         </div>
       </section>
@@ -88,15 +89,24 @@ export default function UpcomingMatchesSection({ limit = 6 }: UpcomingMatchesSec
   }
 
   return (
-    <section className="py-12 bg-white">
+    <section className="py-12 bg-[#111827]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
           <div className="flex items-center gap-3">
-            <h2 className="text-2xl font-bold text-gray-900">Upcoming Matches</h2>
-            <span className="flex items-center gap-1 bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-medium">
+            <h2 className="text-2xl font-bold text-white">Upcoming Matches</h2>
+            <span className="flex items-center gap-1 bg-[#22c55e]/20 text-[#22c55e] px-3 py-1 rounded-full text-sm font-medium border border-[#22c55e]/30">
               {matches.length} Scheduled
             </span>
           </div>
+          <Link 
+            href="/dashboard/matches"
+            className="text-[#22c55e] hover:text-[#4ade80] font-medium flex items-center gap-1 transition-colors"
+          >
+            View All Matches
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

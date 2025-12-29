@@ -49,13 +49,13 @@ export default function CompletedMatchesSection({ limit = 6 }: CompletedMatchesS
 
   if (isLoading) {
     return (
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-[#0a0f1a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center gap-3 mb-8">
-            <h2 className="text-2xl font-bold text-gray-900">Recent Results</h2>
-            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-gray-600"></div>
+            <h2 className="text-2xl font-bold text-white">Recent Results</h2>
+            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-gray-400"></div>
           </div>
-          <div className="text-center text-gray-500">Loading recent results...</div>
+          <div className="text-center text-gray-400">Loading recent results...</div>
         </div>
       </section>
     );
@@ -63,11 +63,11 @@ export default function CompletedMatchesSection({ limit = 6 }: CompletedMatchesS
 
   if (error) {
     return (
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-[#0a0f1a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Recent Results</h2>
-            <p className="text-red-600">{error}</p>
+            <h2 className="text-2xl font-bold text-white mb-4">Recent Results</h2>
+            <p className="text-red-400">{error}</p>
           </div>
         </div>
       </section>
@@ -76,11 +76,11 @@ export default function CompletedMatchesSection({ limit = 6 }: CompletedMatchesS
 
   if (matches.length === 0) {
     return (
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-[#0a0f1a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Recent Results</h2>
-            <p className="text-gray-600">No recent match results available.</p>
+            <h2 className="text-2xl font-bold text-white mb-4">Recent Results</h2>
+            <p className="text-gray-400">No recent match results available.</p>
           </div>
         </div>
       </section>
@@ -88,12 +88,12 @@ export default function CompletedMatchesSection({ limit = 6 }: CompletedMatchesS
   }
 
   return (
-    <section className="py-12 bg-gray-50">
+    <section className="py-12 bg-[#0a0f1a]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
           <div className="flex items-center gap-3">
-            <h2 className="text-2xl font-bold text-gray-900">Recent Results</h2>
-            <span className="flex items-center gap-1 bg-gray-200 text-gray-600 px-3 py-1 rounded-full text-sm font-medium">
+            <h2 className="text-2xl font-bold text-white">Recent Results</h2>
+            <span className="flex items-center gap-1 bg-gray-700/50 text-gray-300 px-3 py-1 rounded-full text-sm font-medium border border-gray-600">
               {matches.length} Completed
             </span>
           </div>

@@ -1,11 +1,33 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --primary: #16a34a;
-  --primary-dark: #15803d;
-  --primary-light: #22c55e;
+  /* New Dark Theme Color Palette */
+  --background: #0a0f1a;
+  --background-secondary: #111827;
+  --background-card: #1a2332;
+  --foreground: #f8fafc;
+  --foreground-muted: #94a3b8;
+  
+  /* Primary Green */
+  --primary: #22c55e;
+  --primary-dark: #16a34a;
+  --primary-light: #4ade80;
+  --primary-glow: rgba(34, 197, 94, 0.3);
+  
+  /* Accent Colors */
+  --accent-blue: #3b82f6;
+  --accent-purple: #8b5cf6;
+  --accent-orange: #f97316;
+  --accent-red: #ef4444;
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  --gradient-hero: linear-gradient(180deg, rgba(10, 15, 26, 0.8) 0%, rgba(10, 15, 26, 0.95) 100%);
+  --gradient-card: linear-gradient(145deg, rgba(26, 35, 50, 0.9) 0%, rgba(17, 24, 39, 0.9) 100%);
+  
+  /* Borders */
+  --border-color: rgba(148, 163, 184, 0.1);
+  --border-glow: rgba(34, 197, 94, 0.5);
 }
 
 @theme inline {
@@ -26,28 +48,28 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - Dark Theme */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--background-secondary);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #16a34a;
+  background: var(--primary);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #15803d;
+  background: var(--primary-light);
 }
 
 /* Focus styles for accessibility */
 a:focus,
 button:focus {
-  outline: 2px solid #16a34a;
+  outline: 2px solid var(--primary);
   outline-offset: 2px;
 }
 
@@ -65,4 +87,45 @@ main {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Glow effects */
+.glow-green {
+  box-shadow: 0 0 20px var(--primary-glow);
+}
+
+.glow-text {
+  text-shadow: 0 0 10px var(--primary-glow);
+}
+
+/* Card styles */
+.card-glass {
+  background: var(--gradient-card);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+}
+
+/* Button hover effects */
+.btn-primary {
+  background: var(--gradient-primary);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 30px var(--primary-glow);
+  transform: translateY(-2px);
+}
+
+/* Hero section background */
+.hero-bg {
+  background: url('/images/hero-bg.jpg') center/cover no-repeat;
+  position: relative;
+}
+
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-hero);
 }

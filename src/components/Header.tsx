@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 interface User {
@@ -45,7 +46,7 @@ const Header = () => {
 
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "/matches", label: "Matches" },
+    { href: "/dashboard/matches", label: "Matches" },
     { href: "/about", label: "About Us" },
     { href: "/how-to-play", label: "How To Play" },
     { href: "/fantasy-cricket", label: "Fantasy Cricket" },
@@ -56,13 +57,20 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50">
+    <header className="bg-[#0a0f1a]/95 backdrop-blur-md border-b border-[#22c55e]/20 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center">
-              <span className="text-2xl font-bold text-green-600">
+            <Link href="/" className="flex items-center gap-2">
+              <Image
+                src="/favicon.png"
+                alt="DineDivine"
+                width={36}
+                height={36}
+                className="rounded-lg"
+              />
+              <span className="text-xl font-bold text-[#22c55e]">
                 DineDivine
               </span>
             </Link>
@@ -74,7 +82,7 @@ const Header = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-700 hover:text-green-600 font-medium transition-colors duration-200"
+                className="text-gray-300 hover:text-[#22c55e] font-medium transition-colors duration-200 text-sm"
               >
                 {link.label}
               </Link>
@@ -84,18 +92,18 @@ const Header = () => {
           {/* Auth Buttons - Desktop */}
           <div className="hidden lg:flex items-center space-x-4">
             {isLoading ? (
-              <div className="w-20 h-8 bg-gray-200 animate-pulse rounded-lg"></div>
+              <div className="w-20 h-8 bg-gray-700 animate-pulse rounded-lg"></div>
             ) : user ? (
               <>
                 <Link
                   href="/dashboard"
-                  className="text-green-600 hover:text-green-700 font-medium transition-colors duration-200"
+                  className="text-[#22c55e] hover:text-[#4ade80] font-medium transition-colors duration-200"
                 >
                   Dashboard
                 </Link>
                 <button
                   onClick={handleLogout}
-                  className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 font-medium transition-colors duration-200"
+                  className="bg-red-500/20 text-red-400 px-4 py-2 rounded-lg hover:bg-red-500/30 border border-red-500/30 font-medium transition-colors duration-200"
                 >
                   Logout
                 </button>
@@ -104,13 +112,13 @@ const Header = () => {
               <>
                 <Link
                   href="/login"
-                  className="text-green-600 hover:text-green-700 font-medium transition-colors duration-200"
+                  className="text-[#22c55e] hover:text-[#4ade80] font-medium transition-colors duration-200"
                 >
                   Login
                 </Link>
                 <Link
                   href="/register"
-                  className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 font-medium transition-colors duration-200"
+                  className="bg-gradient-to-r from-[#22c55e] to-[#16a34a] text-white px-4 py-2 rounded-lg hover:shadow-lg hover:shadow-[#22c55e]/30 font-medium transition-all duration-200"
                 >
                   Register
                 </Link>
@@ -122,7 +130,7 @@ const Header = () => {
           <div className="lg:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-green-600 focus:outline-none"
+              className="text-gray-300 hover:text-[#22c55e] focus:outline-none"
               aria-label="Toggle menu"
             >
               <svg
@@ -146,24 +154,24 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden pb-4">
+          <div className="lg:hidden pb-4 bg-[#111827] rounded-lg mt-2 p-4">
             <nav className="flex flex-col space-y-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-gray-700 hover:text-green-600 font-medium py-2 transition-colors duration-200"
+                  className="text-gray-300 hover:text-[#22c55e] font-medium py-2 transition-colors duration-200"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.label}
                 </Link>
               ))}
-              <div className="flex flex-col space-y-2 pt-4 border-t border-gray-200">
+              <div className="flex flex-col space-y-2 pt-4 border-t border-gray-700">
                 {user ? (
                   <>
                     <Link
                       href="/dashboard"
-                      className="text-green-600 hover:text-green-700 font-medium py-2 transition-colors duration-200"
+                      className="text-[#22c55e] hover:text-[#4ade80] font-medium py-2 transition-colors duration-200"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Dashboard
@@ -173,7 +181,7 @@ const Header = () => {
                         handleLogout();
                         setIsMenuOpen(false);
                       }}
-                      className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 font-medium text-center transition-colors duration-200"
+                      className="bg-red-500/20 text-red-400 px-4 py-2 rounded-lg hover:bg-red-500/30 border border-red-500/30 font-medium text-center transition-colors duration-200"
                     >
                       Logout
                     </button>
@@ -182,14 +190,14 @@ const Header = () => {
                   <>
                     <Link
                       href="/login"
-                      className="text-green-600 hover:text-green-700 font-medium py-2 transition-colors duration-200"
+                      className="text-[#22c55e] hover:text-[#4ade80] font-medium py-2 transition-colors duration-200"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Login
                     </Link>
                     <Link
                       href="/register"
-                      className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 font-medium text-center transition-colors duration-200"
+                      className="bg-gradient-to-r from-[#22c55e] to-[#16a34a] text-white px-4 py-2 rounded-lg hover:shadow-lg font-medium text-center transition-all duration-200"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Register
