@@ -94,7 +94,7 @@ export default function LoginPage() {
       <div className="relative z-10 mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-[#1a2332] py-8 px-4 shadow-xl sm:rounded-xl sm:px-10 border border-[#22c55e]/20">
           {error && (
-            <div className="mb-4 bg-red-500/10 border border-red-500/30 text-red-400 px-4 py-3 rounded-lg text-sm">
+            <div className="mb-4 bg-red-900/200/10 border border-red-500/30 text-red-400 px-4 py-3 rounded-lg text-sm">
               {error}
             </div>
           )}

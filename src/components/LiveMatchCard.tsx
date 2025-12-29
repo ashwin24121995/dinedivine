@@ -53,7 +53,7 @@ export default function LiveMatchCard({ match: initialMatch, refreshInterval = 3
       {/* Live Indicator */}
       {isLive && (
         <div className="absolute top-3 right-3 z-10">
-          <div className="flex items-center gap-1 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
+          <div className="flex items-center gap-1 bg-red-900/200 text-white text-xs font-bold px-2 py-1 rounded">
             <span className="w-2 h-2 bg-[#1a2332] rounded-full animate-pulse"></span>
             LIVE
           </div>
@@ -68,7 +68,7 @@ export default function LiveMatchCard({ match: initialMatch, refreshInterval = 3
           </span>
         </div>
         {match.fantasyEnabled && (
-          <span className="bg-yellow-400 text-yellow-900 text-xs font-bold px-2 py-1 rounded">
+          <span className="bg-yellow-400 text-amber-200 text-xs font-bold px-2 py-1 rounded">
             FANTASY
           </span>
         )}

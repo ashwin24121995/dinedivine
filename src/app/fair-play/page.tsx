@@ -217,7 +217,7 @@ export default function FairPlayPage() {
             {prohibitedActivities.map((item) => (
               <div
                 key={item.activity}
-                className="bg-red-50 border border-red-200 p-6 rounded-xl"
+                className="bg-red-900/20 border border-red-500/30 p-6 rounded-xl"
               >
                 <div className="flex items-center gap-3 mb-3">
                   <svg
@@ -233,11 +233,11 @@ export default function FairPlayPage() {
                       d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"
                     />
                   </svg>
-                  <h3 className="text-lg font-semibold text-red-800">
+                  <h3 className="text-lg font-semibold text-red-300">
                     {item.activity}
                   </h3>
                 </div>
-                <p className="text-red-700 text-sm">{item.description}</p>
+                <p className="text-red-400 text-sm">{item.description}</p>
               </div>
             ))}
           </div>
@@ -338,14 +338,14 @@ export default function FairPlayPage() {
               Violations of our fair play policy may result in the following
               actions, depending on the severity and nature of the violation:
             </p>
-            <div className="bg-yellow-50 border border-yellow-200 p-8 rounded-xl">
+            <div className="bg-amber-900/20 border border-amber-500/30 p-8 rounded-xl">
               <ol className="space-y-4">
                 {consequences.map((consequence, index) => (
                   <li key={index} className="flex items-start gap-4">
-                    <span className="w-8 h-8 bg-yellow-400 text-yellow-900 rounded-full flex items-center justify-center font-bold flex-shrink-0">
+                    <span className="w-8 h-8 bg-yellow-400 text-amber-200 rounded-full flex items-center justify-center font-bold flex-shrink-0">
                       {index + 1}
                     </span>
-                    <span className="text-yellow-800 pt-1">{consequence}</span>
+                    <span className="text-amber-300 pt-1">{consequence}</span>
                   </li>
                 ))}
               </ol>

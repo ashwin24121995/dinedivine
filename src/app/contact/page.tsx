@@ -237,14 +237,14 @@ export default function ContactPage() {
                 </button>
 
                 {submitStatus === "success" && (
-                  <div className="bg-[#22c55e]/10 border border-green-200 text-[#22c55e] px-4 py-3 rounded-lg">
+                  <div className="bg-[#22c55e]/10 border border-green-500/30 text-[#22c55e] px-4 py-3 rounded-lg">
                     Thank you for your message! We&apos;ll get back to you
                     within 24-48 hours.
                   </div>
                 )}
 
                 {submitStatus === "error" && (
-                  <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
+                  <div className="bg-red-900/20 border border-red-500/30 text-red-400 px-4 py-3 rounded-lg">
                     Something went wrong. Please try again later.
                   </div>
                 )}
@@ -296,8 +296,8 @@ export default function ContactPage() {
               </div>
 
               {/* Response Time */}
-              <div className="bg-[#22c55e]/10 border border-green-200 p-6 rounded-xl">
-                <h3 className="font-semibold text-green-800 mb-2">
+              <div className="bg-[#22c55e]/10 border border-green-500/30 p-6 rounded-xl">
+                <h3 className="font-semibold text-green-300 mb-2">
                   Response Time
                 </h3>
                 <p className="text-[#22c55e] text-sm">

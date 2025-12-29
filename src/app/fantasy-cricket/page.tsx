@@ -239,7 +239,7 @@ export default function FantasyCricketPage() {
               </p>
             </div>
             <div className="bg-[#22c55e]/10 p-8 rounded-2xl">
-              <h3 className="text-xl font-semibold text-green-800 mb-6">
+              <h3 className="text-xl font-semibold text-green-300 mb-6">
                 Key Highlights
               </h3>
               <ul className="space-y-4">
@@ -468,9 +468,9 @@ export default function FantasyCricketPage() {
             ].map((tournament) => (
               <div
                 key={tournament}
-                className="bg-[#22c55e]/10 border border-green-200 p-4 rounded-lg text-center"
+                className="bg-[#22c55e]/10 border border-green-500/30 p-4 rounded-lg text-center"
               >
-                <span className="text-green-800 font-medium text-sm">
+                <span className="text-green-300 font-medium text-sm">
                   {tournament}
                 </span>
               </div>
@@ -509,9 +509,9 @@ export default function FantasyCricketPage() {
       </section>
 
       {/* Disclaimer */}
-      <section className="py-8 bg-yellow-50">
+      <section className="py-8 bg-amber-900/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-yellow-800 text-sm">
+          <p className="text-center text-amber-300 text-sm">
             <strong>Note:</strong> DineDivine is a free-to-play fantasy sports
             platform for entertainment purposes only. No real money is involved
             in playing fantasy cricket on our platform. Users must be 18+ years

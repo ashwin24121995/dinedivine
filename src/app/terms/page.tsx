@@ -47,8 +47,8 @@ export default function TermsPage() {
                 these Terms. If you do not agree to these Terms, please do not
                 use our Platform.
               </p>
-              <div className="bg-[#22c55e]/10 border border-green-200 p-4 rounded-lg">
-                <p className="text-green-800 font-medium">
+              <div className="bg-[#22c55e]/10 border border-green-500/30 p-4 rounded-lg">
+                <p className="text-green-300 font-medium">
                   DineDivine is a FREE-TO-PLAY fantasy sports platform designed
                   purely for entertainment purposes. There is NO real money
                   involvement, NO cash prizes, and NO gambling or betting of any
@@ -122,8 +122,8 @@ export default function TermsPage() {
                 <li>Track live scores and player performances</li>
                 <li>Compete on leaderboards with other users</li>
               </ul>
-              <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg mb-4">
-                <p className="text-yellow-800">
+              <div className="bg-amber-900/20 border border-amber-500/30 p-4 rounded-lg mb-4">
+                <p className="text-amber-300">
                   <strong>Important:</strong> All services are provided free of
                   charge. There are no entry fees, no real money prizes, and no
                   monetary rewards. The Platform is designed solely for

@@ -21,8 +21,8 @@ export default function CricScoreMatchCard({ match, showSeries = true }: CricSco
     switch (actualStatus) {
       case "live":
         return (
-          <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-red-500/20 text-red-400 border border-red-500/30 animate-pulse">
-            <span className="w-2 h-2 bg-red-500 rounded-full mr-1"></span>
+          <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-red-900/200/20 text-red-400 border border-red-500/30 animate-pulse">
+            <span className="w-2 h-2 bg-red-900/200 rounded-full mr-1"></span>
             LIVE
           </span>
         );

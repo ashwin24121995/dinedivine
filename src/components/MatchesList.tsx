@@ -86,7 +86,7 @@ export default function MatchesList({
       <div className="py-12">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-2xl font-bold text-white mb-6">{title}</h2>
-          <div className="bg-red-50 border border-red-200 rounded-lg p-6 text-center">
+          <div className="bg-red-900/20 border border-red-500/30 rounded-lg p-6 text-center">
             <p className="text-red-600">{error}</p>
             <button
               onClick={fetchMatches}
@@ -120,7 +120,7 @@ export default function MatchesList({
                 >
                   {f === "all" ? "All" : f.charAt(0).toUpperCase() + f.slice(1)}
                   {f === "live" && (
-                    <span className="ml-1 w-2 h-2 bg-red-500 rounded-full inline-block animate-pulse"></span>
+                    <span className="ml-1 w-2 h-2 bg-red-900/200 rounded-full inline-block animate-pulse"></span>
                   )}
                 </button>
               ))}

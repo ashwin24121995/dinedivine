@@ -3,6 +3,7 @@ import Link from "next/link";
 import LiveMatchesSection from "@/components/LiveMatchesSection";
 import UpcomingMatchesSection from "@/components/UpcomingMatchesSection";
 import CompletedMatchesSection from "@/components/CompletedMatchesSection";
+import FeaturedContestsSection from "@/components/FeaturedContestsSection";
 import HeroCTA, { BottomCTA } from "@/components/HeroCTA";
 
 export const revalidate = 60; // Revalidate every 60 seconds
@@ -70,6 +71,9 @@ export default function Home() {
 
       {/* Upcoming Matches Section */}
       <UpcomingMatchesSection limit={6} />
+
+      {/* Featured Contests Section */}
+      <FeaturedContestsSection />
 
       {/* Features Section */}
       <section className="py-20 bg-[#111827]">

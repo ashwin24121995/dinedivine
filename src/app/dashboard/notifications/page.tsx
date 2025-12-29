@@ -150,7 +150,7 @@ export default function NotificationsPage() {
                 className={`bg-[#1a2332] rounded-xl shadow-sm border p-4 cursor-pointer transition-all hover:shadow-md ${
                   notification.is_read
                     ? "border-[#22c55e]/20"
-                    : "border-green-200 bg-[#22c55e]/10"
+                    : "border-green-500/30 bg-[#22c55e]/10"
                 }`}
               >
                 <div className="flex items-start gap-4">

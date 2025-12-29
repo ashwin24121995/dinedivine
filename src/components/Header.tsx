@@ -103,7 +103,7 @@ const Header = () => {
                 </Link>
                 <button
                   onClick={handleLogout}
-                  className="bg-red-500/20 text-red-400 px-4 py-2 rounded-lg hover:bg-red-500/30 border border-red-500/30 font-medium transition-colors duration-200"
+                  className="bg-red-900/200/20 text-red-400 px-4 py-2 rounded-lg hover:bg-red-900/200/30 border border-red-500/30 font-medium transition-colors duration-200"
                 >
                   Logout
                 </button>
@@ -181,7 +181,7 @@ const Header = () => {
                         handleLogout();
                         setIsMenuOpen(false);
                       }}
-                      className="bg-red-500/20 text-red-400 px-4 py-2 rounded-lg hover:bg-red-500/30 border border-red-500/30 font-medium text-center transition-colors duration-200"
+                      className="bg-red-900/200/20 text-red-400 px-4 py-2 rounded-lg hover:bg-red-900/200/30 border border-red-500/30 font-medium text-center transition-colors duration-200"
                     >
                       Logout
                     </button>

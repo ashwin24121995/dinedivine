@@ -131,7 +131,7 @@ export default function MatchesPage() {
                 : "text-gray-300 hover:bg-[#1a2332]"
             }`}
           >
-            <span className={`w-2 h-2 rounded-full ${activeTab === "live" ? "bg-[#1a2332]" : "bg-red-500"} animate-pulse`}></span>
+            <span className={`w-2 h-2 rounded-full ${activeTab === "live" ? "bg-[#1a2332]" : "bg-red-900/200"} animate-pulse`}></span>
             Live
           </button>
           <button
@@ -192,7 +192,7 @@ export default function MatchesPage() {
               <div
                 key={match.id}
                 className={`bg-[#1a2332] rounded-xl shadow-sm border p-4 hover:shadow-md transition-all ${
-                  activeTab === "live" ? "border-red-200" : "border-[#22c55e]/20 hover:border-green-300"
+                  activeTab === "live" ? "border-red-500/30" : "border-[#22c55e]/20 hover:border-green-300"
                 }`}
               >
                 {/* Match Header */}
@@ -208,7 +208,7 @@ export default function MatchesPage() {
                       {match.matchType}
                     </span>
                     {activeTab === "live" && (
-                      <span className="px-2 py-1 bg-red-100 text-red-600 text-xs rounded-full font-medium animate-pulse">
+                      <span className="px-2 py-1 bg-red-900/30 text-red-600 text-xs rounded-full font-medium animate-pulse">
                         LIVE
                       </span>
                     )}

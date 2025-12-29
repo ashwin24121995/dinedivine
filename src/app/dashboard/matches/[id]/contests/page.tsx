@@ -6,10 +6,13 @@ import { useRouter, useSearchParams } from "next/navigation";
 
 interface Contest {
   id: number;
-  contest_name: string;
-  contest_type: string;
+  name: string;
+  contest_name?: string;
+  contest_type?: string;
   max_participants: number;
   current_participants: number;
+  spots_left?: number;
+  spots_filled_percent?: number;
   status: string;
 }
 
@@ -39,11 +42,19 @@ export default function MatchContestsPage({ params }: { params: Promise<{ id: st
 
   const fetchContests = async () => {
     try {
-      const res = await fetch(`/api/contests?matchId=${matchId}`);
-      const data = await res.json();
+      let res = await fetch(`/api/contests?matchId=${matchId}`);
+      let data = await res.json();
+      
+      // If no contests exist, seed them first
+      if (data.success && (!data.contests || data.contests.length === 0)) {
+        await fetch(`/api/contests/seed?matchId=${matchId}`);
+        // Fetch again after seeding
+        res = await fetch(`/api/contests?matchId=${matchId}`);
+        data = await res.json();
+      }
       
       if (data.success) {
-        setContests(data.contests);
+        setContests(data.contests || []);
       }
     } catch (error) {
       console.error("Error fetching contests:", error);
@@ -139,7 +150,7 @@ export default function MatchContestsPage({ params }: { params: Promise<{ id: st
 
         {/* User Teams Info */}
         {userTeams.length > 0 && (
-          <div className="bg-[#22c55e]/10 border border-green-200 rounded-lg p-4 mb-6">
+          <div className="bg-[#22c55e]/10 border border-green-500/30 rounded-lg p-4 mb-6">
             <p className="text-[#22c55e]">
               You have <strong>{userTeams.length}</strong> team(s) for this match. 
               {selectedTeamId && ` Using team: ${userTeams.find(t => t.id === parseInt(selectedTeamId))?.team_name}`}
@@ -158,13 +169,13 @@ export default function MatchContestsPage({ params }: { params: Promise<{ id: st
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                   <div>
                     <div className="flex items-center gap-2 mb-2">
-                      <h3 className="font-bold text-lg text-white">{contest.contest_name}</h3>
+                      <h3 className="font-bold text-lg text-white">{contest.name || contest.contest_name}</h3>
                       <span className="px-2 py-1 bg-[#22c55e]/20 text-[#22c55e] text-xs rounded-full font-medium">
                         FREE
                       </span>
                     </div>
                     <p className="text-gray-300 text-sm">
-                      {contest.contest_type.charAt(0).toUpperCase() + contest.contest_type.slice(1)} Contest
+                      {contest.spots_left !== undefined ? `${contest.spots_left} spots left` : 'Free Contest'}
                     </p>
                   </div>
 
@@ -231,7 +242,7 @@ export default function MatchContestsPage({ params }: { params: Promise<{ id: st
           <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
             <div className="bg-[#1a2332] rounded-xl p-6 max-w-md w-full mx-4">
               <h3 className="text-xl font-bold text-white mb-4">Select a Team</h3>
-              <p className="text-gray-300 mb-4">Choose which team to use for {selectedContest.contest_name}</p>
+              <p className="text-gray-300 mb-4">Choose which team to use for {selectedContest.name || selectedContest.contest_name}</p>
               
               <div className="space-y-2 mb-6">
                 {userTeams.map((team) => (

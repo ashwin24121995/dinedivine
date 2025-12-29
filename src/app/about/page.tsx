@@ -51,7 +51,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="bg-[#22c55e]/10 p-8 rounded-2xl">
-              <h3 className="text-xl font-semibold text-green-800 mb-4">
+              <h3 className="text-xl font-semibold text-green-300 mb-4">
                 Company Details
               </h3>
               <div className="space-y-3">
@@ -287,15 +287,15 @@ export default function AboutPage() {
       {/* Compliance Section */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg">
-            <h3 className="text-xl font-semibold text-yellow-800 mb-3">
+          <div className="bg-amber-900/20 border-l-4 border-amber-500 p-6 rounded-r-lg">
+            <h3 className="text-xl font-semibold text-amber-300 mb-3">
               Legal Compliance & Restrictions
             </h3>
-            <p className="text-yellow-700 mb-4">
+            <p className="text-amber-400 mb-4">
               DineDivine operates in full compliance with Indian laws and
               regulations. Please note the following important restrictions:
             </p>
-            <ul className="list-disc list-inside text-yellow-700 space-y-2">
+            <ul className="list-disc list-inside text-amber-400 space-y-2">
               <li>
                 Users must be <strong>18 years of age or older</strong> to use
                 this platform.

@@ -15,9 +15,9 @@ export default function MatchCard({ match }: MatchCardProps) {
   const getStatusColor = () => {
     switch (status) {
       case "live":
-        return "bg-red-500";
+        return "bg-red-900/200";
       case "upcoming":
-        return "bg-blue-500";
+        return "bg-blue-900/200";
       case "completed":
         return "bg-[#0a0f1a]0";
       default:
@@ -52,7 +52,7 @@ export default function MatchCard({ match }: MatchCardProps) {
           </span>
         </div>
         {match.fantasyEnabled && (
-          <span className="bg-yellow-400 text-yellow-900 text-xs font-bold px-2 py-1 rounded">
+          <span className="bg-yellow-400 text-amber-200 text-xs font-bold px-2 py-1 rounded">
             FANTASY
           </span>
         )}

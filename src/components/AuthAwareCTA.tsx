@@ -44,13 +44,13 @@ export default function AuthAwareCTA({
   const getVariantClasses = () => {
     switch (variant) {
       case "primary":
-        return "bg-[#1a2332] text-green-700 hover:bg-green-50";
+        return "bg-[#1a2332] text-green-400 hover:bg-green-900/20";
       case "secondary":
         return "bg-green-600 text-white hover:bg-green-700";
       case "outline":
-        return "border-2 border-white text-white hover:bg-[#1a2332] hover:text-green-700";
+        return "border-2 border-white text-white hover:bg-[#1a2332] hover:text-green-400";
       default:
-        return "bg-[#1a2332] text-green-700 hover:bg-green-50";
+        return "bg-[#1a2332] text-green-400 hover:bg-green-900/20";
     }
   };
 

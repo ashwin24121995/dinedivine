@@ -70,7 +70,7 @@ export default function LiveScoresPage() {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-3xl font-bold text-white flex items-center gap-3">
-                <span className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></span>
+                <span className="w-3 h-3 bg-red-900/200 rounded-full animate-pulse"></span>
                 Live Scores
               </h1>
               <p className="text-gray-300 mt-1">Real-time cricket match updates</p>
@@ -83,7 +83,7 @@ export default function LiveScoresPage() {
         </div>
 
         {/* Auto-refresh indicator */}
-        <div className="bg-[#22c55e]/10 border border-green-200 rounded-lg p-3 mb-6 flex items-center gap-2">
+        <div className="bg-[#22c55e]/10 border border-green-500/30 rounded-lg p-3 mb-6 flex items-center gap-2">
           <div className="w-2 h-2 bg-[#22c55e]/100 rounded-full animate-pulse"></div>
           <span className="text-[#22c55e] text-sm">Auto-refreshing every 3 seconds</span>
         </div>
@@ -98,12 +98,12 @@ export default function LiveScoresPage() {
             {liveMatches.map((match) => (
               <div
                 key={match.id}
-                className="bg-[#1a2332] rounded-xl shadow-sm border-2 border-red-200 p-6 hover:shadow-md transition-all"
+                className="bg-[#1a2332] rounded-xl shadow-sm border-2 border-red-500/30 p-6 hover:shadow-md transition-all"
               >
                 {/* Match Header */}
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-sm text-gray-300 truncate max-w-[60%]">{match.series}</span>
-                  <span className="px-3 py-1 bg-red-100 text-red-600 text-sm rounded-full font-medium animate-pulse">
+                  <span className="px-3 py-1 bg-red-900/30 text-red-600 text-sm rounded-full font-medium animate-pulse">
                     🔴 LIVE
                   </span>
                 </div>

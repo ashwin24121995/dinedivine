@@ -191,9 +191,9 @@ export default function MatchDetailPage() {
         </div>
 
         {/* Tips Section */}
-        <div className="mt-6 bg-blue-50 rounded-xl p-6">
-          <h3 className="font-bold text-blue-800 mb-3">💡 Tips for Team Selection</h3>
-          <ul className="text-blue-700 text-sm space-y-2">
+        <div className="mt-6 bg-blue-900/20 rounded-xl p-6">
+          <h3 className="font-bold text-blue-300 mb-3">💡 Tips for Team Selection</h3>
+          <ul className="text-blue-400 text-sm space-y-2">
             <li>• Select 11 players within the 100 credit budget</li>
             <li>• Choose 1 Captain (2x points) and 1 Vice-Captain (1.5x points)</li>
             <li>• Balance your team with batsmen, bowlers, all-rounders, and wicket-keepers</li>

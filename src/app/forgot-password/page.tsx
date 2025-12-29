@@ -200,7 +200,7 @@ export default function ForgotPasswordPage() {
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-[#1a2332] py-8 px-4 shadow-lg sm:rounded-xl sm:px-10">
           {error && (
-            <div className="mb-4 bg-red-500/10 border border-red-500/30 text-red-400 px-4 py-3 rounded-lg text-sm">
+            <div className="mb-4 bg-red-900/200/10 border border-red-500/30 text-red-400 px-4 py-3 rounded-lg text-sm">
               {error}
             </div>
           )}
@@ -209,7 +209,7 @@ export default function ForgotPasswordPage() {
           {step === "email" && (
             <form onSubmit={handleEmailSubmit} className="space-y-6">
               <div className="text-center mb-6">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
                   <svg
                     className="w-8 h-8 text-green-600"
                     fill="none"
@@ -270,7 +270,7 @@ export default function ForgotPasswordPage() {
           {step === "otp" && (
             <form onSubmit={handleOtpSubmit} className="space-y-6">
               <div className="text-center mb-6">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
                   <svg
                     className="w-8 h-8 text-green-600"
                     fill="none"
@@ -356,7 +356,7 @@ export default function ForgotPasswordPage() {
           {step === "reset" && (
             <form onSubmit={handleResetSubmit} className="space-y-6">
               <div className="text-center mb-6">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
                   <svg
                     className="w-8 h-8 text-green-600"
                     fill="none"
@@ -494,7 +494,7 @@ export default function ForgotPasswordPage() {
           {/* Step 4: Success */}
           {step === "success" && (
             <div className="text-center">
-              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-20 bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
                 <svg
                   className="w-10 h-10 text-green-600"
                   fill="none"

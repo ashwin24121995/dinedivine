@@ -21,6 +21,11 @@ export const metadata: Metadata = {
   keywords:
     "fantasy sports, fantasy cricket, free to play, entertainment, games, DineDivine",
   authors: [{ name: "DINEDIVINE VENTURES PRIVATE LIMITED" }],
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.webp",
+  },
   openGraph: {
     title: "DineDivine - Free To Play Fantasy Sports Platform",
     description:
@@ -39,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-gray-900`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0a0f1a] text-white`}
       >
         <div className="min-h-screen flex flex-col">
           <Header />

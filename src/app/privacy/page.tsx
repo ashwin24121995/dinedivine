@@ -330,7 +330,7 @@ export default function PrivacyPage() {
                 If you have any questions or concerns about this Privacy Policy
                 or our data practices, please contact us:
               </p>
-              <div className="bg-[#22c55e]/10 border border-green-200 p-6 rounded-lg">
+              <div className="bg-[#22c55e]/10 border border-green-500/30 p-6 rounded-lg">
                 <p className="text-gray-300 mb-2">
                   <strong>DINEDIVINE VENTURES PRIVATE LIMITED</strong>
                 </p>

@@ -103,7 +103,7 @@ export default function MyContestsPage() {
                 : "text-gray-300 hover:bg-[#1a2332]"
             }`}
           >
-            <span className={`w-2 h-2 rounded-full ${activeTab === "active" ? "bg-[#1a2332]" : "bg-red-500"} animate-pulse`}></span>
+            <span className={`w-2 h-2 rounded-full ${activeTab === "active" ? "bg-[#1a2332]" : "bg-red-900/200"} animate-pulse`}></span>
             Live
           </button>
           <button
@@ -141,7 +141,7 @@ export default function MyContestsPage() {
                     <div className="flex items-center gap-2 mb-2">
                       <h3 className="font-bold text-lg text-white">{contest.contest_name}</h3>
                       <span className={`px-2 py-1 text-xs rounded-full font-medium ${
-                        contest.status === "live" ? "bg-red-100 text-red-600" :
+                        contest.status === "live" ? "bg-red-900/30 text-red-600" :
                         contest.status === "upcoming" ? "bg-[#22c55e]/20 text-[#22c55e]" :
                         "bg-[#1a2332] text-gray-300"
                       }`}>

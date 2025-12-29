@@ -116,8 +116,8 @@ export default function LiveMatchesSection({
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
           <div className="flex items-center gap-3">
             <h2 className="text-2xl font-bold text-white">Live Matches</h2>
-            <span className="flex items-center gap-1 bg-red-500/20 text-red-400 px-3 py-1 rounded-full text-sm font-medium border border-red-500/30">
-              <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+            <span className="flex items-center gap-1 bg-red-900/200/20 text-red-400 px-3 py-1 rounded-full text-sm font-medium border border-red-500/30">
+              <span className="w-2 h-2 bg-red-900/200 rounded-full animate-pulse"></span>
               {matches.length} Live
             </span>
           </div>

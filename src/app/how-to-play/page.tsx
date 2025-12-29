@@ -223,7 +223,7 @@ export default function HowToPlayPage() {
                   }`}
                 >
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="bg-[#22c55e]/20 text-green-800 text-sm font-semibold px-3 py-1 rounded-full">
+                    <span className="bg-[#22c55e]/20 text-green-300 text-sm font-semibold px-3 py-1 rounded-full">
                       Step {step.number}
                     </span>
                   </div>
@@ -264,8 +264,8 @@ export default function HowToPlayPage() {
               </div>
             ))}
           </div>
-          <div className="mt-8 bg-[#22c55e]/10 border border-green-200 p-6 rounded-xl">
-            <h4 className="font-semibold text-green-800 mb-2">
+          <div className="mt-8 bg-[#22c55e]/10 border border-green-500/30 p-6 rounded-xl">
+            <h4 className="font-semibold text-green-300 mb-2">
               Important Notes:
             </h4>
             <ul className="list-disc list-inside text-[#22c55e] space-y-1">
@@ -320,8 +320,8 @@ export default function HowToPlayPage() {
                 </tbody>
               </table>
             </div>
-            <div className="mt-6 bg-yellow-50 border border-yellow-200 p-4 rounded-lg">
-              <p className="text-yellow-800 text-sm">
+            <div className="mt-6 bg-amber-900/20 border border-amber-500/30 p-4 rounded-lg">
+              <p className="text-amber-300 text-sm">
                 <strong>Captain Bonus:</strong> Your Captain earns 2x points for
                 all actions.
                 <br />

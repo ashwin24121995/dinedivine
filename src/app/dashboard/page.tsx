@@ -204,7 +204,7 @@ export default function DashboardPage() {
                 <p className="text-gray-300 text-sm">Teams Created</p>
                 <p className="text-3xl font-bold text-white">{counts.teams}</p>
               </div>
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+              <div className="w-12 h-12 bg-blue-900/30 rounded-full flex items-center justify-center">
                 <span className="text-2xl">🏏</span>
               </div>
             </div>
@@ -216,7 +216,7 @@ export default function DashboardPage() {
                 <p className="text-gray-300 text-sm">Contests Joined</p>
                 <p className="text-3xl font-bold text-white">{counts.contests}</p>
               </div>
-              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+              <div className="w-12 h-12 bg-green-900/30 rounded-full flex items-center justify-center">
                 <span className="text-2xl">🎯</span>
               </div>
             </div>
@@ -228,7 +228,7 @@ export default function DashboardPage() {
                 <p className="text-gray-300 text-sm">Total Points</p>
                 <p className="text-3xl font-bold text-white">{stats?.total_points_earned || 0}</p>
               </div>
-              <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
+              <div className="w-12 h-12 bg-amber-900/30 rounded-full flex items-center justify-center">
                 <span className="text-2xl">⭐</span>
               </div>
             </div>
@@ -291,7 +291,7 @@ export default function DashboardPage() {
           <div className="mb-8">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-xl font-bold text-white flex items-center gap-2">
-                <span className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></span>
+                <span className="w-3 h-3 bg-red-900/200 rounded-full animate-pulse"></span>
                 Live Matches
               </h2>
               <Link href="/dashboard/live-scores" className="text-[#22c55e] hover:underline text-sm">
@@ -307,7 +307,7 @@ export default function DashboardPage() {
                 >
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-xs text-gray-500 truncate max-w-[60%]">{match.series}</span>
-                    <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded-full font-medium animate-pulse">
+                    <span className="px-2 py-1 bg-red-900/200/20 text-red-400 text-xs rounded-full font-medium animate-pulse">
                       LIVE
                     </span>
                   </div>
@@ -455,7 +455,7 @@ export default function DashboardPage() {
                   <span className="text-xl">🔔</span>
                   <span className="font-medium">Notifications</span>
                   {counts.unreadNotifications > 0 && (
-                    <span className="bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">
+                    <span className="bg-red-900/200 text-white text-xs px-2 py-0.5 rounded-full">
                       {counts.unreadNotifications}
                     </span>
                   )}

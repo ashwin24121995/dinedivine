@@ -528,7 +528,7 @@ export default function CreateTeamPage() {
               {/* Captain Selection */}
               <div className="bg-[#1a2332] rounded-xl shadow-sm border border-[#22c55e]/20 p-4">
                 <h3 className="font-bold text-white mb-4 flex items-center gap-2">
-                  <span className="w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center text-sm font-bold">C</span>
+                  <span className="w-8 h-8 bg-amber-900/200 text-white rounded-full flex items-center justify-center text-sm font-bold">C</span>
                   Captain (2x Points)
                 </h3>
                 <div className="space-y-2">
@@ -540,7 +540,7 @@ export default function CreateTeamPage() {
                         setCaptain(player);
                       }}
                       className={`flex items-center gap-3 p-3 rounded-lg cursor-pointer transition-colors ${
-                        captain?.id === player.id ? "bg-yellow-100 border-2 border-yellow-500" : "hover:bg-[#0a0f1a] border border-[#22c55e]/20"
+                        captain?.id === player.id ? "bg-amber-900/30 border-2 border-yellow-500" : "hover:bg-[#0a0f1a] border border-[#22c55e]/20"
                       }`}
                     >
                       <img
@@ -554,7 +554,7 @@ export default function CreateTeamPage() {
                         <p className="text-xs text-gray-300">{getRoleFromPlayer(player.role)}</p>
                       </div>
                       {captain?.id === player.id && (
-                        <span className="w-6 h-6 bg-yellow-500 text-white rounded-full flex items-center justify-center text-xs font-bold">C</span>
+                        <span className="w-6 h-6 bg-amber-900/200 text-white rounded-full flex items-center justify-center text-xs font-bold">C</span>
                       )}
                     </div>
                   ))}
@@ -564,7 +564,7 @@ export default function CreateTeamPage() {
               {/* Vice Captain Selection */}
               <div className="bg-[#1a2332] rounded-xl shadow-sm border border-[#22c55e]/20 p-4">
                 <h3 className="font-bold text-white mb-4 flex items-center gap-2">
-                  <span className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold">VC</span>
+                  <span className="w-8 h-8 bg-blue-900/200 text-white rounded-full flex items-center justify-center text-sm font-bold">VC</span>
                   Vice Captain (1.5x Points)
                 </h3>
                 <div className="space-y-2">
@@ -577,7 +577,7 @@ export default function CreateTeamPage() {
                       }}
                       className={`flex items-center gap-3 p-3 rounded-lg cursor-pointer transition-colors ${
                         captain?.id === player.id ? "opacity-50 cursor-not-allowed" : 
-                        viceCaptain?.id === player.id ? "bg-blue-100 border-2 border-blue-500" : "hover:bg-[#0a0f1a] border border-[#22c55e]/20"
+                        viceCaptain?.id === player.id ? "bg-blue-900/30 border-2 border-blue-500" : "hover:bg-[#0a0f1a] border border-[#22c55e]/20"
                       }`}
                     >
                       <img
@@ -591,7 +591,7 @@ export default function CreateTeamPage() {
                         <p className="text-xs text-gray-300">{getRoleFromPlayer(player.role)}</p>
                       </div>
                       {viceCaptain?.id === player.id && (
-                        <span className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-xs font-bold">VC</span>
+                        <span className="w-6 h-6 bg-blue-900/200 text-white rounded-full flex items-center justify-center text-xs font-bold">VC</span>
                       )}
                       {captain?.id === player.id && (
                         <span className="text-xs text-gray-300">Captain</span>
@@ -659,8 +659,8 @@ export default function CreateTeamPage() {
                   <div
                     key={player.id}
                     className={`text-center p-4 rounded-lg ${
-                      player.id === captain?.id ? "bg-yellow-50 border-2 border-yellow-500" :
-                      player.id === viceCaptain?.id ? "bg-blue-50 border-2 border-blue-500" :
+                      player.id === captain?.id ? "bg-amber-900/20 border-2 border-yellow-500" :
+                      player.id === viceCaptain?.id ? "bg-blue-900/20 border-2 border-blue-500" :
                       "bg-[#0a0f1a]"
                     }`}
                   >
@@ -672,10 +672,10 @@ export default function CreateTeamPage() {
                         onError={(e) => { e.currentTarget.src = '/placeholder-player.png'; }}
                       />
                       {player.id === captain?.id && (
-                        <span className="absolute -top-1 -right-1 w-6 h-6 bg-yellow-500 text-white rounded-full flex items-center justify-center text-xs font-bold">C</span>
+                        <span className="absolute -top-1 -right-1 w-6 h-6 bg-amber-900/200 text-white rounded-full flex items-center justify-center text-xs font-bold">C</span>
                       )}
                       {player.id === viceCaptain?.id && (
-                        <span className="absolute -top-1 -right-1 w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-xs font-bold">VC</span>
+                        <span className="absolute -top-1 -right-1 w-6 h-6 bg-blue-900/200 text-white rounded-full flex items-center justify-center text-xs font-bold">VC</span>
                       )}
                     </div>
                     <p className="font-medium text-sm mt-2">{player.name}</p>

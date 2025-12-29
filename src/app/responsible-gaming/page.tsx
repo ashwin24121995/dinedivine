@@ -150,8 +150,8 @@ export default function ResponsibleGamingPage() {
             </p>
           </div>
 
-          <div className="bg-[#22c55e]/10 border border-green-200 p-8 rounded-2xl max-w-3xl mx-auto">
-            <h3 className="text-xl font-semibold text-green-800 mb-4 text-center">
+          <div className="bg-[#22c55e]/10 border border-green-500/30 p-8 rounded-2xl max-w-3xl mx-auto">
+            <h3 className="text-xl font-semibold text-green-300 mb-4 text-center">
               What Makes DineDivine Different
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -255,7 +255,7 @@ export default function ResponsibleGamingPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center">
+                <div className="w-16 h-16 bg-red-900/30 rounded-full flex items-center justify-center">
                   <span className="text-3xl">🔞</span>
                 </div>
                 <h2 className="text-3xl font-bold text-white">
@@ -291,7 +291,7 @@ export default function ResponsibleGamingPage() {
 
             <div>
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center">
+                <div className="w-16 h-16 bg-amber-900/30 rounded-full flex items-center justify-center">
                   <svg
                     className="w-8 h-8 text-yellow-600"
                     fill="none"
@@ -321,19 +321,19 @@ export default function ResponsibleGamingPage() {
                 not permitted to access or use DineDivine. We comply with all
                 applicable laws and regulations.
               </p>
-              <div className="bg-yellow-50 border border-yellow-200 rounded-xl overflow-hidden">
+              <div className="bg-amber-900/20 border border-amber-500/30 rounded-xl overflow-hidden">
                 <table className="w-full">
-                  <thead className="bg-yellow-100">
+                  <thead className="bg-amber-900/30">
                     <tr>
-                      <th className="px-4 py-3 text-left text-yellow-800 font-semibold">
+                      <th className="px-4 py-3 text-left text-amber-300 font-semibold">
                         State
                       </th>
-                      <th className="px-4 py-3 text-left text-yellow-800 font-semibold">
+                      <th className="px-4 py-3 text-left text-amber-300 font-semibold">
                         Status
                       </th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-yellow-200">
+                  <tbody className="divide-y divide-amber-500/30">
                     {geoRestrictions.map((restriction) => (
                       <tr key={restriction.state}>
                         <td className="px-4 py-3 text-white font-medium">

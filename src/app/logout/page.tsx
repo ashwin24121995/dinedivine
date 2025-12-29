@@ -73,7 +73,7 @@ export default function LogoutPage() {
           {isLoggingOut ? (
             <div className="text-center">
               <div className="w-20 h-20 mx-auto mb-6 relative">
-                <div className="absolute inset-0 border-4 border-green-200 rounded-full"></div>
+                <div className="absolute inset-0 border-4 border-green-500/30 rounded-full"></div>
                 <div className="absolute inset-0 border-4 border-green-600 rounded-full border-t-transparent animate-spin"></div>
               </div>
               <h2 className="text-xl font-semibold text-white mb-2">
@@ -85,7 +85,7 @@ export default function LogoutPage() {
             </div>
           ) : logoutComplete ? (
             <div className="text-center">
-              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-20 bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
                 <svg
                   className="w-10 h-10 text-green-600"
                   fill="none"
@@ -124,7 +124,7 @@ export default function LogoutPage() {
             </div>
           ) : error ? (
             <div className="text-center">
-              <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-20 bg-red-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
                 <svg
                   className="w-10 h-10 text-red-600"
                   fill="none"
@@ -164,7 +164,7 @@ export default function LogoutPage() {
 
         {/* Info Box */}
         {logoutComplete && (
-          <div className="mt-6 bg-green-50 border border-green-200 rounded-xl p-4 mx-4 sm:mx-0">
+          <div className="mt-6 bg-green-900/20 border border-green-500/30 rounded-xl p-4 mx-4 sm:mx-0">
             <div className="flex">
               <div className="flex-shrink-0">
                 <svg
@@ -182,7 +182,7 @@ export default function LogoutPage() {
                 </svg>
               </div>
               <div className="ml-3">
-                <p className="text-sm text-green-700">
+                <p className="text-sm text-green-400">
                   For your security, please close this browser window if you are
                   using a shared computer.
                 </p>

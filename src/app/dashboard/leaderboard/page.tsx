@@ -51,7 +51,7 @@ export default function LeaderboardPage() {
   };
 
   const getRankColor = (rank: number) => {
-    if (rank === 1) return "bg-yellow-100 text-yellow-800";
+    if (rank === 1) return "bg-amber-900/30 text-amber-300";
     if (rank === 2) return "bg-[#1a2332] text-white";
     if (rank === 3) return "bg-orange-100 text-orange-800";
     return "bg-[#0a0f1a] text-gray-300";
