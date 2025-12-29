@@ -28,18 +28,23 @@ export async function GET(request: NextRequest) {
       params.push(matchId);
     }
 
-    sql += ` ORDER BY max_participants DESC, created_at DESC`;
+    sql += ` ORDER BY max_entries DESC, created_at DESC`;
 
     const contests = await query<Contest[]>(sql, params);
 
     // Calculate spots left for each contest
-    const contestsWithSpots = contests.map((contest) => ({
-      ...contest,
-      spots_left: contest.max_participants - contest.current_participants,
-      spots_filled_percent: Math.round(
-        (contest.current_participants / contest.max_participants) * 100
-      ),
-    }));
+    // Handle both old schema (max_entries) and new schema (max_participants)
+    const contestsWithSpots = contests.map((contest: Record<string, unknown>) => {
+      const maxParticipants = (contest.max_entries as number) || (contest.max_participants as number) || 100;
+      const currentParticipants = (contest.current_entries as number) || (contest.current_participants as number) || 0;
+      return {
+        ...contest,
+        max_participants: maxParticipants,
+        current_participants: currentParticipants,
+        spots_left: maxParticipants - currentParticipants,
+        spots_filled_percent: Math.round((currentParticipants / maxParticipants) * 100),
+      };
+    });
 
     return NextResponse.json({
       success: true,

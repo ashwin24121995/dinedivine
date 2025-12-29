@@ -71,7 +71,7 @@ export async function POST(request: NextRequest) {
     const createdContests = [];
     for (const template of contestTemplates) {
       const result = await query(
-        `INSERT INTO contests (match_id, name, entry_fee, prize_pool, max_participants, current_participants, status)
+        `INSERT INTO contests (match_id, name, entry_fee, prize_pool, max_entries, current_entries, status)
          VALUES (?, ?, ?, ?, ?, 0, 'upcoming')`,
         [
           matchId,
@@ -125,7 +125,7 @@ export async function GET(request: NextRequest) {
       // Create contests for this match
       for (const template of contestTemplates) {
         await query(
-          `INSERT INTO contests (match_id, name, entry_fee, prize_pool, max_participants, current_participants, status)
+          `INSERT INTO contests (match_id, name, entry_fee, prize_pool, max_entries, current_entries, status)
            VALUES (?, ?, ?, ?, ?, 0, 'upcoming')`,
           [
             matchId,
