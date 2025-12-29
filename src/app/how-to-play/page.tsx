@@ -239,7 +239,7 @@ export default function HowToPlayPage() {
       </section>
 
       {/* Team Selection Rules */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-[#0a0f1a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-white mb-4">
             Team Selection Rules
@@ -309,7 +309,7 @@ export default function HowToPlayPage() {
                   {pointsSystem.map((item, index) => (
                     <tr
                       key={index}
-                      className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}
+                      className={index % 2 === 0 ? "bg-[#0a0f1a]" : "bg-[#1a2332]"}
                     >
                       <td className="px-6 py-4 text-white">{item.action}</td>
                       <td className="px-6 py-4 text-right font-semibold text-[#22c55e]">
@@ -334,7 +334,7 @@ export default function HowToPlayPage() {
       </section>
 
       {/* Tips Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-[#0a0f1a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-white mb-12">
             Pro Tips for Success
@@ -435,7 +435,7 @@ export default function HowToPlayPage() {
             />
             <Link
               href="/fantasy-cricket"
-              className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#22c55e] transition-colors duration-200 text-lg"
+              className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1a2332] hover:text-[#22c55e] transition-colors duration-200 text-lg"
             >
               Explore Fantasy Cricket
             </Link>

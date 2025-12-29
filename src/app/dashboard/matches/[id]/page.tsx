@@ -115,7 +115,7 @@ export default function MatchDetailPage() {
           <div className="bg-[#22c55e] text-white px-6 py-4">
             <p className="text-sm opacity-90">{match.series || "Cricket Match"}</p>
             <div className="flex items-center justify-between mt-1">
-              <span className="text-xs bg-white/20 px-2 py-1 rounded uppercase">
+              <span className="text-xs bg-[#1a2332]/20 px-2 py-1 rounded uppercase">
                 {match.matchType}
               </span>
               <span className="text-sm">{formatDateIST(match.dateTimeGMT)} IST</span>
@@ -131,7 +131,7 @@ export default function MatchDetailPage() {
                   <img
                     src={team1.img}
                     alt={team1.name}
-                    className="w-20 h-20 mx-auto mb-3 rounded-full object-cover bg-gray-100"
+                    className="w-20 h-20 mx-auto mb-3 rounded-full object-cover bg-[#1a2332]"
                   />
                 )}
                 <h3 className="font-bold text-lg text-white">{team1.name}</h3>
@@ -149,7 +149,7 @@ export default function MatchDetailPage() {
                   <img
                     src={team2.img}
                     alt={team2.name}
-                    className="w-20 h-20 mx-auto mb-3 rounded-full object-cover bg-gray-100"
+                    className="w-20 h-20 mx-auto mb-3 rounded-full object-cover bg-[#1a2332]"
                   />
                 )}
                 <h3 className="font-bold text-lg text-white">{team2.name}</h3>
@@ -182,7 +182,7 @@ export default function MatchDetailPage() {
 
               <Link
                 href={`/dashboard/matches/${matchId}/contests`}
-                className="block w-full bg-white border-2 border-green-600 text-[#22c55e] text-center py-4 rounded-lg font-semibold hover:bg-[#22c55e]/10 transition-colors"
+                className="block w-full bg-[#1a2332] border-2 border-green-600 text-[#22c55e] text-center py-4 rounded-lg font-semibold hover:bg-[#22c55e]/10 transition-colors"
               >
                 🎯 View Contests
               </Link>

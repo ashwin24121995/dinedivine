@@ -49,12 +49,12 @@ export default function LiveMatchCard({ match: initialMatch, refreshInterval = 3
   const isLive = isMatchLive(match);
 
   return (
-    <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden border border-gray-100 relative">
+    <div className="bg-[#1a2332] rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden border border-gray-100 relative">
       {/* Live Indicator */}
       {isLive && (
         <div className="absolute top-3 right-3 z-10">
           <div className="flex items-center gap-1 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
-            <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+            <span className="w-2 h-2 bg-[#1a2332] rounded-full animate-pulse"></span>
             LIVE
           </div>
         </div>
@@ -79,7 +79,7 @@ export default function LiveMatchCard({ match: initialMatch, refreshInterval = 3
         <div className="flex justify-between items-center mb-4">
           {/* Team 1 */}
           <div className="flex-1 text-center">
-            <div className="w-14 h-14 mx-auto mb-2 relative bg-gray-100 rounded-full overflow-hidden">
+            <div className="w-14 h-14 mx-auto mb-2 relative bg-[#1a2332] rounded-full overflow-hidden">
               {match.teamInfo?.[0]?.img ? (
                 <Image
                   src={match.teamInfo[0].img}
@@ -94,12 +94,12 @@ export default function LiveMatchCard({ match: initialMatch, refreshInterval = 3
                 </div>
               )}
             </div>
-            <p className="font-semibold text-gray-800 text-sm truncate">
+            <p className="font-semibold text-gray-200 text-sm truncate">
               {match.teamInfo?.[0]?.shortname || match.teams[0]}
             </p>
             {match.score?.[0] && (
               <div className="mt-1">
-                <p className="text-2xl font-bold text-gray-900">
+                <p className="text-2xl font-bold text-white">
                   {match.score[0].r}/{match.score[0].w}
                 </p>
                 <p className="text-sm text-gray-500">
@@ -116,7 +116,7 @@ export default function LiveMatchCard({ match: initialMatch, refreshInterval = 3
 
           {/* Team 2 */}
           <div className="flex-1 text-center">
-            <div className="w-14 h-14 mx-auto mb-2 relative bg-gray-100 rounded-full overflow-hidden">
+            <div className="w-14 h-14 mx-auto mb-2 relative bg-[#1a2332] rounded-full overflow-hidden">
               {match.teamInfo?.[1]?.img ? (
                 <Image
                   src={match.teamInfo[1].img}
@@ -131,12 +131,12 @@ export default function LiveMatchCard({ match: initialMatch, refreshInterval = 3
                 </div>
               )}
             </div>
-            <p className="font-semibold text-gray-800 text-sm truncate">
+            <p className="font-semibold text-gray-200 text-sm truncate">
               {match.teamInfo?.[1]?.shortname || match.teams[1]}
             </p>
             {match.score?.[1] && (
               <div className="mt-1">
-                <p className="text-2xl font-bold text-gray-900">
+                <p className="text-2xl font-bold text-white">
                   {match.score[1].r}/{match.score[1].w}
                 </p>
                 <p className="text-sm text-gray-500">
@@ -149,7 +149,7 @@ export default function LiveMatchCard({ match: initialMatch, refreshInterval = 3
 
         {/* Status */}
         <div className="text-center py-2 border-t border-gray-100">
-          <p className={`text-sm font-medium ${isLive ? "text-red-600" : "text-gray-600"}`}>
+          <p className={`text-sm font-medium ${isLive ? "text-red-600" : "text-gray-300"}`}>
             {match.status}
           </p>
         </div>

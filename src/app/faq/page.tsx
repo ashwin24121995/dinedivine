@@ -254,7 +254,7 @@ export default function FAQPage() {
       </section>
 
       {/* Still Have Questions */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-[#0a0f1a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-[#22c55e] text-white p-8 md:p-12 rounded-2xl text-center">
             <h2 className="text-3xl font-bold mb-4">Still Have Questions?</h2>
@@ -265,7 +265,7 @@ export default function FAQPage() {
             </p>
             <Link
               href="/contact"
-              className="bg-white text-[#22c55e] px-8 py-3 rounded-lg font-semibold hover:bg-[#22c55e]/10 transition-colors duration-200 text-lg inline-block"
+              className="bg-[#1a2332] text-[#22c55e] px-8 py-3 rounded-lg font-semibold hover:bg-[#22c55e]/10 transition-colors duration-200 text-lg inline-block"
             >
               Contact Support
             </Link>

@@ -152,7 +152,7 @@ const Footer = () => {
       {/* Copyright */}
       <div className="bg-[#050810] py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-gray-600 text-sm">
+          <p className="text-center text-gray-300 text-sm">
             © {currentYear} DINEDIVINE VENTURES PRIVATE LIMITED. All rights
             reserved.
           </p>

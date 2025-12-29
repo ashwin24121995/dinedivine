@@ -351,7 +351,7 @@ export default function RegisterPage() {
                     Mobile Number <span className="text-red-500">*</span>
                   </label>
                   <div className="mt-1 flex">
-                    <span className="inline-flex items-center px-3 rounded-l-lg border border-r-0 border-gray-300 bg-gray-50 text-gray-400 text-sm">
+                    <span className="inline-flex items-center px-3 rounded-l-lg border border-r-0 border-gray-600 bg-[#0a0f1a] text-gray-400 text-sm">
                       +91
                     </span>
                     <input
@@ -426,7 +426,7 @@ export default function RegisterPage() {
                     required
                     value={formData.state}
                     onChange={handleChange}
-                    className="mt-1 block w-full px-4 py-3 border border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#22c55e] focus:border-[#22c55e] bg-white"
+                    className="mt-1 block w-full px-4 py-3 border border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#22c55e] focus:border-[#22c55e] bg-[#1a2332]"
                   >
                     <option value="">Select your state</option>
                     {indianStates.map((state) => (
@@ -466,7 +466,7 @@ export default function RegisterPage() {
                   <button
                     type="button"
                     onClick={handlePrevStep}
-                    className="flex-1 py-3 px-4 border-2 border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-300 bg-white hover:bg-gray-50"
+                    className="flex-1 py-3 px-4 border-2 border-gray-600 rounded-lg shadow-sm text-sm font-medium text-gray-300 bg-[#1a2332] hover:bg-[#0a0f1a]"
                   >
                     Back
                   </button>
@@ -591,7 +591,7 @@ export default function RegisterPage() {
                       type="checkbox"
                       checked={formData.agreeAge}
                       onChange={handleChange}
-                      className="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded mt-1"
+                      className="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-600 rounded mt-1"
                     />
                     <label
                       htmlFor="agreeAge"
@@ -610,7 +610,7 @@ export default function RegisterPage() {
                       type="checkbox"
                       checked={formData.agreeTerms}
                       onChange={handleChange}
-                      className="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded mt-1"
+                      className="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-600 rounded mt-1"
                     />
                     <label
                       htmlFor="agreeTerms"
@@ -640,7 +640,7 @@ export default function RegisterPage() {
                   <button
                     type="button"
                     onClick={handlePrevStep}
-                    className="flex-1 py-3 px-4 border-2 border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-300 bg-white hover:bg-gray-50"
+                    className="flex-1 py-3 px-4 border-2 border-gray-600 rounded-lg shadow-sm text-sm font-medium text-gray-300 bg-[#1a2332] hover:bg-[#0a0f1a]"
                   >
                     Back
                   </button>

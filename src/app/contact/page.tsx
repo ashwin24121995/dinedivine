@@ -157,7 +157,7 @@ export default function ContactPage() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#22c55e] focus:border-[#22c55e] outline-none transition-colors"
+                    className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-[#22c55e] focus:border-[#22c55e] outline-none transition-colors"
                     placeholder="Enter your full name"
                   />
                 </div>
@@ -176,7 +176,7 @@ export default function ContactPage() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#22c55e] focus:border-[#22c55e] outline-none transition-colors"
+                    className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-[#22c55e] focus:border-[#22c55e] outline-none transition-colors"
                     placeholder="Enter your email address"
                   />
                 </div>
@@ -194,7 +194,7 @@ export default function ContactPage() {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#22c55e] focus:border-[#22c55e] outline-none transition-colors bg-white"
+                    className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-[#22c55e] focus:border-[#22c55e] outline-none transition-colors bg-[#1a2332]"
                   >
                     <option value="">Select a subject</option>
                     {subjectOptions.map((option) => (
@@ -219,7 +219,7 @@ export default function ContactPage() {
                     onChange={handleChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#22c55e] focus:border-[#22c55e] outline-none transition-colors resize-none"
+                    className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-[#22c55e] focus:border-[#22c55e] outline-none transition-colors resize-none"
                     placeholder="Enter your message"
                   />
                 </div>
@@ -274,7 +274,7 @@ export default function ContactPage() {
               </div>
 
               {/* Company Details */}
-              <div className="bg-gray-50 p-6 rounded-xl mb-8">
+              <div className="bg-[#0a0f1a] p-6 rounded-xl mb-8">
                 <h3 className="font-semibold text-white mb-4">
                   Company Details
                 </h3>
@@ -312,7 +312,7 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-[#0a0f1a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl font-bold text-white mb-4">
             Looking for Quick Answers?

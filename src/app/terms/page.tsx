@@ -324,7 +324,7 @@ export default function TermsPage() {
               <p className="text-gray-400 leading-relaxed mb-4">
                 If you have any questions about these Terms, please contact us:
               </p>
-              <div className="bg-gray-50 p-6 rounded-lg">
+              <div className="bg-[#0a0f1a] p-6 rounded-lg">
                 <p className="text-gray-300 mb-2">
                   <strong>DINEDIVINE VENTURES PRIVATE LIMITED</strong>
                 </p>

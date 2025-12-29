@@ -61,7 +61,7 @@ export default function LogoutPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#0a0f1a] flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <Link href="/" className="flex justify-center">
           <span className="text-3xl font-bold text-green-600">DineDivine</span>
@@ -69,17 +69,17 @@ export default function LogoutPage() {
       </div>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-white py-8 px-4 shadow-lg sm:rounded-xl sm:px-10">
+        <div className="bg-[#1a2332] py-8 px-4 shadow-lg sm:rounded-xl sm:px-10">
           {isLoggingOut ? (
             <div className="text-center">
               <div className="w-20 h-20 mx-auto mb-6 relative">
                 <div className="absolute inset-0 border-4 border-green-200 rounded-full"></div>
                 <div className="absolute inset-0 border-4 border-green-600 rounded-full border-t-transparent animate-spin"></div>
               </div>
-              <h2 className="text-xl font-semibold text-gray-900 mb-2">
+              <h2 className="text-xl font-semibold text-white mb-2">
                 Logging you out...
               </h2>
-              <p className="text-gray-600">
+              <p className="text-gray-300">
                 Please wait while we securely log you out.
               </p>
             </div>
@@ -100,10 +100,10 @@ export default function LogoutPage() {
                   />
                 </svg>
               </div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">
+              <h2 className="text-2xl font-bold text-white mb-2">
                 You&apos;ve been logged out
               </h2>
-              <p className="text-gray-600 mb-8">
+              <p className="text-gray-300 mb-8">
                 Thank you for using DineDivine. We hope to see you again soon!
               </p>
 
@@ -116,7 +116,7 @@ export default function LogoutPage() {
                 </button>
                 <button
                   onClick={handleGoHome}
-                  className="w-full py-3 px-4 border-2 border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors duration-200"
+                  className="w-full py-3 px-4 border-2 border-gray-600 rounded-lg shadow-sm text-sm font-medium text-gray-300 bg-[#1a2332] hover:bg-[#0a0f1a] transition-colors duration-200"
                 >
                   Go to Homepage
                 </button>
@@ -139,10 +139,10 @@ export default function LogoutPage() {
                   />
                 </svg>
               </div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">
+              <h2 className="text-2xl font-bold text-white mb-2">
                 Logout Error
               </h2>
-              <p className="text-gray-600 mb-8">{error}</p>
+              <p className="text-gray-300 mb-8">{error}</p>
 
               <div className="space-y-4">
                 <button
@@ -153,7 +153,7 @@ export default function LogoutPage() {
                 </button>
                 <button
                   onClick={handleGoHome}
-                  className="w-full py-3 px-4 border-2 border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors duration-200"
+                  className="w-full py-3 px-4 border-2 border-gray-600 rounded-lg shadow-sm text-sm font-medium text-gray-300 bg-[#1a2332] hover:bg-[#0a0f1a] transition-colors duration-200"
                 >
                   Go to Homepage
                 </button>
@@ -194,7 +194,7 @@ export default function LogoutPage() {
         {/* Quick Links */}
         {logoutComplete && (
           <div className="mt-6 text-center">
-            <p className="text-sm text-gray-600 mb-4">Quick Links</p>
+            <p className="text-sm text-gray-300 mb-4">Quick Links</p>
             <div className="flex justify-center gap-4 flex-wrap">
               <Link
                 href="/about"

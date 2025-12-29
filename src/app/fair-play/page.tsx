@@ -178,7 +178,7 @@ export default function FairPlayPage() {
       </section>
 
       {/* Core Principles */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-[#0a0f1a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-white mb-12">
             Core Fair Play Principles
@@ -245,7 +245,7 @@ export default function FairPlayPage() {
       </section>
 
       {/* How We Ensure Fair Play */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-[#0a0f1a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-white mb-12">
             How We Ensure Fair Play
@@ -355,7 +355,7 @@ export default function FairPlayPage() {
       </section>
 
       {/* Report Violations */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-[#0a0f1a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-[#22c55e] text-white p-8 md:p-12 rounded-2xl">
             <div className="max-w-3xl mx-auto text-center">
@@ -368,7 +368,7 @@ export default function FairPlayPage() {
               </p>
               <Link
                 href="/contact"
-                className="bg-white text-[#22c55e] px-8 py-3 rounded-lg font-semibold hover:bg-[#22c55e]/10 transition-colors duration-200 text-lg inline-block"
+                className="bg-[#1a2332] text-[#22c55e] px-8 py-3 rounded-lg font-semibold hover:bg-[#22c55e]/10 transition-colors duration-200 text-lg inline-block"
               >
                 Report Violation
               </Link>
@@ -402,7 +402,7 @@ export default function FairPlayPage() {
       </section>
 
       {/* Footer Note */}
-      <section className="py-8 bg-gray-100">
+      <section className="py-8 bg-[#1a2332]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-center text-gray-400 text-sm">
             This fair play policy is subject to updates. Users will be notified

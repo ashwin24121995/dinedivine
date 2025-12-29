@@ -111,7 +111,7 @@ export default function LiveScoresPage() {
                 {/* Teams & Scores */}
                 <div className="space-y-4">
                   {/* Team 1 */}
-                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                  <div className="flex items-center justify-between p-3 bg-[#0a0f1a] rounded-lg">
                     <div className="flex items-center gap-3">
                       <img
                         src={match.t1img}
@@ -125,7 +125,7 @@ export default function LiveScoresPage() {
                   </div>
 
                   {/* Team 2 */}
-                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                  <div className="flex items-center justify-between p-3 bg-[#0a0f1a] rounded-lg">
                     <div className="flex items-center gap-3">
                       <img
                         src={match.t2img}
@@ -146,7 +146,7 @@ export default function LiveScoresPage() {
 
                 {/* Match Type Badge */}
                 <div className="mt-4 flex justify-center">
-                  <span className="px-3 py-1 bg-gray-100 text-gray-400 text-sm rounded-full font-medium uppercase">
+                  <span className="px-3 py-1 bg-[#1a2332] text-gray-400 text-sm rounded-full font-medium uppercase">
                     {match.matchType}
                   </span>
                 </div>

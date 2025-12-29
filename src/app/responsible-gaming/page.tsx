@@ -225,7 +225,7 @@ export default function ResponsibleGamingPage() {
       </section>
 
       {/* Guidelines */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-[#0a0f1a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-white mb-12">
             Responsible Gaming Guidelines
@@ -353,7 +353,7 @@ export default function ResponsibleGamingPage() {
       </section>
 
       {/* Self-Exclusion */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-[#0a0f1a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-center text-white mb-6">
@@ -411,7 +411,7 @@ export default function ResponsibleGamingPage() {
             </p>
             <Link
               href="/contact"
-              className="bg-white text-[#22c55e] px-8 py-3 rounded-lg font-semibold hover:bg-[#22c55e]/10 transition-colors duration-200 text-lg inline-block"
+              className="bg-[#1a2332] text-[#22c55e] px-8 py-3 rounded-lg font-semibold hover:bg-[#22c55e]/10 transition-colors duration-200 text-lg inline-block"
             >
               Contact Support
             </Link>
@@ -420,7 +420,7 @@ export default function ResponsibleGamingPage() {
       </section>
 
       {/* Legal Compliance */}
-      <section className="py-8 bg-gray-100">
+      <section className="py-8 bg-[#1a2332]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-center text-gray-400 text-sm">
             DineDivine operates in compliance with all applicable Indian laws

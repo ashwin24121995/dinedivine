@@ -61,10 +61,10 @@ export default function MatchesList({
     return (
       <div className="py-12">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">{title}</h2>
+          <h2 className="text-2xl font-bold text-white mb-6">{title}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[1, 2, 3].map((i) => (
-              <div key={i} className="bg-white rounded-xl shadow-md p-4 animate-pulse">
+              <div key={i} className="bg-[#1a2332] rounded-xl shadow-md p-4 animate-pulse">
                 <div className="h-8 bg-gray-200 rounded mb-4"></div>
                 <div className="flex justify-between items-center mb-4">
                   <div className="w-16 h-16 bg-gray-200 rounded-full"></div>
@@ -85,7 +85,7 @@ export default function MatchesList({
     return (
       <div className="py-12">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">{title}</h2>
+          <h2 className="text-2xl font-bold text-white mb-6">{title}</h2>
           <div className="bg-red-50 border border-red-200 rounded-lg p-6 text-center">
             <p className="text-red-600">{error}</p>
             <button
@@ -104,7 +104,7 @@ export default function MatchesList({
     <div className="py-12">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
-          <h2 className="text-2xl font-bold text-gray-900">{title}</h2>
+          <h2 className="text-2xl font-bold text-white">{title}</h2>
           
           {showFilters && (
             <div className="flex gap-2 flex-wrap">
@@ -115,7 +115,7 @@ export default function MatchesList({
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
                     filter === f
                       ? "bg-green-600 text-white"
-                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                      : "bg-[#1a2332] text-gray-300 hover:bg-gray-200"
                   }`}
                 >
                   {f === "all" ? "All" : f.charAt(0).toUpperCase() + f.slice(1)}
@@ -129,7 +129,7 @@ export default function MatchesList({
         </div>
 
         {displayMatches.length === 0 ? (
-          <div className="bg-gray-50 rounded-lg p-12 text-center">
+          <div className="bg-[#0a0f1a] rounded-lg p-12 text-center">
             <svg
               className="w-16 h-16 text-gray-400 mx-auto mb-4"
               fill="none"
@@ -143,7 +143,7 @@ export default function MatchesList({
                 d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
               />
             </svg>
-            <p className="text-gray-600 text-lg">No matches found</p>
+            <p className="text-gray-300 text-lg">No matches found</p>
             <p className="text-gray-400 text-sm mt-2">
               Check back later for upcoming matches
             </p>

@@ -345,7 +345,7 @@ export default function ForgotPasswordPage() {
                   setOtp("");
                   setError("");
                 }}
-                className="w-full py-3 px-4 border-2 border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-300 bg-white hover:bg-gray-50"
+                className="w-full py-3 px-4 border-2 border-gray-600 rounded-lg shadow-sm text-sm font-medium text-gray-300 bg-[#1a2332] hover:bg-[#0a0f1a]"
               >
                 Change Email
               </button>

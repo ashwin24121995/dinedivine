@@ -210,7 +210,7 @@ export default function PrivacyPage() {
                 information:
               </p>
               <div className="space-y-4">
-                <div className="bg-gray-50 p-4 rounded-lg">
+                <div className="bg-[#0a0f1a] p-4 rounded-lg">
                   <h4 className="font-semibold text-white mb-2">
                     Right to Access
                   </h4>
@@ -219,7 +219,7 @@ export default function PrivacyPage() {
                     about you.
                   </p>
                 </div>
-                <div className="bg-gray-50 p-4 rounded-lg">
+                <div className="bg-[#0a0f1a] p-4 rounded-lg">
                   <h4 className="font-semibold text-white mb-2">
                     Right to Correction
                   </h4>
@@ -228,7 +228,7 @@ export default function PrivacyPage() {
                     information.
                   </p>
                 </div>
-                <div className="bg-gray-50 p-4 rounded-lg">
+                <div className="bg-[#0a0f1a] p-4 rounded-lg">
                   <h4 className="font-semibold text-white mb-2">
                     Right to Deletion
                   </h4>
@@ -237,7 +237,7 @@ export default function PrivacyPage() {
                     subject to legal requirements.
                   </p>
                 </div>
-                <div className="bg-gray-50 p-4 rounded-lg">
+                <div className="bg-[#0a0f1a] p-4 rounded-lg">
                   <h4 className="font-semibold text-white mb-2">
                     Right to Withdraw Consent
                   </h4>
@@ -304,7 +304,7 @@ export default function PrivacyPage() {
                 rules made thereunder, the name and contact details of the
                 Grievance Officer are provided below:
               </p>
-              <div className="bg-gray-50 p-6 rounded-lg">
+              <div className="bg-[#0a0f1a] p-6 rounded-lg">
                 <p className="text-gray-300 mb-2">
                   <strong>Grievance Officer</strong>
                 </p>

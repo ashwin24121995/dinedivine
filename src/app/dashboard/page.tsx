@@ -168,11 +168,11 @@ export default function DashboardPage() {
               <p className="text-white/80 mt-1">Ready to play some fantasy cricket?</p>
             </div>
             <div className="mt-4 md:mt-0 flex items-center gap-4">
-              <div className="bg-white/20 rounded-lg px-4 py-2">
+              <div className="bg-[#1a2332]/20 rounded-lg px-4 py-2">
                 <p className="text-sm text-white/80">Level</p>
                 <p className="text-2xl font-bold">{stats?.level || 1}</p>
               </div>
-              <div className="bg-white/20 rounded-lg px-4 py-2">
+              <div className="bg-[#1a2332]/20 rounded-lg px-4 py-2">
                 <p className="text-sm text-white/80">XP Points</p>
                 <p className="text-2xl font-bold">{stats?.xp_points || 0}</p>
               </div>
@@ -185,7 +185,7 @@ export default function DashboardPage() {
               <span>Level {stats?.level || 1}</span>
               <span>Level {(stats?.level || 1) + 1}</span>
             </div>
-            <div className="w-full bg-white/20 rounded-full h-2">
+            <div className="w-full bg-[#1a2332]/20 rounded-full h-2">
               <div
                 className="bg-yellow-400 h-2 rounded-full transition-all duration-500"
                 style={{ width: `${getXpProgress()}%` }}

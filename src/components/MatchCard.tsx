@@ -19,9 +19,9 @@ export default function MatchCard({ match }: MatchCardProps) {
       case "upcoming":
         return "bg-blue-500";
       case "completed":
-        return "bg-gray-500";
+        return "bg-[#0a0f1a]0";
       default:
-        return "bg-gray-500";
+        return "bg-[#0a0f1a]0";
     }
   };
 
@@ -39,12 +39,12 @@ export default function MatchCard({ match }: MatchCardProps) {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden border border-gray-100">
+    <div className="bg-[#1a2332] rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden border border-gray-100">
       {/* Header */}
       <div className="bg-gradient-to-r from-green-600 to-green-700 px-4 py-3 flex justify-between items-center">
         <div className="flex items-center gap-2">
           <span className={`${getStatusColor()} text-white text-xs font-bold px-2 py-1 rounded flex items-center gap-1`}>
-            {isLive && <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>}
+            {isLive && <span className="w-2 h-2 bg-[#1a2332] rounded-full animate-pulse"></span>}
             {getStatusText()}
           </span>
           <span className="text-white text-sm font-medium">
@@ -63,7 +63,7 @@ export default function MatchCard({ match }: MatchCardProps) {
         <div className="flex justify-between items-center mb-4">
           {/* Team 1 */}
           <div className="flex-1 text-center">
-            <div className="w-12 h-12 mx-auto mb-2 relative bg-gray-100 rounded-full overflow-hidden">
+            <div className="w-12 h-12 mx-auto mb-2 relative bg-[#1a2332] rounded-full overflow-hidden">
               {match.teamInfo?.[0]?.img ? (
                 <Image
                   src={match.teamInfo[0].img}
@@ -78,11 +78,11 @@ export default function MatchCard({ match }: MatchCardProps) {
                 </div>
               )}
             </div>
-            <p className="font-semibold text-gray-800 text-sm truncate">
+            <p className="font-semibold text-gray-200 text-sm truncate">
               {match.teamInfo?.[0]?.shortname || match.teams[0]}
             </p>
             {match.score?.[0] && (
-              <p className="text-lg font-bold text-gray-900">
+              <p className="text-lg font-bold text-white">
                 {match.score[0].r}/{match.score[0].w}
                 <span className="text-sm font-normal text-gray-500 ml-1">
                   ({match.score[0].o})
@@ -98,7 +98,7 @@ export default function MatchCard({ match }: MatchCardProps) {
 
           {/* Team 2 */}
           <div className="flex-1 text-center">
-            <div className="w-12 h-12 mx-auto mb-2 relative bg-gray-100 rounded-full overflow-hidden">
+            <div className="w-12 h-12 mx-auto mb-2 relative bg-[#1a2332] rounded-full overflow-hidden">
               {match.teamInfo?.[1]?.img ? (
                 <Image
                   src={match.teamInfo[1].img}
@@ -113,11 +113,11 @@ export default function MatchCard({ match }: MatchCardProps) {
                 </div>
               )}
             </div>
-            <p className="font-semibold text-gray-800 text-sm truncate">
+            <p className="font-semibold text-gray-200 text-sm truncate">
               {match.teamInfo?.[1]?.shortname || match.teams[1]}
             </p>
             {match.score?.[1] && (
-              <p className="text-lg font-bold text-gray-900">
+              <p className="text-lg font-bold text-white">
                 {match.score[1].r}/{match.score[1].w}
                 <span className="text-sm font-normal text-gray-500 ml-1">
                   ({match.score[1].o})
@@ -129,7 +129,7 @@ export default function MatchCard({ match }: MatchCardProps) {
 
         {/* Status */}
         <div className="text-center py-2 border-t border-gray-100">
-          <p className={`text-sm font-medium ${isLive ? "text-red-600" : "text-gray-600"}`}>
+          <p className={`text-sm font-medium ${isLive ? "text-red-600" : "text-gray-300"}`}>
             {match.status}
           </p>
         </div>

@@ -177,7 +177,7 @@ export default function ProfilePage() {
                   type="text"
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#22c55e] focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-[#22c55e] focus:border-transparent"
                   required
                 />
               </div>
@@ -189,7 +189,7 @@ export default function ProfilePage() {
                 <input
                   type="email"
                   value={user?.email || ""}
-                  className="w-full px-4 py-3 border border-[#22c55e]/20 rounded-lg bg-gray-50 text-gray-400"
+                  className="w-full px-4 py-3 border border-[#22c55e]/20 rounded-lg bg-[#0a0f1a] text-gray-400"
                   disabled
                 />
                 <p className="text-xs text-gray-400 mt-1">Email cannot be changed</p>
@@ -203,7 +203,7 @@ export default function ProfilePage() {
                   type="tel"
                   value={mobile}
                   onChange={(e) => setMobile(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#22c55e] focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-[#22c55e] focus:border-transparent"
                   pattern="[6-9][0-9]{9}"
                   required
                 />
@@ -216,7 +216,7 @@ export default function ProfilePage() {
                 <input
                   type="text"
                   value={user?.state || ""}
-                  className="w-full px-4 py-3 border border-[#22c55e]/20 rounded-lg bg-gray-50 text-gray-400"
+                  className="w-full px-4 py-3 border border-[#22c55e]/20 rounded-lg bg-[#0a0f1a] text-gray-400"
                   disabled
                 />
                 <p className="text-xs text-gray-400 mt-1">State cannot be changed</p>
@@ -261,7 +261,7 @@ export default function ProfilePage() {
                     type="password"
                     value={currentPassword}
                     onChange={(e) => setCurrentPassword(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#22c55e] focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-[#22c55e] focus:border-transparent"
                     required
                   />
                 </div>
@@ -274,7 +274,7 @@ export default function ProfilePage() {
                     type="password"
                     value={newPassword}
                     onChange={(e) => setNewPassword(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#22c55e] focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-[#22c55e] focus:border-transparent"
                     minLength={6}
                     required
                   />
@@ -288,7 +288,7 @@ export default function ProfilePage() {
                     type="password"
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#22c55e] focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-[#22c55e] focus:border-transparent"
                     minLength={6}
                     required
                   />

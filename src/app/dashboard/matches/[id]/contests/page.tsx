@@ -250,7 +250,7 @@ export default function MatchContestsPage({ params }: { params: Promise<{ id: st
               <div className="flex gap-2">
                 <button
                   onClick={() => setShowTeamSelector(false)}
-                  className="flex-1 px-4 py-2 border border-[#22c55e]/20 rounded-lg text-gray-400 hover:bg-gray-50"
+                  className="flex-1 px-4 py-2 border border-[#22c55e]/20 rounded-lg text-gray-400 hover:bg-[#0a0f1a]"
                 >
                   Cancel
                 </button>

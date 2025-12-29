@@ -26,8 +26,8 @@ export default function HeroCTA() {
   if (isLoading) {
     return (
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
-        <div className="w-48 h-14 bg-white/20 animate-pulse rounded-xl"></div>
-        <div className="w-48 h-14 bg-white/10 animate-pulse rounded-xl"></div>
+        <div className="w-48 h-14 bg-[#1a2332]/20 animate-pulse rounded-xl"></div>
+        <div className="w-48 h-14 bg-[#1a2332]/10 animate-pulse rounded-xl"></div>
       </div>
     );
   }
@@ -57,7 +57,7 @@ export default function HeroCTA() {
       )}
       <Link
         href="/how-to-play"
-        className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white/20 transition-all duration-300"
+        className="inline-flex items-center justify-center gap-2 bg-[#1a2332]/10 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-[#1a2332]/20 transition-all duration-300"
       >
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -89,7 +89,7 @@ export function BottomCTA() {
 
   if (isLoading) {
     return (
-      <div className="w-48 h-14 bg-white/20 animate-pulse rounded-xl mx-auto"></div>
+      <div className="w-48 h-14 bg-[#1a2332]/20 animate-pulse rounded-xl mx-auto"></div>
     );
   }
 
@@ -97,7 +97,7 @@ export function BottomCTA() {
     return (
       <Link
         href="/dashboard/matches"
-        className="inline-flex items-center justify-center gap-2 bg-white text-[#16a34a] px-8 py-4 rounded-xl text-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg"
+        className="inline-flex items-center justify-center gap-2 bg-[#1a2332] text-[#16a34a] px-8 py-4 rounded-xl text-lg font-semibold hover:bg-[#1a2332] transition-all duration-300 shadow-lg"
       >
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -110,7 +110,7 @@ export function BottomCTA() {
   return (
     <Link
       href="/register"
-      className="inline-flex items-center justify-center gap-2 bg-white text-[#16a34a] px-8 py-4 rounded-xl text-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg"
+      className="inline-flex items-center justify-center gap-2 bg-[#1a2332] text-[#16a34a] px-8 py-4 rounded-xl text-lg font-semibold hover:bg-[#1a2332] transition-all duration-300 shadow-lg"
     >
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />

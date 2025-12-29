@@ -352,7 +352,7 @@ export default function CreateTeamPage() {
       </div>
 
       {/* Progress Steps */}
-      <div className="bg-white border-b border-[#22c55e]/20">
+      <div className="bg-[#1a2332] border-b border-[#22c55e]/20">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center justify-center gap-4">
             <div className={`flex items-center gap-2 ${step === "select" ? "text-[#22c55e]" : "text-gray-400"}`}>
@@ -374,7 +374,7 @@ export default function CreateTeamPage() {
       </div>
 
       {/* Stats Bar */}
-      <div className="bg-white border-b border-[#22c55e]/20 sticky top-0 z-10">
+      <div className="bg-[#1a2332] border-b border-[#22c55e]/20 sticky top-0 z-10">
         <div className="max-w-7xl mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-6">
@@ -409,7 +409,7 @@ export default function CreateTeamPage() {
               <div className="flex gap-2">
                 <button
                   onClick={() => setActiveTeamTab(0)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium ${activeTeamTab === 0 ? "bg-[#22c55e] text-white" : "bg-white text-gray-400 border"}`}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium ${activeTeamTab === 0 ? "bg-[#22c55e] text-white" : "bg-[#1a2332] text-gray-400 border"}`}
                 >
                   All
                 </button>
@@ -417,7 +417,7 @@ export default function CreateTeamPage() {
                   <button
                     key={index}
                     onClick={() => setActiveTeamTab(index + 1)}
-                    className={`px-4 py-2 rounded-lg text-sm font-medium ${activeTeamTab === index + 1 ? "bg-[#22c55e] text-white" : "bg-white text-gray-400 border"}`}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium ${activeTeamTab === index + 1 ? "bg-[#22c55e] text-white" : "bg-[#1a2332] text-gray-400 border"}`}
                   >
                     {squad.shortname} ({getTeamPlayerCount(index)})
                   </button>
@@ -428,7 +428,7 @@ export default function CreateTeamPage() {
                   <button
                     key={role}
                     onClick={() => setActiveRoleTab(role)}
-                    className={`px-4 py-2 rounded-lg text-sm font-medium ${activeRoleTab === role ? "bg-blue-600 text-white" : "bg-white text-gray-400 border"}`}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium ${activeRoleTab === role ? "bg-blue-600 text-white" : "bg-[#1a2332] text-gray-400 border"}`}
                   >
                     {role}
                   </button>
@@ -454,7 +454,7 @@ export default function CreateTeamPage() {
                     key={player.id}
                     onClick={() => togglePlayer(player)}
                     className={`grid grid-cols-12 gap-4 p-4 border-b border-gray-50 cursor-pointer transition-colors ${
-                      isSelected ? "bg-[#22c55e]/10" : can ? "hover:bg-gray-50" : "opacity-50"
+                      isSelected ? "bg-[#22c55e]/10" : can ? "hover:bg-[#0a0f1a]" : "opacity-50"
                     }`}
                   >
                     <div className="col-span-5 flex items-center gap-3">
@@ -470,7 +470,7 @@ export default function CreateTeamPage() {
                       </div>
                     </div>
                     <div className="col-span-2 flex items-center justify-center">
-                      <span className="px-2 py-1 bg-gray-100 text-gray-400 text-xs rounded-full">
+                      <span className="px-2 py-1 bg-[#1a2332] text-gray-400 text-xs rounded-full">
                         {getRoleFromPlayer(player.role)}
                       </span>
                     </div>
@@ -493,7 +493,7 @@ export default function CreateTeamPage() {
             </div>
 
             {/* Next Button */}
-            <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-[#22c55e]/20 p-4">
+            <div className="fixed bottom-0 left-0 right-0 bg-[#1a2332] border-t border-[#22c55e]/20 p-4">
               <div className="max-w-7xl mx-auto flex justify-end">
                 <button
                   onClick={() => {
@@ -540,7 +540,7 @@ export default function CreateTeamPage() {
                         setCaptain(player);
                       }}
                       className={`flex items-center gap-3 p-3 rounded-lg cursor-pointer transition-colors ${
-                        captain?.id === player.id ? "bg-yellow-100 border-2 border-yellow-500" : "hover:bg-gray-50 border border-[#22c55e]/20"
+                        captain?.id === player.id ? "bg-yellow-100 border-2 border-yellow-500" : "hover:bg-[#0a0f1a] border border-[#22c55e]/20"
                       }`}
                     >
                       <img
@@ -577,7 +577,7 @@ export default function CreateTeamPage() {
                       }}
                       className={`flex items-center gap-3 p-3 rounded-lg cursor-pointer transition-colors ${
                         captain?.id === player.id ? "opacity-50 cursor-not-allowed" : 
-                        viceCaptain?.id === player.id ? "bg-blue-100 border-2 border-blue-500" : "hover:bg-gray-50 border border-[#22c55e]/20"
+                        viceCaptain?.id === player.id ? "bg-blue-100 border-2 border-blue-500" : "hover:bg-[#0a0f1a] border border-[#22c55e]/20"
                       }`}
                     >
                       <img
@@ -603,11 +603,11 @@ export default function CreateTeamPage() {
             </div>
 
             {/* Navigation Buttons */}
-            <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-[#22c55e]/20 p-4">
+            <div className="fixed bottom-0 left-0 right-0 bg-[#1a2332] border-t border-[#22c55e]/20 p-4">
               <div className="max-w-7xl mx-auto flex justify-between">
                 <button
                   onClick={() => setStep("select")}
-                  className="px-6 py-3 rounded-lg font-medium border border-gray-300 hover:bg-gray-50"
+                  className="px-6 py-3 rounded-lg font-medium border border-gray-600 hover:bg-[#0a0f1a]"
                 >
                   ← Back
                 </button>
@@ -647,7 +647,7 @@ export default function CreateTeamPage() {
                 value={teamName}
                 onChange={(e) => setTeamName(e.target.value)}
                 placeholder="Enter a name for your team"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#22c55e] focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-[#22c55e] focus:border-transparent"
                 maxLength={50}
               />
             </div>
@@ -661,7 +661,7 @@ export default function CreateTeamPage() {
                     className={`text-center p-4 rounded-lg ${
                       player.id === captain?.id ? "bg-yellow-50 border-2 border-yellow-500" :
                       player.id === viceCaptain?.id ? "bg-blue-50 border-2 border-blue-500" :
-                      "bg-gray-50"
+                      "bg-[#0a0f1a]"
                     }`}
                   >
                     <div className="relative inline-block">
@@ -686,11 +686,11 @@ export default function CreateTeamPage() {
             </div>
 
             {/* Save Button */}
-            <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-[#22c55e]/20 p-4">
+            <div className="fixed bottom-0 left-0 right-0 bg-[#1a2332] border-t border-[#22c55e]/20 p-4">
               <div className="max-w-7xl mx-auto flex justify-between">
                 <button
                   onClick={() => setStep("captain")}
-                  className="px-6 py-3 rounded-lg font-medium border border-gray-300 hover:bg-gray-50"
+                  className="px-6 py-3 rounded-lg font-medium border border-gray-600 hover:bg-[#0a0f1a]"
                 >
                   ← Back
                 </button>

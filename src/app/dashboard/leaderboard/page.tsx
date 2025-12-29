@@ -52,9 +52,9 @@ export default function LeaderboardPage() {
 
   const getRankColor = (rank: number) => {
     if (rank === 1) return "bg-yellow-100 text-yellow-800";
-    if (rank === 2) return "bg-gray-100 text-white";
+    if (rank === 2) return "bg-[#1a2332] text-white";
     if (rank === 3) return "bg-orange-100 text-orange-800";
-    return "bg-gray-50 text-gray-400";
+    return "bg-[#0a0f1a] text-gray-400";
   };
 
   return (
@@ -76,7 +76,7 @@ export default function LeaderboardPage() {
             className={`px-6 py-2 rounded-lg font-medium transition-all ${
               activeTab === "global"
                 ? "bg-[#22c55e] text-white"
-                : "text-gray-400 hover:bg-gray-100"
+                : "text-gray-400 hover:bg-[#1a2332]"
             }`}
           >
             All Time
@@ -86,7 +86,7 @@ export default function LeaderboardPage() {
             className={`px-6 py-2 rounded-lg font-medium transition-all ${
               activeTab === "weekly"
                 ? "bg-[#22c55e] text-white"
-                : "text-gray-400 hover:bg-gray-100"
+                : "text-gray-400 hover:bg-[#1a2332]"
             }`}
           >
             This Week
@@ -96,7 +96,7 @@ export default function LeaderboardPage() {
             className={`px-6 py-2 rounded-lg font-medium transition-all ${
               activeTab === "monthly"
                 ? "bg-[#22c55e] text-white"
-                : "text-gray-400 hover:bg-gray-100"
+                : "text-gray-400 hover:bg-[#1a2332]"
             }`}
           >
             This Month
@@ -108,7 +108,7 @@ export default function LeaderboardPage() {
           <div className="bg-gradient-to-r from-[#22c55e] to-[#16a34a] text-white rounded-xl p-6 mb-6">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
-                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center text-2xl font-bold">
+                <div className="w-16 h-16 bg-[#1a2332]/20 rounded-full flex items-center justify-center text-2xl font-bold">
                   {currentUserRank.user_name.charAt(0).toUpperCase()}
                 </div>
                 <div>
@@ -141,7 +141,7 @@ export default function LeaderboardPage() {
           </div>
         ) : leaderboard.length > 0 ? (
           <div className="bg-[#1a2332] rounded-xl shadow-sm border border-[#22c55e]/20 overflow-hidden">
-            <div className="grid grid-cols-12 gap-4 p-4 border-b border-[#22c55e]/20 text-sm font-medium text-gray-400 bg-gray-50">
+            <div className="grid grid-cols-12 gap-4 p-4 border-b border-[#22c55e]/20 text-sm font-medium text-gray-400 bg-[#0a0f1a]">
               <div className="col-span-1">Rank</div>
               <div className="col-span-5">Player</div>
               <div className="col-span-2 text-center">Points</div>

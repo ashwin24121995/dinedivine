@@ -116,7 +116,7 @@ export default function MyTeamsPage() {
                 <div className="mt-4 pt-4 border-t border-[#22c55e]/20 flex gap-2">
                   <Link
                     href={`/dashboard/teams/${team.id}`}
-                    className="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-300 px-4 py-2 rounded-lg text-sm font-medium text-center transition-colors"
+                    className="flex-1 bg-[#1a2332] hover:bg-gray-200 text-gray-300 px-4 py-2 rounded-lg text-sm font-medium text-center transition-colors"
                   >
                     View Team
                   </Link>

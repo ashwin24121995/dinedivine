@@ -128,10 +128,10 @@ export default function MatchesPage() {
             className={`px-6 py-2 rounded-lg font-medium transition-all flex items-center gap-2 ${
               activeTab === "live"
                 ? "bg-red-600 text-white"
-                : "text-gray-400 hover:bg-gray-100"
+                : "text-gray-400 hover:bg-[#1a2332]"
             }`}
           >
-            <span className={`w-2 h-2 rounded-full ${activeTab === "live" ? "bg-white" : "bg-red-500"} animate-pulse`}></span>
+            <span className={`w-2 h-2 rounded-full ${activeTab === "live" ? "bg-[#1a2332]" : "bg-red-500"} animate-pulse`}></span>
             Live
           </button>
           <button
@@ -139,7 +139,7 @@ export default function MatchesPage() {
             className={`px-6 py-2 rounded-lg font-medium transition-all ${
               activeTab === "upcoming"
                 ? "bg-[#22c55e] text-white"
-                : "text-gray-400 hover:bg-gray-100"
+                : "text-gray-400 hover:bg-[#1a2332]"
             }`}
           >
             Upcoming
@@ -149,7 +149,7 @@ export default function MatchesPage() {
             className={`px-6 py-2 rounded-lg font-medium transition-all ${
               activeTab === "completed"
                 ? "bg-gray-600 text-white"
-                : "text-gray-400 hover:bg-gray-100"
+                : "text-gray-400 hover:bg-[#1a2332]"
             }`}
           >
             Completed
@@ -204,7 +204,7 @@ export default function MatchesPage() {
                         Squad Ready
                       </span>
                     )}
-                    <span className="px-2 py-1 bg-gray-100 text-gray-400 text-xs rounded-full font-medium uppercase">
+                    <span className="px-2 py-1 bg-[#1a2332] text-gray-400 text-xs rounded-full font-medium uppercase">
                       {match.matchType}
                     </span>
                     {activeTab === "live" && (
@@ -285,7 +285,7 @@ export default function MatchesPage() {
                     <p className="text-sm text-center text-gray-400">{match.status}</p>
                     <Link
                       href={`/dashboard/matches/${match.id}/results`}
-                      className="block mt-3 bg-gray-100 hover:bg-gray-200 text-gray-300 px-4 py-2 rounded-lg text-sm font-medium text-center transition-colors"
+                      className="block mt-3 bg-[#1a2332] hover:bg-gray-200 text-gray-300 px-4 py-2 rounded-lg text-sm font-medium text-center transition-colors"
                     >
                       View Results
                     </Link>

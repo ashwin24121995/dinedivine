@@ -340,7 +340,7 @@ export default function FantasyCricketPage() {
       </section>
 
       {/* Match Formats */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-[#0a0f1a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-white mb-4">
             Supported Match Formats
@@ -397,7 +397,7 @@ export default function FantasyCricketPage() {
       </section>
 
       {/* How Fantasy Points Work */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-[#0a0f1a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-white mb-4">
             How Fantasy Points Work
@@ -500,7 +500,7 @@ export default function FantasyCricketPage() {
             />
             <Link
               href="/how-to-play"
-              className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#22c55e] transition-colors duration-200 text-lg"
+              className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1a2332] hover:text-[#22c55e] transition-colors duration-200 text-lg"
             >
               Learn How To Play
             </Link>

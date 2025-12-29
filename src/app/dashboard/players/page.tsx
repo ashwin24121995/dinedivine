@@ -58,7 +58,7 @@ export default function PlayersPage() {
       case "wk-batsman":
         return "bg-yellow-100 text-yellow-600";
       default:
-        return "bg-gray-100 text-gray-400";
+        return "bg-[#1a2332] text-gray-400";
     }
   };
 
