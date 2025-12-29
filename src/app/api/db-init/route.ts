@@ -21,6 +21,19 @@ export async function GET() {
       )
     `);
 
+    // Add missing columns to user_teams if they don't exist
+    try {
+      await query(`ALTER TABLE user_teams ADD COLUMN total_credits_used DECIMAL(5,2) DEFAULT 0`);
+    } catch (e) {
+      // Column might already exist, ignore error
+    }
+
+    try {
+      await query(`ALTER TABLE user_teams ADD COLUMN total_points DECIMAL(10,2) DEFAULT 0`);
+    } catch (e) {
+      // Column might already exist, ignore error
+    }
+
     // Create team_players table if not exists
     await query(`
       CREATE TABLE IF NOT EXISTS team_players (
@@ -77,10 +90,16 @@ export async function GET() {
       "SHOW TABLES"
     );
 
+    // Get columns from user_teams to verify
+    const columns = await query<{ Field: string }[]>(
+      "SHOW COLUMNS FROM user_teams"
+    );
+
     return NextResponse.json({
       success: true,
       message: "Database tables created/verified successfully",
       tables: tables.map((t: Record<string, string>) => Object.values(t)[0]),
+      user_teams_columns: columns.map((c: { Field: string }) => c.Field),
     });
   } catch (error) {
     console.error("Database init error:", error);
