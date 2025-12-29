@@ -63,6 +63,8 @@ export default function CreateTeamPage() {
   const [activeRoleTab, setActiveRoleTab] = useState("ALL");
   const [saving, setSaving] = useState(false);
   const [teamName, setTeamName] = useState("");
+  const [squadNotAvailable, setSquadNotAvailable] = useState(false);
+  const [squadMessage, setSquadMessage] = useState("");
 
   useEffect(() => {
     fetchMatchData();
@@ -82,19 +84,27 @@ export default function CreateTeamPage() {
       const squadRes = await fetch(`/api/matches/${matchId}/squad`);
       const squadData = await squadRes.json();
       
-      if (squadData.success && squadData.squads) {
-        // Add credits to players based on role
-        const squadsWithCredits = squadData.squads.map((squad: TeamSquad) => ({
-          ...squad,
-          players: squad.players.map((player: Player) => ({
-            ...player,
-            credits: getPlayerCredits(player.role),
-            isSelected: false,
-            isCaptain: false,
-            isViceCaptain: false,
-          })),
-        }));
-        setSquads(squadsWithCredits);
+      if (squadData.success) {
+        if (squadData.squadNotAvailable) {
+          setSquadNotAvailable(true);
+          setSquadMessage(squadData.message || "Squad not announced yet. Check back closer to match time.");
+        } else if (squadData.squads && squadData.squads.length > 0) {
+          // Add credits to players based on role
+          const squadsWithCredits = squadData.squads.map((squad: TeamSquad) => ({
+            ...squad,
+            players: squad.players.map((player: Player) => ({
+              ...player,
+              credits: player.credits || getPlayerCredits(player.role),
+              isSelected: false,
+              isCaptain: false,
+              isViceCaptain: false,
+            })),
+          }));
+          setSquads(squadsWithCredits);
+        } else {
+          setSquadNotAvailable(true);
+          setSquadMessage("Squad not announced yet. Check back closer to match time.");
+        }
       }
     } catch (error) {
       console.error("Error fetching match data:", error);
@@ -270,6 +280,47 @@ export default function CreateTeamPage() {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
+      </div>
+    );
+  }
+
+  if (squadNotAvailable) {
+    return (
+      <div className="min-h-screen bg-gray-50">
+        {/* Header */}
+        <div className="bg-gradient-to-r from-green-600 to-green-700 text-white py-4">
+          <div className="max-w-7xl mx-auto px-4">
+            <Link href={`/dashboard/matches/${matchId}`} className="text-white/80 hover:text-white flex items-center gap-2 mb-2">
+              ← Back to Match
+            </Link>
+            <h1 className="text-2xl font-bold">Create Your Team</h1>
+          </div>
+        </div>
+        
+        <div className="max-w-2xl mx-auto px-4 py-16">
+          <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+            <div className="text-6xl mb-4">🏏</div>
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">Squad Not Available</h2>
+            <p className="text-gray-600 mb-6">{squadMessage}</p>
+            <p className="text-sm text-gray-500 mb-8">
+              Teams are usually announced 1-2 hours before the match starts. Please check back later.
+            </p>
+            <div className="flex gap-4 justify-center">
+              <Link 
+                href={`/dashboard/matches/${matchId}`}
+                className="bg-gray-200 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-300 transition"
+              >
+                ← Back to Match
+              </Link>
+              <button 
+                onClick={() => window.location.reload()}
+                className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition"
+              >
+                🔄 Refresh
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
