@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Check if contest exists and has spots
-    const contests = await query<{ id: number; max_participants: number; current_participants: number; match_id: string }[]>(
+    const contests = await query<{ id: number; max_entries: number; current_entries: number; match_id: string }[]>(
       "SELECT * FROM contests WHERE id = ?",
       [contestId]
     );
@@ -48,7 +48,7 @@ export async function POST(request: NextRequest) {
 
     const contest = contests[0];
 
-    if (contest.current_participants >= contest.max_participants) {
+    if (contest.current_entries >= contest.max_entries) {
       return NextResponse.json(
         { success: false, error: "Contest is full" },
         { status: 400 }
@@ -89,7 +89,7 @@ export async function POST(request: NextRequest) {
 
     // Update contest participants count
     await query(
-      "UPDATE contests SET current_participants = current_participants + 1 WHERE id = ?",
+      "UPDATE contests SET current_entries = current_entries + 1 WHERE id = ?",
       [contestId]
     );
 
@@ -106,7 +106,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error("Error joining contest:", error);
     return NextResponse.json(
-      { success: false, error: "Failed to join contest" },
+      { success: false, error: "Failed to join contest", details: error instanceof Error ? error.message : String(error) },
       { status: 500 }
     );
   }
