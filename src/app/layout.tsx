@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "DineDivine - Free To Play Fantasy Sports Platform",
     description:
       "The leading free-to-play entertainment platform for fantasy sports and social fun.",
-    url: "https://www.dinedivine.com",
+    url: "https://www.dinedivinelive.com",
     siteName: "DineDivine",
     type: "website",
   },

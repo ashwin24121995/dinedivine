@@ -107,10 +107,10 @@ const Footer = () => {
               <p className="pt-2">
                 <strong className="text-gray-300">Website:</strong>{" "}
                 <a
-                  href="https://www.dinedivine.com"
+                  href="https://www.dinedivinelive.com"
                   className="text-[#22c55e] hover:underline"
                 >
-                  www.dinedivine.com
+                  www.dinedivinelive.com
                 </a>
               </p>
             </div>

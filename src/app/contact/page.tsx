@@ -70,7 +70,7 @@ export default function ContactPage() {
     },
     {
       title: "Website",
-      content: "www.dinedivine.com",
+      content: "www.dinedivinelive.com",
       icon: (
         <svg
           className="w-6 h-6"
