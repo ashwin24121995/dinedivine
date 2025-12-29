@@ -2,6 +2,7 @@ import Link from "next/link";
 import LiveMatchesSection from "@/components/LiveMatchesSection";
 import UpcomingMatchesSection from "@/components/UpcomingMatchesSection";
 import CompletedMatchesSection from "@/components/CompletedMatchesSection";
+import HeroCTA, { BottomCTA } from "@/components/HeroCTA";
 
 export const revalidate = 60; // Revalidate every 60 seconds
 
@@ -18,20 +19,7 @@ export default function Home() {
             The Leading Entertainment Platform for Games & Social Fun. Play
             fantasy cricket and enjoy the thrill of the game!
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/register"
-              className="bg-white text-green-700 px-8 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors duration-200 text-lg"
-            >
-              Get Started - It&apos;s Free!
-            </Link>
-            <Link
-              href="/how-to-play"
-              className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-green-700 transition-colors duration-200 text-lg"
-            >
-              Learn How To Play
-            </Link>
-          </div>
+          <HeroCTA />
         </div>
       </section>
 
@@ -194,12 +182,7 @@ export default function Home() {
             Join thousands of cricket fans who are already enjoying the thrill
             of fantasy cricket on DineDivine.
           </p>
-          <Link
-            href="/register"
-            className="bg-white text-green-700 px-8 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors duration-200 text-lg inline-block"
-          >
-            Create Free Account
-          </Link>
+          <BottomCTA />
         </div>
       </section>
     </div>
