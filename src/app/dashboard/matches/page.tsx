@@ -19,6 +19,15 @@ interface CricScoreMatch {
   dateTimeGMT: string;
 }
 
+// Series known to have squad data available
+const SERIES_WITH_SQUADS = [
+  "Big Bash League",
+  "International League T20",
+  "Syed Mushtaq Ali",
+  "BBL",
+  "ILT20",
+];
+
 export default function MatchesPage() {
   const router = useRouter();
   const [activeTab, setActiveTab] = useState<"upcoming" | "live" | "completed">("upcoming");
@@ -68,14 +77,21 @@ export default function MatchesPage() {
 
     if (diff <= 0) return "Starting soon";
 
-    const hours = Math.floor(diff / (1000 * 60 * 60));
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
 
-    if (hours > 24) {
-      const days = Math.floor(hours / 24);
-      return `${days}d ${hours % 24}h`;
+    if (days > 0) {
+      return `${days}d ${hours}h`;
     }
-    return `${hours}h ${minutes}m`;
+    if (hours > 0) {
+      return `${hours}h ${minutes}m`;
+    }
+    return `${minutes}m`;
+  };
+
+  const hasSquadAvailable = (series: string): boolean => {
+    return SERIES_WITH_SQUADS.some(s => series.toLowerCase().includes(s.toLowerCase()));
   };
 
   const filteredMatches = matches.filter((match) => {
@@ -108,16 +124,6 @@ export default function MatchesPage() {
         {/* Tabs */}
         <div className="flex gap-2 mb-6 bg-white rounded-lg p-1 shadow-sm border border-gray-100 w-fit">
           <button
-            onClick={() => setActiveTab("upcoming")}
-            className={`px-6 py-2 rounded-lg font-medium transition-all ${
-              activeTab === "upcoming"
-                ? "bg-green-600 text-white"
-                : "text-gray-600 hover:bg-gray-100"
-            }`}
-          >
-            Upcoming
-          </button>
-          <button
             onClick={() => setActiveTab("live")}
             className={`px-6 py-2 rounded-lg font-medium transition-all flex items-center gap-2 ${
               activeTab === "live"
@@ -127,6 +133,16 @@ export default function MatchesPage() {
           >
             <span className={`w-2 h-2 rounded-full ${activeTab === "live" ? "bg-white" : "bg-red-500"} animate-pulse`}></span>
             Live
+          </button>
+          <button
+            onClick={() => setActiveTab("upcoming")}
+            className={`px-6 py-2 rounded-lg font-medium transition-all ${
+              activeTab === "upcoming"
+                ? "bg-green-600 text-white"
+                : "text-gray-600 hover:bg-gray-100"
+            }`}
+          >
+            Upcoming
           </button>
           <button
             onClick={() => setActiveTab("completed")}
@@ -181,8 +197,13 @@ export default function MatchesPage() {
               >
                 {/* Match Header */}
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs text-gray-500 truncate max-w-[60%]">{match.series}</span>
+                  <span className="text-xs text-gray-500 truncate max-w-[50%]">{match.series}</span>
                   <div className="flex items-center gap-2">
+                    {hasSquadAvailable(match.series) && activeTab === "upcoming" && (
+                      <span className="px-2 py-0.5 bg-green-100 text-green-600 text-xs rounded-full font-medium">
+                        Squad Ready
+                      </span>
+                    )}
                     <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full font-medium uppercase">
                       {match.matchType}
                     </span>

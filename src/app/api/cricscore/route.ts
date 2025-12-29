@@ -1,8 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getCricScore, getLiveMatches, getUpcomingMatches, getCompletedMatches, getAllMatchesCategorized } from "@/lib/cricketApi";
+import { CricScoreMatch } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
+
+// Sort matches by start time (soonest first for upcoming, most recent first for completed)
+function sortMatchesByTime(matches: CricScoreMatch[], ascending: boolean = true): CricScoreMatch[] {
+  return [...matches].sort((a, b) => {
+    const timeA = new Date(a.dateTimeGMT).getTime();
+    const timeB = new Date(b.dateTimeGMT).getTime();
+    return ascending ? timeA - timeB : timeB - timeA;
+  });
+}
 
 export async function GET(request: NextRequest) {
   try {
@@ -30,20 +40,31 @@ export async function GET(request: NextRequest) {
 
     switch (status) {
       case "live":
-        // Get only LIVE matches (ms === "live")
+        // Get only LIVE matches (ms === "live" or fixture with past start time)
         data = await getLiveMatches(noCache);
+        // Sort live matches by start time (most recent first)
+        data = sortMatchesByTime(data, false);
         break;
       case "upcoming":
-        // Get only UPCOMING matches (ms === "fixture")
+        // Get only UPCOMING matches (ms === "fixture" with future start time)
         data = await getUpcomingMatches();
+        // Sort upcoming matches by start time (soonest first)
+        data = sortMatchesByTime(data, true);
         break;
       case "completed":
         // Get only COMPLETED matches (ms === "result")
         data = await getCompletedMatches();
+        // Sort completed matches by time (most recent first)
+        data = sortMatchesByTime(data, false);
         break;
       case "all":
         // Get all matches categorized
-        data = await getAllMatchesCategorized(noCache);
+        const categorized = await getAllMatchesCategorized(noCache);
+        data = {
+          live: sortMatchesByTime(categorized.live, false),
+          upcoming: sortMatchesByTime(categorized.upcoming, true),
+          completed: sortMatchesByTime(categorized.completed, false),
+        };
         break;
       default:
         // Return all matches from eCricScore

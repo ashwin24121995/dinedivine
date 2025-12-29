@@ -38,6 +38,15 @@ interface CricScoreMatch {
   dateTimeGMT: string;
 }
 
+// Series known to have squad data available
+const SERIES_WITH_SQUADS = [
+  "Big Bash League",
+  "International League T20",
+  "Syed Mushtaq Ali",
+  "BBL",
+  "ILT20",
+];
+
 export default function DashboardPage() {
   const router = useRouter();
   const [user, setUser] = useState<User | null>(null);
@@ -81,18 +90,18 @@ export default function DashboardPage() {
 
   const fetchMatches = async () => {
     try {
-      // Fetch upcoming matches
-      const upcomingRes = await fetch("/api/cricscore?status=upcoming");
-      const upcomingData = await upcomingRes.json();
-      if (upcomingData.success && upcomingData.data) {
-        setUpcomingMatches(upcomingData.data.slice(0, 6));
-      }
-
-      // Fetch live matches
+      // Fetch live matches first
       const liveRes = await fetch("/api/cricscore?status=live");
       const liveData = await liveRes.json();
       if (liveData.success && liveData.data) {
         setLiveMatches(liveData.data);
+      }
+
+      // Fetch upcoming matches (already sorted by time from API)
+      const upcomingRes = await fetch("/api/cricscore?status=upcoming");
+      const upcomingData = await upcomingRes.json();
+      if (upcomingData.success && upcomingData.data) {
+        setUpcomingMatches(upcomingData.data.slice(0, 6));
       }
     } catch (error) {
       console.error("Error fetching matches:", error);
@@ -108,6 +117,30 @@ export default function DashboardPage() {
       hour: "2-digit",
       minute: "2-digit",
     });
+  };
+
+  const getTimeRemaining = (dateStr: string) => {
+    const matchDate = new Date(dateStr);
+    const now = new Date();
+    const diff = matchDate.getTime() - now.getTime();
+
+    if (diff <= 0) return "Starting soon";
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+    if (days > 0) {
+      return `${days}d ${hours}h`;
+    }
+    if (hours > 0) {
+      return `${hours}h ${minutes}m`;
+    }
+    return `${minutes}m`;
+  };
+
+  const hasSquadAvailable = (series: string): boolean => {
+    return SERIES_WITH_SQUADS.some(s => series.toLowerCase().includes(s.toLowerCase()));
   };
 
   const getXpProgress = () => {
@@ -267,9 +300,13 @@ export default function DashboardPage() {
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {liveMatches.map((match) => (
-                <div key={match.id} className="bg-white rounded-xl shadow-sm border border-red-200 p-4">
+                <Link 
+                  key={match.id} 
+                  href={`/dashboard/live-scores/${match.id}`}
+                  className="bg-white rounded-xl shadow-sm border border-red-200 p-4 hover:shadow-md transition-all"
+                >
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs text-gray-500">{match.series}</span>
+                    <span className="text-xs text-gray-500 truncate max-w-[60%]">{match.series}</span>
                     <span className="px-2 py-1 bg-red-100 text-red-600 text-xs rounded-full font-medium animate-pulse">
                       LIVE
                     </span>
@@ -292,7 +329,7 @@ export default function DashboardPage() {
                     </div>
                   </div>
                   <p className="text-xs text-gray-500 mt-2 text-center">{match.status}</p>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -315,10 +352,17 @@ export default function DashboardPage() {
                   className="bg-white rounded-xl shadow-sm border border-gray-100 p-4 hover:shadow-md transition-all hover:border-green-300"
                 >
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs text-gray-500 truncate max-w-[60%]">{match.series}</span>
-                    <span className="px-2 py-1 bg-green-100 text-green-600 text-xs rounded-full font-medium uppercase">
-                      {match.matchType}
-                    </span>
+                    <span className="text-xs text-gray-500 truncate max-w-[50%]">{match.series}</span>
+                    <div className="flex items-center gap-1">
+                      {hasSquadAvailable(match.series) && (
+                        <span className="px-2 py-0.5 bg-green-100 text-green-600 text-xs rounded-full font-medium">
+                          Squad Ready
+                        </span>
+                      )}
+                      <span className="px-2 py-1 bg-green-100 text-green-600 text-xs rounded-full font-medium uppercase">
+                        {match.matchType}
+                      </span>
+                    </div>
                   </div>
                   <div className="flex items-center justify-between py-3">
                     <div className="flex items-center gap-2">
@@ -332,7 +376,12 @@ export default function DashboardPage() {
                     </div>
                   </div>
                   <div className="flex items-center justify-between text-sm">
-                    <span className="text-gray-500">{formatDateIST(match.dateTimeGMT)} IST</span>
+                    <div>
+                      <span className="text-gray-500">{formatDateIST(match.dateTimeGMT)} IST</span>
+                      <p className="text-xs text-green-600 font-medium">
+                        Starts in {getTimeRemaining(match.dateTimeGMT)}
+                      </p>
+                    </div>
                     <span className="text-green-600 font-medium">Create Team →</span>
                   </div>
                 </Link>
@@ -406,7 +455,7 @@ export default function DashboardPage() {
                   <span className="text-xl">🔔</span>
                   <span className="font-medium">Notifications</span>
                   {counts.unreadNotifications > 0 && (
-                    <span className="px-2 py-1 bg-red-500 text-white text-xs rounded-full">
+                    <span className="bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">
                       {counts.unreadNotifications}
                     </span>
                   )}
@@ -414,7 +463,7 @@ export default function DashboardPage() {
                 <span className="text-gray-400">→</span>
               </Link>
               <Link
-                href="/dashboard/players"
+                href="/dashboard/player-stats"
                 className="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50 transition-colors"
               >
                 <div className="flex items-center gap-3">
@@ -429,7 +478,7 @@ export default function DashboardPage() {
               >
                 <div className="flex items-center gap-3">
                   <span className="text-xl">❓</span>
-                  <span className="font-medium">How To Play</span>
+                  <span className="font-medium">How to Play</span>
                 </div>
                 <span className="text-gray-400">→</span>
               </Link>
