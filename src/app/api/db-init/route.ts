@@ -86,18 +86,34 @@ export async function GET() {
     await query(`
       CREATE TABLE IF NOT EXISTS contest_entries (
         id INT AUTO_INCREMENT PRIMARY KEY,
-        contest_id INT NOT NULL,
         user_id INT NOT NULL,
+        contest_id INT NOT NULL,
         team_id INT NOT NULL,
-        rank_position INT DEFAULT 0,
-        points_earned DECIMAL(10,2) DEFAULT 0,
+        points DECIMAL(10,2) DEFAULT 0,
+        rank_position INT DEFAULT NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        UNIQUE KEY unique_entry (contest_id, user_id, team_id),
-        FOREIGN KEY (contest_id) REFERENCES contests(id) ON DELETE CASCADE,
         FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
-        FOREIGN KEY (team_id) REFERENCES user_teams(id) ON DELETE CASCADE
+        FOREIGN KEY (contest_id) REFERENCES contests(id) ON DELETE CASCADE,
+        FOREIGN KEY (team_id) REFERENCES user_teams(id) ON DELETE CASCADE,
+        UNIQUE KEY unique_entry (user_id, contest_id)
       )
     `);
+
+    // Add rank_position column if it doesn't exist
+    try {
+      await query(`ALTER TABLE contest_entries ADD COLUMN rank_position INT DEFAULT NULL`);
+    } catch (e) {
+      // Column might already exist
+    }
+
+    // Add points column if it doesn't exist
+    try {
+      await query(`ALTER TABLE contest_entries ADD COLUMN points DECIMAL(10,2) DEFAULT 0`);
+    } catch (e) {
+      // Column might already exist
+    }
+
+
 
     // Check which tables exist
     const tables = await query<{ Tables_in_railway: string }[]>(

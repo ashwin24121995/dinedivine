@@ -11,6 +11,8 @@ interface Contest {
   contest_type?: string;
   max_participants: number;
   current_participants: number;
+  max_entries?: number;
+  current_entries?: number;
   spots_left?: number;
   spots_filled_percent?: number;
   status: string;
@@ -22,6 +24,15 @@ interface Team {
   player_count: number;
 }
 
+interface ContestEntry {
+  id: number;
+  contest_id: number;
+  team_id: number;
+  points: number;
+  rank_position: number;
+  contest_name: string;
+}
+
 export default function MatchContestsPage({ params }: { params: Promise<{ id: string }> }) {
   const { id: matchId } = use(params);
   const router = useRouter();
@@ -30,18 +41,24 @@ export default function MatchContestsPage({ params }: { params: Promise<{ id: st
 
   const [contests, setContests] = useState<Contest[]>([]);
   const [userTeams, setUserTeams] = useState<Team[]>([]);
+  const [userEntries, setUserEntries] = useState<ContestEntry[]>([]);
   const [loading, setLoading] = useState(true);
   const [joiningContestId, setJoiningContestId] = useState<number | null>(null);
   const [showTeamSelector, setShowTeamSelector] = useState(false);
   const [selectedContest, setSelectedContest] = useState<Contest | null>(null);
+  const [activeTab, setActiveTab] = useState<"available" | "joined">("available");
 
   useEffect(() => {
     fetchContests();
     fetchUserTeams();
+    fetchUserEntries();
   }, [matchId]);
 
   const fetchContests = async () => {
     try {
+      // First trigger a sync to update contest statuses
+      await fetch(`/api/contests/sync?action=status`);
+      
       let res = await fetch(`/api/contests?matchId=${matchId}`);
       let data = await res.json();
       
@@ -76,6 +93,19 @@ export default function MatchContestsPage({ params }: { params: Promise<{ id: st
     }
   };
 
+  const fetchUserEntries = async () => {
+    try {
+      const res = await fetch(`/api/contests/my-entries?matchId=${matchId}`);
+      const data = await res.json();
+      
+      if (data.success) {
+        setUserEntries(data.entries || []);
+      }
+    } catch (error) {
+      console.error("Error fetching user entries:", error);
+    }
+  };
+
   const handleJoinContest = (contest: Contest) => {
     if (userTeams.length === 0) {
       router.push(`/dashboard/matches/${matchId}/create-team`);
@@ -105,6 +135,7 @@ export default function MatchContestsPage({ params }: { params: Promise<{ id: st
       
       if (data.success) {
         fetchContests();
+        fetchUserEntries();
         setShowTeamSelector(false);
         alert("Successfully joined the contest!");
       } else {
@@ -118,6 +149,21 @@ export default function MatchContestsPage({ params }: { params: Promise<{ id: st
     }
   };
 
+  const isJoined = (contestId: number) => {
+    return userEntries.some(entry => entry.contest_id === contestId);
+  };
+
+  const getStatusBadge = (status: string) => {
+    switch (status) {
+      case "live":
+        return <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded-full font-medium animate-pulse">🔴 LIVE</span>;
+      case "completed":
+        return <span className="px-2 py-1 bg-gray-500/20 text-gray-400 text-xs rounded-full font-medium">✓ Completed</span>;
+      default:
+        return <span className="px-2 py-1 bg-[#22c55e]/20 text-[#22c55e] text-xs rounded-full font-medium">FREE</span>;
+    }
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen bg-[#0a0f1a] flex items-center justify-center">
@@ -125,6 +171,9 @@ export default function MatchContestsPage({ params }: { params: Promise<{ id: st
       </div>
     );
   }
+
+  const availableContests = contests.filter(c => c.status !== "completed" && !isJoined(c.id));
+  const joinedContests = contests.filter(c => isJoined(c.id));
 
   return (
     <div className="min-h-screen bg-[#0a0f1a] py-8">
@@ -136,8 +185,8 @@ export default function MatchContestsPage({ params }: { params: Promise<{ id: st
           </Link>
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-3xl font-bold text-white">Join a Contest</h1>
-              <p className="text-gray-300 mt-1">Select a free contest to join</p>
+              <h1 className="text-3xl font-bold text-white">Contests</h1>
+              <p className="text-gray-300 mt-1">Join free contests and compete</p>
             </div>
             <Link
               href={`/dashboard/matches/${matchId}/create-team`}
@@ -148,8 +197,32 @@ export default function MatchContestsPage({ params }: { params: Promise<{ id: st
           </div>
         </div>
 
+        {/* Tabs */}
+        <div className="flex gap-4 mb-6">
+          <button
+            onClick={() => setActiveTab("available")}
+            className={`px-6 py-2 rounded-lg font-medium transition-colors ${
+              activeTab === "available"
+                ? "bg-[#22c55e] text-white"
+                : "bg-[#1a2332] text-gray-300 hover:bg-[#22c55e]/20"
+            }`}
+          >
+            Available ({availableContests.length})
+          </button>
+          <button
+            onClick={() => setActiveTab("joined")}
+            className={`px-6 py-2 rounded-lg font-medium transition-colors ${
+              activeTab === "joined"
+                ? "bg-[#22c55e] text-white"
+                : "bg-[#1a2332] text-gray-300 hover:bg-[#22c55e]/20"
+            }`}
+          >
+            My Contests ({joinedContests.length})
+          </button>
+        </div>
+
         {/* User Teams Info */}
-        {userTeams.length > 0 && (
+        {userTeams.length > 0 && activeTab === "available" && (
           <div className="bg-[#22c55e]/10 border border-green-500/30 rounded-lg p-4 mb-6">
             <p className="text-[#22c55e]">
               You have <strong>{userTeams.length}</strong> team(s) for this match. 
@@ -158,83 +231,195 @@ export default function MatchContestsPage({ params }: { params: Promise<{ id: st
           </div>
         )}
 
-        {/* Contests List */}
-        {contests.length > 0 ? (
-          <div className="space-y-4">
-            {contests.map((contest) => (
-              <div
-                key={contest.id}
-                className="bg-[#1a2332] rounded-xl shadow-sm border border-[#22c55e]/20 p-6"
-              >
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                  <div>
-                    <div className="flex items-center gap-2 mb-2">
-                      <h3 className="font-bold text-lg text-white">{contest.name || contest.contest_name}</h3>
-                      <span className="px-2 py-1 bg-[#22c55e]/20 text-[#22c55e] text-xs rounded-full font-medium">
-                        FREE
-                      </span>
-                    </div>
-                    <p className="text-gray-300 text-sm">
-                      {contest.spots_left !== undefined ? `${contest.spots_left} spots left` : 'Free Contest'}
-                    </p>
-                  </div>
-
-                  <div className="flex items-center gap-6">
-                    <div className="text-center">
-                      <p className="text-xs text-gray-300">Spots Left</p>
-                      <p className="font-bold text-lg">
-                        {contest.max_participants - contest.current_participants}
-                        <span className="text-gray-300 font-normal">/{contest.max_participants}</span>
-                      </p>
-                    </div>
-                    
-                    {/* Progress bar */}
-                    <div className="w-24">
-                      <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
-                        <div
-                          className="h-full bg-[#22c55e]/100 transition-all"
-                          style={{
-                            width: `${(contest.current_participants / contest.max_participants) * 100}%`,
-                          }}
-                        ></div>
-                      </div>
-                      <p className="text-xs text-gray-300 mt-1 text-center">
-                        {Math.round((contest.current_participants / contest.max_participants) * 100)}% filled
-                      </p>
-                    </div>
-
-                    <button
-                      onClick={() => handleJoinContest(contest)}
-                      disabled={joiningContestId === contest.id || contest.current_participants >= contest.max_participants}
-                      className={`px-6 py-2 rounded-lg font-medium transition-colors ${
-                        contest.current_participants >= contest.max_participants
-                          ? "bg-gray-200 text-gray-300 cursor-not-allowed"
-                          : "bg-[#22c55e] hover:shadow-lg hover:shadow-[#22c55e]/30 text-white"
-                      }`}
+        {/* Available Contests */}
+        {activeTab === "available" && (
+          <>
+            {availableContests.length > 0 ? (
+              <div className="space-y-4">
+                {availableContests.map((contest) => {
+                  const maxP = contest.max_entries || contest.max_participants || 100;
+                  const currentP = contest.current_entries || contest.current_participants || 0;
+                  const spotsLeft = maxP - currentP;
+                  
+                  return (
+                    <div
+                      key={contest.id}
+                      className="bg-[#1a2332] rounded-xl shadow-sm border border-[#22c55e]/20 p-6"
                     >
-                      {joiningContestId === contest.id
-                        ? "Joining..."
-                        : contest.current_participants >= contest.max_participants
-                        ? "Full"
-                        : "Join"}
-                    </button>
-                  </div>
-                </div>
+                      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                        <div>
+                          <div className="flex items-center gap-2 mb-2">
+                            <h3 className="font-bold text-lg text-white">{contest.name || contest.contest_name}</h3>
+                            {getStatusBadge(contest.status)}
+                          </div>
+                          <p className="text-gray-300 text-sm">
+                            {spotsLeft} spots left
+                          </p>
+                        </div>
+
+                        <div className="flex items-center gap-6">
+                          <div className="text-center">
+                            <p className="text-xs text-gray-300">Spots Left</p>
+                            <p className="font-bold text-lg text-white">
+                              {spotsLeft}
+                              <span className="text-gray-300 font-normal">/{maxP}</span>
+                            </p>
+                          </div>
+                          
+                          {/* Progress bar */}
+                          <div className="w-24">
+                            <div className="h-2 bg-gray-700 rounded-full overflow-hidden">
+                              <div
+                                className="h-full bg-[#22c55e] transition-all"
+                                style={{
+                                  width: `${(currentP / maxP) * 100}%`,
+                                }}
+                              ></div>
+                            </div>
+                            <p className="text-xs text-gray-300 mt-1 text-center">
+                              {Math.round((currentP / maxP) * 100)}% filled
+                            </p>
+                          </div>
+
+                          <button
+                            onClick={() => handleJoinContest(contest)}
+                            disabled={joiningContestId === contest.id || currentP >= maxP || contest.status === "completed"}
+                            className={`px-6 py-2 rounded-lg font-medium transition-colors ${
+                              currentP >= maxP || contest.status === "completed"
+                                ? "bg-gray-600 text-gray-400 cursor-not-allowed"
+                                : "bg-[#22c55e] hover:shadow-lg hover:shadow-[#22c55e]/30 text-white"
+                            }`}
+                          >
+                            {joiningContestId === contest.id
+                              ? "Joining..."
+                              : currentP >= maxP
+                              ? "Full"
+                              : contest.status === "completed"
+                              ? "Ended"
+                              : "Join"}
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
-            ))}
-          </div>
-        ) : (
-          <div className="bg-[#1a2332] rounded-xl shadow-sm border border-[#22c55e]/20 p-12 text-center">
-            <div className="text-6xl mb-4">🎯</div>
-            <h3 className="text-xl font-bold text-white mb-2">No Contests Available</h3>
-            <p className="text-gray-300 mb-6">Contests for this match will be available soon!</p>
-            <Link
-              href="/dashboard/matches"
-              className="inline-block bg-[#22c55e] hover:shadow-lg hover:shadow-[#22c55e]/30 text-white px-6 py-3 rounded-lg font-medium transition-colors"
-            >
-              Browse Other Matches
-            </Link>
-          </div>
+            ) : (
+              <div className="bg-[#1a2332] rounded-xl shadow-sm border border-[#22c55e]/20 p-12 text-center">
+                <div className="text-6xl mb-4">🎯</div>
+                <h3 className="text-xl font-bold text-white mb-2">No Available Contests</h3>
+                <p className="text-gray-300 mb-6">
+                  {joinedContests.length > 0 
+                    ? "You've joined all available contests for this match!"
+                    : "Contests for this match will be available soon!"}
+                </p>
+                {joinedContests.length > 0 && (
+                  <button
+                    onClick={() => setActiveTab("joined")}
+                    className="inline-block bg-[#22c55e] hover:shadow-lg hover:shadow-[#22c55e]/30 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+                  >
+                    View My Contests
+                  </button>
+                )}
+              </div>
+            )}
+          </>
+        )}
+
+        {/* Joined Contests */}
+        {activeTab === "joined" && (
+          <>
+            {joinedContests.length > 0 ? (
+              <div className="space-y-4">
+                {joinedContests.map((contest) => {
+                  const entry = userEntries.find(e => e.contest_id === contest.id);
+                  const maxP = contest.max_entries || contest.max_participants || 100;
+                  const currentP = contest.current_entries || contest.current_participants || 0;
+                  
+                  return (
+                    <div
+                      key={contest.id}
+                      className="bg-[#1a2332] rounded-xl shadow-sm border border-[#22c55e]/20 p-6"
+                    >
+                      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                        <div>
+                          <div className="flex items-center gap-2 mb-2">
+                            <h3 className="font-bold text-lg text-white">{contest.name || contest.contest_name}</h3>
+                            {getStatusBadge(contest.status)}
+                            <span className="px-2 py-1 bg-blue-500/20 text-blue-400 text-xs rounded-full font-medium">
+                              ✓ Joined
+                            </span>
+                          </div>
+                          <p className="text-gray-300 text-sm">
+                            {currentP} participants
+                          </p>
+                        </div>
+
+                        <div className="flex items-center gap-6">
+                          {/* Points & Rank for completed contests */}
+                          {contest.status === "completed" && entry && (
+                            <>
+                              <div className="text-center">
+                                <p className="text-xs text-gray-300">Your Points</p>
+                                <p className="font-bold text-lg text-[#22c55e]">
+                                  {entry.points || 0}
+                                </p>
+                              </div>
+                              <div className="text-center">
+                                <p className="text-xs text-gray-300">Your Rank</p>
+                                <p className="font-bold text-lg text-yellow-400">
+                                  #{entry.rank_position || "-"}
+                                </p>
+                              </div>
+                            </>
+                          )}
+                          
+                          {/* For live contests */}
+                          {contest.status === "live" && (
+                            <div className="text-center">
+                              <p className="text-xs text-gray-300">Status</p>
+                              <p className="font-bold text-lg text-red-400 animate-pulse">
+                                Match Live
+                              </p>
+                            </div>
+                          )}
+
+                          {/* For upcoming contests */}
+                          {contest.status === "upcoming" && (
+                            <div className="text-center">
+                              <p className="text-xs text-gray-300">Status</p>
+                              <p className="font-bold text-lg text-[#22c55e]">
+                                Waiting
+                              </p>
+                            </div>
+                          )}
+
+                          <Link
+                            href={`/dashboard/contests/${contest.id}/leaderboard`}
+                            className="px-6 py-2 rounded-lg font-medium transition-colors bg-[#22c55e]/20 text-[#22c55e] hover:bg-[#22c55e]/30"
+                          >
+                            Leaderboard
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            ) : (
+              <div className="bg-[#1a2332] rounded-xl shadow-sm border border-[#22c55e]/20 p-12 text-center">
+                <div className="text-6xl mb-4">🏆</div>
+                <h3 className="text-xl font-bold text-white mb-2">No Contests Joined</h3>
+                <p className="text-gray-300 mb-6">You haven't joined any contests for this match yet.</p>
+                <button
+                  onClick={() => setActiveTab("available")}
+                  className="inline-block bg-[#22c55e] hover:shadow-lg hover:shadow-[#22c55e]/30 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+                >
+                  Browse Contests
+                </button>
+              </div>
+            )}
+          </>
         )}
 
         {/* Team Selector Modal */}
