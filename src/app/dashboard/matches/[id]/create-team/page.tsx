@@ -124,9 +124,14 @@ export default function CreateTeamPage() {
   };
 
   const getRoleFromPlayer = (role: string): string => {
-    if (role.toLowerCase().includes("keeper")) return "WK";
-    if (role.toLowerCase().includes("allrounder") || role.toLowerCase().includes("all-rounder")) return "AR";
-    if (role.toLowerCase().includes("bowler")) return "BOWL";
+    const roleLower = role.toLowerCase();
+    // Check for Wicket Keeper - API returns "WK-Batsman"
+    if (roleLower.includes("wk") || roleLower.includes("keeper") || roleLower.includes("wicket")) return "WK";
+    // Check for All Rounder - API returns "Batting Allrounder" or "Bowling Allrounder"
+    if (roleLower.includes("allrounder") || roleLower.includes("all-rounder") || roleLower.includes("all rounder")) return "AR";
+    // Check for Bowler
+    if (roleLower.includes("bowler") || roleLower === "bowling") return "BOWL";
+    // Default to Batsman
     return "BAT";
   };
 
