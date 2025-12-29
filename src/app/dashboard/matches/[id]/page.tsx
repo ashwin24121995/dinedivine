@@ -69,10 +69,10 @@ export default function MatchDetailPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-[#0a0f1a] flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Loading match details...</p>
+          <p className="mt-4 text-gray-400">Loading match details...</p>
         </div>
       </div>
     );
@@ -80,13 +80,13 @@ export default function MatchDetailPage() {
 
   if (error || !match) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-[#0a0f1a] flex items-center justify-center">
         <div className="text-center">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">Match Not Found</h2>
-          <p className="text-gray-600 mb-6">{error || "Unable to load match details"}</p>
+          <h2 className="text-2xl font-bold text-white mb-4">Match Not Found</h2>
+          <p className="text-gray-400 mb-6">{error || "Unable to load match details"}</p>
           <Link
             href="/dashboard/matches"
-            className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700"
+            className="bg-[#22c55e] text-white px-6 py-3 rounded-lg hover:shadow-lg hover:shadow-[#22c55e]/30"
           >
             Back to Matches
           </Link>
@@ -99,20 +99,20 @@ export default function MatchDetailPage() {
   const team2 = match.teamInfo?.[1] || { name: match.teams?.[1] || "Team 2", shortname: "T2", img: "" };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-[#0a0f1a] py-8">
       <div className="max-w-4xl mx-auto px-4">
         {/* Back Button */}
         <Link
           href="/dashboard/matches"
-          className="inline-flex items-center text-green-600 hover:text-green-700 mb-6"
+          className="inline-flex items-center text-[#22c55e] hover:text-[#22c55e] mb-6"
         >
           ← Back to Matches
         </Link>
 
         {/* Match Card */}
-        <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+        <div className="bg-[#1a2332] rounded-xl shadow-lg overflow-hidden">
           {/* Series Header */}
-          <div className="bg-green-600 text-white px-6 py-4">
+          <div className="bg-[#22c55e] text-white px-6 py-4">
             <p className="text-sm opacity-90">{match.series || "Cricket Match"}</p>
             <div className="flex items-center justify-between mt-1">
               <span className="text-xs bg-white/20 px-2 py-1 rounded uppercase">
@@ -134,8 +134,8 @@ export default function MatchDetailPage() {
                     className="w-20 h-20 mx-auto mb-3 rounded-full object-cover bg-gray-100"
                   />
                 )}
-                <h3 className="font-bold text-lg text-gray-800">{team1.name}</h3>
-                <p className="text-gray-500 text-sm">{team1.shortname}</p>
+                <h3 className="font-bold text-lg text-white">{team1.name}</h3>
+                <p className="text-gray-400 text-sm">{team1.shortname}</p>
               </div>
 
               {/* VS */}
@@ -152,21 +152,21 @@ export default function MatchDetailPage() {
                     className="w-20 h-20 mx-auto mb-3 rounded-full object-cover bg-gray-100"
                   />
                 )}
-                <h3 className="font-bold text-lg text-gray-800">{team2.name}</h3>
-                <p className="text-gray-500 text-sm">{team2.shortname}</p>
+                <h3 className="font-bold text-lg text-white">{team2.name}</h3>
+                <p className="text-gray-400 text-sm">{team2.shortname}</p>
               </div>
             </div>
 
             {/* Match Info */}
-            <div className="mt-8 pt-6 border-t border-gray-200">
+            <div className="mt-8 pt-6 border-t border-[#22c55e]/20">
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div>
-                  <p className="text-gray-500">Venue</p>
-                  <p className="font-medium text-gray-800">{match.venue || "TBA"}</p>
+                  <p className="text-gray-400">Venue</p>
+                  <p className="font-medium text-white">{match.venue || "TBA"}</p>
                 </div>
                 <div>
-                  <p className="text-gray-500">Status</p>
-                  <p className="font-medium text-gray-800">{match.status || "Upcoming"}</p>
+                  <p className="text-gray-400">Status</p>
+                  <p className="font-medium text-white">{match.status || "Upcoming"}</p>
                 </div>
               </div>
             </div>
@@ -175,14 +175,14 @@ export default function MatchDetailPage() {
             <div className="mt-8 space-y-4">
               <Link
                 href={`/dashboard/matches/${matchId}/create-team`}
-                className="block w-full bg-green-600 text-white text-center py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors text-lg"
+                className="block w-full bg-[#22c55e] text-white text-center py-4 rounded-lg font-semibold hover:shadow-lg hover:shadow-[#22c55e]/30 transition-colors text-lg"
               >
                 🏏 Create Your Team
               </Link>
 
               <Link
                 href={`/dashboard/matches/${matchId}/contests`}
-                className="block w-full bg-white border-2 border-green-600 text-green-600 text-center py-4 rounded-lg font-semibold hover:bg-green-50 transition-colors"
+                className="block w-full bg-white border-2 border-green-600 text-[#22c55e] text-center py-4 rounded-lg font-semibold hover:bg-[#22c55e]/10 transition-colors"
               >
                 🎯 View Contests
               </Link>

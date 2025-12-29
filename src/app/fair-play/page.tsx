@@ -157,17 +157,17 @@ export default function FairPlayPage() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl font-bold text-white mb-6">
               Our Commitment to Fair Play
             </h2>
-            <p className="text-gray-600 leading-relaxed mb-4">
+            <p className="text-gray-400 leading-relaxed mb-4">
               DineDivine is committed to providing a fair and enjoyable fantasy
               sports experience for all users. We have implemented
               comprehensive policies and systems to ensure that every
               participant has an equal opportunity to showcase their cricket
               knowledge and skills.
             </p>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-gray-400 leading-relaxed">
               Our fair play policy applies to all users and covers all aspects
               of the platform, from account creation to contest participation.
               By using DineDivine, you agree to abide by these policies and
@@ -180,22 +180,22 @@ export default function FairPlayPage() {
       {/* Core Principles */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+          <h2 className="text-3xl font-bold text-center text-white mb-12">
             Core Fair Play Principles
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {principles.map((principle) => (
               <div
                 key={principle.title}
-                className="bg-white p-8 rounded-xl shadow-lg"
+                className="bg-[#1a2332] p-8 rounded-xl shadow-lg"
               >
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4 text-green-600">
+                <div className="w-16 h-16 bg-[#22c55e]/20 rounded-full flex items-center justify-center mb-4 text-[#22c55e]">
                   {principle.icon}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                <h3 className="text-xl font-bold text-white mb-3">
                   {principle.title}
                 </h3>
-                <p className="text-gray-600">{principle.description}</p>
+                <p className="text-gray-400">{principle.description}</p>
               </div>
             ))}
           </div>
@@ -205,10 +205,10 @@ export default function FairPlayPage() {
       {/* Prohibited Activities */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold text-center text-white mb-4">
             Prohibited Activities
           </h2>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
             The following activities are strictly prohibited on DineDivine.
             Engaging in any of these activities may result in account
             suspension or permanent ban.
@@ -247,12 +247,12 @@ export default function FairPlayPage() {
       {/* How We Ensure Fair Play */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+          <h2 className="text-3xl font-bold text-center text-white mb-12">
             How We Ensure Fair Play
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-20 h-20 bg-[#22c55e] rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg
                   className="w-10 h-10 text-white"
                   fill="none"
@@ -267,16 +267,16 @@ export default function FairPlayPage() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <h3 className="text-xl font-semibold text-white mb-3">
                 Identity Verification
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-400">
                 We verify user identities to prevent multiple accounts and
                 ensure each user is who they claim to be.
               </p>
             </div>
             <div className="text-center">
-              <div className="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-20 h-20 bg-[#22c55e] rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg
                   className="w-10 h-10 text-white"
                   fill="none"
@@ -291,16 +291,16 @@ export default function FairPlayPage() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <h3 className="text-xl font-semibold text-white mb-3">
                 Automated Monitoring
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-400">
                 Our systems continuously monitor for suspicious activities,
                 unusual patterns, and potential violations.
               </p>
             </div>
             <div className="text-center">
-              <div className="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-20 h-20 bg-[#22c55e] rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg
                   className="w-10 h-10 text-white"
                   fill="none"
@@ -315,10 +315,10 @@ export default function FairPlayPage() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <h3 className="text-xl font-semibold text-white mb-3">
                 Manual Review
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-400">
                 Our team manually reviews flagged accounts and activities to
                 ensure accurate enforcement of policies.
               </p>
@@ -331,10 +331,10 @@ export default function FairPlayPage() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-6">
+            <h2 className="text-3xl font-bold text-center text-white mb-6">
               Consequences of Violations
             </h2>
-            <p className="text-center text-gray-600 mb-8">
+            <p className="text-center text-gray-400 mb-8">
               Violations of our fair play policy may result in the following
               actions, depending on the severity and nature of the violation:
             </p>
@@ -357,7 +357,7 @@ export default function FairPlayPage() {
       {/* Report Violations */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-green-600 text-white p-8 md:p-12 rounded-2xl">
+          <div className="bg-[#22c55e] text-white p-8 md:p-12 rounded-2xl">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl font-bold mb-4">Report a Violation</h2>
               <p className="text-green-100 text-lg mb-8">
@@ -368,7 +368,7 @@ export default function FairPlayPage() {
               </p>
               <Link
                 href="/contact"
-                className="bg-white text-green-700 px-8 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors duration-200 text-lg inline-block"
+                className="bg-white text-[#22c55e] px-8 py-3 rounded-lg font-semibold hover:bg-[#22c55e]/10 transition-colors duration-200 text-lg inline-block"
               >
                 Report Violation
               </Link>
@@ -381,17 +381,17 @@ export default function FairPlayPage() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl font-bold text-white mb-6">
               Fantasy Cricket is a Game of Skill
             </h2>
-            <p className="text-gray-600 leading-relaxed mb-4">
+            <p className="text-gray-400 leading-relaxed mb-4">
               Fantasy cricket on DineDivine is a game of skill where success
               depends on your knowledge of cricket, understanding of player
               performance, and ability to analyze match conditions. Unlike games
               of chance, your decisions directly impact your team&apos;s
               performance.
             </p>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-gray-400 leading-relaxed">
               We encourage all users to develop their skills, learn from
               experienced players, and continuously improve their fantasy
               cricket strategies. Remember, the goal is to have fun while
@@ -404,11 +404,11 @@ export default function FairPlayPage() {
       {/* Footer Note */}
       <section className="py-8 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-gray-600 text-sm">
+          <p className="text-center text-gray-400 text-sm">
             This fair play policy is subject to updates. Users will be notified
             of any significant changes. For questions about our fair play
             policies, please{" "}
-            <Link href="/contact" className="text-green-600 hover:underline">
+            <Link href="/contact" className="text-[#22c55e] hover:underline">
               contact us
             </Link>
             .

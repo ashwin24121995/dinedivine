@@ -124,22 +124,22 @@ export default function ProfilePage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
+      <div className="min-h-screen bg-[#0a0f1a] flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#22c55e]"></div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-[#0a0f1a] py-8">
       <div className="max-w-3xl mx-auto px-4">
         {/* Header */}
         <div className="mb-8">
-          <Link href="/dashboard" className="text-green-600 hover:underline text-sm mb-2 inline-block">
+          <Link href="/dashboard" className="text-[#22c55e] hover:underline text-sm mb-2 inline-block">
             ← Back to Dashboard
           </Link>
-          <h1 className="text-3xl font-bold text-gray-800">Profile Settings</h1>
-          <p className="text-gray-500 mt-1">Manage your account information</p>
+          <h1 className="text-3xl font-bold text-white">Profile Settings</h1>
+          <p className="text-gray-400 mt-1">Manage your account information</p>
         </div>
 
         {/* Message */}
@@ -147,7 +147,7 @@ export default function ProfilePage() {
           <div
             className={`mb-6 p-4 rounded-lg ${
               message.type === "success"
-                ? "bg-green-100 text-green-700 border border-green-200"
+                ? "bg-[#22c55e]/20 text-[#22c55e] border border-green-200"
                 : "bg-red-100 text-red-700 border border-red-200"
             }`}
           >
@@ -156,67 +156,67 @@ export default function ProfilePage() {
         )}
 
         {/* Profile Card */}
-        <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-6">
+        <div className="bg-[#1a2332] rounded-xl shadow-sm border border-[#22c55e]/20 p-6 mb-6">
           <div className="flex items-center gap-4 mb-6">
             <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center text-white text-3xl font-bold">
               {user?.fullName?.charAt(0).toUpperCase()}
             </div>
             <div>
-              <h2 className="text-xl font-bold text-gray-800">{user?.fullName}</h2>
-              <p className="text-gray-500">{user?.email}</p>
+              <h2 className="text-xl font-bold text-white">{user?.fullName}</h2>
+              <p className="text-gray-400">{user?.email}</p>
             </div>
           </div>
 
           <form onSubmit={handleUpdateProfile}>
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-300 mb-2">
                   Full Name
                 </label>
                 <input
                   type="text"
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#22c55e] focus:border-transparent"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-300 mb-2">
                   Email Address
                 </label>
                 <input
                   type="email"
                   value={user?.email || ""}
-                  className="w-full px-4 py-3 border border-gray-200 rounded-lg bg-gray-50 text-gray-500"
+                  className="w-full px-4 py-3 border border-[#22c55e]/20 rounded-lg bg-gray-50 text-gray-400"
                   disabled
                 />
                 <p className="text-xs text-gray-400 mt-1">Email cannot be changed</p>
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-300 mb-2">
                   Mobile Number
                 </label>
                 <input
                   type="tel"
                   value={mobile}
                   onChange={(e) => setMobile(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#22c55e] focus:border-transparent"
                   pattern="[6-9][0-9]{9}"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-300 mb-2">
                   State
                 </label>
                 <input
                   type="text"
                   value={user?.state || ""}
-                  className="w-full px-4 py-3 border border-gray-200 rounded-lg bg-gray-50 text-gray-500"
+                  className="w-full px-4 py-3 border border-[#22c55e]/20 rounded-lg bg-gray-50 text-gray-400"
                   disabled
                 />
                 <p className="text-xs text-gray-400 mt-1">State cannot be changed</p>
@@ -227,7 +227,7 @@ export default function ProfilePage() {
               <button
                 type="submit"
                 disabled={saving}
-                className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-colors disabled:opacity-50"
+                className="bg-[#22c55e] hover:shadow-lg hover:shadow-[#22c55e]/30 text-white px-6 py-3 rounded-lg font-medium transition-colors disabled:opacity-50"
               >
                 {saving ? "Saving..." : "Save Changes"}
               </button>
@@ -236,59 +236,59 @@ export default function ProfilePage() {
         </div>
 
         {/* Password Change Section */}
-        <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-6">
+        <div className="bg-[#1a2332] rounded-xl shadow-sm border border-[#22c55e]/20 p-6 mb-6">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h3 className="text-lg font-bold text-gray-800">Password</h3>
-              <p className="text-gray-500 text-sm">Change your account password</p>
+              <h3 className="text-lg font-bold text-white">Password</h3>
+              <p className="text-gray-400 text-sm">Change your account password</p>
             </div>
             <button
               onClick={() => setShowPasswordForm(!showPasswordForm)}
-              className="text-green-600 hover:underline font-medium"
+              className="text-[#22c55e] hover:underline font-medium"
             >
               {showPasswordForm ? "Cancel" : "Change Password"}
             </button>
           </div>
 
           {showPasswordForm && (
-            <form onSubmit={handleChangePassword} className="mt-4 pt-4 border-t border-gray-100">
+            <form onSubmit={handleChangePassword} className="mt-4 pt-4 border-t border-[#22c55e]/20">
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-300 mb-2">
                     Current Password
                   </label>
                   <input
                     type="password"
                     value={currentPassword}
                     onChange={(e) => setCurrentPassword(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#22c55e] focus:border-transparent"
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-300 mb-2">
                     New Password
                   </label>
                   <input
                     type="password"
                     value={newPassword}
                     onChange={(e) => setNewPassword(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#22c55e] focus:border-transparent"
                     minLength={6}
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-300 mb-2">
                     Confirm New Password
                   </label>
                   <input
                     type="password"
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#22c55e] focus:border-transparent"
                     minLength={6}
                     required
                   />
@@ -297,7 +297,7 @@ export default function ProfilePage() {
                 <button
                   type="submit"
                   disabled={saving}
-                  className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-colors disabled:opacity-50"
+                  className="bg-[#22c55e] hover:shadow-lg hover:shadow-[#22c55e]/30 text-white px-6 py-3 rounded-lg font-medium transition-colors disabled:opacity-50"
                 >
                   {saving ? "Updating..." : "Update Password"}
                 </button>
@@ -307,20 +307,20 @@ export default function ProfilePage() {
         </div>
 
         {/* Account Info */}
-        <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-          <h3 className="text-lg font-bold text-gray-800 mb-4">Account Information</h3>
+        <div className="bg-[#1a2332] rounded-xl shadow-sm border border-[#22c55e]/20 p-6">
+          <h3 className="text-lg font-bold text-white mb-4">Account Information</h3>
           <div className="space-y-3 text-sm">
-            <div className="flex justify-between py-2 border-b border-gray-100">
-              <span className="text-gray-500">Account Status</span>
-              <span className="text-green-600 font-medium">Active</span>
+            <div className="flex justify-between py-2 border-b border-[#22c55e]/20">
+              <span className="text-gray-400">Account Status</span>
+              <span className="text-[#22c55e] font-medium">Active</span>
             </div>
-            <div className="flex justify-between py-2 border-b border-gray-100">
-              <span className="text-gray-500">Member Since</span>
-              <span className="text-gray-800">December 2024</span>
+            <div className="flex justify-between py-2 border-b border-[#22c55e]/20">
+              <span className="text-gray-400">Member Since</span>
+              <span className="text-white">December 2024</span>
             </div>
             <div className="flex justify-between py-2">
-              <span className="text-gray-500">Account Type</span>
-              <span className="text-gray-800">Free Player</span>
+              <span className="text-gray-400">Account Type</span>
+              <span className="text-white">Free Player</span>
             </div>
           </div>
         </div>

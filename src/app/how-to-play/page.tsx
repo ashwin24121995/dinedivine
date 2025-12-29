@@ -201,7 +201,7 @@ export default function HowToPlayPage() {
       {/* Steps Section */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+          <h2 className="text-3xl font-bold text-center text-white mb-12">
             Getting Started in 6 Easy Steps
           </h2>
           <div className="space-y-8">
@@ -213,24 +213,24 @@ export default function HowToPlayPage() {
                 }`}
               >
                 <div className="flex-shrink-0">
-                  <div className="w-24 h-24 bg-green-600 rounded-full flex items-center justify-center text-white">
+                  <div className="w-24 h-24 bg-[#22c55e] rounded-full flex items-center justify-center text-white">
                     {step.icon}
                   </div>
                 </div>
                 <div
-                  className={`flex-grow bg-white p-6 rounded-xl shadow-lg ${
+                  className={`flex-grow bg-[#1a2332] p-6 rounded-xl shadow-lg ${
                     index % 2 === 1 ? "md:text-right" : ""
                   }`}
                 >
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="bg-green-100 text-green-800 text-sm font-semibold px-3 py-1 rounded-full">
+                    <span className="bg-[#22c55e]/20 text-green-800 text-sm font-semibold px-3 py-1 rounded-full">
                       Step {step.number}
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  <h3 className="text-xl font-bold text-white mb-2">
                     {step.title}
                   </h3>
-                  <p className="text-gray-600">{step.description}</p>
+                  <p className="text-gray-400">{step.description}</p>
                 </div>
               </div>
             ))}
@@ -241,10 +241,10 @@ export default function HowToPlayPage() {
       {/* Team Selection Rules */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold text-center text-white mb-4">
             Team Selection Rules
           </h2>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
             Build a balanced team of 11 players following these composition
             rules. You can select players from both teams playing in the match.
           </p>
@@ -252,23 +252,23 @@ export default function HowToPlayPage() {
             {teamRules.map((rule) => (
               <div
                 key={rule.category}
-                className="bg-white p-6 rounded-xl shadow-lg text-center"
+                className="bg-[#1a2332] p-6 rounded-xl shadow-lg text-center"
               >
-                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                <h3 className="text-lg font-bold text-white mb-2">
                   {rule.category}
                 </h3>
-                <div className="text-3xl font-bold text-green-600 mb-2">
+                <div className="text-3xl font-bold text-[#22c55e] mb-2">
                   {rule.min} - {rule.max}
                 </div>
-                <p className="text-gray-600 text-sm">{rule.description}</p>
+                <p className="text-gray-400 text-sm">{rule.description}</p>
               </div>
             ))}
           </div>
-          <div className="mt-8 bg-green-50 border border-green-200 p-6 rounded-xl">
+          <div className="mt-8 bg-[#22c55e]/10 border border-green-200 p-6 rounded-xl">
             <h4 className="font-semibold text-green-800 mb-2">
               Important Notes:
             </h4>
-            <ul className="list-disc list-inside text-green-700 space-y-1">
+            <ul className="list-disc list-inside text-[#22c55e] space-y-1">
               <li>You must select exactly 11 players for your team</li>
               <li>
                 Maximum 7 players can be selected from a single playing team
@@ -289,17 +289,17 @@ export default function HowToPlayPage() {
       {/* Points System */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold text-center text-white mb-4">
             Points System
           </h2>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
             Your fantasy team earns points based on the real-life performance
             of your selected players. Here&apos;s how points are calculated:
           </p>
           <div className="max-w-2xl mx-auto">
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+            <div className="bg-[#1a2332] rounded-xl shadow-lg overflow-hidden">
               <table className="w-full">
-                <thead className="bg-green-600 text-white">
+                <thead className="bg-[#22c55e] text-white">
                   <tr>
                     <th className="px-6 py-4 text-left">Player Action</th>
                     <th className="px-6 py-4 text-right">Points</th>
@@ -311,8 +311,8 @@ export default function HowToPlayPage() {
                       key={index}
                       className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}
                     >
-                      <td className="px-6 py-4 text-gray-900">{item.action}</td>
-                      <td className="px-6 py-4 text-right font-semibold text-green-600">
+                      <td className="px-6 py-4 text-white">{item.action}</td>
+                      <td className="px-6 py-4 text-right font-semibold text-[#22c55e]">
                         {item.points}
                       </td>
                     </tr>
@@ -336,14 +336,14 @@ export default function HowToPlayPage() {
       {/* Tips Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+          <h2 className="text-3xl font-bold text-center text-white mb-12">
             Pro Tips for Success
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-xl shadow-lg">
-              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4">
+            <div className="bg-[#1a2332] p-6 rounded-xl shadow-lg">
+              <div className="w-12 h-12 bg-[#22c55e]/20 rounded-full flex items-center justify-center mb-4">
                 <svg
-                  className="w-6 h-6 text-green-600"
+                  className="w-6 h-6 text-[#22c55e]"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -356,18 +356,18 @@ export default function HowToPlayPage() {
                   />
                 </svg>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">
+              <h3 className="text-lg font-bold text-white mb-2">
                 Check Player Form
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-400">
                 Always check recent performances of players before selecting
                 them. A player in good form is more likely to score points.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-xl shadow-lg">
-              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4">
+            <div className="bg-[#1a2332] p-6 rounded-xl shadow-lg">
+              <div className="w-12 h-12 bg-[#22c55e]/20 rounded-full flex items-center justify-center mb-4">
                 <svg
-                  className="w-6 h-6 text-green-600"
+                  className="w-6 h-6 text-[#22c55e]"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -380,18 +380,18 @@ export default function HowToPlayPage() {
                   />
                 </svg>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">
+              <h3 className="text-lg font-bold text-white mb-2">
                 Consider Pitch Conditions
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-400">
                 Pitch conditions affect player performance. Select more spinners
                 on turning tracks and pacers on seaming pitches.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-xl shadow-lg">
-              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4">
+            <div className="bg-[#1a2332] p-6 rounded-xl shadow-lg">
+              <div className="w-12 h-12 bg-[#22c55e]/20 rounded-full flex items-center justify-center mb-4">
                 <svg
-                  className="w-6 h-6 text-green-600"
+                  className="w-6 h-6 text-[#22c55e]"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -404,10 +404,10 @@ export default function HowToPlayPage() {
                   />
                 </svg>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">
+              <h3 className="text-lg font-bold text-white mb-2">
                 Choose Captain Wisely
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-400">
                 Your Captain earns double points. Pick a reliable performer who
                 is likely to have a significant impact on the match.
               </p>
@@ -417,7 +417,7 @@ export default function HowToPlayPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-green-600 text-white">
+      <section className="py-16 bg-[#22c55e] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Play?</h2>
           <p className="text-green-100 text-lg mb-8 max-w-2xl mx-auto">
@@ -435,7 +435,7 @@ export default function HowToPlayPage() {
             />
             <Link
               href="/fantasy-cricket"
-              className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-green-700 transition-colors duration-200 text-lg"
+              className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#22c55e] transition-colors duration-200 text-lg"
             >
               Explore Fantasy Cricket
             </Link>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
@@ -29,7 +30,6 @@ export default function LoginPage() {
     setError("");
 
     try {
-      // API call will be implemented when backend is connected
       const response = await fetch("/api/auth/login", {
         method: "POST",
         headers: {
@@ -41,7 +41,6 @@ export default function LoginPage() {
       const data = await response.json();
 
       if (data.success) {
-        // Redirect to dashboard on successful login
         router.push("/dashboard");
         router.refresh();
       } else {
@@ -55,29 +54,47 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-      <div className="sm:mx-auto sm:w-full sm:max-w-md">
-        <Link href="/" className="flex justify-center">
-          <span className="text-3xl font-bold text-green-600">DineDivine</span>
+    <div className="min-h-screen bg-[#0a0f1a] flex flex-col justify-center py-12 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/auth-bg.webp"
+          alt="Background"
+          fill
+          className="object-cover opacity-30"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0f1a]/50 to-[#0a0f1a]"></div>
+      </div>
+
+      <div className="relative z-10 sm:mx-auto sm:w-full sm:max-w-md">
+        <Link href="/" className="flex justify-center items-center gap-2">
+          <Image
+            src="/favicon.webp"
+            alt="DineDivine"
+            width={40}
+            height={40}
+            className="rounded-lg"
+          />
+          <span className="text-3xl font-bold text-[#22c55e]">DineDivine</span>
         </Link>
-        <h2 className="mt-6 text-center text-3xl font-bold text-gray-900">
+        <h2 className="mt-6 text-center text-3xl font-bold text-white">
           Sign in to your account
         </h2>
-        <p className="mt-2 text-center text-sm text-gray-600">
+        <p className="mt-2 text-center text-sm text-gray-400">
           Don&apos;t have an account?{" "}
           <Link
             href="/register"
-            className="font-medium text-green-600 hover:text-green-500"
+            className="font-medium text-[#22c55e] hover:text-[#4ade80]"
           >
             Register for free
           </Link>
         </p>
       </div>
 
-      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-white py-8 px-4 shadow-lg sm:rounded-xl sm:px-10">
+      <div className="relative z-10 mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+        <div className="bg-[#1a2332] py-8 px-4 shadow-xl sm:rounded-xl sm:px-10 border border-[#22c55e]/20">
           {error && (
-            <div className="mb-4 bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm">
+            <div className="mb-4 bg-red-500/10 border border-red-500/30 text-red-400 px-4 py-3 rounded-lg text-sm">
               {error}
             </div>
           )}
@@ -86,7 +103,7 @@ export default function LoginPage() {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-gray-300"
               >
                 Email address
               </label>
@@ -99,7 +116,7 @@ export default function LoginPage() {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="appearance-none block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                  className="appearance-none block w-full px-4 py-3 bg-[#0a0f1a] border border-gray-600 rounded-lg shadow-sm placeholder-gray-500 text-white focus:outline-none focus:ring-2 focus:ring-[#22c55e] focus:border-[#22c55e]"
                   placeholder="Enter your email"
                 />
               </div>
@@ -108,7 +125,7 @@ export default function LoginPage() {
             <div>
               <label
                 htmlFor="password"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-gray-300"
               >
                 Password
               </label>
@@ -121,7 +138,7 @@ export default function LoginPage() {
                   required
                   value={formData.password}
                   onChange={handleChange}
-                  className="appearance-none block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 pr-12"
+                  className="appearance-none block w-full px-4 py-3 bg-[#0a0f1a] border border-gray-600 rounded-lg shadow-sm placeholder-gray-500 text-white focus:outline-none focus:ring-2 focus:ring-[#22c55e] focus:border-[#22c55e] pr-12"
                   placeholder="Enter your password"
                 />
                 <button
@@ -174,11 +191,11 @@ export default function LoginPage() {
                   id="remember-me"
                   name="remember-me"
                   type="checkbox"
-                  className="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded"
+                  className="h-4 w-4 text-[#22c55e] focus:ring-[#22c55e] bg-[#0a0f1a] border-gray-600 rounded"
                 />
                 <label
                   htmlFor="remember-me"
-                  className="ml-2 block text-sm text-gray-700"
+                  className="ml-2 block text-sm text-gray-400"
                 >
                   Remember me
                 </label>
@@ -187,7 +204,7 @@ export default function LoginPage() {
               <div className="text-sm">
                 <Link
                   href="/forgot-password"
-                  className="font-medium text-green-600 hover:text-green-500"
+                  className="font-medium text-[#22c55e] hover:text-[#4ade80]"
                 >
                   Forgot your password?
                 </Link>
@@ -198,10 +215,10 @@ export default function LoginPage() {
               <button
                 type="submit"
                 disabled={isLoading}
-                className={`w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white transition-colors duration-200 ${
+                className={`w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white transition-all duration-200 ${
                   isLoading
-                    ? "bg-gray-400 cursor-not-allowed"
-                    : "bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                    ? "bg-gray-600 cursor-not-allowed"
+                    : "bg-gradient-to-r from-[#22c55e] to-[#16a34a] hover:shadow-lg hover:shadow-[#22c55e]/30 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#22c55e]"
                 }`}
               >
                 {isLoading ? (
@@ -237,10 +254,10 @@ export default function LoginPage() {
           <div className="mt-6">
             <div className="relative">
               <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-gray-300" />
+                <div className="w-full border-t border-gray-600" />
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-white text-gray-500">
+                <span className="px-2 bg-[#1a2332] text-gray-400">
                   New to DineDivine?
                 </span>
               </div>
@@ -249,7 +266,7 @@ export default function LoginPage() {
             <div className="mt-6">
               <Link
                 href="/register"
-                className="w-full flex justify-center py-3 px-4 border-2 border-green-600 rounded-lg shadow-sm text-sm font-medium text-green-600 bg-white hover:bg-green-50 transition-colors duration-200"
+                className="w-full flex justify-center py-3 px-4 border-2 border-[#22c55e] rounded-lg shadow-sm text-sm font-medium text-[#22c55e] bg-transparent hover:bg-[#22c55e]/10 transition-colors duration-200"
               >
                 Create a free account
               </Link>
@@ -258,11 +275,11 @@ export default function LoginPage() {
         </div>
 
         {/* Info Box */}
-        <div className="mt-6 bg-green-50 border border-green-200 rounded-xl p-4 mx-4 sm:mx-0">
+        <div className="mt-6 bg-[#22c55e]/10 border border-[#22c55e]/30 rounded-xl p-4 mx-4 sm:mx-0">
           <div className="flex">
             <div className="flex-shrink-0">
               <svg
-                className="h-5 w-5 text-green-600"
+                className="h-5 w-5 text-[#22c55e]"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -276,7 +293,7 @@ export default function LoginPage() {
               </svg>
             </div>
             <div className="ml-3">
-              <p className="text-sm text-green-700">
+              <p className="text-sm text-[#22c55e]">
                 DineDivine is a <strong>free-to-play</strong> fantasy sports
                 platform. No real money is involved.
               </p>

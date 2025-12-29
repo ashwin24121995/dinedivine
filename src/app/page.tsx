@@ -15,7 +15,7 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero-bg.jpg"
+            src="/images/hero-bg.webp"
             alt="Fantasy Cricket Stadium"
             fill
             className="object-cover"
@@ -29,7 +29,7 @@ export default function Home() {
           {/* Logo */}
           <div className="mb-8">
             <Image
-              src="/logo-full.png"
+              src="/logo-hero.webp"
               alt="DineDivine Logo"
               width={300}
               height={120}
@@ -86,7 +86,7 @@ export default function Home() {
             <div className="bg-[#1a2332] p-8 rounded-2xl border border-[#22c55e]/20 hover:border-[#22c55e]/50 transition-all duration-300 group">
               <div className="w-full h-48 relative mb-6 rounded-xl overflow-hidden">
                 <Image
-                  src="/images/feature-team.png"
+                  src="/images/feature-team.webp"
                   alt="Build Your Team"
                   fill
                   className="object-contain group-hover:scale-105 transition-transform duration-300"
@@ -104,7 +104,7 @@ export default function Home() {
             <div className="bg-[#1a2332] p-8 rounded-2xl border border-[#22c55e]/20 hover:border-[#22c55e]/50 transition-all duration-300 group">
               <div className="w-full h-48 relative mb-6 rounded-xl overflow-hidden">
                 <Image
-                  src="/images/feature-contest.png"
+                  src="/images/feature-contest.webp"
                   alt="Join Contests"
                   fill
                   className="object-contain group-hover:scale-105 transition-transform duration-300"
@@ -122,7 +122,7 @@ export default function Home() {
             <div className="bg-[#1a2332] p-8 rounded-2xl border border-[#22c55e]/20 hover:border-[#22c55e]/50 transition-all duration-300 group">
               <div className="w-full h-48 relative mb-6 rounded-xl overflow-hidden">
                 <Image
-                  src="/images/feature-live.png"
+                  src="/images/feature-live.webp"
                   alt="Live Tracking"
                   fill
                   className="object-contain group-hover:scale-105 transition-transform duration-300"

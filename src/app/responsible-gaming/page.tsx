@@ -138,10 +138,10 @@ export default function ResponsibleGamingPage() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl font-bold text-white mb-6">
               Our Commitment to Responsible Gaming
             </h2>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-gray-400 leading-relaxed">
               DineDivine is a free-to-play fantasy sports platform designed
               purely for entertainment. We do not involve any real money gaming,
               betting, or gambling activities. Our platform is built to provide
@@ -150,14 +150,14 @@ export default function ResponsibleGamingPage() {
             </p>
           </div>
 
-          <div className="bg-green-50 border border-green-200 p-8 rounded-2xl max-w-3xl mx-auto">
+          <div className="bg-[#22c55e]/10 border border-green-200 p-8 rounded-2xl max-w-3xl mx-auto">
             <h3 className="text-xl font-semibold text-green-800 mb-4 text-center">
               What Makes DineDivine Different
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="flex items-center gap-3">
                 <svg
-                  className="w-6 h-6 text-green-600 flex-shrink-0"
+                  className="w-6 h-6 text-[#22c55e] flex-shrink-0"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -169,11 +169,11 @@ export default function ResponsibleGamingPage() {
                     d="M5 13l4 4L19 7"
                   />
                 </svg>
-                <span className="text-gray-700">100% Free to Play</span>
+                <span className="text-gray-300">100% Free to Play</span>
               </div>
               <div className="flex items-center gap-3">
                 <svg
-                  className="w-6 h-6 text-green-600 flex-shrink-0"
+                  className="w-6 h-6 text-[#22c55e] flex-shrink-0"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -185,11 +185,11 @@ export default function ResponsibleGamingPage() {
                     d="M5 13l4 4L19 7"
                   />
                 </svg>
-                <span className="text-gray-700">No Real Money Involvement</span>
+                <span className="text-gray-300">No Real Money Involvement</span>
               </div>
               <div className="flex items-center gap-3">
                 <svg
-                  className="w-6 h-6 text-green-600 flex-shrink-0"
+                  className="w-6 h-6 text-[#22c55e] flex-shrink-0"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -201,11 +201,11 @@ export default function ResponsibleGamingPage() {
                     d="M5 13l4 4L19 7"
                   />
                 </svg>
-                <span className="text-gray-700">No Cash Prizes or Rewards</span>
+                <span className="text-gray-300">No Cash Prizes or Rewards</span>
               </div>
               <div className="flex items-center gap-3">
                 <svg
-                  className="w-6 h-6 text-green-600 flex-shrink-0"
+                  className="w-6 h-6 text-[#22c55e] flex-shrink-0"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -217,7 +217,7 @@ export default function ResponsibleGamingPage() {
                     d="M5 13l4 4L19 7"
                   />
                 </svg>
-                <span className="text-gray-700">Pure Entertainment Focus</span>
+                <span className="text-gray-300">Pure Entertainment Focus</span>
               </div>
             </div>
           </div>
@@ -227,22 +227,22 @@ export default function ResponsibleGamingPage() {
       {/* Guidelines */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+          <h2 className="text-3xl font-bold text-center text-white mb-12">
             Responsible Gaming Guidelines
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {guidelines.map((guideline) => (
               <div
                 key={guideline.title}
-                className="bg-white p-8 rounded-xl shadow-lg"
+                className="bg-[#1a2332] p-8 rounded-xl shadow-lg"
               >
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4 text-green-600">
+                <div className="w-16 h-16 bg-[#22c55e]/20 rounded-full flex items-center justify-center mb-4 text-[#22c55e]">
                   {guideline.icon}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                <h3 className="text-xl font-bold text-white mb-3">
                   {guideline.title}
                 </h3>
-                <p className="text-gray-600">{guideline.description}</p>
+                <p className="text-gray-400">{guideline.description}</p>
               </div>
             ))}
           </div>
@@ -258,11 +258,11 @@ export default function ResponsibleGamingPage() {
                 <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center">
                   <span className="text-3xl">🔞</span>
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900">
+                <h2 className="text-3xl font-bold text-white">
                   Age Restrictions
                 </h2>
               </div>
-              <p className="text-gray-600 mb-6 leading-relaxed">
+              <p className="text-gray-400 mb-6 leading-relaxed">
                 DineDivine is strictly for users who are 18 years of age or
                 older. We take age verification seriously and have implemented
                 measures to prevent underage access to our platform.
@@ -283,7 +283,7 @@ export default function ResponsibleGamingPage() {
                         d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
                       />
                     </svg>
-                    <span className="text-gray-700">{restriction}</span>
+                    <span className="text-gray-300">{restriction}</span>
                   </li>
                 ))}
               </ul>
@@ -312,11 +312,11 @@ export default function ResponsibleGamingPage() {
                     />
                   </svg>
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900">
+                <h2 className="text-3xl font-bold text-white">
                   Geographic Restrictions
                 </h2>
               </div>
-              <p className="text-gray-600 mb-6 leading-relaxed">
+              <p className="text-gray-400 mb-6 leading-relaxed">
                 Due to state regulations, users from certain Indian states are
                 not permitted to access or use DineDivine. We comply with all
                 applicable laws and regulations.
@@ -336,7 +336,7 @@ export default function ResponsibleGamingPage() {
                   <tbody className="divide-y divide-yellow-200">
                     {geoRestrictions.map((restriction) => (
                       <tr key={restriction.state}>
-                        <td className="px-4 py-3 text-gray-900 font-medium">
+                        <td className="px-4 py-3 text-white font-medium">
                           {restriction.state}
                         </td>
                         <td className="px-4 py-3 text-red-600">
@@ -356,40 +356,40 @@ export default function ResponsibleGamingPage() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-6">
+            <h2 className="text-3xl font-bold text-center text-white mb-6">
               Self-Exclusion & Account Control
             </h2>
-            <p className="text-center text-gray-600 mb-8">
+            <p className="text-center text-gray-400 mb-8">
               We believe users should have full control over their gaming
               experience. DineDivine offers the following account management
               options:
             </p>
             <div className="space-y-4">
-              <div className="bg-white p-6 rounded-xl shadow-lg">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              <div className="bg-[#1a2332] p-6 rounded-xl shadow-lg">
+                <h3 className="text-lg font-semibold text-white mb-2">
                   Temporary Break
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-400">
                   Take a break from the platform for a specified period. Your
                   account will be temporarily suspended and you won&apos;t be
                   able to participate in any contests during this time.
                 </p>
               </div>
-              <div className="bg-white p-6 rounded-xl shadow-lg">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              <div className="bg-[#1a2332] p-6 rounded-xl shadow-lg">
+                <h3 className="text-lg font-semibold text-white mb-2">
                   Account Deactivation
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-400">
                   Deactivate your account if you wish to stop using DineDivine.
                   You can reactivate your account at any time by contacting our
                   support team.
                 </p>
               </div>
-              <div className="bg-white p-6 rounded-xl shadow-lg">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              <div className="bg-[#1a2332] p-6 rounded-xl shadow-lg">
+                <h3 className="text-lg font-semibold text-white mb-2">
                   Permanent Account Deletion
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-400">
                   Request permanent deletion of your account and all associated
                   data. This action is irreversible and all your data will be
                   permanently removed from our systems.
@@ -403,7 +403,7 @@ export default function ResponsibleGamingPage() {
       {/* Contact Section */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-green-600 text-white p-8 md:p-12 rounded-2xl text-center">
+          <div className="bg-[#22c55e] text-white p-8 md:p-12 rounded-2xl text-center">
             <h2 className="text-3xl font-bold mb-4">Need Help?</h2>
             <p className="text-green-100 text-lg mb-8 max-w-2xl mx-auto">
               If you have any questions about responsible gaming or need
@@ -411,7 +411,7 @@ export default function ResponsibleGamingPage() {
             </p>
             <Link
               href="/contact"
-              className="bg-white text-green-700 px-8 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors duration-200 text-lg inline-block"
+              className="bg-white text-[#22c55e] px-8 py-3 rounded-lg font-semibold hover:bg-[#22c55e]/10 transition-colors duration-200 text-lg inline-block"
             >
               Contact Support
             </Link>
@@ -422,16 +422,16 @@ export default function ResponsibleGamingPage() {
       {/* Legal Compliance */}
       <section className="py-8 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-gray-600 text-sm">
+          <p className="text-center text-gray-400 text-sm">
             DineDivine operates in compliance with all applicable Indian laws
             and regulations. We are committed to maintaining the highest
             standards of responsible gaming and user protection. For more
             information, please review our{" "}
-            <Link href="/terms" className="text-green-600 hover:underline">
+            <Link href="/terms" className="text-[#22c55e] hover:underline">
               Terms and Conditions
             </Link>{" "}
             and{" "}
-            <Link href="/privacy" className="text-green-600 hover:underline">
+            <Link href="/privacy" className="text-[#22c55e] hover:underline">
               Privacy Policy
             </Link>
             .

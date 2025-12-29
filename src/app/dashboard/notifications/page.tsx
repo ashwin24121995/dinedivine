@@ -105,31 +105,31 @@ export default function NotificationsPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
+      <div className="min-h-screen bg-[#0a0f1a] flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#22c55e]"></div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-[#0a0f1a] py-8">
       <div className="max-w-3xl mx-auto px-4">
         {/* Header */}
         <div className="mb-8">
-          <Link href="/dashboard" className="text-green-600 hover:underline text-sm mb-2 inline-block">
+          <Link href="/dashboard" className="text-[#22c55e] hover:underline text-sm mb-2 inline-block">
             ← Back to Dashboard
           </Link>
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-3xl font-bold text-gray-800">Notifications</h1>
-              <p className="text-gray-500 mt-1">
+              <h1 className="text-3xl font-bold text-white">Notifications</h1>
+              <p className="text-gray-400 mt-1">
                 {unreadCount > 0 ? `${unreadCount} unread notifications` : "All caught up!"}
               </p>
             </div>
             {unreadCount > 0 && (
               <button
                 onClick={markAllAsRead}
-                className="text-green-600 hover:text-green-700 font-medium text-sm"
+                className="text-[#22c55e] hover:text-[#22c55e] font-medium text-sm"
               >
                 Mark all as read
               </button>
@@ -147,37 +147,37 @@ export default function NotificationsPage() {
                   if (!notification.is_read) markAsRead(notification.id);
                   if (notification.link) router.push(notification.link);
                 }}
-                className={`bg-white rounded-xl shadow-sm border p-4 cursor-pointer transition-all hover:shadow-md ${
+                className={`bg-[#1a2332] rounded-xl shadow-sm border p-4 cursor-pointer transition-all hover:shadow-md ${
                   notification.is_read
-                    ? "border-gray-100"
-                    : "border-green-200 bg-green-50"
+                    ? "border-[#22c55e]/20"
+                    : "border-green-200 bg-[#22c55e]/10"
                 }`}
               >
                 <div className="flex items-start gap-4">
                   <div className="text-2xl">{getNotificationIcon(notification.type)}</div>
                   <div className="flex-1">
                     <div className="flex items-center justify-between">
-                      <h3 className={`font-medium ${notification.is_read ? "text-gray-700" : "text-gray-900"}`}>
+                      <h3 className={`font-medium ${notification.is_read ? "text-gray-300" : "text-white"}`}>
                         {notification.title}
                       </h3>
                       <span className="text-xs text-gray-400">{formatTime(notification.created_at)}</span>
                     </div>
-                    <p className={`text-sm mt-1 ${notification.is_read ? "text-gray-500" : "text-gray-600"}`}>
+                    <p className={`text-sm mt-1 ${notification.is_read ? "text-gray-400" : "text-gray-400"}`}>
                       {notification.message}
                     </p>
                   </div>
                   {!notification.is_read && (
-                    <div className="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-[#22c55e]/100 rounded-full mt-2"></div>
                   )}
                 </div>
               </div>
             ))}
           </div>
         ) : (
-          <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-12 text-center">
+          <div className="bg-[#1a2332] rounded-xl shadow-sm border border-[#22c55e]/20 p-12 text-center">
             <div className="text-6xl mb-4">🔔</div>
-            <h3 className="text-xl font-bold text-gray-800 mb-2">No Notifications</h3>
-            <p className="text-gray-500">You&apos;re all caught up! Check back later for updates.</p>
+            <h3 className="text-xl font-bold text-white mb-2">No Notifications</h3>
+            <p className="text-gray-400">You&apos;re all caught up! Check back later for updates.</p>
           </div>
         )}
       </div>

@@ -25,17 +25,17 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl font-bold text-white mb-6">
                 Who We Are
               </h2>
-              <p className="text-gray-600 mb-4 leading-relaxed">
+              <p className="text-gray-400 mb-4 leading-relaxed">
                 DineDivine is a premier free-to-play fantasy sports platform
                 operated by <strong>DINEDIVINE VENTURES PRIVATE LIMITED</strong>
                 . We are dedicated to providing cricket enthusiasts across India
                 with an engaging and entertaining platform to showcase their
                 knowledge of the game.
               </p>
-              <p className="text-gray-600 mb-4 leading-relaxed">
+              <p className="text-gray-400 mb-4 leading-relaxed">
                 Our platform is designed purely for entertainment purposes,
                 allowing users to create fantasy cricket teams, participate in
                 contests, and enjoy the thrill of the game without any monetary
@@ -43,41 +43,41 @@ export default function AboutPage() {
                 accessible to everyone, which is why our platform is completely
                 free to play.
               </p>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-400 leading-relaxed">
                 Based in Gurgaon, Haryana, we operate in strict compliance with
                 all applicable Indian laws and regulations governing fantasy
                 sports platforms. Our commitment to responsible gaming and fair
                 play ensures a safe and enjoyable experience for all our users.
               </p>
             </div>
-            <div className="bg-green-50 p-8 rounded-2xl">
+            <div className="bg-[#22c55e]/10 p-8 rounded-2xl">
               <h3 className="text-xl font-semibold text-green-800 mb-4">
                 Company Details
               </h3>
               <div className="space-y-3">
                 <div>
-                  <p className="text-sm text-gray-500">Company Name</p>
-                  <p className="font-medium text-gray-900">
+                  <p className="text-sm text-gray-400">Company Name</p>
+                  <p className="font-medium text-white">
                     DINEDIVINE VENTURES PRIVATE LIMITED
                   </p>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500">CIN</p>
-                  <p className="font-medium text-gray-900">
+                  <p className="text-sm text-gray-400">CIN</p>
+                  <p className="font-medium text-white">
                     U56102HR2024PTC123713
                   </p>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500">GST Number</p>
-                  <p className="font-medium text-gray-900">06AALCD0239Q1ZA</p>
+                  <p className="text-sm text-gray-400">GST Number</p>
+                  <p className="font-medium text-white">06AALCD0239Q1ZA</p>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500">PAN Number</p>
-                  <p className="font-medium text-gray-900">AALCD0239Q</p>
+                  <p className="text-sm text-gray-400">PAN Number</p>
+                  <p className="font-medium text-white">AALCD0239Q</p>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500">Registered Address</p>
-                  <p className="font-medium text-gray-900">
+                  <p className="text-sm text-gray-400">Registered Address</p>
+                  <p className="font-medium text-white">
                     C/O PARDEEP SAGGAR, 20-P DSC, SEC-23A, Shivaji Nagar
                     (Gurgaon), Shivaji Nagar, Gurgaon- 122001, Haryana, India
                   </p>
@@ -92,10 +92,10 @@ export default function AboutPage() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+            <div className="bg-[#1a2332] p-8 rounded-2xl shadow-lg">
+              <div className="w-16 h-16 bg-[#22c55e]/20 rounded-full flex items-center justify-center mb-6">
                 <svg
-                  className="w-8 h-8 text-green-600"
+                  className="w-8 h-8 text-[#22c55e]"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -108,10 +108,10 @@ export default function AboutPage() {
                   />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              <h3 className="text-2xl font-bold text-white mb-4">
                 Our Mission
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-400 leading-relaxed">
                 To democratize fantasy sports entertainment by providing a
                 completely free platform where cricket fans can engage with the
                 sport they love. We aim to create an inclusive community where
@@ -119,10 +119,10 @@ export default function AboutPage() {
                 financial barriers or risks.
               </p>
             </div>
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+            <div className="bg-[#1a2332] p-8 rounded-2xl shadow-lg">
+              <div className="w-16 h-16 bg-[#22c55e]/20 rounded-full flex items-center justify-center mb-6">
                 <svg
-                  className="w-8 h-8 text-green-600"
+                  className="w-8 h-8 text-[#22c55e]"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -141,10 +141,10 @@ export default function AboutPage() {
                   />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              <h3 className="text-2xl font-bold text-white mb-4">
                 Our Vision
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-400 leading-relaxed">
                 To become India&apos;s most trusted and beloved free-to-play
                 fantasy sports platform. We envision a future where millions of
                 cricket enthusiasts come together on DineDivine to share their
@@ -160,12 +160,12 @@ export default function AboutPage() {
       {/* Core Values */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+          <h2 className="text-3xl font-bold text-center text-white mb-12">
             Our Core Values
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-[#22c55e] rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg
                   className="w-8 h-8 text-white"
                   fill="none"
@@ -180,16 +180,16 @@ export default function AboutPage() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <h3 className="text-xl font-semibold text-white mb-2">
                 Integrity
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-400">
                 We operate with complete transparency and honesty in all our
                 dealings.
               </p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-[#22c55e] rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg
                   className="w-8 h-8 text-white"
                   fill="none"
@@ -204,15 +204,15 @@ export default function AboutPage() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <h3 className="text-xl font-semibold text-white mb-2">
                 Accessibility
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-400">
                 Free-to-play model ensures everyone can enjoy fantasy sports.
               </p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-[#22c55e] rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg
                   className="w-8 h-8 text-white"
                   fill="none"
@@ -227,15 +227,15 @@ export default function AboutPage() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <h3 className="text-xl font-semibold text-white mb-2">
                 Community
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-400">
                 Building a vibrant community of passionate cricket enthusiasts.
               </p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-[#22c55e] rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg
                   className="w-8 h-8 text-white"
                   fill="none"
@@ -250,10 +250,10 @@ export default function AboutPage() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <h3 className="text-xl font-semibold text-white mb-2">
                 Fair Play
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-400">
                 Ensuring a level playing field for all participants.
               </p>
             </div>
@@ -262,7 +262,7 @@ export default function AboutPage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-16 bg-green-600 text-white">
+      <section className="py-16 bg-[#22c55e] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-12">
             Why Choose DineDivine?

@@ -174,14 +174,14 @@ function FAQItem({
   onClick: () => void;
 }) {
   return (
-    <div className="border-b border-gray-200">
+    <div className="border-b border-[#22c55e]/20">
       <button
-        className="w-full py-4 flex justify-between items-center text-left hover:text-green-600 transition-colors duration-200"
+        className="w-full py-4 flex justify-between items-center text-left hover:text-[#22c55e] transition-colors duration-200"
         onClick={onClick}
       >
-        <span className="font-medium text-gray-900 pr-4">{question}</span>
+        <span className="font-medium text-white pr-4">{question}</span>
         <svg
-          className={`w-5 h-5 text-green-600 flex-shrink-0 transition-transform duration-200 ${
+          className={`w-5 h-5 text-[#22c55e] flex-shrink-0 transition-transform duration-200 ${
             isOpen ? "rotate-180" : ""
           }`}
           fill="none"
@@ -197,7 +197,7 @@ function FAQItem({
         </svg>
       </button>
       {isOpen && (
-        <div className="pb-4 text-gray-600 leading-relaxed">{answer}</div>
+        <div className="pb-4 text-gray-400 leading-relaxed">{answer}</div>
       )}
     </div>
   );
@@ -234,10 +234,10 @@ export default function FAQPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {faqData.map((category, categoryIndex) => (
             <div key={category.category} className="mb-12">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b-2 border-green-600">
+              <h2 className="text-2xl font-bold text-white mb-6 pb-2 border-b-2 border-green-600">
                 {category.category}
               </h2>
-              <div className="bg-white rounded-xl shadow-lg p-6">
+              <div className="bg-[#1a2332] rounded-xl shadow-lg p-6">
                 {category.questions.map((item, questionIndex) => (
                   <FAQItem
                     key={questionIndex}
@@ -256,7 +256,7 @@ export default function FAQPage() {
       {/* Still Have Questions */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-green-600 text-white p-8 md:p-12 rounded-2xl text-center">
+          <div className="bg-[#22c55e] text-white p-8 md:p-12 rounded-2xl text-center">
             <h2 className="text-3xl font-bold mb-4">Still Have Questions?</h2>
             <p className="text-green-100 text-lg mb-8 max-w-2xl mx-auto">
               Can&apos;t find the answer you&apos;re looking for? Our support
@@ -265,7 +265,7 @@ export default function FAQPage() {
             </p>
             <Link
               href="/contact"
-              className="bg-white text-green-700 px-8 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors duration-200 text-lg inline-block"
+              className="bg-white text-[#22c55e] px-8 py-3 rounded-lg font-semibold hover:bg-[#22c55e]/10 transition-colors duration-200 text-lg inline-block"
             >
               Contact Support
             </Link>
@@ -276,17 +276,17 @@ export default function FAQPage() {
       {/* Quick Links */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-center text-gray-900 mb-8">
+          <h2 className="text-2xl font-bold text-center text-white mb-8">
             Helpful Resources
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Link
               href="/how-to-play"
-              className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200 text-center group"
+              className="bg-[#1a2332] p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200 text-center group"
             >
-              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 transition-colors duration-200">
+              <div className="w-12 h-12 bg-[#22c55e]/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 transition-colors duration-200">
                 <svg
-                  className="w-6 h-6 text-green-600"
+                  className="w-6 h-6 text-[#22c55e]"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -299,18 +299,18 @@ export default function FAQPage() {
                   />
                 </svg>
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2">How To Play</h3>
-              <p className="text-gray-600 text-sm">
+              <h3 className="font-semibold text-white mb-2">How To Play</h3>
+              <p className="text-gray-400 text-sm">
                 Step-by-step guide to get started
               </p>
             </Link>
             <Link
               href="/fair-play"
-              className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200 text-center group"
+              className="bg-[#1a2332] p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200 text-center group"
             >
-              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 transition-colors duration-200">
+              <div className="w-12 h-12 bg-[#22c55e]/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 transition-colors duration-200">
                 <svg
-                  className="w-6 h-6 text-green-600"
+                  className="w-6 h-6 text-[#22c55e]"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -323,18 +323,18 @@ export default function FAQPage() {
                   />
                 </svg>
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2">Fair Play</h3>
-              <p className="text-gray-600 text-sm">
+              <h3 className="font-semibold text-white mb-2">Fair Play</h3>
+              <p className="text-gray-400 text-sm">
                 Our policies for fair competition
               </p>
             </Link>
             <Link
               href="/responsible-gaming"
-              className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200 text-center group"
+              className="bg-[#1a2332] p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200 text-center group"
             >
-              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 transition-colors duration-200">
+              <div className="w-12 h-12 bg-[#22c55e]/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 transition-colors duration-200">
                 <svg
-                  className="w-6 h-6 text-green-600"
+                  className="w-6 h-6 text-[#22c55e]"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -347,10 +347,10 @@ export default function FAQPage() {
                   />
                 </svg>
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2">
+              <h3 className="font-semibold text-white mb-2">
                 Responsible Gaming
               </h3>
-              <p className="text-gray-600 text-sm">
+              <p className="text-gray-400 text-sm">
                 Play responsibly and safely
               </p>
             </Link>

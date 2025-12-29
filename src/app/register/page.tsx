@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const indianStates = [
   "Andaman and Nicobar Islands",
@@ -219,19 +220,29 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-      <div className="sm:mx-auto sm:w-full sm:max-w-md">
+    <div className="min-h-screen bg-[#0a0f1a] flex flex-col justify-center py-12 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/auth-bg.webp"
+          alt="Background"
+          fill
+          className="object-cover opacity-30"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0f1a]/50 to-[#0a0f1a]"></div>
+      </div>
+      <div className="relative z-10 sm:mx-auto sm:w-full sm:max-w-md">
         <Link href="/" className="flex justify-center">
-          <span className="text-3xl font-bold text-green-600">DineDivine</span>
+          <span className="text-3xl font-bold text-[#22c55e]">DineDivine</span>
         </Link>
-        <h2 className="mt-6 text-center text-3xl font-bold text-gray-900">
+        <h2 className="mt-6 text-center text-3xl font-bold text-white">
           Create your account
         </h2>
-        <p className="mt-2 text-center text-sm text-gray-600">
+        <p className="mt-2 text-center text-sm text-gray-400">
           Already have an account?{" "}
           <Link
             href="/login"
-            className="font-medium text-green-600 hover:text-green-500"
+            className="font-medium text-[#22c55e] hover:text-[#4ade80]"
           >
             Sign in
           </Link>
@@ -246,8 +257,8 @@ export default function RegisterPage() {
               <div
                 className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold ${
                   step >= s
-                    ? "bg-green-600 text-white"
-                    : "bg-gray-200 text-gray-500"
+                    ? "bg-[#22c55e] text-white"
+                    : "bg-gray-200 text-gray-400"
                 }`}
               >
                 {step > s ? (
@@ -271,7 +282,7 @@ export default function RegisterPage() {
               {s < 3 && (
                 <div
                   className={`w-16 h-1 ${
-                    step > s ? "bg-green-600" : "bg-gray-200"
+                    step > s ? "bg-[#22c55e]" : "bg-gray-700"
                   }`}
                 />
               )}
@@ -279,9 +290,9 @@ export default function RegisterPage() {
           ))}
         </div>
 
-        <div className="bg-white py-8 px-4 shadow-lg sm:rounded-xl sm:px-10">
+        <div className="bg-[#1a2332] py-8 px-4 shadow-lg sm:rounded-xl sm:px-10">
           {error && (
-            <div className="mb-4 bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm">
+            <div className="mb-4 bg-red-500/10 border border-red-500/30 text-red-400 px-4 py-3 rounded-lg text-sm">
               {error}
             </div>
           )}
@@ -290,14 +301,14 @@ export default function RegisterPage() {
             {/* Step 1: Basic Information */}
             {step === 1 && (
               <div className="space-y-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                <h3 className="text-lg font-semibold text-white mb-4">
                   Basic Information
                 </h3>
 
                 <div>
                   <label
                     htmlFor="fullName"
-                    className="block text-sm font-medium text-gray-700"
+                    className="block text-sm font-medium text-gray-300"
                   >
                     Full Name <span className="text-red-500">*</span>
                   </label>
@@ -308,7 +319,7 @@ export default function RegisterPage() {
                     required
                     value={formData.fullName}
                     onChange={handleChange}
-                    className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                    className="mt-1 block w-full px-4 py-3 border border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#22c55e] focus:border-[#22c55e]"
                     placeholder="Enter your full name"
                   />
                 </div>
@@ -316,7 +327,7 @@ export default function RegisterPage() {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-gray-700"
+                    className="block text-sm font-medium text-gray-300"
                   >
                     Email Address <span className="text-red-500">*</span>
                   </label>
@@ -327,7 +338,7 @@ export default function RegisterPage() {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                    className="mt-1 block w-full px-4 py-3 border border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#22c55e] focus:border-[#22c55e]"
                     placeholder="Enter your email address"
                   />
                 </div>
@@ -335,12 +346,12 @@ export default function RegisterPage() {
                 <div>
                   <label
                     htmlFor="mobile"
-                    className="block text-sm font-medium text-gray-700"
+                    className="block text-sm font-medium text-gray-300"
                   >
                     Mobile Number <span className="text-red-500">*</span>
                   </label>
                   <div className="mt-1 flex">
-                    <span className="inline-flex items-center px-3 rounded-l-lg border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
+                    <span className="inline-flex items-center px-3 rounded-l-lg border border-r-0 border-gray-300 bg-gray-50 text-gray-400 text-sm">
                       +91
                     </span>
                     <input
@@ -350,7 +361,7 @@ export default function RegisterPage() {
                       required
                       value={formData.mobile}
                       onChange={handleChange}
-                      className="block w-full px-4 py-3 border border-gray-300 rounded-r-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                      className="block w-full px-4 py-3 border border-gray-600 rounded-r-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#22c55e] focus:border-[#22c55e]"
                       placeholder="10-digit mobile number"
                       maxLength={10}
                     />
@@ -360,7 +371,7 @@ export default function RegisterPage() {
                 <button
                   type="button"
                   onClick={handleNextStep}
-                  className="w-full py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                  className="w-full py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-gradient-to-r from-[#22c55e] to-[#16a34a] hover:shadow-lg hover:shadow-[#22c55e]/30 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
                 >
                   Continue
                 </button>
@@ -370,14 +381,14 @@ export default function RegisterPage() {
             {/* Step 2: Verification */}
             {step === 2 && (
               <div className="space-y-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                <h3 className="text-lg font-semibold text-white mb-4">
                   Age & Location Verification
                 </h3>
 
                 <div>
                   <label
                     htmlFor="dateOfBirth"
-                    className="block text-sm font-medium text-gray-700"
+                    className="block text-sm font-medium text-gray-300"
                   >
                     Date of Birth <span className="text-red-500">*</span>
                   </label>
@@ -395,9 +406,9 @@ export default function RegisterPage() {
                         .toISOString()
                         .split("T")[0]
                     }
-                    className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                    className="mt-1 block w-full px-4 py-3 border border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#22c55e] focus:border-[#22c55e]"
                   />
-                  <p className="mt-1 text-xs text-gray-500">
+                  <p className="mt-1 text-xs text-gray-400">
                     You must be 18 years or older to register
                   </p>
                 </div>
@@ -405,7 +416,7 @@ export default function RegisterPage() {
                 <div>
                   <label
                     htmlFor="state"
-                    className="block text-sm font-medium text-gray-700"
+                    className="block text-sm font-medium text-gray-300"
                   >
                     State of Residence <span className="text-red-500">*</span>
                   </label>
@@ -415,7 +426,7 @@ export default function RegisterPage() {
                     required
                     value={formData.state}
                     onChange={handleChange}
-                    className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-white"
+                    className="mt-1 block w-full px-4 py-3 border border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#22c55e] focus:border-[#22c55e] bg-white"
                   >
                     <option value="">Select your state</option>
                     {indianStates.map((state) => (
@@ -455,14 +466,14 @@ export default function RegisterPage() {
                   <button
                     type="button"
                     onClick={handlePrevStep}
-                    className="flex-1 py-3 px-4 border-2 border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
+                    className="flex-1 py-3 px-4 border-2 border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-300 bg-white hover:bg-gray-50"
                   >
                     Back
                   </button>
                   <button
                     type="button"
                     onClick={handleNextStep}
-                    className="flex-1 py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700"
+                    className="flex-1 py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-gradient-to-r from-[#22c55e] to-[#16a34a] hover:shadow-lg hover:shadow-[#22c55e]/30"
                   >
                     Continue
                   </button>
@@ -473,14 +484,14 @@ export default function RegisterPage() {
             {/* Step 3: Password & Confirmation */}
             {step === 3 && (
               <div className="space-y-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                <h3 className="text-lg font-semibold text-white mb-4">
                   Set Your Password
                 </h3>
 
                 <div>
                   <label
                     htmlFor="password"
-                    className="block text-sm font-medium text-gray-700"
+                    className="block text-sm font-medium text-gray-300"
                   >
                     Password <span className="text-red-500">*</span>
                   </label>
@@ -492,7 +503,7 @@ export default function RegisterPage() {
                       required
                       value={formData.password}
                       onChange={handleChange}
-                      className="block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 pr-12"
+                      className="block w-full px-4 py-3 border border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#22c55e] focus:border-[#22c55e] pr-12"
                       placeholder="Create a strong password"
                     />
                     <button
@@ -521,7 +532,7 @@ export default function RegisterPage() {
                       </svg>
                     </button>
                   </div>
-                  <p className="mt-1 text-xs text-gray-500">
+                  <p className="mt-1 text-xs text-gray-400">
                     At least 8 characters with uppercase, lowercase, and number
                   </p>
                 </div>
@@ -529,7 +540,7 @@ export default function RegisterPage() {
                 <div>
                   <label
                     htmlFor="confirmPassword"
-                    className="block text-sm font-medium text-gray-700"
+                    className="block text-sm font-medium text-gray-300"
                   >
                     Confirm Password <span className="text-red-500">*</span>
                   </label>
@@ -541,7 +552,7 @@ export default function RegisterPage() {
                       required
                       value={formData.confirmPassword}
                       onChange={handleChange}
-                      className="block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 pr-12"
+                      className="block w-full px-4 py-3 border border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#22c55e] focus:border-[#22c55e] pr-12"
                       placeholder="Confirm your password"
                     />
                     <button
@@ -584,7 +595,7 @@ export default function RegisterPage() {
                     />
                     <label
                       htmlFor="agreeAge"
-                      className="ml-2 block text-sm text-gray-700"
+                      className="ml-2 block text-sm text-gray-300"
                     >
                       I confirm that I am <strong>18 years of age or older</strong>{" "}
                       and I am not accessing this platform from a restricted
@@ -603,7 +614,7 @@ export default function RegisterPage() {
                     />
                     <label
                       htmlFor="agreeTerms"
-                      className="ml-2 block text-sm text-gray-700"
+                      className="ml-2 block text-sm text-gray-300"
                     >
                       I agree to the{" "}
                       <Link
@@ -629,7 +640,7 @@ export default function RegisterPage() {
                   <button
                     type="button"
                     onClick={handlePrevStep}
-                    className="flex-1 py-3 px-4 border-2 border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
+                    className="flex-1 py-3 px-4 border-2 border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-300 bg-white hover:bg-gray-50"
                   >
                     Back
                   </button>
@@ -639,7 +650,7 @@ export default function RegisterPage() {
                     className={`flex-1 py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white ${
                       isLoading
                         ? "bg-gray-400 cursor-not-allowed"
-                        : "bg-green-600 hover:bg-green-700"
+                        : "bg-gradient-to-r from-[#22c55e] to-[#16a34a] hover:shadow-lg hover:shadow-[#22c55e]/30"
                     }`}
                   >
                     {isLoading ? "Creating Account..." : "Create Account"}
@@ -651,11 +662,11 @@ export default function RegisterPage() {
         </div>
 
         {/* Info Box */}
-        <div className="mt-6 bg-green-50 border border-green-200 rounded-xl p-4 mx-4 sm:mx-0">
+        <div className="mt-6 bg-[#22c55e]/10 border border-[#22c55e]/30 rounded-xl p-4 mx-4 sm:mx-0">
           <div className="flex">
             <div className="flex-shrink-0">
               <svg
-                className="h-5 w-5 text-green-600"
+                className="h-5 w-5 text-[#22c55e]"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -669,7 +680,7 @@ export default function RegisterPage() {
               </svg>
             </div>
             <div className="ml-3">
-              <p className="text-sm text-green-700">
+              <p className="text-sm text-[#22c55e]">
                 Your data is secure. DineDivine is a{" "}
                 <strong>free-to-play</strong> platform with no real money
                 involvement.

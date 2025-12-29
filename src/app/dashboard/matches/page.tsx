@@ -110,25 +110,25 @@ export default function MatchesPage() {
   const matchTypes = [...new Set(matches.map((m) => m.matchType))];
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-[#0a0f1a] py-8">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="mb-8">
-          <Link href="/dashboard" className="text-green-600 hover:underline text-sm mb-2 inline-block">
+          <Link href="/dashboard" className="text-[#22c55e] hover:underline text-sm mb-2 inline-block">
             ← Back to Dashboard
           </Link>
-          <h1 className="text-3xl font-bold text-gray-800">Select Match</h1>
-          <p className="text-gray-500 mt-1">Choose a match to create your fantasy team</p>
+          <h1 className="text-3xl font-bold text-white">Select Match</h1>
+          <p className="text-gray-400 mt-1">Choose a match to create your fantasy team</p>
         </div>
 
         {/* Tabs */}
-        <div className="flex gap-2 mb-6 bg-white rounded-lg p-1 shadow-sm border border-gray-100 w-fit">
+        <div className="flex gap-2 mb-6 bg-[#1a2332] rounded-lg p-1 shadow-sm border border-[#22c55e]/20 w-fit">
           <button
             onClick={() => setActiveTab("live")}
             className={`px-6 py-2 rounded-lg font-medium transition-all flex items-center gap-2 ${
               activeTab === "live"
                 ? "bg-red-600 text-white"
-                : "text-gray-600 hover:bg-gray-100"
+                : "text-gray-400 hover:bg-gray-100"
             }`}
           >
             <span className={`w-2 h-2 rounded-full ${activeTab === "live" ? "bg-white" : "bg-red-500"} animate-pulse`}></span>
@@ -138,8 +138,8 @@ export default function MatchesPage() {
             onClick={() => setActiveTab("upcoming")}
             className={`px-6 py-2 rounded-lg font-medium transition-all ${
               activeTab === "upcoming"
-                ? "bg-green-600 text-white"
-                : "text-gray-600 hover:bg-gray-100"
+                ? "bg-[#22c55e] text-white"
+                : "text-gray-400 hover:bg-gray-100"
             }`}
           >
             Upcoming
@@ -149,7 +149,7 @@ export default function MatchesPage() {
             className={`px-6 py-2 rounded-lg font-medium transition-all ${
               activeTab === "completed"
                 ? "bg-gray-600 text-white"
-                : "text-gray-600 hover:bg-gray-100"
+                : "text-gray-400 hover:bg-gray-100"
             }`}
           >
             Completed
@@ -164,13 +164,13 @@ export default function MatchesPage() {
               placeholder="Search by team or series..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              className="w-full px-4 py-3 border border-[#22c55e]/20 rounded-lg focus:ring-2 focus:ring-[#22c55e] focus:border-transparent"
             />
           </div>
           <select
             value={matchTypeFilter}
             onChange={(e) => setMatchTypeFilter(e.target.value)}
-            className="px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+            className="px-4 py-3 border border-[#22c55e]/20 rounded-lg focus:ring-2 focus:ring-[#22c55e] focus:border-transparent"
           >
             <option value="all">All Formats</option>
             {matchTypes.map((type) => (
@@ -184,27 +184,27 @@ export default function MatchesPage() {
         {/* Matches Grid */}
         {loading ? (
           <div className="flex items-center justify-center py-12">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#22c55e]"></div>
           </div>
         ) : filteredMatches.length > 0 ? (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {filteredMatches.map((match) => (
               <div
                 key={match.id}
-                className={`bg-white rounded-xl shadow-sm border p-4 hover:shadow-md transition-all ${
-                  activeTab === "live" ? "border-red-200" : "border-gray-100 hover:border-green-300"
+                className={`bg-[#1a2332] rounded-xl shadow-sm border p-4 hover:shadow-md transition-all ${
+                  activeTab === "live" ? "border-red-200" : "border-[#22c55e]/20 hover:border-green-300"
                 }`}
               >
                 {/* Match Header */}
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs text-gray-500 truncate max-w-[50%]">{match.series}</span>
+                  <span className="text-xs text-gray-400 truncate max-w-[50%]">{match.series}</span>
                   <div className="flex items-center gap-2">
                     {hasSquadAvailable(match.series) && activeTab === "upcoming" && (
-                      <span className="px-2 py-0.5 bg-green-100 text-green-600 text-xs rounded-full font-medium">
+                      <span className="px-2 py-0.5 bg-[#22c55e]/20 text-[#22c55e] text-xs rounded-full font-medium">
                         Squad Ready
                       </span>
                     )}
-                    <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full font-medium uppercase">
+                    <span className="px-2 py-1 bg-gray-100 text-gray-400 text-xs rounded-full font-medium uppercase">
                       {match.matchType}
                     </span>
                     {activeTab === "live" && (
@@ -225,9 +225,9 @@ export default function MatchesPage() {
                       onError={(e) => { e.currentTarget.src = '/placeholder-team.png'; }}
                     />
                     <div>
-                      <p className="font-semibold text-gray-800">{match.t1}</p>
+                      <p className="font-semibold text-white">{match.t1}</p>
                       {(activeTab === "live" || activeTab === "completed") && match.t1s && (
-                        <p className="text-green-600 font-bold">{match.t1s}</p>
+                        <p className="text-[#22c55e] font-bold">{match.t1s}</p>
                       )}
                     </div>
                   </div>
@@ -238,9 +238,9 @@ export default function MatchesPage() {
 
                   <div className="flex items-center gap-3 flex-1 justify-end">
                     <div className="text-right">
-                      <p className="font-semibold text-gray-800">{match.t2}</p>
+                      <p className="font-semibold text-white">{match.t2}</p>
                       {(activeTab === "live" || activeTab === "completed") && match.t2s && (
-                        <p className="text-green-600 font-bold">{match.t2s}</p>
+                        <p className="text-[#22c55e] font-bold">{match.t2s}</p>
                       )}
                     </div>
                     <img
@@ -254,23 +254,23 @@ export default function MatchesPage() {
 
                 {/* Status / Time */}
                 {activeTab === "upcoming" ? (
-                  <div className="flex items-center justify-between pt-3 border-t border-gray-100">
+                  <div className="flex items-center justify-between pt-3 border-t border-[#22c55e]/20">
                     <div>
-                      <p className="text-sm text-gray-500">{formatDateIST(match.dateTimeGMT)} IST</p>
-                      <p className="text-xs text-green-600 font-medium">
+                      <p className="text-sm text-gray-400">{formatDateIST(match.dateTimeGMT)} IST</p>
+                      <p className="text-xs text-[#22c55e] font-medium">
                         Starts in {getTimeRemaining(match.dateTimeGMT)}
                       </p>
                     </div>
                     <Link
                       href={`/dashboard/matches/${match.id}/create-team`}
-                      className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+                      className="bg-[#22c55e] hover:shadow-lg hover:shadow-[#22c55e]/30 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
                     >
                       Create Team
                     </Link>
                   </div>
                 ) : activeTab === "live" ? (
-                  <div className="pt-3 border-t border-gray-100">
-                    <p className="text-sm text-center text-gray-600">{match.status}</p>
+                  <div className="pt-3 border-t border-[#22c55e]/20">
+                    <p className="text-sm text-center text-gray-400">{match.status}</p>
                     <div className="flex gap-2 mt-3">
                       <Link
                         href={`/dashboard/live-scores/${match.id}`}
@@ -281,11 +281,11 @@ export default function MatchesPage() {
                     </div>
                   </div>
                 ) : (
-                  <div className="pt-3 border-t border-gray-100">
-                    <p className="text-sm text-center text-gray-600">{match.status}</p>
+                  <div className="pt-3 border-t border-[#22c55e]/20">
+                    <p className="text-sm text-center text-gray-400">{match.status}</p>
                     <Link
                       href={`/dashboard/matches/${match.id}/results`}
-                      className="block mt-3 bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium text-center transition-colors"
+                      className="block mt-3 bg-gray-100 hover:bg-gray-200 text-gray-300 px-4 py-2 rounded-lg text-sm font-medium text-center transition-colors"
                     >
                       View Results
                     </Link>
@@ -295,8 +295,8 @@ export default function MatchesPage() {
             ))}
           </div>
         ) : (
-          <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-12 text-center">
-            <p className="text-gray-500 text-lg">
+          <div className="bg-[#1a2332] rounded-xl shadow-sm border border-[#22c55e]/20 p-12 text-center">
+            <p className="text-gray-400 text-lg">
               {activeTab === "upcoming"
                 ? "No upcoming matches at the moment."
                 : activeTab === "live"
@@ -309,7 +309,7 @@ export default function MatchesPage() {
 
         {/* Match Count */}
         {!loading && filteredMatches.length > 0 && (
-          <p className="text-center text-gray-500 text-sm mt-6">
+          <p className="text-center text-gray-400 text-sm mt-6">
             Showing {filteredMatches.length} {activeTab} match{filteredMatches.length !== 1 ? "es" : ""}
           </p>
         )}

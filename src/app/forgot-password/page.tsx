@@ -176,20 +176,20 @@ export default function ForgotPasswordPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#0a0f1a] flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <Link href="/" className="flex justify-center">
-          <span className="text-3xl font-bold text-green-600">DineDivine</span>
+          <span className="text-3xl font-bold text-[#22c55e]">DineDivine</span>
         </Link>
-        <h2 className="mt-6 text-center text-3xl font-bold text-gray-900">
+        <h2 className="mt-6 text-center text-3xl font-bold text-white">
           {step === "success" ? "Password Reset Successful" : "Reset your password"}
         </h2>
         {step !== "success" && (
-          <p className="mt-2 text-center text-sm text-gray-600">
+          <p className="mt-2 text-center text-sm text-gray-400">
             Remember your password?{" "}
             <Link
               href="/login"
-              className="font-medium text-green-600 hover:text-green-500"
+              className="font-medium text-[#22c55e] hover:text-[#4ade80]"
             >
               Sign in
             </Link>
@@ -198,9 +198,9 @@ export default function ForgotPasswordPage() {
       </div>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-white py-8 px-4 shadow-lg sm:rounded-xl sm:px-10">
+        <div className="bg-[#1a2332] py-8 px-4 shadow-lg sm:rounded-xl sm:px-10">
           {error && (
-            <div className="mb-4 bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm">
+            <div className="mb-4 bg-red-500/10 border border-red-500/30 text-red-400 px-4 py-3 rounded-lg text-sm">
               {error}
             </div>
           )}
@@ -224,7 +224,7 @@ export default function ForgotPasswordPage() {
                     />
                   </svg>
                 </div>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-400 text-sm">
                   Enter your registered email address and we&apos;ll send you a
                   verification code to reset your password.
                 </p>
@@ -233,7 +233,7 @@ export default function ForgotPasswordPage() {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-sm font-medium text-gray-300"
                 >
                   Email address
                 </label>
@@ -247,7 +247,7 @@ export default function ForgotPasswordPage() {
                     setEmail(e.target.value);
                     setError("");
                   }}
-                  className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                  className="mt-1 block w-full px-4 py-3 border border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#22c55e] focus:border-[#22c55e]"
                   placeholder="Enter your email"
                 />
               </div>
@@ -258,7 +258,7 @@ export default function ForgotPasswordPage() {
                 className={`w-full py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white ${
                   isLoading
                     ? "bg-gray-400 cursor-not-allowed"
-                    : "bg-green-600 hover:bg-green-700"
+                    : "bg-gradient-to-r from-[#22c55e] to-[#16a34a] hover:shadow-lg hover:shadow-[#22c55e]/30"
                 }`}
               >
                 {isLoading ? "Sending..." : "Send Verification Code"}
@@ -285,7 +285,7 @@ export default function ForgotPasswordPage() {
                     />
                   </svg>
                 </div>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-400 text-sm">
                   We&apos;ve sent a 6-digit verification code to{" "}
                   <strong>{email}</strong>. Enter the code below.
                 </p>
@@ -294,7 +294,7 @@ export default function ForgotPasswordPage() {
               <div>
                 <label
                   htmlFor="otp"
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-sm font-medium text-gray-300"
                 >
                   Verification Code
                 </label>
@@ -310,7 +310,7 @@ export default function ForgotPasswordPage() {
                     setOtp(value);
                     setError("");
                   }}
-                  className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 text-center text-2xl tracking-widest"
+                  className="mt-1 block w-full px-4 py-3 border border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#22c55e] focus:border-[#22c55e] text-center text-2xl tracking-widest"
                   placeholder="000000"
                 />
               </div>
@@ -321,7 +321,7 @@ export default function ForgotPasswordPage() {
                 className={`w-full py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white ${
                   isLoading
                     ? "bg-gray-400 cursor-not-allowed"
-                    : "bg-green-600 hover:bg-green-700"
+                    : "bg-gradient-to-r from-[#22c55e] to-[#16a34a] hover:shadow-lg hover:shadow-[#22c55e]/30"
                 }`}
               >
                 {isLoading ? "Verifying..." : "Verify Code"}
@@ -332,7 +332,7 @@ export default function ForgotPasswordPage() {
                   type="button"
                   onClick={handleResendOtp}
                   disabled={isLoading}
-                  className="text-sm text-green-600 hover:text-green-500"
+                  className="text-sm text-[#22c55e] hover:text-[#4ade80]"
                 >
                   Didn&apos;t receive the code? Resend
                 </button>
@@ -345,7 +345,7 @@ export default function ForgotPasswordPage() {
                   setOtp("");
                   setError("");
                 }}
-                className="w-full py-3 px-4 border-2 border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
+                className="w-full py-3 px-4 border-2 border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-300 bg-white hover:bg-gray-50"
               >
                 Change Email
               </button>
@@ -371,7 +371,7 @@ export default function ForgotPasswordPage() {
                     />
                   </svg>
                 </div>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-400 text-sm">
                   Create a new password for your account.
                 </p>
               </div>
@@ -379,7 +379,7 @@ export default function ForgotPasswordPage() {
               <div>
                 <label
                   htmlFor="password"
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-sm font-medium text-gray-300"
                 >
                   New Password
                 </label>
@@ -394,7 +394,7 @@ export default function ForgotPasswordPage() {
                       setPassword(e.target.value);
                       setError("");
                     }}
-                    className="block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 pr-12"
+                    className="block w-full px-4 py-3 border border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#22c55e] focus:border-[#22c55e] pr-12"
                     placeholder="Create a strong password"
                   />
                   <button
@@ -423,7 +423,7 @@ export default function ForgotPasswordPage() {
                     </svg>
                   </button>
                 </div>
-                <p className="mt-1 text-xs text-gray-500">
+                <p className="mt-1 text-xs text-gray-400">
                   At least 8 characters with uppercase, lowercase, and number
                 </p>
               </div>
@@ -431,7 +431,7 @@ export default function ForgotPasswordPage() {
               <div>
                 <label
                   htmlFor="confirmPassword"
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-sm font-medium text-gray-300"
                 >
                   Confirm New Password
                 </label>
@@ -446,7 +446,7 @@ export default function ForgotPasswordPage() {
                       setConfirmPassword(e.target.value);
                       setError("");
                     }}
-                    className="block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 pr-12"
+                    className="block w-full px-4 py-3 border border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#22c55e] focus:border-[#22c55e] pr-12"
                     placeholder="Confirm your password"
                   />
                   <button
@@ -483,7 +483,7 @@ export default function ForgotPasswordPage() {
                 className={`w-full py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white ${
                   isLoading
                     ? "bg-gray-400 cursor-not-allowed"
-                    : "bg-green-600 hover:bg-green-700"
+                    : "bg-gradient-to-r from-[#22c55e] to-[#16a34a] hover:shadow-lg hover:shadow-[#22c55e]/30"
                 }`}
               >
                 {isLoading ? "Resetting..." : "Reset Password"}
@@ -509,16 +509,16 @@ export default function ForgotPasswordPage() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <h3 className="text-xl font-semibold text-white mb-2">
                 Password Reset Complete!
               </h3>
-              <p className="text-gray-600 mb-8">
+              <p className="text-gray-400 mb-8">
                 Your password has been successfully reset. You can now sign in
                 with your new password.
               </p>
               <Link
                 href="/login"
-                className="w-full inline-block py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 text-center"
+                className="w-full inline-block py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-gradient-to-r from-[#22c55e] to-[#16a34a] hover:shadow-lg hover:shadow-[#22c55e]/30 text-center"
               >
                 Sign In Now
               </Link>
@@ -529,11 +529,11 @@ export default function ForgotPasswordPage() {
         {/* Help Text */}
         {step !== "success" && (
           <div className="mt-6 text-center">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-gray-400">
               Need help?{" "}
               <Link
                 href="/contact"
-                className="text-green-600 hover:text-green-500"
+                className="text-[#22c55e] hover:text-[#4ade80]"
               >
                 Contact Support
               </Link>

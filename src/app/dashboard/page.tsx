@@ -151,29 +151,29 @@ export default function DashboardPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
+      <div className="min-h-screen bg-[#0a0f1a] flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#22c55e]"></div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#0a0f1a]">
       {/* Dashboard Header */}
-      <div className="bg-gradient-to-r from-green-600 to-green-700 text-white">
+      <div className="bg-gradient-to-r from-[#22c55e] to-[#16a34a] text-white">
         <div className="max-w-7xl mx-auto px-4 py-8">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between">
             <div>
               <h1 className="text-3xl font-bold">Welcome back, {user?.fullName?.split(" ")[0]}!</h1>
-              <p className="text-green-100 mt-1">Ready to play some fantasy cricket?</p>
+              <p className="text-white/80 mt-1">Ready to play some fantasy cricket?</p>
             </div>
             <div className="mt-4 md:mt-0 flex items-center gap-4">
               <div className="bg-white/20 rounded-lg px-4 py-2">
-                <p className="text-sm text-green-100">Level</p>
+                <p className="text-sm text-white/80">Level</p>
                 <p className="text-2xl font-bold">{stats?.level || 1}</p>
               </div>
               <div className="bg-white/20 rounded-lg px-4 py-2">
-                <p className="text-sm text-green-100">XP Points</p>
+                <p className="text-sm text-white/80">XP Points</p>
                 <p className="text-2xl font-bold">{stats?.xp_points || 0}</p>
               </div>
             </div>
@@ -181,7 +181,7 @@ export default function DashboardPage() {
 
           {/* XP Progress Bar */}
           <div className="mt-6">
-            <div className="flex justify-between text-sm text-green-100 mb-1">
+            <div className="flex justify-between text-sm text-white/80 mb-1">
               <span>Level {stats?.level || 1}</span>
               <span>Level {(stats?.level || 1) + 1}</span>
             </div>
@@ -198,11 +198,11 @@ export default function DashboardPage() {
       <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Quick Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-          <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+          <div className="bg-[#1a2332] rounded-xl shadow-sm p-6 border border-[#22c55e]/20">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-gray-500 text-sm">Teams Created</p>
-                <p className="text-3xl font-bold text-gray-800">{counts.teams}</p>
+                <p className="text-gray-400 text-sm">Teams Created</p>
+                <p className="text-3xl font-bold text-white">{counts.teams}</p>
               </div>
               <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
                 <span className="text-2xl">🏏</span>
@@ -210,11 +210,11 @@ export default function DashboardPage() {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+          <div className="bg-[#1a2332] rounded-xl shadow-sm p-6 border border-[#22c55e]/20">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-gray-500 text-sm">Contests Joined</p>
-                <p className="text-3xl font-bold text-gray-800">{counts.contests}</p>
+                <p className="text-gray-400 text-sm">Contests Joined</p>
+                <p className="text-3xl font-bold text-white">{counts.contests}</p>
               </div>
               <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
                 <span className="text-2xl">🎯</span>
@@ -222,11 +222,11 @@ export default function DashboardPage() {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+          <div className="bg-[#1a2332] rounded-xl shadow-sm p-6 border border-[#22c55e]/20">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-gray-500 text-sm">Total Points</p>
-                <p className="text-3xl font-bold text-gray-800">{stats?.total_points_earned || 0}</p>
+                <p className="text-gray-400 text-sm">Total Points</p>
+                <p className="text-3xl font-bold text-white">{stats?.total_points_earned || 0}</p>
               </div>
               <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
                 <span className="text-2xl">⭐</span>
@@ -234,11 +234,11 @@ export default function DashboardPage() {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+          <div className="bg-[#1a2332] rounded-xl shadow-sm p-6 border border-[#22c55e]/20">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-gray-500 text-sm">Total Wins</p>
-                <p className="text-3xl font-bold text-gray-800">{stats?.total_wins || 0}</p>
+                <p className="text-gray-400 text-sm">Total Wins</p>
+                <p className="text-3xl font-bold text-white">{stats?.total_wins || 0}</p>
               </div>
               <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
                 <span className="text-2xl">🏆</span>
@@ -255,7 +255,7 @@ export default function DashboardPage() {
           >
             <span className="text-3xl mb-2 block">🏏</span>
             <h3 className="font-semibold">Play Now</h3>
-            <p className="text-sm text-green-100">Select a match</p>
+            <p className="text-sm text-white/80">Select a match</p>
           </Link>
 
           <Link
@@ -290,11 +290,11 @@ export default function DashboardPage() {
         {liveMatches.length > 0 && (
           <div className="mb-8">
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2">
+              <h2 className="text-xl font-bold text-white flex items-center gap-2">
                 <span className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></span>
                 Live Matches
               </h2>
-              <Link href="/dashboard/live-scores" className="text-green-600 hover:underline text-sm">
+              <Link href="/dashboard/live-scores" className="text-[#22c55e] hover:underline text-sm">
                 View All →
               </Link>
             </div>
@@ -303,11 +303,11 @@ export default function DashboardPage() {
                 <Link 
                   key={match.id} 
                   href={`/dashboard/live-scores/${match.id}`}
-                  className="bg-white rounded-xl shadow-sm border border-red-200 p-4 hover:shadow-md transition-all"
+                  className="bg-[#1a2332] rounded-xl shadow-sm border border-red-500/30 p-4 hover:shadow-md transition-all"
                 >
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-xs text-gray-500 truncate max-w-[60%]">{match.series}</span>
-                    <span className="px-2 py-1 bg-red-100 text-red-600 text-xs rounded-full font-medium animate-pulse">
+                    <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded-full font-medium animate-pulse">
                       LIVE
                     </span>
                   </div>
@@ -316,14 +316,14 @@ export default function DashboardPage() {
                       <img src={match.t1img} alt={match.t1} className="w-8 h-8 rounded-full" onError={(e) => { e.currentTarget.src = '/placeholder-team.png'; }} />
                       <div>
                         <p className="font-semibold text-sm">{match.t1}</p>
-                        <p className="text-green-600 font-bold">{match.t1s || "-"}</p>
+                        <p className="text-[#22c55e] font-bold">{match.t1s || "-"}</p>
                       </div>
                     </div>
                     <span className="text-gray-400 text-sm">VS</span>
                     <div className="flex items-center gap-2">
                       <div className="text-right">
                         <p className="font-semibold text-sm">{match.t2}</p>
-                        <p className="text-green-600 font-bold">{match.t2s || "-"}</p>
+                        <p className="text-[#22c55e] font-bold">{match.t2s || "-"}</p>
                       </div>
                       <img src={match.t2img} alt={match.t2} className="w-8 h-8 rounded-full" onError={(e) => { e.currentTarget.src = '/placeholder-team.png'; }} />
                     </div>
@@ -338,8 +338,8 @@ export default function DashboardPage() {
         {/* Upcoming Matches */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-xl font-bold text-gray-800">Upcoming Matches</h2>
-            <Link href="/dashboard/matches" className="text-green-600 hover:underline text-sm">
+            <h2 className="text-xl font-bold text-white">Upcoming Matches</h2>
+            <Link href="/dashboard/matches" className="text-[#22c55e] hover:underline text-sm">
               View All →
             </Link>
           </div>
@@ -349,17 +349,17 @@ export default function DashboardPage() {
                 <Link
                   key={match.id}
                   href={`/dashboard/matches/${match.id}`}
-                  className="bg-white rounded-xl shadow-sm border border-gray-100 p-4 hover:shadow-md transition-all hover:border-green-300"
+                  className="bg-[#1a2332] rounded-xl shadow-sm border border-[#22c55e]/20 p-4 hover:shadow-md transition-all hover:border-[#22c55e]/50"
                 >
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-xs text-gray-500 truncate max-w-[50%]">{match.series}</span>
                     <div className="flex items-center gap-1">
                       {hasSquadAvailable(match.series) && (
-                        <span className="px-2 py-0.5 bg-green-100 text-green-600 text-xs rounded-full font-medium">
+                        <span className="px-2 py-0.5 bg-[#22c55e]/20 text-[#22c55e] text-xs rounded-full font-medium">
                           Squad Ready
                         </span>
                       )}
-                      <span className="px-2 py-1 bg-green-100 text-green-600 text-xs rounded-full font-medium uppercase">
+                      <span className="px-2 py-1 bg-[#22c55e]/20 text-[#22c55e] text-xs rounded-full font-medium uppercase">
                         {match.matchType}
                       </span>
                     </div>
@@ -378,17 +378,17 @@ export default function DashboardPage() {
                   <div className="flex items-center justify-between text-sm">
                     <div>
                       <span className="text-gray-500">{formatDateIST(match.dateTimeGMT)} IST</span>
-                      <p className="text-xs text-green-600 font-medium">
+                      <p className="text-xs text-[#22c55e] font-medium">
                         Starts in {getTimeRemaining(match.dateTimeGMT)}
                       </p>
                     </div>
-                    <span className="text-green-600 font-medium">Create Team →</span>
+                    <span className="text-[#22c55e] font-medium">Create Team →</span>
                   </div>
                 </Link>
               ))}
             </div>
           ) : (
-            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 text-center">
+            <div className="bg-[#1a2332] rounded-xl shadow-sm border border-[#22c55e]/20 p-8 text-center">
               <p className="text-gray-500">No upcoming matches at the moment.</p>
             </div>
           )}
@@ -397,8 +397,8 @@ export default function DashboardPage() {
         {/* Additional Stats */}
         <div className="grid md:grid-cols-2 gap-6">
           {/* Streak & Performance */}
-          <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-            <h3 className="text-lg font-bold text-gray-800 mb-4">Your Performance</h3>
+          <div className="bg-[#1a2332] rounded-xl shadow-sm border border-[#22c55e]/20 p-6">
+            <h3 className="text-lg font-bold text-white mb-4">Your Performance</h3>
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
@@ -434,22 +434,22 @@ export default function DashboardPage() {
           </div>
 
           {/* Quick Links */}
-          <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-            <h3 className="text-lg font-bold text-gray-800 mb-4">Quick Links</h3>
+          <div className="bg-[#1a2332] rounded-xl shadow-sm border border-[#22c55e]/20 p-6">
+            <h3 className="text-lg font-bold text-white mb-4">Quick Links</h3>
             <div className="space-y-3">
               <Link
                 href="/dashboard/profile"
-                className="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                className="flex items-center justify-between p-3 rounded-lg hover:bg-[#22c55e]/10 transition-colors"
               >
                 <div className="flex items-center gap-3">
                   <span className="text-xl">👤</span>
                   <span className="font-medium">Edit Profile</span>
                 </div>
-                <span className="text-gray-400">→</span>
+                <span className="text-[#22c55e]">→</span>
               </Link>
               <Link
                 href="/dashboard/notifications"
-                className="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                className="flex items-center justify-between p-3 rounded-lg hover:bg-[#22c55e]/10 transition-colors"
               >
                 <div className="flex items-center gap-3">
                   <span className="text-xl">🔔</span>
@@ -460,27 +460,27 @@ export default function DashboardPage() {
                     </span>
                   )}
                 </div>
-                <span className="text-gray-400">→</span>
+                <span className="text-[#22c55e]">→</span>
               </Link>
               <Link
                 href="/dashboard/player-stats"
-                className="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                className="flex items-center justify-between p-3 rounded-lg hover:bg-[#22c55e]/10 transition-colors"
               >
                 <div className="flex items-center gap-3">
                   <span className="text-xl">📊</span>
                   <span className="font-medium">Player Stats</span>
                 </div>
-                <span className="text-gray-400">→</span>
+                <span className="text-[#22c55e]">→</span>
               </Link>
               <Link
                 href="/how-to-play"
-                className="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                className="flex items-center justify-between p-3 rounded-lg hover:bg-[#22c55e]/10 transition-colors"
               >
                 <div className="flex items-center gap-3">
                   <span className="text-xl">❓</span>
                   <span className="font-medium">How to Play</span>
                 </div>
-                <span className="text-gray-400">→</span>
+                <span className="text-[#22c55e]">→</span>
               </Link>
             </div>
           </div>

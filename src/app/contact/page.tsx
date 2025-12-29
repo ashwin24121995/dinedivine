@@ -139,14 +139,14 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              <h2 className="text-2xl font-bold text-white mb-6">
                 Send Us a Message
               </h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-sm font-medium text-gray-700 mb-1"
+                    className="block text-sm font-medium text-gray-300 mb-1"
                   >
                     Full Name <span className="text-red-500">*</span>
                   </label>
@@ -157,7 +157,7 @@ export default function ContactPage() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition-colors"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#22c55e] focus:border-[#22c55e] outline-none transition-colors"
                     placeholder="Enter your full name"
                   />
                 </div>
@@ -165,7 +165,7 @@ export default function ContactPage() {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 mb-1"
+                    className="block text-sm font-medium text-gray-300 mb-1"
                   >
                     Email Address <span className="text-red-500">*</span>
                   </label>
@@ -176,7 +176,7 @@ export default function ContactPage() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition-colors"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#22c55e] focus:border-[#22c55e] outline-none transition-colors"
                     placeholder="Enter your email address"
                   />
                 </div>
@@ -184,7 +184,7 @@ export default function ContactPage() {
                 <div>
                   <label
                     htmlFor="subject"
-                    className="block text-sm font-medium text-gray-700 mb-1"
+                    className="block text-sm font-medium text-gray-300 mb-1"
                   >
                     Subject <span className="text-red-500">*</span>
                   </label>
@@ -194,7 +194,7 @@ export default function ContactPage() {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition-colors bg-white"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#22c55e] focus:border-[#22c55e] outline-none transition-colors bg-white"
                   >
                     <option value="">Select a subject</option>
                     {subjectOptions.map((option) => (
@@ -208,7 +208,7 @@ export default function ContactPage() {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-medium text-gray-700 mb-1"
+                    className="block text-sm font-medium text-gray-300 mb-1"
                   >
                     Message <span className="text-red-500">*</span>
                   </label>
@@ -219,7 +219,7 @@ export default function ContactPage() {
                     onChange={handleChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition-colors resize-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#22c55e] focus:border-[#22c55e] outline-none transition-colors resize-none"
                     placeholder="Enter your message"
                   />
                 </div>
@@ -230,14 +230,14 @@ export default function ContactPage() {
                   className={`w-full py-3 px-6 rounded-lg font-semibold text-white transition-colors duration-200 ${
                     isSubmitting
                       ? "bg-gray-400 cursor-not-allowed"
-                      : "bg-green-600 hover:bg-green-700"
+                      : "bg-[#22c55e] hover:shadow-lg hover:shadow-[#22c55e]/30"
                   }`}
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </button>
 
                 {submitStatus === "success" && (
-                  <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg">
+                  <div className="bg-[#22c55e]/10 border border-green-200 text-[#22c55e] px-4 py-3 rounded-lg">
                     Thank you for your message! We&apos;ll get back to you
                     within 24-48 hours.
                   </div>
@@ -253,21 +253,21 @@ export default function ContactPage() {
 
             {/* Contact Information */}
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              <h2 className="text-2xl font-bold text-white mb-6">
                 Contact Information
               </h2>
 
               <div className="space-y-6 mb-8">
                 {contactInfo.map((info) => (
                   <div key={info.title} className="flex gap-4">
-                    <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0 text-green-600">
+                    <div className="w-12 h-12 bg-[#22c55e]/20 rounded-lg flex items-center justify-center flex-shrink-0 text-[#22c55e]">
                       {info.icon}
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900">
+                      <h3 className="font-semibold text-white">
                         {info.title}
                       </h3>
-                      <p className="text-gray-600">{info.content}</p>
+                      <p className="text-gray-400">{info.content}</p>
                     </div>
                   </div>
                 ))}
@@ -275,10 +275,10 @@ export default function ContactPage() {
 
               {/* Company Details */}
               <div className="bg-gray-50 p-6 rounded-xl mb-8">
-                <h3 className="font-semibold text-gray-900 mb-4">
+                <h3 className="font-semibold text-white mb-4">
                   Company Details
                 </h3>
-                <div className="space-y-2 text-sm text-gray-600">
+                <div className="space-y-2 text-sm text-gray-400">
                   <p>
                     <strong>Company Name:</strong> DINEDIVINE VENTURES PRIVATE
                     LIMITED
@@ -296,11 +296,11 @@ export default function ContactPage() {
               </div>
 
               {/* Response Time */}
-              <div className="bg-green-50 border border-green-200 p-6 rounded-xl">
+              <div className="bg-[#22c55e]/10 border border-green-200 p-6 rounded-xl">
                 <h3 className="font-semibold text-green-800 mb-2">
                   Response Time
                 </h3>
-                <p className="text-green-700 text-sm">
+                <p className="text-[#22c55e] text-sm">
                   We aim to respond to all inquiries within 24-48 business
                   hours. For urgent matters, please indicate so in your message
                   subject.
@@ -314,16 +314,16 @@ export default function ContactPage() {
       {/* FAQ Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl font-bold text-white mb-4">
             Looking for Quick Answers?
           </h2>
-          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
             Check out our FAQ section for answers to commonly asked questions
             about DineDivine, fantasy cricket, and our platform.
           </p>
           <Link
             href="/faq"
-            className="inline-block bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-200"
+            className="inline-block bg-[#22c55e] text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-[#22c55e]/30 transition-colors duration-200"
           >
             Visit FAQ
           </Link>
@@ -333,17 +333,17 @@ export default function ContactPage() {
       {/* Helpful Links */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-center text-gray-900 mb-8">
+          <h2 className="text-2xl font-bold text-center text-white mb-8">
             Helpful Resources
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <Link
               href="/how-to-play"
-              className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200 text-center group"
+              className="bg-[#1a2332] p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200 text-center group"
             >
-              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 transition-colors duration-200">
+              <div className="w-12 h-12 bg-[#22c55e]/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 transition-colors duration-200">
                 <svg
-                  className="w-6 h-6 text-green-600"
+                  className="w-6 h-6 text-[#22c55e]"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -356,15 +356,15 @@ export default function ContactPage() {
                   />
                 </svg>
               </div>
-              <h3 className="font-semibold text-gray-900">How To Play</h3>
+              <h3 className="font-semibold text-white">How To Play</h3>
             </Link>
             <Link
               href="/terms"
-              className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200 text-center group"
+              className="bg-[#1a2332] p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200 text-center group"
             >
-              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 transition-colors duration-200">
+              <div className="w-12 h-12 bg-[#22c55e]/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 transition-colors duration-200">
                 <svg
-                  className="w-6 h-6 text-green-600"
+                  className="w-6 h-6 text-[#22c55e]"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -377,15 +377,15 @@ export default function ContactPage() {
                   />
                 </svg>
               </div>
-              <h3 className="font-semibold text-gray-900">Terms & Conditions</h3>
+              <h3 className="font-semibold text-white">Terms & Conditions</h3>
             </Link>
             <Link
               href="/privacy"
-              className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200 text-center group"
+              className="bg-[#1a2332] p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200 text-center group"
             >
-              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 transition-colors duration-200">
+              <div className="w-12 h-12 bg-[#22c55e]/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 transition-colors duration-200">
                 <svg
-                  className="w-6 h-6 text-green-600"
+                  className="w-6 h-6 text-[#22c55e]"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -398,15 +398,15 @@ export default function ContactPage() {
                   />
                 </svg>
               </div>
-              <h3 className="font-semibold text-gray-900">Privacy Policy</h3>
+              <h3 className="font-semibold text-white">Privacy Policy</h3>
             </Link>
             <Link
               href="/responsible-gaming"
-              className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200 text-center group"
+              className="bg-[#1a2332] p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200 text-center group"
             >
-              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 transition-colors duration-200">
+              <div className="w-12 h-12 bg-[#22c55e]/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 transition-colors duration-200">
                 <svg
-                  className="w-6 h-6 text-green-600"
+                  className="w-6 h-6 text-[#22c55e]"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -419,7 +419,7 @@ export default function ContactPage() {
                   />
                 </svg>
               </div>
-              <h3 className="font-semibold text-gray-900">Responsible Gaming</h3>
+              <h3 className="font-semibold text-white">Responsible Gaming</h3>
             </Link>
           </div>
         </div>

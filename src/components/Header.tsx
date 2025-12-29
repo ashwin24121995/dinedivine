@@ -64,7 +64,7 @@ const Header = () => {
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center gap-2">
               <Image
-                src="/favicon.png"
+                src="/favicon.webp"
                 alt="DineDivine"
                 width={36}
                 height={36}

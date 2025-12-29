@@ -283,7 +283,7 @@ export default function CreateTeamPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-[#0a0f1a] flex items-center justify-center">
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
       </div>
     );
@@ -291,9 +291,9 @@ export default function CreateTeamPage() {
 
   if (squadNotAvailable) {
     return (
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-[#0a0f1a]">
         {/* Header */}
-        <div className="bg-gradient-to-r from-green-600 to-green-700 text-white py-4">
+        <div className="bg-gradient-to-r from-[#22c55e] to-[#16a34a] text-white py-4">
           <div className="max-w-7xl mx-auto px-4">
             <Link href={`/dashboard/matches/${matchId}`} className="text-white/80 hover:text-white flex items-center gap-2 mb-2">
               ← Back to Match
@@ -303,23 +303,23 @@ export default function CreateTeamPage() {
         </div>
         
         <div className="max-w-2xl mx-auto px-4 py-16">
-          <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+          <div className="bg-[#1a2332] rounded-xl shadow-lg p-8 text-center">
             <div className="text-6xl mb-4">🏏</div>
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">Squad Not Available</h2>
-            <p className="text-gray-600 mb-6">{squadMessage}</p>
-            <p className="text-sm text-gray-500 mb-8">
+            <h2 className="text-2xl font-bold text-white mb-4">Squad Not Available</h2>
+            <p className="text-gray-400 mb-6">{squadMessage}</p>
+            <p className="text-sm text-gray-400 mb-8">
               Teams are usually announced 1-2 hours before the match starts. Please check back later.
             </p>
             <div className="flex gap-4 justify-center">
               <Link 
                 href={`/dashboard/matches/${matchId}`}
-                className="bg-gray-200 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-300 transition"
+                className="bg-gray-200 text-gray-300 px-6 py-3 rounded-lg hover:bg-gray-300 transition"
               >
                 ← Back to Match
               </Link>
               <button 
                 onClick={() => window.location.reload()}
-                className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition"
+                className="bg-[#22c55e] text-white px-6 py-3 rounded-lg hover:shadow-lg hover:shadow-[#22c55e]/30 transition"
               >
                 🔄 Refresh
               </button>
@@ -331,9 +331,9 @@ export default function CreateTeamPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#0a0f1a]">
       {/* Header */}
-      <div className="bg-gradient-to-r from-green-600 to-green-700 text-white py-4">
+      <div className="bg-gradient-to-r from-[#22c55e] to-[#16a34a] text-white py-4">
         <div className="max-w-7xl mx-auto px-4">
           <Link href="/dashboard/matches" className="text-green-100 hover:text-white text-sm mb-2 inline-block">
             ← Back to Matches
@@ -352,21 +352,21 @@ export default function CreateTeamPage() {
       </div>
 
       {/* Progress Steps */}
-      <div className="bg-white border-b border-gray-200">
+      <div className="bg-white border-b border-[#22c55e]/20">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center justify-center gap-4">
-            <div className={`flex items-center gap-2 ${step === "select" ? "text-green-600" : "text-gray-400"}`}>
-              <span className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${step === "select" ? "bg-green-600 text-white" : "bg-gray-200"}`}>1</span>
+            <div className={`flex items-center gap-2 ${step === "select" ? "text-[#22c55e]" : "text-gray-400"}`}>
+              <span className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${step === "select" ? "bg-[#22c55e] text-white" : "bg-gray-200"}`}>1</span>
               <span className="font-medium">Select Players</span>
             </div>
             <div className="w-12 h-0.5 bg-gray-200"></div>
-            <div className={`flex items-center gap-2 ${step === "captain" ? "text-green-600" : "text-gray-400"}`}>
-              <span className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${step === "captain" ? "bg-green-600 text-white" : "bg-gray-200"}`}>2</span>
+            <div className={`flex items-center gap-2 ${step === "captain" ? "text-[#22c55e]" : "text-gray-400"}`}>
+              <span className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${step === "captain" ? "bg-[#22c55e] text-white" : "bg-gray-200"}`}>2</span>
               <span className="font-medium">Choose C & VC</span>
             </div>
             <div className="w-12 h-0.5 bg-gray-200"></div>
-            <div className={`flex items-center gap-2 ${step === "preview" ? "text-green-600" : "text-gray-400"}`}>
-              <span className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${step === "preview" ? "bg-green-600 text-white" : "bg-gray-200"}`}>3</span>
+            <div className={`flex items-center gap-2 ${step === "preview" ? "text-[#22c55e]" : "text-gray-400"}`}>
+              <span className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${step === "preview" ? "bg-[#22c55e] text-white" : "bg-gray-200"}`}>3</span>
               <span className="font-medium">Save Team</span>
             </div>
           </div>
@@ -374,24 +374,24 @@ export default function CreateTeamPage() {
       </div>
 
       {/* Stats Bar */}
-      <div className="bg-white border-b border-gray-200 sticky top-0 z-10">
+      <div className="bg-white border-b border-[#22c55e]/20 sticky top-0 z-10">
         <div className="max-w-7xl mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-6">
               <div>
-                <p className="text-xs text-gray-500">Players</p>
+                <p className="text-xs text-gray-400">Players</p>
                 <p className="font-bold text-lg">{selectedPlayers.length}/{TOTAL_PLAYERS}</p>
               </div>
               <div>
-                <p className="text-xs text-gray-500">Credits Left</p>
+                <p className="text-xs text-gray-400">Credits Left</p>
                 <p className="font-bold text-lg">{(TOTAL_CREDITS - getTotalCreditsUsed()).toFixed(1)}</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
               {Object.entries(ROLE_LIMITS).map(([role, limit]) => (
                 <div key={role} className="text-center">
-                  <p className="text-xs text-gray-500">{role}</p>
-                  <p className={`font-bold ${getSelectedByRole(role) >= limit.min ? "text-green-600" : "text-gray-400"}`}>
+                  <p className="text-xs text-gray-400">{role}</p>
+                  <p className={`font-bold ${getSelectedByRole(role) >= limit.min ? "text-[#22c55e]" : "text-gray-400"}`}>
                     {getSelectedByRole(role)}
                   </p>
                 </div>
@@ -409,7 +409,7 @@ export default function CreateTeamPage() {
               <div className="flex gap-2">
                 <button
                   onClick={() => setActiveTeamTab(0)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium ${activeTeamTab === 0 ? "bg-green-600 text-white" : "bg-white text-gray-600 border"}`}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium ${activeTeamTab === 0 ? "bg-[#22c55e] text-white" : "bg-white text-gray-400 border"}`}
                 >
                   All
                 </button>
@@ -417,7 +417,7 @@ export default function CreateTeamPage() {
                   <button
                     key={index}
                     onClick={() => setActiveTeamTab(index + 1)}
-                    className={`px-4 py-2 rounded-lg text-sm font-medium ${activeTeamTab === index + 1 ? "bg-green-600 text-white" : "bg-white text-gray-600 border"}`}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium ${activeTeamTab === index + 1 ? "bg-[#22c55e] text-white" : "bg-white text-gray-400 border"}`}
                   >
                     {squad.shortname} ({getTeamPlayerCount(index)})
                   </button>
@@ -428,7 +428,7 @@ export default function CreateTeamPage() {
                   <button
                     key={role}
                     onClick={() => setActiveRoleTab(role)}
-                    className={`px-4 py-2 rounded-lg text-sm font-medium ${activeRoleTab === role ? "bg-blue-600 text-white" : "bg-white text-gray-600 border"}`}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium ${activeRoleTab === role ? "bg-blue-600 text-white" : "bg-white text-gray-400 border"}`}
                   >
                     {role}
                   </button>
@@ -437,8 +437,8 @@ export default function CreateTeamPage() {
             </div>
 
             {/* Players List */}
-            <div className="bg-white rounded-xl shadow-sm border border-gray-100">
-              <div className="grid grid-cols-12 gap-4 p-4 border-b border-gray-100 text-sm font-medium text-gray-500">
+            <div className="bg-[#1a2332] rounded-xl shadow-sm border border-[#22c55e]/20">
+              <div className="grid grid-cols-12 gap-4 p-4 border-b border-[#22c55e]/20 text-sm font-medium text-gray-400">
                 <div className="col-span-5">Player</div>
                 <div className="col-span-2 text-center">Role</div>
                 <div className="col-span-2 text-center">Points</div>
@@ -454,7 +454,7 @@ export default function CreateTeamPage() {
                     key={player.id}
                     onClick={() => togglePlayer(player)}
                     className={`grid grid-cols-12 gap-4 p-4 border-b border-gray-50 cursor-pointer transition-colors ${
-                      isSelected ? "bg-green-50" : can ? "hover:bg-gray-50" : "opacity-50"
+                      isSelected ? "bg-[#22c55e]/10" : can ? "hover:bg-gray-50" : "opacity-50"
                     }`}
                   >
                     <div className="col-span-5 flex items-center gap-3">
@@ -465,16 +465,16 @@ export default function CreateTeamPage() {
                         onError={(e) => { e.currentTarget.src = '/placeholder-player.png'; }}
                       />
                       <div>
-                        <p className="font-medium text-gray-800">{player.name}</p>
-                        <p className="text-xs text-gray-500">{squads[player.teamIndex]?.shortname}</p>
+                        <p className="font-medium text-white">{player.name}</p>
+                        <p className="text-xs text-gray-400">{squads[player.teamIndex]?.shortname}</p>
                       </div>
                     </div>
                     <div className="col-span-2 flex items-center justify-center">
-                      <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">
+                      <span className="px-2 py-1 bg-gray-100 text-gray-400 text-xs rounded-full">
                         {getRoleFromPlayer(player.role)}
                       </span>
                     </div>
-                    <div className="col-span-2 flex items-center justify-center text-gray-600">
+                    <div className="col-span-2 flex items-center justify-center text-gray-400">
                       -
                     </div>
                     <div className="col-span-2 flex items-center justify-center font-medium">
@@ -482,7 +482,7 @@ export default function CreateTeamPage() {
                     </div>
                     <div className="col-span-1 flex items-center justify-center">
                       <span className={`w-6 h-6 rounded-full flex items-center justify-center text-sm ${
-                        isSelected ? "bg-green-600 text-white" : "bg-gray-200 text-gray-600"
+                        isSelected ? "bg-[#22c55e] text-white" : "bg-gray-200 text-gray-400"
                       }`}>
                         {isSelected ? "✓" : "+"}
                       </span>
@@ -493,7 +493,7 @@ export default function CreateTeamPage() {
             </div>
 
             {/* Next Button */}
-            <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4">
+            <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-[#22c55e]/20 p-4">
               <div className="max-w-7xl mx-auto flex justify-end">
                 <button
                   onClick={() => {
@@ -506,8 +506,8 @@ export default function CreateTeamPage() {
                   }}
                   className={`px-8 py-3 rounded-lg font-medium ${
                     canProceedToCaptain().can
-                      ? "bg-green-600 hover:bg-green-700 text-white"
-                      : "bg-gray-200 text-gray-500 cursor-not-allowed"
+                      ? "bg-[#22c55e] hover:shadow-lg hover:shadow-[#22c55e]/30 text-white"
+                      : "bg-gray-200 text-gray-400 cursor-not-allowed"
                   }`}
                 >
                   Next: Choose Captain →
@@ -520,14 +520,14 @@ export default function CreateTeamPage() {
         {step === "captain" && (
           <>
             <div className="text-center mb-6">
-              <h2 className="text-xl font-bold text-gray-800">Choose Captain & Vice Captain</h2>
-              <p className="text-gray-500">Captain gets 2x points, Vice Captain gets 1.5x points</p>
+              <h2 className="text-xl font-bold text-white">Choose Captain & Vice Captain</h2>
+              <p className="text-gray-400">Captain gets 2x points, Vice Captain gets 1.5x points</p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6 mb-24">
               {/* Captain Selection */}
-              <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
-                <h3 className="font-bold text-gray-800 mb-4 flex items-center gap-2">
+              <div className="bg-[#1a2332] rounded-xl shadow-sm border border-[#22c55e]/20 p-4">
+                <h3 className="font-bold text-white mb-4 flex items-center gap-2">
                   <span className="w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center text-sm font-bold">C</span>
                   Captain (2x Points)
                 </h3>
@@ -540,7 +540,7 @@ export default function CreateTeamPage() {
                         setCaptain(player);
                       }}
                       className={`flex items-center gap-3 p-3 rounded-lg cursor-pointer transition-colors ${
-                        captain?.id === player.id ? "bg-yellow-100 border-2 border-yellow-500" : "hover:bg-gray-50 border border-gray-100"
+                        captain?.id === player.id ? "bg-yellow-100 border-2 border-yellow-500" : "hover:bg-gray-50 border border-[#22c55e]/20"
                       }`}
                     >
                       <img
@@ -551,7 +551,7 @@ export default function CreateTeamPage() {
                       />
                       <div className="flex-1">
                         <p className="font-medium">{player.name}</p>
-                        <p className="text-xs text-gray-500">{getRoleFromPlayer(player.role)}</p>
+                        <p className="text-xs text-gray-400">{getRoleFromPlayer(player.role)}</p>
                       </div>
                       {captain?.id === player.id && (
                         <span className="w-6 h-6 bg-yellow-500 text-white rounded-full flex items-center justify-center text-xs font-bold">C</span>
@@ -562,8 +562,8 @@ export default function CreateTeamPage() {
               </div>
 
               {/* Vice Captain Selection */}
-              <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
-                <h3 className="font-bold text-gray-800 mb-4 flex items-center gap-2">
+              <div className="bg-[#1a2332] rounded-xl shadow-sm border border-[#22c55e]/20 p-4">
+                <h3 className="font-bold text-white mb-4 flex items-center gap-2">
                   <span className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold">VC</span>
                   Vice Captain (1.5x Points)
                 </h3>
@@ -577,7 +577,7 @@ export default function CreateTeamPage() {
                       }}
                       className={`flex items-center gap-3 p-3 rounded-lg cursor-pointer transition-colors ${
                         captain?.id === player.id ? "opacity-50 cursor-not-allowed" : 
-                        viceCaptain?.id === player.id ? "bg-blue-100 border-2 border-blue-500" : "hover:bg-gray-50 border border-gray-100"
+                        viceCaptain?.id === player.id ? "bg-blue-100 border-2 border-blue-500" : "hover:bg-gray-50 border border-[#22c55e]/20"
                       }`}
                     >
                       <img
@@ -588,7 +588,7 @@ export default function CreateTeamPage() {
                       />
                       <div className="flex-1">
                         <p className="font-medium">{player.name}</p>
-                        <p className="text-xs text-gray-500">{getRoleFromPlayer(player.role)}</p>
+                        <p className="text-xs text-gray-400">{getRoleFromPlayer(player.role)}</p>
                       </div>
                       {viceCaptain?.id === player.id && (
                         <span className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-xs font-bold">VC</span>
@@ -603,7 +603,7 @@ export default function CreateTeamPage() {
             </div>
 
             {/* Navigation Buttons */}
-            <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4">
+            <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-[#22c55e]/20 p-4">
               <div className="max-w-7xl mx-auto flex justify-between">
                 <button
                   onClick={() => setStep("select")}
@@ -621,8 +621,8 @@ export default function CreateTeamPage() {
                   }}
                   className={`px-8 py-3 rounded-lg font-medium ${
                     captain && viceCaptain
-                      ? "bg-green-600 hover:bg-green-700 text-white"
-                      : "bg-gray-200 text-gray-500 cursor-not-allowed"
+                      ? "bg-[#22c55e] hover:shadow-lg hover:shadow-[#22c55e]/30 text-white"
+                      : "bg-gray-200 text-gray-400 cursor-not-allowed"
                   }`}
                 >
                   Next: Preview Team →
@@ -635,25 +635,25 @@ export default function CreateTeamPage() {
         {step === "preview" && (
           <>
             <div className="text-center mb-6">
-              <h2 className="text-xl font-bold text-gray-800">Team Preview</h2>
-              <p className="text-gray-500">Review your team before saving</p>
+              <h2 className="text-xl font-bold text-white">Team Preview</h2>
+              <p className="text-gray-400">Review your team before saving</p>
             </div>
 
             {/* Team Name */}
-            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-6">
-              <label className="block text-sm font-medium text-gray-700 mb-2">Team Name</label>
+            <div className="bg-[#1a2332] rounded-xl shadow-sm border border-[#22c55e]/20 p-6 mb-6">
+              <label className="block text-sm font-medium text-gray-300 mb-2">Team Name</label>
               <input
                 type="text"
                 value={teamName}
                 onChange={(e) => setTeamName(e.target.value)}
                 placeholder="Enter a name for your team"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#22c55e] focus:border-transparent"
                 maxLength={50}
               />
             </div>
 
             {/* Team Preview */}
-            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-24">
+            <div className="bg-[#1a2332] rounded-xl shadow-sm border border-[#22c55e]/20 p-6 mb-24">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {selectedPlayers.map((player) => (
                   <div
@@ -679,14 +679,14 @@ export default function CreateTeamPage() {
                       )}
                     </div>
                     <p className="font-medium text-sm mt-2">{player.name}</p>
-                    <p className="text-xs text-gray-500">{getRoleFromPlayer(player.role)} • {player.credits} cr</p>
+                    <p className="text-xs text-gray-400">{getRoleFromPlayer(player.role)} • {player.credits} cr</p>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Save Button */}
-            <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4">
+            <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-[#22c55e]/20 p-4">
               <div className="max-w-7xl mx-auto flex justify-between">
                 <button
                   onClick={() => setStep("captain")}
@@ -699,8 +699,8 @@ export default function CreateTeamPage() {
                   disabled={saving || !teamName.trim()}
                   className={`px-8 py-3 rounded-lg font-medium ${
                     !saving && teamName.trim()
-                      ? "bg-green-600 hover:bg-green-700 text-white"
-                      : "bg-gray-200 text-gray-500 cursor-not-allowed"
+                      ? "bg-[#22c55e] hover:shadow-lg hover:shadow-[#22c55e]/30 text-white"
+                      : "bg-gray-200 text-gray-400 cursor-not-allowed"
                   }`}
                 >
                   {saving ? "Saving..." : "Save Team & Join Contest"}

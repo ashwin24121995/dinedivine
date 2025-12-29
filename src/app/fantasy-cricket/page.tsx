@@ -216,36 +216,36 @@ export default function FantasyCricketPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl font-bold text-white mb-6">
                 What is Fantasy Cricket?
               </h2>
-              <p className="text-gray-600 mb-4 leading-relaxed">
+              <p className="text-gray-400 mb-4 leading-relaxed">
                 Fantasy cricket is an online game where you become the team
                 manager. You select real cricket players to form your virtual
                 team, and earn points based on how those players perform in
                 actual matches.
               </p>
-              <p className="text-gray-600 mb-4 leading-relaxed">
+              <p className="text-gray-400 mb-4 leading-relaxed">
                 It&apos;s a game of skill that rewards your cricket knowledge,
                 analytical abilities, and understanding of the sport. The better
                 you know the players, pitch conditions, and match dynamics, the
                 better your fantasy team will perform.
               </p>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-400 leading-relaxed">
                 On DineDivine, fantasy cricket is completely free to play. We
                 believe that the joy of the game should be accessible to
                 everyone, without any financial barriers. Create your team,
                 join contests, and enjoy the excitement of fantasy cricket!
               </p>
             </div>
-            <div className="bg-green-50 p-8 rounded-2xl">
+            <div className="bg-[#22c55e]/10 p-8 rounded-2xl">
               <h3 className="text-xl font-semibold text-green-800 mb-6">
                 Key Highlights
               </h3>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
                   <svg
-                    className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5"
+                    className="w-6 h-6 text-[#22c55e] flex-shrink-0 mt-0.5"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -257,13 +257,13 @@ export default function FantasyCricketPage() {
                       d="M5 13l4 4L19 7"
                     />
                   </svg>
-                  <span className="text-gray-700">
+                  <span className="text-gray-300">
                     100% free to play - no entry fees or hidden charges
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <svg
-                    className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5"
+                    className="w-6 h-6 text-[#22c55e] flex-shrink-0 mt-0.5"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -275,13 +275,13 @@ export default function FantasyCricketPage() {
                       d="M5 13l4 4L19 7"
                     />
                   </svg>
-                  <span className="text-gray-700">
+                  <span className="text-gray-300">
                     Real-time scoring based on actual match performances
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <svg
-                    className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5"
+                    className="w-6 h-6 text-[#22c55e] flex-shrink-0 mt-0.5"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -293,13 +293,13 @@ export default function FantasyCricketPage() {
                       d="M5 13l4 4L19 7"
                     />
                   </svg>
-                  <span className="text-gray-700">
+                  <span className="text-gray-300">
                     Cover all major cricket tournaments and leagues
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <svg
-                    className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5"
+                    className="w-6 h-6 text-[#22c55e] flex-shrink-0 mt-0.5"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -311,13 +311,13 @@ export default function FantasyCricketPage() {
                       d="M5 13l4 4L19 7"
                     />
                   </svg>
-                  <span className="text-gray-700">
+                  <span className="text-gray-300">
                     Compete with cricket fans from across India
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <svg
-                    className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5"
+                    className="w-6 h-6 text-[#22c55e] flex-shrink-0 mt-0.5"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -329,7 +329,7 @@ export default function FantasyCricketPage() {
                       d="M5 13l4 4L19 7"
                     />
                   </svg>
-                  <span className="text-gray-700">
+                  <span className="text-gray-300">
                     Pure entertainment with no gambling or real money
                   </span>
                 </li>
@@ -342,10 +342,10 @@ export default function FantasyCricketPage() {
       {/* Match Formats */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold text-center text-white mb-4">
             Supported Match Formats
           </h2>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
             Play fantasy cricket across all major formats. Each format offers a
             unique challenge and requires different strategies.
           </p>
@@ -353,15 +353,15 @@ export default function FantasyCricketPage() {
             {formats.map((format) => (
               <div
                 key={format.title}
-                className="bg-white p-8 rounded-xl shadow-lg text-center"
+                className="bg-[#1a2332] p-8 rounded-xl shadow-lg text-center"
               >
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 text-green-600">
+                <div className="w-16 h-16 bg-[#22c55e]/20 rounded-full flex items-center justify-center mx-auto mb-4 text-[#22c55e]">
                   {format.icon}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                <h3 className="text-xl font-bold text-white mb-3">
                   {format.title}
                 </h3>
-                <p className="text-gray-600">{format.description}</p>
+                <p className="text-gray-400">{format.description}</p>
               </div>
             ))}
           </div>
@@ -371,24 +371,24 @@ export default function FantasyCricketPage() {
       {/* Platform Features */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold text-center text-white mb-4">
             Platform Features
           </h2>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
             DineDivine offers a comprehensive fantasy cricket experience with
             features designed to enhance your gameplay.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature) => (
               <div key={feature.title} className="flex gap-4">
-                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0 text-green-600">
+                <div className="w-12 h-12 bg-[#22c55e]/20 rounded-lg flex items-center justify-center flex-shrink-0 text-[#22c55e]">
                   {feature.icon}
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  <h3 className="text-lg font-semibold text-white mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600 text-sm">{feature.description}</p>
+                  <p className="text-gray-400 text-sm">{feature.description}</p>
                 </div>
               </div>
             ))}
@@ -399,45 +399,45 @@ export default function FantasyCricketPage() {
       {/* How Fantasy Points Work */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold text-center text-white mb-4">
             How Fantasy Points Work
           </h2>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
             Your fantasy team earns points based on the real-world performance
             of your selected players during the match.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white p-6 rounded-xl shadow-lg">
-              <h3 className="text-lg font-bold text-green-600 mb-4">Batting</h3>
-              <ul className="space-y-2 text-gray-600 text-sm">
+            <div className="bg-[#1a2332] p-6 rounded-xl shadow-lg">
+              <h3 className="text-lg font-bold text-[#22c55e] mb-4">Batting</h3>
+              <ul className="space-y-2 text-gray-400 text-sm">
                 <li>Runs scored</li>
                 <li>Boundaries (4s and 6s)</li>
                 <li>Half-centuries and centuries</li>
                 <li>Strike rate bonuses</li>
               </ul>
             </div>
-            <div className="bg-white p-6 rounded-xl shadow-lg">
-              <h3 className="text-lg font-bold text-green-600 mb-4">Bowling</h3>
-              <ul className="space-y-2 text-gray-600 text-sm">
+            <div className="bg-[#1a2332] p-6 rounded-xl shadow-lg">
+              <h3 className="text-lg font-bold text-[#22c55e] mb-4">Bowling</h3>
+              <ul className="space-y-2 text-gray-400 text-sm">
                 <li>Wickets taken</li>
                 <li>Maiden overs</li>
                 <li>Economy rate bonuses</li>
                 <li>Multi-wicket hauls</li>
               </ul>
             </div>
-            <div className="bg-white p-6 rounded-xl shadow-lg">
-              <h3 className="text-lg font-bold text-green-600 mb-4">
+            <div className="bg-[#1a2332] p-6 rounded-xl shadow-lg">
+              <h3 className="text-lg font-bold text-[#22c55e] mb-4">
                 Fielding
               </h3>
-              <ul className="space-y-2 text-gray-600 text-sm">
+              <ul className="space-y-2 text-gray-400 text-sm">
                 <li>Catches taken</li>
                 <li>Stumpings</li>
                 <li>Run outs (direct/indirect)</li>
               </ul>
             </div>
-            <div className="bg-white p-6 rounded-xl shadow-lg">
-              <h3 className="text-lg font-bold text-green-600 mb-4">Bonus</h3>
-              <ul className="space-y-2 text-gray-600 text-sm">
+            <div className="bg-[#1a2332] p-6 rounded-xl shadow-lg">
+              <h3 className="text-lg font-bold text-[#22c55e] mb-4">Bonus</h3>
+              <ul className="space-y-2 text-gray-400 text-sm">
                 <li>Captain: 2x points</li>
                 <li>Vice-Captain: 1.5x points</li>
                 <li>Player of the Match</li>
@@ -450,10 +450,10 @@ export default function FantasyCricketPage() {
       {/* Tournaments Section */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold text-center text-white mb-4">
             Covered Tournaments
           </h2>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
             Play fantasy cricket for all major international and domestic
             cricket tournaments.
           </p>
@@ -468,7 +468,7 @@ export default function FantasyCricketPage() {
             ].map((tournament) => (
               <div
                 key={tournament}
-                className="bg-green-50 border border-green-200 p-4 rounded-lg text-center"
+                className="bg-[#22c55e]/10 border border-green-200 p-4 rounded-lg text-center"
               >
                 <span className="text-green-800 font-medium text-sm">
                   {tournament}
@@ -480,7 +480,7 @@ export default function FantasyCricketPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-green-600 text-white">
+      <section className="py-16 bg-[#22c55e] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-4">
             Start Your Fantasy Cricket Journey
@@ -500,7 +500,7 @@ export default function FantasyCricketPage() {
             />
             <Link
               href="/how-to-play"
-              className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-green-700 transition-colors duration-200 text-lg"
+              className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#22c55e] transition-colors duration-200 text-lg"
             >
               Learn How To Play
             </Link>
