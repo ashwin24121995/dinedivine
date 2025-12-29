@@ -56,7 +56,7 @@ export async function GET(request: NextRequest) {
   } catch (error) {
     console.error("Error fetching contests:", error);
     return NextResponse.json(
-      { success: false, error: "Failed to fetch contests", contests: [] },
+      { success: false, error: "Failed to fetch contests", details: error instanceof Error ? error.message : String(error), contests: [] },
       { status: 500 }
     );
   }
