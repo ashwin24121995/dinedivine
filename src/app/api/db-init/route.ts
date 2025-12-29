@@ -95,11 +95,17 @@ export async function GET() {
       "SHOW COLUMNS FROM user_teams"
     );
 
+    // Get columns from contests to verify
+    const contestColumns = await query<{ Field: string }[]>(
+      "SHOW COLUMNS FROM contests"
+    );
+
     return NextResponse.json({
       success: true,
       message: "Database tables created/verified successfully",
       tables: tables.map((t: Record<string, string>) => Object.values(t)[0]),
       user_teams_columns: columns.map((c: { Field: string }) => c.Field),
+      contests_columns: contestColumns.map((c: { Field: string }) => c.Field),
     });
   } catch (error) {
     console.error("Database init error:", error);
