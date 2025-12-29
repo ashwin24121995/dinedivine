@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { query } from "@/lib/db";
 import { verifyToken, getAuthCookie } from "@/lib/auth";
-import { ResultSetHeader } from "mysql2";
+import { ResultSetHeader, RowDataPacket } from "mysql2";
 
 export const dynamic = "force-dynamic";
 
@@ -69,13 +69,13 @@ export async function POST(request: NextRequest) {
     // Validate inputs
     if (!matchId || !teamName || !players || players.length !== 11) {
       return NextResponse.json(
-        { success: false, error: "Invalid team data" },
+        { success: false, error: `Invalid team data: matchId=${!!matchId}, teamName=${!!teamName}, players=${players?.length || 0}` },
         { status: 400 }
       );
     }
 
     // Check if user already has 5 teams for this match
-    const existingTeams = await query<{ count: number }[]>(
+    const existingTeams = await query<(RowDataPacket & { count: number })[]>(
       "SELECT COUNT(*) as count FROM user_teams WHERE user_id = ? AND match_id = ?",
       [payload.id, matchId]
     );
@@ -87,14 +87,24 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Calculate total credits
+    const totalCredits = players.reduce((sum: number, p: { credits: number }) => sum + (p.credits || 0), 0);
+
     // Create team
     const result = await query<ResultSetHeader>(
       `INSERT INTO user_teams (user_id, match_id, team_name, total_credits_used) 
        VALUES (?, ?, ?, ?)`,
-      [payload.id, matchId, teamName, players.reduce((sum: number, p: { credits: number }) => sum + p.credits, 0)]
+      [payload.id, matchId, teamName, totalCredits]
     );
 
     const teamId = result.insertId;
+
+    if (!teamId) {
+      return NextResponse.json(
+        { success: false, error: "Failed to create team - no insertId returned" },
+        { status: 500 }
+      );
+    }
 
     // Add players to team
     for (const player of players) {
@@ -103,21 +113,26 @@ export async function POST(request: NextRequest) {
          VALUES (?, ?, ?, ?, ?, ?, ?)`,
         [
           teamId,
-          player.playerId,
-          player.playerName,
-          player.role,
-          player.credits,
+          player.playerId || player.id || "unknown",
+          player.playerName || player.name || "Unknown Player",
+          player.role || "UNKNOWN",
+          player.credits || 0,
           player.isCaptain ? 1 : 0,
           player.isViceCaptain ? 1 : 0,
         ]
       );
     }
 
-    // Update user stats
-    await query(
-      `UPDATE user_stats SET total_teams_created = total_teams_created + 1, xp_points = xp_points + 10 WHERE user_id = ?`,
-      [payload.id]
-    );
+    // Update user stats (don't fail if this fails)
+    try {
+      await query(
+        `UPDATE user_stats SET total_teams_created = total_teams_created + 1, xp_points = xp_points + 10 WHERE user_id = ?`,
+        [payload.id]
+      );
+    } catch (statsError) {
+      console.error("Error updating user stats:", statsError);
+      // Don't fail the team creation if stats update fails
+    }
 
     return NextResponse.json({
       success: true,
@@ -127,8 +142,9 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error("Error creating team:", error);
     const errorMessage = error instanceof Error ? error.message : "Unknown error";
+    const errorStack = error instanceof Error ? error.stack : "";
     return NextResponse.json(
-      { success: false, error: "Failed to create team", details: errorMessage },
+      { success: false, error: "Failed to create team", details: errorMessage, stack: errorStack },
       { status: 500 }
     );
   }
