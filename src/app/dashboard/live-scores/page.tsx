@@ -73,10 +73,10 @@ export default function LiveScoresPage() {
                 <span className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></span>
                 Live Scores
               </h1>
-              <p className="text-gray-400 mt-1">Real-time cricket match updates</p>
+              <p className="text-gray-300 mt-1">Real-time cricket match updates</p>
             </div>
             <div className="text-right">
-              <p className="text-sm text-gray-400">Last updated</p>
+              <p className="text-sm text-gray-300">Last updated</p>
               <p className="font-medium text-gray-300">{formatTime(lastUpdated)} IST</p>
             </div>
           </div>
@@ -102,7 +102,7 @@ export default function LiveScoresPage() {
               >
                 {/* Match Header */}
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-sm text-gray-400 truncate max-w-[60%]">{match.series}</span>
+                  <span className="text-sm text-gray-300 truncate max-w-[60%]">{match.series}</span>
                   <span className="px-3 py-1 bg-red-100 text-red-600 text-sm rounded-full font-medium animate-pulse">
                     🔴 LIVE
                   </span>
@@ -141,12 +141,12 @@ export default function LiveScoresPage() {
 
                 {/* Match Status */}
                 <div className="mt-4 pt-4 border-t border-[#22c55e]/20">
-                  <p className="text-center text-gray-400 font-medium">{match.status}</p>
+                  <p className="text-center text-gray-300 font-medium">{match.status}</p>
                 </div>
 
                 {/* Match Type Badge */}
                 <div className="mt-4 flex justify-center">
-                  <span className="px-3 py-1 bg-[#1a2332] text-gray-400 text-sm rounded-full font-medium uppercase">
+                  <span className="px-3 py-1 bg-[#1a2332] text-gray-300 text-sm rounded-full font-medium uppercase">
                     {match.matchType}
                   </span>
                 </div>
@@ -157,7 +157,7 @@ export default function LiveScoresPage() {
           <div className="bg-[#1a2332] rounded-xl shadow-sm border border-[#22c55e]/20 p-12 text-center">
             <div className="text-6xl mb-4">🏏</div>
             <h3 className="text-xl font-bold text-white mb-2">No Live Matches</h3>
-            <p className="text-gray-400 mb-6">There are no live matches at the moment. Check back later!</p>
+            <p className="text-gray-300 mb-6">There are no live matches at the moment. Check back later!</p>
             <Link
               href="/dashboard/matches"
               className="inline-block bg-[#22c55e] hover:shadow-lg hover:shadow-[#22c55e]/30 text-white px-6 py-3 rounded-lg font-medium transition-colors"

@@ -51,15 +51,15 @@ export default function Home() {
           <div className="mt-12 grid grid-cols-3 gap-8 max-w-2xl mx-auto">
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-[#22c55e]">100+</div>
-              <div className="text-gray-400 text-sm mt-1">Live Matches</div>
+              <div className="text-gray-300 text-sm mt-1">Live Matches</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-[#22c55e]">Free</div>
-              <div className="text-gray-400 text-sm mt-1">To Play</div>
+              <div className="text-gray-300 text-sm mt-1">To Play</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-[#22c55e]">24/7</div>
-              <div className="text-gray-400 text-sm mt-1">Live Updates</div>
+              <div className="text-gray-300 text-sm mt-1">Live Updates</div>
             </div>
           </div>
         </div>
@@ -77,7 +77,7 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-4">
             Why Choose <span className="text-[#22c55e]">DineDivine</span>?
           </h2>
-          <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+          <p className="text-gray-300 text-center mb-12 max-w-2xl mx-auto">
             Experience the ultimate fantasy cricket platform with cutting-edge features
           </p>
           
@@ -95,7 +95,7 @@ export default function Home() {
               <h3 className="text-xl font-semibold text-white mb-3">
                 Build Your Dream Team
               </h3>
-              <p className="text-gray-400">
+              <p className="text-gray-300">
                 Select from real players, assign captain & vice-captain, and create your winning fantasy XI within the budget.
               </p>
             </div>
@@ -113,7 +113,7 @@ export default function Home() {
               <h3 className="text-xl font-semibold text-white mb-3">
                 Compete & Win
               </h3>
-              <p className="text-gray-400">
+              <p className="text-gray-300">
                 Join free contests, compete on leaderboards, and prove your cricket knowledge against other fans.
               </p>
             </div>
@@ -131,7 +131,7 @@ export default function Home() {
               <h3 className="text-xl font-semibold text-white mb-3">
                 Real-Time Updates
               </h3>
-              <p className="text-gray-400">
+              <p className="text-gray-300">
                 Track live scores, player performance, and fantasy points as the match unfolds in real-time.
               </p>
             </div>
@@ -148,7 +148,7 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-4">
             How It <span className="text-[#22c55e]">Works</span>
           </h2>
-          <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+          <p className="text-gray-300 text-center mb-12 max-w-2xl mx-auto">
             Get started in just 4 simple steps
           </p>
           
@@ -160,7 +160,7 @@ export default function Home() {
               <h3 className="text-lg font-semibold text-white mb-2">
                 Select a Match
               </h3>
-              <p className="text-gray-400">
+              <p className="text-gray-300">
                 Choose from upcoming cricket matches across all major leagues
               </p>
               {/* Connector line */}
@@ -174,7 +174,7 @@ export default function Home() {
               <h3 className="text-lg font-semibold text-white mb-2">
                 Build Your Team
               </h3>
-              <p className="text-gray-400">
+              <p className="text-gray-300">
                 Pick your dream team of 11 players within the budget
               </p>
               <div className="hidden md:block absolute top-8 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-[#22c55e]/50 to-transparent"></div>
@@ -187,7 +187,7 @@ export default function Home() {
               <h3 className="text-lg font-semibold text-white mb-2">
                 Join Contests
               </h3>
-              <p className="text-gray-400">
+              <p className="text-gray-300">
                 Enter free contests and compete with other cricket fans
               </p>
               <div className="hidden md:block absolute top-8 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-[#22c55e]/50 to-transparent"></div>
@@ -200,7 +200,7 @@ export default function Home() {
               <h3 className="text-lg font-semibold text-white mb-2">
                 Track & Enjoy
               </h3>
-              <p className="text-gray-400">
+              <p className="text-gray-300">
                 Watch live scores and enjoy the thrill of fantasy cricket
               </p>
             </div>

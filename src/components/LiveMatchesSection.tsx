@@ -62,7 +62,7 @@ export default function LiveMatchesSection({
             <h2 className="text-2xl font-bold text-white">Live Matches</h2>
             <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-[#22c55e]"></div>
           </div>
-          <div className="text-center text-gray-400">Loading live matches...</div>
+          <div className="text-center text-gray-300">Loading live matches...</div>
         </div>
       </section>
     );
@@ -94,11 +94,11 @@ export default function LiveMatchesSection({
           <div className="text-center">
             <div className="flex items-center justify-center gap-3 mb-4">
               <h2 className="text-2xl font-bold text-white">Live Matches</h2>
-              <span className="flex items-center gap-1 bg-[#1a2332] text-gray-400 px-3 py-1 rounded-full text-sm font-medium border border-gray-700">
+              <span className="flex items-center gap-1 bg-[#1a2332] text-gray-300 px-3 py-1 rounded-full text-sm font-medium border border-gray-700">
                 No Live Matches
               </span>
             </div>
-            <p className="text-gray-400">
+            <p className="text-gray-300">
               There are no live matches at the moment. Check back later!
             </p>
             <p className="text-xs text-gray-500 mt-2">
@@ -121,7 +121,7 @@ export default function LiveMatchesSection({
               {matches.length} Live
             </span>
           </div>
-          <div className="flex items-center gap-2 text-sm text-gray-400">
+          <div className="flex items-center gap-2 text-sm text-gray-300">
             {isLoading && (
               <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>

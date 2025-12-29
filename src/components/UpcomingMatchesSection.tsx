@@ -56,7 +56,7 @@ export default function UpcomingMatchesSection({ limit = 6 }: UpcomingMatchesSec
             <h2 className="text-2xl font-bold text-white">Upcoming Matches</h2>
             <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-[#22c55e]"></div>
           </div>
-          <div className="text-center text-gray-400">Loading upcoming matches...</div>
+          <div className="text-center text-gray-300">Loading upcoming matches...</div>
         </div>
       </section>
     );
@@ -81,7 +81,7 @@ export default function UpcomingMatchesSection({ limit = 6 }: UpcomingMatchesSec
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-2xl font-bold text-white mb-4">Upcoming Matches</h2>
-            <p className="text-gray-400">No upcoming matches scheduled at the moment.</p>
+            <p className="text-gray-300">No upcoming matches scheduled at the moment.</p>
           </div>
         </div>
       </section>

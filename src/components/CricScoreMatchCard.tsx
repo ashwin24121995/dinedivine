@@ -34,7 +34,7 @@ export default function CricScoreMatchCard({ match, showSeries = true }: CricSco
         );
       case "completed":
         return (
-          <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-gray-700/50 text-gray-400 border border-gray-600">
+          <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-gray-700/50 text-gray-300 border border-gray-600">
             COMPLETED
           </span>
         );
@@ -48,7 +48,7 @@ export default function CricScoreMatchCard({ match, showSeries = true }: CricSco
     if (actualStatus === "live") {
       return <span className="text-red-400 font-medium">Match in Progress</span>;
     } else if (actualStatus === "completed") {
-      return <span className="text-gray-400">{match.status}</span>;
+      return <span className="text-gray-300">{match.status}</span>;
     } else {
       // Upcoming
       if (timeUntil.hours > 24) {

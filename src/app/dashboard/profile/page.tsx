@@ -139,7 +139,7 @@ export default function ProfilePage() {
             ← Back to Dashboard
           </Link>
           <h1 className="text-3xl font-bold text-white">Profile Settings</h1>
-          <p className="text-gray-400 mt-1">Manage your account information</p>
+          <p className="text-gray-300 mt-1">Manage your account information</p>
         </div>
 
         {/* Message */}
@@ -163,7 +163,7 @@ export default function ProfilePage() {
             </div>
             <div>
               <h2 className="text-xl font-bold text-white">{user?.fullName}</h2>
-              <p className="text-gray-400">{user?.email}</p>
+              <p className="text-gray-300">{user?.email}</p>
             </div>
           </div>
 
@@ -189,10 +189,10 @@ export default function ProfilePage() {
                 <input
                   type="email"
                   value={user?.email || ""}
-                  className="w-full px-4 py-3 border border-[#22c55e]/20 rounded-lg bg-[#0a0f1a] text-gray-400"
+                  className="w-full px-4 py-3 border border-[#22c55e]/20 rounded-lg bg-[#0a0f1a] text-gray-300"
                   disabled
                 />
-                <p className="text-xs text-gray-400 mt-1">Email cannot be changed</p>
+                <p className="text-xs text-gray-300 mt-1">Email cannot be changed</p>
               </div>
 
               <div>
@@ -216,10 +216,10 @@ export default function ProfilePage() {
                 <input
                   type="text"
                   value={user?.state || ""}
-                  className="w-full px-4 py-3 border border-[#22c55e]/20 rounded-lg bg-[#0a0f1a] text-gray-400"
+                  className="w-full px-4 py-3 border border-[#22c55e]/20 rounded-lg bg-[#0a0f1a] text-gray-300"
                   disabled
                 />
-                <p className="text-xs text-gray-400 mt-1">State cannot be changed</p>
+                <p className="text-xs text-gray-300 mt-1">State cannot be changed</p>
               </div>
             </div>
 
@@ -240,7 +240,7 @@ export default function ProfilePage() {
           <div className="flex items-center justify-between mb-4">
             <div>
               <h3 className="text-lg font-bold text-white">Password</h3>
-              <p className="text-gray-400 text-sm">Change your account password</p>
+              <p className="text-gray-300 text-sm">Change your account password</p>
             </div>
             <button
               onClick={() => setShowPasswordForm(!showPasswordForm)}
@@ -311,15 +311,15 @@ export default function ProfilePage() {
           <h3 className="text-lg font-bold text-white mb-4">Account Information</h3>
           <div className="space-y-3 text-sm">
             <div className="flex justify-between py-2 border-b border-[#22c55e]/20">
-              <span className="text-gray-400">Account Status</span>
+              <span className="text-gray-300">Account Status</span>
               <span className="text-[#22c55e] font-medium">Active</span>
             </div>
             <div className="flex justify-between py-2 border-b border-[#22c55e]/20">
-              <span className="text-gray-400">Member Since</span>
+              <span className="text-gray-300">Member Since</span>
               <span className="text-white">December 2024</span>
             </div>
             <div className="flex justify-between py-2">
-              <span className="text-gray-400">Account Type</span>
+              <span className="text-gray-300">Account Type</span>
               <span className="text-white">Free Player</span>
             </div>
           </div>

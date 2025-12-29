@@ -141,7 +141,7 @@ export default function ResponsibleGamingPage() {
             <h2 className="text-3xl font-bold text-white mb-6">
               Our Commitment to Responsible Gaming
             </h2>
-            <p className="text-gray-400 leading-relaxed">
+            <p className="text-gray-300 leading-relaxed">
               DineDivine is a free-to-play fantasy sports platform designed
               purely for entertainment. We do not involve any real money gaming,
               betting, or gambling activities. Our platform is built to provide
@@ -242,7 +242,7 @@ export default function ResponsibleGamingPage() {
                 <h3 className="text-xl font-bold text-white mb-3">
                   {guideline.title}
                 </h3>
-                <p className="text-gray-400">{guideline.description}</p>
+                <p className="text-gray-300">{guideline.description}</p>
               </div>
             ))}
           </div>
@@ -262,7 +262,7 @@ export default function ResponsibleGamingPage() {
                   Age Restrictions
                 </h2>
               </div>
-              <p className="text-gray-400 mb-6 leading-relaxed">
+              <p className="text-gray-300 mb-6 leading-relaxed">
                 DineDivine is strictly for users who are 18 years of age or
                 older. We take age verification seriously and have implemented
                 measures to prevent underage access to our platform.
@@ -316,7 +316,7 @@ export default function ResponsibleGamingPage() {
                   Geographic Restrictions
                 </h2>
               </div>
-              <p className="text-gray-400 mb-6 leading-relaxed">
+              <p className="text-gray-300 mb-6 leading-relaxed">
                 Due to state regulations, users from certain Indian states are
                 not permitted to access or use DineDivine. We comply with all
                 applicable laws and regulations.
@@ -359,7 +359,7 @@ export default function ResponsibleGamingPage() {
             <h2 className="text-3xl font-bold text-center text-white mb-6">
               Self-Exclusion & Account Control
             </h2>
-            <p className="text-center text-gray-400 mb-8">
+            <p className="text-center text-gray-300 mb-8">
               We believe users should have full control over their gaming
               experience. DineDivine offers the following account management
               options:
@@ -369,7 +369,7 @@ export default function ResponsibleGamingPage() {
                 <h3 className="text-lg font-semibold text-white mb-2">
                   Temporary Break
                 </h3>
-                <p className="text-gray-400">
+                <p className="text-gray-300">
                   Take a break from the platform for a specified period. Your
                   account will be temporarily suspended and you won&apos;t be
                   able to participate in any contests during this time.
@@ -379,7 +379,7 @@ export default function ResponsibleGamingPage() {
                 <h3 className="text-lg font-semibold text-white mb-2">
                   Account Deactivation
                 </h3>
-                <p className="text-gray-400">
+                <p className="text-gray-300">
                   Deactivate your account if you wish to stop using DineDivine.
                   You can reactivate your account at any time by contacting our
                   support team.
@@ -389,7 +389,7 @@ export default function ResponsibleGamingPage() {
                 <h3 className="text-lg font-semibold text-white mb-2">
                   Permanent Account Deletion
                 </h3>
-                <p className="text-gray-400">
+                <p className="text-gray-300">
                   Request permanent deletion of your account and all associated
                   data. This action is irreversible and all your data will be
                   permanently removed from our systems.
@@ -422,7 +422,7 @@ export default function ResponsibleGamingPage() {
       {/* Legal Compliance */}
       <section className="py-8 bg-[#1a2332]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-gray-400 text-sm">
+          <p className="text-center text-gray-300 text-sm">
             DineDivine operates in compliance with all applicable Indian laws
             and regulations. We are committed to maintaining the highest
             standards of responsible gaming and user protection. For more

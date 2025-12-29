@@ -72,7 +72,7 @@ export default function MatchDetailPage() {
       <div className="min-h-screen bg-[#0a0f1a] flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600 mx-auto"></div>
-          <p className="mt-4 text-gray-400">Loading match details...</p>
+          <p className="mt-4 text-gray-300">Loading match details...</p>
         </div>
       </div>
     );
@@ -83,7 +83,7 @@ export default function MatchDetailPage() {
       <div className="min-h-screen bg-[#0a0f1a] flex items-center justify-center">
         <div className="text-center">
           <h2 className="text-2xl font-bold text-white mb-4">Match Not Found</h2>
-          <p className="text-gray-400 mb-6">{error || "Unable to load match details"}</p>
+          <p className="text-gray-300 mb-6">{error || "Unable to load match details"}</p>
           <Link
             href="/dashboard/matches"
             className="bg-[#22c55e] text-white px-6 py-3 rounded-lg hover:shadow-lg hover:shadow-[#22c55e]/30"
@@ -135,7 +135,7 @@ export default function MatchDetailPage() {
                   />
                 )}
                 <h3 className="font-bold text-lg text-white">{team1.name}</h3>
-                <p className="text-gray-400 text-sm">{team1.shortname}</p>
+                <p className="text-gray-300 text-sm">{team1.shortname}</p>
               </div>
 
               {/* VS */}
@@ -153,7 +153,7 @@ export default function MatchDetailPage() {
                   />
                 )}
                 <h3 className="font-bold text-lg text-white">{team2.name}</h3>
-                <p className="text-gray-400 text-sm">{team2.shortname}</p>
+                <p className="text-gray-300 text-sm">{team2.shortname}</p>
               </div>
             </div>
 
@@ -161,11 +161,11 @@ export default function MatchDetailPage() {
             <div className="mt-8 pt-6 border-t border-[#22c55e]/20">
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div>
-                  <p className="text-gray-400">Venue</p>
+                  <p className="text-gray-300">Venue</p>
                   <p className="font-medium text-white">{match.venue || "TBA"}</p>
                 </div>
                 <div>
-                  <p className="text-gray-400">Status</p>
+                  <p className="text-gray-300">Status</p>
                   <p className="font-medium text-white">{match.status || "Upcoming"}</p>
                 </div>
               </div>

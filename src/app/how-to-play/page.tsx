@@ -230,7 +230,7 @@ export default function HowToPlayPage() {
                   <h3 className="text-xl font-bold text-white mb-2">
                     {step.title}
                   </h3>
-                  <p className="text-gray-400">{step.description}</p>
+                  <p className="text-gray-300">{step.description}</p>
                 </div>
               </div>
             ))}
@@ -244,7 +244,7 @@ export default function HowToPlayPage() {
           <h2 className="text-3xl font-bold text-center text-white mb-4">
             Team Selection Rules
           </h2>
-          <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-gray-300 mb-12 max-w-2xl mx-auto">
             Build a balanced team of 11 players following these composition
             rules. You can select players from both teams playing in the match.
           </p>
@@ -260,7 +260,7 @@ export default function HowToPlayPage() {
                 <div className="text-3xl font-bold text-[#22c55e] mb-2">
                   {rule.min} - {rule.max}
                 </div>
-                <p className="text-gray-400 text-sm">{rule.description}</p>
+                <p className="text-gray-300 text-sm">{rule.description}</p>
               </div>
             ))}
           </div>
@@ -292,7 +292,7 @@ export default function HowToPlayPage() {
           <h2 className="text-3xl font-bold text-center text-white mb-4">
             Points System
           </h2>
-          <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-gray-300 mb-12 max-w-2xl mx-auto">
             Your fantasy team earns points based on the real-life performance
             of your selected players. Here&apos;s how points are calculated:
           </p>
@@ -359,7 +359,7 @@ export default function HowToPlayPage() {
               <h3 className="text-lg font-bold text-white mb-2">
                 Check Player Form
               </h3>
-              <p className="text-gray-400">
+              <p className="text-gray-300">
                 Always check recent performances of players before selecting
                 them. A player in good form is more likely to score points.
               </p>
@@ -383,7 +383,7 @@ export default function HowToPlayPage() {
               <h3 className="text-lg font-bold text-white mb-2">
                 Consider Pitch Conditions
               </h3>
-              <p className="text-gray-400">
+              <p className="text-gray-300">
                 Pitch conditions affect player performance. Select more spinners
                 on turning tracks and pacers on seaming pitches.
               </p>
@@ -407,7 +407,7 @@ export default function HowToPlayPage() {
               <h3 className="text-lg font-bold text-white mb-2">
                 Choose Captain Wisely
               </h3>
-              <p className="text-gray-400">
+              <p className="text-gray-300">
                 Your Captain earns double points. Pick a reliable performer who
                 is likely to have a significant impact on the match.
               </p>

@@ -201,7 +201,7 @@ export default function DashboardPage() {
           <div className="bg-[#1a2332] rounded-xl shadow-sm p-6 border border-[#22c55e]/20">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-gray-400 text-sm">Teams Created</p>
+                <p className="text-gray-300 text-sm">Teams Created</p>
                 <p className="text-3xl font-bold text-white">{counts.teams}</p>
               </div>
               <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
@@ -213,7 +213,7 @@ export default function DashboardPage() {
           <div className="bg-[#1a2332] rounded-xl shadow-sm p-6 border border-[#22c55e]/20">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-gray-400 text-sm">Contests Joined</p>
+                <p className="text-gray-300 text-sm">Contests Joined</p>
                 <p className="text-3xl font-bold text-white">{counts.contests}</p>
               </div>
               <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
@@ -225,7 +225,7 @@ export default function DashboardPage() {
           <div className="bg-[#1a2332] rounded-xl shadow-sm p-6 border border-[#22c55e]/20">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-gray-400 text-sm">Total Points</p>
+                <p className="text-gray-300 text-sm">Total Points</p>
                 <p className="text-3xl font-bold text-white">{stats?.total_points_earned || 0}</p>
               </div>
               <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
@@ -237,7 +237,7 @@ export default function DashboardPage() {
           <div className="bg-[#1a2332] rounded-xl shadow-sm p-6 border border-[#22c55e]/20">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-gray-400 text-sm">Total Wins</p>
+                <p className="text-gray-300 text-sm">Total Wins</p>
                 <p className="text-3xl font-bold text-white">{stats?.total_wins || 0}</p>
               </div>
               <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
@@ -319,7 +319,7 @@ export default function DashboardPage() {
                         <p className="text-[#22c55e] font-bold">{match.t1s || "-"}</p>
                       </div>
                     </div>
-                    <span className="text-gray-400 text-sm">VS</span>
+                    <span className="text-gray-300 text-sm">VS</span>
                     <div className="flex items-center gap-2">
                       <div className="text-right">
                         <p className="font-semibold text-sm">{match.t2}</p>
@@ -369,7 +369,7 @@ export default function DashboardPage() {
                       <img src={match.t1img} alt={match.t1} className="w-10 h-10 rounded-full" onError={(e) => { e.currentTarget.src = '/placeholder-team.png'; }} />
                       <p className="font-semibold text-sm">{match.t1}</p>
                     </div>
-                    <span className="text-gray-400 text-sm">VS</span>
+                    <span className="text-gray-300 text-sm">VS</span>
                     <div className="flex items-center gap-2">
                       <p className="font-semibold text-sm">{match.t2}</p>
                       <img src={match.t2img} alt={match.t2} className="w-10 h-10 rounded-full" onError={(e) => { e.currentTarget.src = '/placeholder-team.png'; }} />

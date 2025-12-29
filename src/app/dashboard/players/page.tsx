@@ -58,7 +58,7 @@ export default function PlayersPage() {
       case "wk-batsman":
         return "bg-yellow-100 text-yellow-600";
       default:
-        return "bg-[#1a2332] text-gray-400";
+        return "bg-[#1a2332] text-gray-300";
     }
   };
 
@@ -71,7 +71,7 @@ export default function PlayersPage() {
             ← Back to Dashboard
           </Link>
           <h1 className="text-3xl font-bold text-white">Player Stats</h1>
-          <p className="text-gray-400 mt-1">Search and view detailed player statistics</p>
+          <p className="text-gray-300 mt-1">Search and view detailed player statistics</p>
         </div>
 
         {/* Search Box */}
@@ -87,7 +87,7 @@ export default function PlayersPage() {
                 className="w-full px-4 py-3 pl-12 border border-[#22c55e]/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#22c55e] focus:border-transparent"
               />
               <svg
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"
+                className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-300"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -143,13 +143,13 @@ export default function PlayersPage() {
                     </div>
                     <div className="flex-1">
                       <h3 className="font-bold text-white">{player.name}</h3>
-                      <p className="text-sm text-gray-400">{player.country}</p>
+                      <p className="text-sm text-gray-300">{player.country}</p>
                       <span className={`inline-block mt-2 px-2 py-1 text-xs rounded-full font-medium ${getRoleBadgeColor(player.role)}`}>
                         {player.role || "Unknown"}
                       </span>
                     </div>
                     <svg
-                      className="w-5 h-5 text-gray-400"
+                      className="w-5 h-5 text-gray-300"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -169,14 +169,14 @@ export default function PlayersPage() {
             <div className="bg-[#1a2332] rounded-xl shadow-sm border border-[#22c55e]/20 p-12 text-center">
               <div className="text-6xl mb-4">🔍</div>
               <h3 className="text-xl font-bold text-white mb-2">No Players Found</h3>
-              <p className="text-gray-400">Try searching with a different name</p>
+              <p className="text-gray-300">Try searching with a different name</p>
             </div>
           )
         ) : (
           <div className="bg-[#1a2332] rounded-xl shadow-sm border border-[#22c55e]/20 p-12 text-center">
             <div className="text-6xl mb-4">🏏</div>
             <h3 className="text-xl font-bold text-white mb-2">Search for Players</h3>
-            <p className="text-gray-400">Enter a player name above to view their stats and information</p>
+            <p className="text-gray-300">Enter a player name above to view their stats and information</p>
           </div>
         )}
       </div>

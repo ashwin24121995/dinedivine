@@ -185,7 +185,7 @@ export default function ForgotPasswordPage() {
           {step === "success" ? "Password Reset Successful" : "Reset your password"}
         </h2>
         {step !== "success" && (
-          <p className="mt-2 text-center text-sm text-gray-400">
+          <p className="mt-2 text-center text-sm text-gray-300">
             Remember your password?{" "}
             <Link
               href="/login"
@@ -224,7 +224,7 @@ export default function ForgotPasswordPage() {
                     />
                   </svg>
                 </div>
-                <p className="text-gray-400 text-sm">
+                <p className="text-gray-300 text-sm">
                   Enter your registered email address and we&apos;ll send you a
                   verification code to reset your password.
                 </p>
@@ -285,7 +285,7 @@ export default function ForgotPasswordPage() {
                     />
                   </svg>
                 </div>
-                <p className="text-gray-400 text-sm">
+                <p className="text-gray-300 text-sm">
                   We&apos;ve sent a 6-digit verification code to{" "}
                   <strong>{email}</strong>. Enter the code below.
                 </p>
@@ -371,7 +371,7 @@ export default function ForgotPasswordPage() {
                     />
                   </svg>
                 </div>
-                <p className="text-gray-400 text-sm">
+                <p className="text-gray-300 text-sm">
                   Create a new password for your account.
                 </p>
               </div>
@@ -403,7 +403,7 @@ export default function ForgotPasswordPage() {
                     onClick={() => setShowPassword(!showPassword)}
                   >
                     <svg
-                      className="h-5 w-5 text-gray-400"
+                      className="h-5 w-5 text-gray-300"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -423,7 +423,7 @@ export default function ForgotPasswordPage() {
                     </svg>
                   </button>
                 </div>
-                <p className="mt-1 text-xs text-gray-400">
+                <p className="mt-1 text-xs text-gray-300">
                   At least 8 characters with uppercase, lowercase, and number
                 </p>
               </div>
@@ -455,7 +455,7 @@ export default function ForgotPasswordPage() {
                     onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                   >
                     <svg
-                      className="h-5 w-5 text-gray-400"
+                      className="h-5 w-5 text-gray-300"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -512,7 +512,7 @@ export default function ForgotPasswordPage() {
               <h3 className="text-xl font-semibold text-white mb-2">
                 Password Reset Complete!
               </h3>
-              <p className="text-gray-400 mb-8">
+              <p className="text-gray-300 mb-8">
                 Your password has been successfully reset. You can now sign in
                 with your new password.
               </p>
@@ -529,7 +529,7 @@ export default function ForgotPasswordPage() {
         {/* Help Text */}
         {step !== "success" && (
           <div className="mt-6 text-center">
-            <p className="text-sm text-gray-400">
+            <p className="text-sm text-gray-300">
               Need help?{" "}
               <Link
                 href="/contact"

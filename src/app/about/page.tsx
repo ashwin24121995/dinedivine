@@ -28,14 +28,14 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold text-white mb-6">
                 Who We Are
               </h2>
-              <p className="text-gray-400 mb-4 leading-relaxed">
+              <p className="text-gray-300 mb-4 leading-relaxed">
                 DineDivine is a premier free-to-play fantasy sports platform
                 operated by <strong>DINEDIVINE VENTURES PRIVATE LIMITED</strong>
                 . We are dedicated to providing cricket enthusiasts across India
                 with an engaging and entertaining platform to showcase their
                 knowledge of the game.
               </p>
-              <p className="text-gray-400 mb-4 leading-relaxed">
+              <p className="text-gray-300 mb-4 leading-relaxed">
                 Our platform is designed purely for entertainment purposes,
                 allowing users to create fantasy cricket teams, participate in
                 contests, and enjoy the thrill of the game without any monetary
@@ -43,7 +43,7 @@ export default function AboutPage() {
                 accessible to everyone, which is why our platform is completely
                 free to play.
               </p>
-              <p className="text-gray-400 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed">
                 Based in Gurgaon, Haryana, we operate in strict compliance with
                 all applicable Indian laws and regulations governing fantasy
                 sports platforms. Our commitment to responsible gaming and fair
@@ -56,27 +56,27 @@ export default function AboutPage() {
               </h3>
               <div className="space-y-3">
                 <div>
-                  <p className="text-sm text-gray-400">Company Name</p>
+                  <p className="text-sm text-gray-300">Company Name</p>
                   <p className="font-medium text-white">
                     DINEDIVINE VENTURES PRIVATE LIMITED
                   </p>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-400">CIN</p>
+                  <p className="text-sm text-gray-300">CIN</p>
                   <p className="font-medium text-white">
                     U56102HR2024PTC123713
                   </p>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-400">GST Number</p>
+                  <p className="text-sm text-gray-300">GST Number</p>
                   <p className="font-medium text-white">06AALCD0239Q1ZA</p>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-400">PAN Number</p>
+                  <p className="text-sm text-gray-300">PAN Number</p>
                   <p className="font-medium text-white">AALCD0239Q</p>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-400">Registered Address</p>
+                  <p className="text-sm text-gray-300">Registered Address</p>
                   <p className="font-medium text-white">
                     C/O PARDEEP SAGGAR, 20-P DSC, SEC-23A, Shivaji Nagar
                     (Gurgaon), Shivaji Nagar, Gurgaon- 122001, Haryana, India
@@ -111,7 +111,7 @@ export default function AboutPage() {
               <h3 className="text-2xl font-bold text-white mb-4">
                 Our Mission
               </h3>
-              <p className="text-gray-400 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed">
                 To democratize fantasy sports entertainment by providing a
                 completely free platform where cricket fans can engage with the
                 sport they love. We aim to create an inclusive community where
@@ -144,7 +144,7 @@ export default function AboutPage() {
               <h3 className="text-2xl font-bold text-white mb-4">
                 Our Vision
               </h3>
-              <p className="text-gray-400 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed">
                 To become India&apos;s most trusted and beloved free-to-play
                 fantasy sports platform. We envision a future where millions of
                 cricket enthusiasts come together on DineDivine to share their
@@ -183,7 +183,7 @@ export default function AboutPage() {
               <h3 className="text-xl font-semibold text-white mb-2">
                 Integrity
               </h3>
-              <p className="text-gray-400">
+              <p className="text-gray-300">
                 We operate with complete transparency and honesty in all our
                 dealings.
               </p>
@@ -207,7 +207,7 @@ export default function AboutPage() {
               <h3 className="text-xl font-semibold text-white mb-2">
                 Accessibility
               </h3>
-              <p className="text-gray-400">
+              <p className="text-gray-300">
                 Free-to-play model ensures everyone can enjoy fantasy sports.
               </p>
             </div>
@@ -230,7 +230,7 @@ export default function AboutPage() {
               <h3 className="text-xl font-semibold text-white mb-2">
                 Community
               </h3>
-              <p className="text-gray-400">
+              <p className="text-gray-300">
                 Building a vibrant community of passionate cricket enthusiasts.
               </p>
             </div>
@@ -253,7 +253,7 @@ export default function AboutPage() {
               <h3 className="text-xl font-semibold text-white mb-2">
                 Fair Play
               </h3>
-              <p className="text-gray-400">
+              <p className="text-gray-300">
                 Ensuring a level playing field for all participants.
               </p>
             </div>

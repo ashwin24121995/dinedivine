@@ -36,11 +36,11 @@ const Footer = () => {
               />
               <h3 className="text-2xl font-bold text-[#22c55e]">DineDivine</h3>
             </div>
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-300 text-sm">
               The Leading Entertainment Platform for Games & Social Fun. A free
               to play platform built for entertainment only.
             </p>
-            <div className="text-gray-400 text-sm space-y-1">
+            <div className="text-gray-300 text-sm space-y-1">
               <p>
                 <strong className="text-gray-300">Company:</strong> DINEDIVINE
                 VENTURES PRIVATE LIMITED
@@ -65,7 +65,7 @@ const Footer = () => {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 hover:text-[#22c55e] transition-colors duration-200"
+                    className="text-gray-300 hover:text-[#22c55e] transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -82,7 +82,7 @@ const Footer = () => {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 hover:text-[#22c55e] transition-colors duration-200"
+                    className="text-gray-300 hover:text-[#22c55e] transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -96,7 +96,7 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4 text-[#22c55e]">
               Contact Us
             </h4>
-            <div className="text-gray-400 text-sm space-y-2">
+            <div className="text-gray-300 text-sm space-y-2">
               <p>
                 <strong className="text-gray-300">Address:</strong>
               </p>

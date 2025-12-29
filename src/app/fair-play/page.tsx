@@ -160,14 +160,14 @@ export default function FairPlayPage() {
             <h2 className="text-3xl font-bold text-white mb-6">
               Our Commitment to Fair Play
             </h2>
-            <p className="text-gray-400 leading-relaxed mb-4">
+            <p className="text-gray-300 leading-relaxed mb-4">
               DineDivine is committed to providing a fair and enjoyable fantasy
               sports experience for all users. We have implemented
               comprehensive policies and systems to ensure that every
               participant has an equal opportunity to showcase their cricket
               knowledge and skills.
             </p>
-            <p className="text-gray-400 leading-relaxed">
+            <p className="text-gray-300 leading-relaxed">
               Our fair play policy applies to all users and covers all aspects
               of the platform, from account creation to contest participation.
               By using DineDivine, you agree to abide by these policies and
@@ -195,7 +195,7 @@ export default function FairPlayPage() {
                 <h3 className="text-xl font-bold text-white mb-3">
                   {principle.title}
                 </h3>
-                <p className="text-gray-400">{principle.description}</p>
+                <p className="text-gray-300">{principle.description}</p>
               </div>
             ))}
           </div>
@@ -208,7 +208,7 @@ export default function FairPlayPage() {
           <h2 className="text-3xl font-bold text-center text-white mb-4">
             Prohibited Activities
           </h2>
-          <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-gray-300 mb-12 max-w-2xl mx-auto">
             The following activities are strictly prohibited on DineDivine.
             Engaging in any of these activities may result in account
             suspension or permanent ban.
@@ -270,7 +270,7 @@ export default function FairPlayPage() {
               <h3 className="text-xl font-semibold text-white mb-3">
                 Identity Verification
               </h3>
-              <p className="text-gray-400">
+              <p className="text-gray-300">
                 We verify user identities to prevent multiple accounts and
                 ensure each user is who they claim to be.
               </p>
@@ -294,7 +294,7 @@ export default function FairPlayPage() {
               <h3 className="text-xl font-semibold text-white mb-3">
                 Automated Monitoring
               </h3>
-              <p className="text-gray-400">
+              <p className="text-gray-300">
                 Our systems continuously monitor for suspicious activities,
                 unusual patterns, and potential violations.
               </p>
@@ -318,7 +318,7 @@ export default function FairPlayPage() {
               <h3 className="text-xl font-semibold text-white mb-3">
                 Manual Review
               </h3>
-              <p className="text-gray-400">
+              <p className="text-gray-300">
                 Our team manually reviews flagged accounts and activities to
                 ensure accurate enforcement of policies.
               </p>
@@ -334,7 +334,7 @@ export default function FairPlayPage() {
             <h2 className="text-3xl font-bold text-center text-white mb-6">
               Consequences of Violations
             </h2>
-            <p className="text-center text-gray-400 mb-8">
+            <p className="text-center text-gray-300 mb-8">
               Violations of our fair play policy may result in the following
               actions, depending on the severity and nature of the violation:
             </p>
@@ -384,14 +384,14 @@ export default function FairPlayPage() {
             <h2 className="text-3xl font-bold text-white mb-6">
               Fantasy Cricket is a Game of Skill
             </h2>
-            <p className="text-gray-400 leading-relaxed mb-4">
+            <p className="text-gray-300 leading-relaxed mb-4">
               Fantasy cricket on DineDivine is a game of skill where success
               depends on your knowledge of cricket, understanding of player
               performance, and ability to analyze match conditions. Unlike games
               of chance, your decisions directly impact your team&apos;s
               performance.
             </p>
-            <p className="text-gray-400 leading-relaxed">
+            <p className="text-gray-300 leading-relaxed">
               We encourage all users to develop their skills, learn from
               experienced players, and continuously improve their fantasy
               cricket strategies. Remember, the goal is to have fun while
@@ -404,7 +404,7 @@ export default function FairPlayPage() {
       {/* Footer Note */}
       <section className="py-8 bg-[#1a2332]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-gray-400 text-sm">
+          <p className="text-center text-gray-300 text-sm">
             This fair play policy is subject to updates. Users will be notified
             of any significant changes. For questions about our fair play
             policies, please{" "}

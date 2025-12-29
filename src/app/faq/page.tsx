@@ -197,7 +197,7 @@ function FAQItem({
         </svg>
       </button>
       {isOpen && (
-        <div className="pb-4 text-gray-400 leading-relaxed">{answer}</div>
+        <div className="pb-4 text-gray-300 leading-relaxed">{answer}</div>
       )}
     </div>
   );
@@ -300,7 +300,7 @@ export default function FAQPage() {
                 </svg>
               </div>
               <h3 className="font-semibold text-white mb-2">How To Play</h3>
-              <p className="text-gray-400 text-sm">
+              <p className="text-gray-300 text-sm">
                 Step-by-step guide to get started
               </p>
             </Link>
@@ -324,7 +324,7 @@ export default function FAQPage() {
                 </svg>
               </div>
               <h3 className="font-semibold text-white mb-2">Fair Play</h3>
-              <p className="text-gray-400 text-sm">
+              <p className="text-gray-300 text-sm">
                 Our policies for fair competition
               </p>
             </Link>
@@ -350,7 +350,7 @@ export default function FAQPage() {
               <h3 className="font-semibold text-white mb-2">
                 Responsible Gaming
               </h3>
-              <p className="text-gray-400 text-sm">
+              <p className="text-gray-300 text-sm">
                 Play responsibly and safely
               </p>
             </Link>

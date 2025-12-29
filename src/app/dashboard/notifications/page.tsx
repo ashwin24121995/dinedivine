@@ -122,7 +122,7 @@ export default function NotificationsPage() {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-3xl font-bold text-white">Notifications</h1>
-              <p className="text-gray-400 mt-1">
+              <p className="text-gray-300 mt-1">
                 {unreadCount > 0 ? `${unreadCount} unread notifications` : "All caught up!"}
               </p>
             </div>
@@ -160,9 +160,9 @@ export default function NotificationsPage() {
                       <h3 className={`font-medium ${notification.is_read ? "text-gray-300" : "text-white"}`}>
                         {notification.title}
                       </h3>
-                      <span className="text-xs text-gray-400">{formatTime(notification.created_at)}</span>
+                      <span className="text-xs text-gray-300">{formatTime(notification.created_at)}</span>
                     </div>
-                    <p className={`text-sm mt-1 ${notification.is_read ? "text-gray-400" : "text-gray-400"}`}>
+                    <p className={`text-sm mt-1 ${notification.is_read ? "text-gray-300" : "text-gray-300"}`}>
                       {notification.message}
                     </p>
                   </div>
@@ -177,7 +177,7 @@ export default function NotificationsPage() {
           <div className="bg-[#1a2332] rounded-xl shadow-sm border border-[#22c55e]/20 p-12 text-center">
             <div className="text-6xl mb-4">🔔</div>
             <h3 className="text-xl font-bold text-white mb-2">No Notifications</h3>
-            <p className="text-gray-400">You&apos;re all caught up! Check back later for updates.</p>
+            <p className="text-gray-300">You&apos;re all caught up! Check back later for updates.</p>
           </div>
         )}
       </div>

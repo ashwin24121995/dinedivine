@@ -126,7 +126,7 @@ export default function MatchContestsPage({ params }: { params: Promise<{ id: st
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-3xl font-bold text-white">Join a Contest</h1>
-              <p className="text-gray-400 mt-1">Select a free contest to join</p>
+              <p className="text-gray-300 mt-1">Select a free contest to join</p>
             </div>
             <Link
               href={`/dashboard/matches/${matchId}/create-team`}
@@ -163,17 +163,17 @@ export default function MatchContestsPage({ params }: { params: Promise<{ id: st
                         FREE
                       </span>
                     </div>
-                    <p className="text-gray-400 text-sm">
+                    <p className="text-gray-300 text-sm">
                       {contest.contest_type.charAt(0).toUpperCase() + contest.contest_type.slice(1)} Contest
                     </p>
                   </div>
 
                   <div className="flex items-center gap-6">
                     <div className="text-center">
-                      <p className="text-xs text-gray-400">Spots Left</p>
+                      <p className="text-xs text-gray-300">Spots Left</p>
                       <p className="font-bold text-lg">
                         {contest.max_participants - contest.current_participants}
-                        <span className="text-gray-400 font-normal">/{contest.max_participants}</span>
+                        <span className="text-gray-300 font-normal">/{contest.max_participants}</span>
                       </p>
                     </div>
                     
@@ -187,7 +187,7 @@ export default function MatchContestsPage({ params }: { params: Promise<{ id: st
                           }}
                         ></div>
                       </div>
-                      <p className="text-xs text-gray-400 mt-1 text-center">
+                      <p className="text-xs text-gray-300 mt-1 text-center">
                         {Math.round((contest.current_participants / contest.max_participants) * 100)}% filled
                       </p>
                     </div>
@@ -197,7 +197,7 @@ export default function MatchContestsPage({ params }: { params: Promise<{ id: st
                       disabled={joiningContestId === contest.id || contest.current_participants >= contest.max_participants}
                       className={`px-6 py-2 rounded-lg font-medium transition-colors ${
                         contest.current_participants >= contest.max_participants
-                          ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+                          ? "bg-gray-200 text-gray-300 cursor-not-allowed"
                           : "bg-[#22c55e] hover:shadow-lg hover:shadow-[#22c55e]/30 text-white"
                       }`}
                     >
@@ -216,7 +216,7 @@ export default function MatchContestsPage({ params }: { params: Promise<{ id: st
           <div className="bg-[#1a2332] rounded-xl shadow-sm border border-[#22c55e]/20 p-12 text-center">
             <div className="text-6xl mb-4">🎯</div>
             <h3 className="text-xl font-bold text-white mb-2">No Contests Available</h3>
-            <p className="text-gray-400 mb-6">Contests for this match will be available soon!</p>
+            <p className="text-gray-300 mb-6">Contests for this match will be available soon!</p>
             <Link
               href="/dashboard/matches"
               className="inline-block bg-[#22c55e] hover:shadow-lg hover:shadow-[#22c55e]/30 text-white px-6 py-3 rounded-lg font-medium transition-colors"
@@ -231,7 +231,7 @@ export default function MatchContestsPage({ params }: { params: Promise<{ id: st
           <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
             <div className="bg-[#1a2332] rounded-xl p-6 max-w-md w-full mx-4">
               <h3 className="text-xl font-bold text-white mb-4">Select a Team</h3>
-              <p className="text-gray-400 mb-4">Choose which team to use for {selectedContest.contest_name}</p>
+              <p className="text-gray-300 mb-4">Choose which team to use for {selectedContest.contest_name}</p>
               
               <div className="space-y-2 mb-6">
                 {userTeams.map((team) => (
@@ -242,7 +242,7 @@ export default function MatchContestsPage({ params }: { params: Promise<{ id: st
                     className="w-full p-4 border border-[#22c55e]/20 rounded-lg hover:border-green-500 hover:bg-[#22c55e]/10 transition-all text-left"
                   >
                     <p className="font-medium text-white">{team.team_name}</p>
-                    <p className="text-sm text-gray-400">{team.player_count} players</p>
+                    <p className="text-sm text-gray-300">{team.player_count} players</p>
                   </button>
                 ))}
               </div>
@@ -250,7 +250,7 @@ export default function MatchContestsPage({ params }: { params: Promise<{ id: st
               <div className="flex gap-2">
                 <button
                   onClick={() => setShowTeamSelector(false)}
-                  className="flex-1 px-4 py-2 border border-[#22c55e]/20 rounded-lg text-gray-400 hover:bg-[#0a0f1a]"
+                  className="flex-1 px-4 py-2 border border-[#22c55e]/20 rounded-lg text-gray-300 hover:bg-[#0a0f1a]"
                 >
                   Cancel
                 </button>

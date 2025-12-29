@@ -111,7 +111,7 @@ export default function LiveMatchCard({ match: initialMatch, refreshInterval = 3
 
           {/* VS */}
           <div className="px-4">
-            <span className="text-gray-400 font-bold text-xl">VS</span>
+            <span className="text-gray-300 font-bold text-xl">VS</span>
           </div>
 
           {/* Team 2 */}
@@ -171,7 +171,7 @@ export default function LiveMatchCard({ match: initialMatch, refreshInterval = 3
         </div>
 
         {/* Venue */}
-        <p className="text-xs text-gray-400 mt-2 truncate text-center">
+        <p className="text-xs text-gray-300 mt-2 truncate text-center">
           {match.venue}
         </p>
       </div>

@@ -54,7 +54,7 @@ export default function LeaderboardPage() {
     if (rank === 1) return "bg-yellow-100 text-yellow-800";
     if (rank === 2) return "bg-[#1a2332] text-white";
     if (rank === 3) return "bg-orange-100 text-orange-800";
-    return "bg-[#0a0f1a] text-gray-400";
+    return "bg-[#0a0f1a] text-gray-300";
   };
 
   return (
@@ -66,7 +66,7 @@ export default function LeaderboardPage() {
             ← Back to Dashboard
           </Link>
           <h1 className="text-3xl font-bold text-white">Leaderboard</h1>
-          <p className="text-gray-400 mt-1">See how you rank against other players</p>
+          <p className="text-gray-300 mt-1">See how you rank against other players</p>
         </div>
 
         {/* Tabs */}
@@ -76,7 +76,7 @@ export default function LeaderboardPage() {
             className={`px-6 py-2 rounded-lg font-medium transition-all ${
               activeTab === "global"
                 ? "bg-[#22c55e] text-white"
-                : "text-gray-400 hover:bg-[#1a2332]"
+                : "text-gray-300 hover:bg-[#1a2332]"
             }`}
           >
             All Time
@@ -86,7 +86,7 @@ export default function LeaderboardPage() {
             className={`px-6 py-2 rounded-lg font-medium transition-all ${
               activeTab === "weekly"
                 ? "bg-[#22c55e] text-white"
-                : "text-gray-400 hover:bg-[#1a2332]"
+                : "text-gray-300 hover:bg-[#1a2332]"
             }`}
           >
             This Week
@@ -96,7 +96,7 @@ export default function LeaderboardPage() {
             className={`px-6 py-2 rounded-lg font-medium transition-all ${
               activeTab === "monthly"
                 ? "bg-[#22c55e] text-white"
-                : "text-gray-400 hover:bg-[#1a2332]"
+                : "text-gray-300 hover:bg-[#1a2332]"
             }`}
           >
             This Month
@@ -141,7 +141,7 @@ export default function LeaderboardPage() {
           </div>
         ) : leaderboard.length > 0 ? (
           <div className="bg-[#1a2332] rounded-xl shadow-sm border border-[#22c55e]/20 overflow-hidden">
-            <div className="grid grid-cols-12 gap-4 p-4 border-b border-[#22c55e]/20 text-sm font-medium text-gray-400 bg-[#0a0f1a]">
+            <div className="grid grid-cols-12 gap-4 p-4 border-b border-[#22c55e]/20 text-sm font-medium text-gray-300 bg-[#0a0f1a]">
               <div className="col-span-1">Rank</div>
               <div className="col-span-5">Player</div>
               <div className="col-span-2 text-center">Points</div>
@@ -171,12 +171,12 @@ export default function LeaderboardPage() {
                         <span className="ml-2 text-xs bg-[#22c55e]/20 text-[#22c55e] px-2 py-0.5 rounded-full">You</span>
                       )}
                     </p>
-                    <p className="text-xs text-gray-400">Level {entry.level}</p>
+                    <p className="text-xs text-gray-300">Level {entry.level}</p>
                   </div>
                 </div>
                 <div className="col-span-2 text-center font-bold text-[#22c55e]">{entry.total_points}</div>
-                <div className="col-span-2 text-center text-gray-400">{entry.total_contests}</div>
-                <div className="col-span-2 text-center text-gray-400">{entry.total_wins}</div>
+                <div className="col-span-2 text-center text-gray-300">{entry.total_contests}</div>
+                <div className="col-span-2 text-center text-gray-300">{entry.total_wins}</div>
               </div>
             ))}
           </div>
@@ -184,7 +184,7 @@ export default function LeaderboardPage() {
           <div className="bg-[#1a2332] rounded-xl shadow-sm border border-[#22c55e]/20 p-12 text-center">
             <div className="text-6xl mb-4">🏆</div>
             <h3 className="text-xl font-bold text-white mb-2">No Rankings Yet</h3>
-            <p className="text-gray-400 mb-6">Join contests to appear on the leaderboard!</p>
+            <p className="text-gray-300 mb-6">Join contests to appear on the leaderboard!</p>
             <Link
               href="/dashboard/matches"
               className="inline-block bg-[#22c55e] hover:shadow-lg hover:shadow-[#22c55e]/30 text-white px-6 py-3 rounded-lg font-medium transition-colors"

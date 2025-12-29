@@ -33,14 +33,14 @@ export default function PrivacyPage() {
               <h2 className="text-2xl font-bold text-white mb-4">
                 1. Introduction
               </h2>
-              <p className="text-gray-400 leading-relaxed mb-4">
+              <p className="text-gray-300 leading-relaxed mb-4">
                 DINEDIVINE VENTURES PRIVATE LIMITED (&quot;Company&quot;,
                 &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) operates the
                 DineDivine platform (the &quot;Platform&quot;). This Privacy
                 Policy explains how we collect, use, disclose, and safeguard
                 your information when you use our Platform.
               </p>
-              <p className="text-gray-400 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed">
                 By using our Platform, you consent to the data practices
                 described in this Privacy Policy. If you do not agree with the
                 terms of this Privacy Policy, please do not access or use our
@@ -57,10 +57,10 @@ export default function PrivacyPage() {
               <h3 className="text-xl font-semibold text-white mb-3">
                 2.1 Personal Information
               </h3>
-              <p className="text-gray-400 leading-relaxed mb-4">
+              <p className="text-gray-300 leading-relaxed mb-4">
                 When you register for an account, we may collect:
               </p>
-              <ul className="list-disc list-inside text-gray-400 space-y-2 mb-6">
+              <ul className="list-disc list-inside text-gray-300 space-y-2 mb-6">
                 <li>Full name</li>
                 <li>Email address</li>
                 <li>Mobile phone number</li>
@@ -72,11 +72,11 @@ export default function PrivacyPage() {
               <h3 className="text-xl font-semibold text-white mb-3">
                 2.2 Usage Information
               </h3>
-              <p className="text-gray-400 leading-relaxed mb-4">
+              <p className="text-gray-300 leading-relaxed mb-4">
                 We automatically collect certain information when you use our
                 Platform:
               </p>
-              <ul className="list-disc list-inside text-gray-400 space-y-2 mb-6">
+              <ul className="list-disc list-inside text-gray-300 space-y-2 mb-6">
                 <li>Device information (type, operating system, browser)</li>
                 <li>IP address and location data</li>
                 <li>Pages visited and features used</li>
@@ -88,7 +88,7 @@ export default function PrivacyPage() {
               <h3 className="text-xl font-semibold text-white mb-3">
                 2.3 Cookies and Tracking Technologies
               </h3>
-              <p className="text-gray-400 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed">
                 We use cookies and similar tracking technologies to enhance your
                 experience, analyze usage patterns, and improve our services.
                 You can control cookie settings through your browser, but
@@ -101,10 +101,10 @@ export default function PrivacyPage() {
               <h2 className="text-2xl font-bold text-white mb-4">
                 3. How We Use Your Information
               </h2>
-              <p className="text-gray-400 leading-relaxed mb-4">
+              <p className="text-gray-300 leading-relaxed mb-4">
                 We use the collected information for the following purposes:
               </p>
-              <ul className="list-disc list-inside text-gray-400 space-y-2">
+              <ul className="list-disc list-inside text-gray-300 space-y-2">
                 <li>To create and manage your account</li>
                 <li>To provide and maintain our Platform services</li>
                 <li>To verify your identity and eligibility</li>
@@ -123,7 +123,7 @@ export default function PrivacyPage() {
               <h2 className="text-2xl font-bold text-white mb-4">
                 4. Information Sharing and Disclosure
               </h2>
-              <p className="text-gray-400 leading-relaxed mb-4">
+              <p className="text-gray-300 leading-relaxed mb-4">
                 We do not sell, trade, or rent your personal information to
                 third parties. We may share your information only in the
                 following circumstances:
@@ -132,7 +132,7 @@ export default function PrivacyPage() {
               <h3 className="text-xl font-semibold text-white mb-3">
                 4.1 Service Providers
               </h3>
-              <p className="text-gray-400 leading-relaxed mb-4">
+              <p className="text-gray-300 leading-relaxed mb-4">
                 We may share information with trusted third-party service
                 providers who assist us in operating our Platform, such as
                 hosting providers, analytics services, and customer support
@@ -142,7 +142,7 @@ export default function PrivacyPage() {
               <h3 className="text-xl font-semibold text-white mb-3">
                 4.2 Legal Requirements
               </h3>
-              <p className="text-gray-400 leading-relaxed mb-4">
+              <p className="text-gray-300 leading-relaxed mb-4">
                 We may disclose your information if required by law, court
                 order, or government request, or if we believe disclosure is
                 necessary to protect our rights, your safety, or the safety of
@@ -152,7 +152,7 @@ export default function PrivacyPage() {
               <h3 className="text-xl font-semibold text-white mb-3">
                 4.3 Business Transfers
               </h3>
-              <p className="text-gray-400 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed">
                 In the event of a merger, acquisition, or sale of assets, your
                 information may be transferred to the acquiring entity. We will
                 notify you of any such change.
@@ -164,18 +164,18 @@ export default function PrivacyPage() {
               <h2 className="text-2xl font-bold text-white mb-4">
                 5. Data Security
               </h2>
-              <p className="text-gray-400 leading-relaxed mb-4">
+              <p className="text-gray-300 leading-relaxed mb-4">
                 We implement appropriate technical and organizational measures
                 to protect your personal information, including:
               </p>
-              <ul className="list-disc list-inside text-gray-400 space-y-2 mb-4">
+              <ul className="list-disc list-inside text-gray-300 space-y-2 mb-4">
                 <li>Encryption of data in transit and at rest</li>
                 <li>Secure server infrastructure</li>
                 <li>Regular security assessments and updates</li>
                 <li>Access controls and authentication measures</li>
                 <li>Employee training on data protection</li>
               </ul>
-              <p className="text-gray-400 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed">
                 However, no method of transmission over the internet or
                 electronic storage is 100% secure. While we strive to protect
                 your information, we cannot guarantee absolute security.
@@ -187,12 +187,12 @@ export default function PrivacyPage() {
               <h2 className="text-2xl font-bold text-white mb-4">
                 6. Data Retention
               </h2>
-              <p className="text-gray-400 leading-relaxed mb-4">
+              <p className="text-gray-300 leading-relaxed mb-4">
                 We retain your personal information for as long as your account
                 is active or as needed to provide you services. We may also
                 retain information as necessary to:
               </p>
-              <ul className="list-disc list-inside text-gray-400 space-y-2">
+              <ul className="list-disc list-inside text-gray-300 space-y-2">
                 <li>Comply with legal obligations</li>
                 <li>Resolve disputes</li>
                 <li>Enforce our agreements</li>
@@ -205,7 +205,7 @@ export default function PrivacyPage() {
               <h2 className="text-2xl font-bold text-white mb-4">
                 7. Your Rights
               </h2>
-              <p className="text-gray-400 leading-relaxed mb-4">
+              <p className="text-gray-300 leading-relaxed mb-4">
                 You have the following rights regarding your personal
                 information:
               </p>
@@ -214,7 +214,7 @@ export default function PrivacyPage() {
                   <h4 className="font-semibold text-white mb-2">
                     Right to Access
                   </h4>
-                  <p className="text-gray-400 text-sm">
+                  <p className="text-gray-300 text-sm">
                     You can request a copy of the personal information we hold
                     about you.
                   </p>
@@ -223,7 +223,7 @@ export default function PrivacyPage() {
                   <h4 className="font-semibold text-white mb-2">
                     Right to Correction
                   </h4>
-                  <p className="text-gray-400 text-sm">
+                  <p className="text-gray-300 text-sm">
                     You can request correction of inaccurate or incomplete
                     information.
                   </p>
@@ -232,7 +232,7 @@ export default function PrivacyPage() {
                   <h4 className="font-semibold text-white mb-2">
                     Right to Deletion
                   </h4>
-                  <p className="text-gray-400 text-sm">
+                  <p className="text-gray-300 text-sm">
                     You can request deletion of your personal information,
                     subject to legal requirements.
                   </p>
@@ -241,13 +241,13 @@ export default function PrivacyPage() {
                   <h4 className="font-semibold text-white mb-2">
                     Right to Withdraw Consent
                   </h4>
-                  <p className="text-gray-400 text-sm">
+                  <p className="text-gray-300 text-sm">
                     You can withdraw your consent for data processing at any
                     time.
                   </p>
                 </div>
               </div>
-              <p className="text-gray-400 leading-relaxed mt-4">
+              <p className="text-gray-300 leading-relaxed mt-4">
                 To exercise these rights, please contact us using the
                 information provided at the end of this policy.
               </p>
@@ -258,7 +258,7 @@ export default function PrivacyPage() {
               <h2 className="text-2xl font-bold text-white mb-4">
                 8. Children&apos;s Privacy
               </h2>
-              <p className="text-gray-400 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed">
                 Our Platform is not intended for users under 18 years of age. We
                 do not knowingly collect personal information from children. If
                 we discover that we have collected information from a minor, we
@@ -272,7 +272,7 @@ export default function PrivacyPage() {
               <h2 className="text-2xl font-bold text-white mb-4">
                 9. Third-Party Links
               </h2>
-              <p className="text-gray-400 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed">
                 Our Platform may contain links to third-party websites or
                 services. We are not responsible for the privacy practices of
                 these third parties. We encourage you to read the privacy
@@ -285,7 +285,7 @@ export default function PrivacyPage() {
               <h2 className="text-2xl font-bold text-white mb-4">
                 10. Changes to This Privacy Policy
               </h2>
-              <p className="text-gray-400 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed">
                 We may update this Privacy Policy from time to time. We will
                 notify you of any material changes by posting the new Privacy
                 Policy on this page and updating the &quot;Last Updated&quot;
@@ -299,7 +299,7 @@ export default function PrivacyPage() {
               <h2 className="text-2xl font-bold text-white mb-4">
                 11. Grievance Officer
               </h2>
-              <p className="text-gray-400 leading-relaxed mb-4">
+              <p className="text-gray-300 leading-relaxed mb-4">
                 In accordance with the Information Technology Act, 2000 and
                 rules made thereunder, the name and contact details of the
                 Grievance Officer are provided below:
@@ -308,14 +308,14 @@ export default function PrivacyPage() {
                 <p className="text-gray-300 mb-2">
                   <strong>Grievance Officer</strong>
                 </p>
-                <p className="text-gray-400 mb-2">
+                <p className="text-gray-300 mb-2">
                   DINEDIVINE VENTURES PRIVATE LIMITED
                 </p>
-                <p className="text-gray-400 mb-2">
+                <p className="text-gray-300 mb-2">
                   C/O PARDEEP SAGGAR, 20-P DSC, SEC-23A, Shivaji Nagar (Gurgaon),
                   Shivaji Nagar, Gurgaon- 122001, Haryana, India
                 </p>
-                <p className="text-gray-400">
+                <p className="text-gray-300">
                   Time: Monday to Friday, 10:00 AM to 6:00 PM IST
                 </p>
               </div>
@@ -326,7 +326,7 @@ export default function PrivacyPage() {
               <h2 className="text-2xl font-bold text-white mb-4">
                 12. Contact Us
               </h2>
-              <p className="text-gray-400 leading-relaxed mb-4">
+              <p className="text-gray-300 leading-relaxed mb-4">
                 If you have any questions or concerns about this Privacy Policy
                 or our data practices, please contact us:
               </p>
@@ -334,14 +334,14 @@ export default function PrivacyPage() {
                 <p className="text-gray-300 mb-2">
                   <strong>DINEDIVINE VENTURES PRIVATE LIMITED</strong>
                 </p>
-                <p className="text-gray-400 mb-2">
+                <p className="text-gray-300 mb-2">
                   C/O PARDEEP SAGGAR, 20-P DSC, SEC-23A, Shivaji Nagar (Gurgaon),
                   Shivaji Nagar, Gurgaon- 122001, Haryana, India
                 </p>
-                <p className="text-gray-400 mb-2">
+                <p className="text-gray-300 mb-2">
                   CIN: U56102HR2024PTC123713
                 </p>
-                <p className="text-gray-400">
+                <p className="text-gray-300">
                   Website:{" "}
                   <a
                     href="https://www.dinedivine.com"

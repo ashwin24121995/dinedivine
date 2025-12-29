@@ -238,7 +238,7 @@ export default function RegisterPage() {
         <h2 className="mt-6 text-center text-3xl font-bold text-white">
           Create your account
         </h2>
-        <p className="mt-2 text-center text-sm text-gray-400">
+        <p className="mt-2 text-center text-sm text-gray-300">
           Already have an account?{" "}
           <Link
             href="/login"
@@ -258,7 +258,7 @@ export default function RegisterPage() {
                 className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold ${
                   step >= s
                     ? "bg-[#22c55e] text-white"
-                    : "bg-gray-200 text-gray-400"
+                    : "bg-gray-200 text-gray-300"
                 }`}
               >
                 {step > s ? (
@@ -351,7 +351,7 @@ export default function RegisterPage() {
                     Mobile Number <span className="text-red-500">*</span>
                   </label>
                   <div className="mt-1 flex">
-                    <span className="inline-flex items-center px-3 rounded-l-lg border border-r-0 border-gray-600 bg-[#0a0f1a] text-gray-400 text-sm">
+                    <span className="inline-flex items-center px-3 rounded-l-lg border border-r-0 border-gray-600 bg-[#0a0f1a] text-gray-300 text-sm">
                       +91
                     </span>
                     <input
@@ -408,7 +408,7 @@ export default function RegisterPage() {
                     }
                     className="mt-1 block w-full px-4 py-3 border border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#22c55e] focus:border-[#22c55e]"
                   />
-                  <p className="mt-1 text-xs text-gray-400">
+                  <p className="mt-1 text-xs text-gray-300">
                     You must be 18 years or older to register
                   </p>
                 </div>
@@ -512,7 +512,7 @@ export default function RegisterPage() {
                       onClick={() => setShowPassword(!showPassword)}
                     >
                       <svg
-                        className="h-5 w-5 text-gray-400"
+                        className="h-5 w-5 text-gray-300"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -532,7 +532,7 @@ export default function RegisterPage() {
                       </svg>
                     </button>
                   </div>
-                  <p className="mt-1 text-xs text-gray-400">
+                  <p className="mt-1 text-xs text-gray-300">
                     At least 8 characters with uppercase, lowercase, and number
                   </p>
                 </div>
@@ -561,7 +561,7 @@ export default function RegisterPage() {
                       onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                     >
                       <svg
-                        className="h-5 w-5 text-gray-400"
+                        className="h-5 w-5 text-gray-300"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"

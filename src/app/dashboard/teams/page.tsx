@@ -72,7 +72,7 @@ export default function MyTeamsPage() {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-3xl font-bold text-white">My Teams</h1>
-              <p className="text-gray-400 mt-1">View and manage your fantasy teams</p>
+              <p className="text-gray-300 mt-1">View and manage your fantasy teams</p>
             </div>
             <Link
               href="/dashboard/matches"
@@ -100,15 +100,15 @@ export default function MyTeamsPage() {
 
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-gray-400">Credits Used</span>
+                    <span className="text-gray-300">Credits Used</span>
                     <span className="font-medium">{team.total_credits_used}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-400">Points Earned</span>
+                    <span className="text-gray-300">Points Earned</span>
                     <span className="font-medium text-[#22c55e]">{team.total_points}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-400">Created</span>
+                    <span className="text-gray-300">Created</span>
                     <span className="font-medium">{formatDate(team.created_at)}</span>
                   </div>
                 </div>
@@ -134,7 +134,7 @@ export default function MyTeamsPage() {
           <div className="bg-[#1a2332] rounded-xl shadow-sm border border-[#22c55e]/20 p-12 text-center">
             <div className="text-6xl mb-4">🏏</div>
             <h3 className="text-xl font-bold text-white mb-2">No Teams Yet</h3>
-            <p className="text-gray-400 mb-6">Create your first fantasy team to start playing!</p>
+            <p className="text-gray-300 mb-6">Create your first fantasy team to start playing!</p>
             <Link
               href="/dashboard/matches"
               className="inline-block bg-[#22c55e] hover:shadow-lg hover:shadow-[#22c55e]/30 text-white px-6 py-3 rounded-lg font-medium transition-colors"

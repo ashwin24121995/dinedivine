@@ -55,7 +55,7 @@ export default function CompletedMatchesSection({ limit = 6 }: CompletedMatchesS
             <h2 className="text-2xl font-bold text-white">Recent Results</h2>
             <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-gray-400"></div>
           </div>
-          <div className="text-center text-gray-400">Loading recent results...</div>
+          <div className="text-center text-gray-300">Loading recent results...</div>
         </div>
       </section>
     );
@@ -80,7 +80,7 @@ export default function CompletedMatchesSection({ limit = 6 }: CompletedMatchesS
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-2xl font-bold text-white mb-4">Recent Results</h2>
-            <p className="text-gray-400">No recent match results available.</p>
+            <p className="text-gray-300">No recent match results available.</p>
           </div>
         </div>
       </section>

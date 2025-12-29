@@ -82,7 +82,7 @@ export default function MyContestsPage() {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-3xl font-bold text-white">My Contests</h1>
-              <p className="text-gray-400 mt-1">Track your contest entries and rankings</p>
+              <p className="text-gray-300 mt-1">Track your contest entries and rankings</p>
             </div>
             <Link
               href="/dashboard/matches"
@@ -100,7 +100,7 @@ export default function MyContestsPage() {
             className={`px-6 py-2 rounded-lg font-medium transition-all flex items-center gap-2 ${
               activeTab === "active"
                 ? "bg-red-600 text-white"
-                : "text-gray-400 hover:bg-[#1a2332]"
+                : "text-gray-300 hover:bg-[#1a2332]"
             }`}
           >
             <span className={`w-2 h-2 rounded-full ${activeTab === "active" ? "bg-[#1a2332]" : "bg-red-500"} animate-pulse`}></span>
@@ -111,7 +111,7 @@ export default function MyContestsPage() {
             className={`px-6 py-2 rounded-lg font-medium transition-all ${
               activeTab === "upcoming"
                 ? "bg-[#22c55e] text-white"
-                : "text-gray-400 hover:bg-[#1a2332]"
+                : "text-gray-300 hover:bg-[#1a2332]"
             }`}
           >
             Upcoming
@@ -121,7 +121,7 @@ export default function MyContestsPage() {
             className={`px-6 py-2 rounded-lg font-medium transition-all ${
               activeTab === "completed"
                 ? "bg-gray-600 text-white"
-                : "text-gray-400 hover:bg-[#1a2332]"
+                : "text-gray-300 hover:bg-[#1a2332]"
             }`}
           >
             Completed
@@ -143,29 +143,29 @@ export default function MyContestsPage() {
                       <span className={`px-2 py-1 text-xs rounded-full font-medium ${
                         contest.status === "live" ? "bg-red-100 text-red-600" :
                         contest.status === "upcoming" ? "bg-[#22c55e]/20 text-[#22c55e]" :
-                        "bg-[#1a2332] text-gray-400"
+                        "bg-[#1a2332] text-gray-300"
                       }`}>
                         {contest.status.toUpperCase()}
                       </span>
                     </div>
-                    <p className="text-gray-400 text-sm">
+                    <p className="text-gray-300 text-sm">
                       Team: <span className="font-medium text-gray-300">{contest.team_name}</span>
                     </p>
                   </div>
 
                   <div className="flex items-center gap-6">
                     <div className="text-center">
-                      <p className="text-xs text-gray-400">Participants</p>
+                      <p className="text-xs text-gray-300">Participants</p>
                       <p className="font-bold text-lg">{contest.current_participants}/{contest.max_participants}</p>
                     </div>
                     {contest.status !== "upcoming" && (
                       <>
                         <div className="text-center">
-                          <p className="text-xs text-gray-400">Points</p>
+                          <p className="text-xs text-gray-300">Points</p>
                           <p className="font-bold text-lg text-[#22c55e]">{contest.team_points}</p>
                         </div>
                         <div className="text-center">
-                          <p className="text-xs text-gray-400">Rank</p>
+                          <p className="text-xs text-gray-300">Rank</p>
                           <p className="font-bold text-lg">#{contest.rank}</p>
                         </div>
                       </>
@@ -187,7 +187,7 @@ export default function MyContestsPage() {
             <h3 className="text-xl font-bold text-white mb-2">
               No {activeTab === "active" ? "Live" : activeTab === "upcoming" ? "Upcoming" : "Completed"} Contests
             </h3>
-            <p className="text-gray-400 mb-6">
+            <p className="text-gray-300 mb-6">
               {activeTab === "upcoming" 
                 ? "Join a contest to see it here!"
                 : "Check back later for more contests."}

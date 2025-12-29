@@ -267,7 +267,7 @@ export default function ContactPage() {
                       <h3 className="font-semibold text-white">
                         {info.title}
                       </h3>
-                      <p className="text-gray-400">{info.content}</p>
+                      <p className="text-gray-300">{info.content}</p>
                     </div>
                   </div>
                 ))}
@@ -278,7 +278,7 @@ export default function ContactPage() {
                 <h3 className="font-semibold text-white mb-4">
                   Company Details
                 </h3>
-                <div className="space-y-2 text-sm text-gray-400">
+                <div className="space-y-2 text-sm text-gray-300">
                   <p>
                     <strong>Company Name:</strong> DINEDIVINE VENTURES PRIVATE
                     LIMITED
@@ -317,7 +317,7 @@ export default function ContactPage() {
           <h2 className="text-2xl font-bold text-white mb-4">
             Looking for Quick Answers?
           </h2>
-          <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
+          <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
             Check out our FAQ section for answers to commonly asked questions
             about DineDivine, fantasy cricket, and our platform.
           </p>

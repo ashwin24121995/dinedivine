@@ -219,19 +219,19 @@ export default function FantasyCricketPage() {
               <h2 className="text-3xl font-bold text-white mb-6">
                 What is Fantasy Cricket?
               </h2>
-              <p className="text-gray-400 mb-4 leading-relaxed">
+              <p className="text-gray-300 mb-4 leading-relaxed">
                 Fantasy cricket is an online game where you become the team
                 manager. You select real cricket players to form your virtual
                 team, and earn points based on how those players perform in
                 actual matches.
               </p>
-              <p className="text-gray-400 mb-4 leading-relaxed">
+              <p className="text-gray-300 mb-4 leading-relaxed">
                 It&apos;s a game of skill that rewards your cricket knowledge,
                 analytical abilities, and understanding of the sport. The better
                 you know the players, pitch conditions, and match dynamics, the
                 better your fantasy team will perform.
               </p>
-              <p className="text-gray-400 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed">
                 On DineDivine, fantasy cricket is completely free to play. We
                 believe that the joy of the game should be accessible to
                 everyone, without any financial barriers. Create your team,
@@ -345,7 +345,7 @@ export default function FantasyCricketPage() {
           <h2 className="text-3xl font-bold text-center text-white mb-4">
             Supported Match Formats
           </h2>
-          <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-gray-300 mb-12 max-w-2xl mx-auto">
             Play fantasy cricket across all major formats. Each format offers a
             unique challenge and requires different strategies.
           </p>
@@ -361,7 +361,7 @@ export default function FantasyCricketPage() {
                 <h3 className="text-xl font-bold text-white mb-3">
                   {format.title}
                 </h3>
-                <p className="text-gray-400">{format.description}</p>
+                <p className="text-gray-300">{format.description}</p>
               </div>
             ))}
           </div>
@@ -374,7 +374,7 @@ export default function FantasyCricketPage() {
           <h2 className="text-3xl font-bold text-center text-white mb-4">
             Platform Features
           </h2>
-          <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-gray-300 mb-12 max-w-2xl mx-auto">
             DineDivine offers a comprehensive fantasy cricket experience with
             features designed to enhance your gameplay.
           </p>
@@ -388,7 +388,7 @@ export default function FantasyCricketPage() {
                   <h3 className="text-lg font-semibold text-white mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-400 text-sm">{feature.description}</p>
+                  <p className="text-gray-300 text-sm">{feature.description}</p>
                 </div>
               </div>
             ))}
@@ -402,14 +402,14 @@ export default function FantasyCricketPage() {
           <h2 className="text-3xl font-bold text-center text-white mb-4">
             How Fantasy Points Work
           </h2>
-          <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-gray-300 mb-12 max-w-2xl mx-auto">
             Your fantasy team earns points based on the real-world performance
             of your selected players during the match.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-[#1a2332] p-6 rounded-xl shadow-lg">
               <h3 className="text-lg font-bold text-[#22c55e] mb-4">Batting</h3>
-              <ul className="space-y-2 text-gray-400 text-sm">
+              <ul className="space-y-2 text-gray-300 text-sm">
                 <li>Runs scored</li>
                 <li>Boundaries (4s and 6s)</li>
                 <li>Half-centuries and centuries</li>
@@ -418,7 +418,7 @@ export default function FantasyCricketPage() {
             </div>
             <div className="bg-[#1a2332] p-6 rounded-xl shadow-lg">
               <h3 className="text-lg font-bold text-[#22c55e] mb-4">Bowling</h3>
-              <ul className="space-y-2 text-gray-400 text-sm">
+              <ul className="space-y-2 text-gray-300 text-sm">
                 <li>Wickets taken</li>
                 <li>Maiden overs</li>
                 <li>Economy rate bonuses</li>
@@ -429,7 +429,7 @@ export default function FantasyCricketPage() {
               <h3 className="text-lg font-bold text-[#22c55e] mb-4">
                 Fielding
               </h3>
-              <ul className="space-y-2 text-gray-400 text-sm">
+              <ul className="space-y-2 text-gray-300 text-sm">
                 <li>Catches taken</li>
                 <li>Stumpings</li>
                 <li>Run outs (direct/indirect)</li>
@@ -437,7 +437,7 @@ export default function FantasyCricketPage() {
             </div>
             <div className="bg-[#1a2332] p-6 rounded-xl shadow-lg">
               <h3 className="text-lg font-bold text-[#22c55e] mb-4">Bonus</h3>
-              <ul className="space-y-2 text-gray-400 text-sm">
+              <ul className="space-y-2 text-gray-300 text-sm">
                 <li>Captain: 2x points</li>
                 <li>Vice-Captain: 1.5x points</li>
                 <li>Player of the Match</li>
@@ -453,7 +453,7 @@ export default function FantasyCricketPage() {
           <h2 className="text-3xl font-bold text-center text-white mb-4">
             Covered Tournaments
           </h2>
-          <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-gray-300 mb-12 max-w-2xl mx-auto">
             Play fantasy cricket for all major international and domestic
             cricket tournaments.
           </p>

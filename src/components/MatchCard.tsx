@@ -93,7 +93,7 @@ export default function MatchCard({ match }: MatchCardProps) {
 
           {/* VS */}
           <div className="px-4">
-            <span className="text-gray-400 font-bold text-lg">VS</span>
+            <span className="text-gray-300 font-bold text-lg">VS</span>
           </div>
 
           {/* Team 2 */}
@@ -141,7 +141,7 @@ export default function MatchCard({ match }: MatchCardProps) {
         </div>
 
         {/* Venue */}
-        <p className="text-xs text-gray-400 mt-2 truncate text-center">
+        <p className="text-xs text-gray-300 mt-2 truncate text-center">
           {match.venue}
         </p>
       </div>

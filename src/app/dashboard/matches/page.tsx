@@ -118,7 +118,7 @@ export default function MatchesPage() {
             ← Back to Dashboard
           </Link>
           <h1 className="text-3xl font-bold text-white">Select Match</h1>
-          <p className="text-gray-400 mt-1">Choose a match to create your fantasy team</p>
+          <p className="text-gray-300 mt-1">Choose a match to create your fantasy team</p>
         </div>
 
         {/* Tabs */}
@@ -128,7 +128,7 @@ export default function MatchesPage() {
             className={`px-6 py-2 rounded-lg font-medium transition-all flex items-center gap-2 ${
               activeTab === "live"
                 ? "bg-red-600 text-white"
-                : "text-gray-400 hover:bg-[#1a2332]"
+                : "text-gray-300 hover:bg-[#1a2332]"
             }`}
           >
             <span className={`w-2 h-2 rounded-full ${activeTab === "live" ? "bg-[#1a2332]" : "bg-red-500"} animate-pulse`}></span>
@@ -139,7 +139,7 @@ export default function MatchesPage() {
             className={`px-6 py-2 rounded-lg font-medium transition-all ${
               activeTab === "upcoming"
                 ? "bg-[#22c55e] text-white"
-                : "text-gray-400 hover:bg-[#1a2332]"
+                : "text-gray-300 hover:bg-[#1a2332]"
             }`}
           >
             Upcoming
@@ -149,7 +149,7 @@ export default function MatchesPage() {
             className={`px-6 py-2 rounded-lg font-medium transition-all ${
               activeTab === "completed"
                 ? "bg-gray-600 text-white"
-                : "text-gray-400 hover:bg-[#1a2332]"
+                : "text-gray-300 hover:bg-[#1a2332]"
             }`}
           >
             Completed
@@ -197,14 +197,14 @@ export default function MatchesPage() {
               >
                 {/* Match Header */}
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs text-gray-400 truncate max-w-[50%]">{match.series}</span>
+                  <span className="text-xs text-gray-300 truncate max-w-[50%]">{match.series}</span>
                   <div className="flex items-center gap-2">
                     {hasSquadAvailable(match.series) && activeTab === "upcoming" && (
                       <span className="px-2 py-0.5 bg-[#22c55e]/20 text-[#22c55e] text-xs rounded-full font-medium">
                         Squad Ready
                       </span>
                     )}
-                    <span className="px-2 py-1 bg-[#1a2332] text-gray-400 text-xs rounded-full font-medium uppercase">
+                    <span className="px-2 py-1 bg-[#1a2332] text-gray-300 text-xs rounded-full font-medium uppercase">
                       {match.matchType}
                     </span>
                     {activeTab === "live" && (
@@ -233,7 +233,7 @@ export default function MatchesPage() {
                   </div>
 
                   <div className="px-4">
-                    <span className="text-gray-400 font-medium">VS</span>
+                    <span className="text-gray-300 font-medium">VS</span>
                   </div>
 
                   <div className="flex items-center gap-3 flex-1 justify-end">
@@ -256,7 +256,7 @@ export default function MatchesPage() {
                 {activeTab === "upcoming" ? (
                   <div className="flex items-center justify-between pt-3 border-t border-[#22c55e]/20">
                     <div>
-                      <p className="text-sm text-gray-400">{formatDateIST(match.dateTimeGMT)} IST</p>
+                      <p className="text-sm text-gray-300">{formatDateIST(match.dateTimeGMT)} IST</p>
                       <p className="text-xs text-[#22c55e] font-medium">
                         Starts in {getTimeRemaining(match.dateTimeGMT)}
                       </p>
@@ -270,7 +270,7 @@ export default function MatchesPage() {
                   </div>
                 ) : activeTab === "live" ? (
                   <div className="pt-3 border-t border-[#22c55e]/20">
-                    <p className="text-sm text-center text-gray-400">{match.status}</p>
+                    <p className="text-sm text-center text-gray-300">{match.status}</p>
                     <div className="flex gap-2 mt-3">
                       <Link
                         href={`/dashboard/live-scores/${match.id}`}
@@ -282,7 +282,7 @@ export default function MatchesPage() {
                   </div>
                 ) : (
                   <div className="pt-3 border-t border-[#22c55e]/20">
-                    <p className="text-sm text-center text-gray-400">{match.status}</p>
+                    <p className="text-sm text-center text-gray-300">{match.status}</p>
                     <Link
                       href={`/dashboard/matches/${match.id}/results`}
                       className="block mt-3 bg-[#1a2332] hover:bg-gray-200 text-gray-300 px-4 py-2 rounded-lg text-sm font-medium text-center transition-colors"
@@ -296,20 +296,20 @@ export default function MatchesPage() {
           </div>
         ) : (
           <div className="bg-[#1a2332] rounded-xl shadow-sm border border-[#22c55e]/20 p-12 text-center">
-            <p className="text-gray-400 text-lg">
+            <p className="text-gray-300 text-lg">
               {activeTab === "upcoming"
                 ? "No upcoming matches at the moment."
                 : activeTab === "live"
                 ? "No live matches right now."
                 : "No completed matches to show."}
             </p>
-            <p className="text-gray-400 text-sm mt-2">Check back later for more matches!</p>
+            <p className="text-gray-300 text-sm mt-2">Check back later for more matches!</p>
           </div>
         )}
 
         {/* Match Count */}
         {!loading && filteredMatches.length > 0 && (
-          <p className="text-center text-gray-400 text-sm mt-6">
+          <p className="text-center text-gray-300 text-sm mt-6">
             Showing {filteredMatches.length} {activeTab} match{filteredMatches.length !== 1 ? "es" : ""}
           </p>
         )}

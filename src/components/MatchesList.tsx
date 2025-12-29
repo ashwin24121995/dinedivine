@@ -131,7 +131,7 @@ export default function MatchesList({
         {displayMatches.length === 0 ? (
           <div className="bg-[#0a0f1a] rounded-lg p-12 text-center">
             <svg
-              className="w-16 h-16 text-gray-400 mx-auto mb-4"
+              className="w-16 h-16 text-gray-300 mx-auto mb-4"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -144,7 +144,7 @@ export default function MatchesList({
               />
             </svg>
             <p className="text-gray-300 text-lg">No matches found</p>
-            <p className="text-gray-400 text-sm mt-2">
+            <p className="text-gray-300 text-sm mt-2">
               Check back later for upcoming matches
             </p>
           </div>

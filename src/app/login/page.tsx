@@ -80,7 +80,7 @@ export default function LoginPage() {
         <h2 className="mt-6 text-center text-3xl font-bold text-white">
           Sign in to your account
         </h2>
-        <p className="mt-2 text-center text-sm text-gray-400">
+        <p className="mt-2 text-center text-sm text-gray-300">
           Don&apos;t have an account?{" "}
           <Link
             href="/register"
@@ -148,7 +148,7 @@ export default function LoginPage() {
                 >
                   {showPassword ? (
                     <svg
-                      className="h-5 w-5 text-gray-400"
+                      className="h-5 w-5 text-gray-300"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -162,7 +162,7 @@ export default function LoginPage() {
                     </svg>
                   ) : (
                     <svg
-                      className="h-5 w-5 text-gray-400"
+                      className="h-5 w-5 text-gray-300"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -195,7 +195,7 @@ export default function LoginPage() {
                 />
                 <label
                   htmlFor="remember-me"
-                  className="ml-2 block text-sm text-gray-400"
+                  className="ml-2 block text-sm text-gray-300"
                 >
                   Remember me
                 </label>
@@ -257,7 +257,7 @@ export default function LoginPage() {
                 <div className="w-full border-t border-gray-600" />
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-[#1a2332] text-gray-400">
+                <span className="px-2 bg-[#1a2332] text-gray-300">
                   New to DineDivine?
                 </span>
               </div>
