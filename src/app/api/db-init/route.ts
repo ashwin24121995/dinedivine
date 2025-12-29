@@ -68,6 +68,20 @@ export async function GET() {
       )
     `);
 
+    // Add name column if it doesn't exist (migration for old schema)
+    try {
+      await query(`ALTER TABLE contests ADD COLUMN name VARCHAR(255) NOT NULL DEFAULT ''`);
+    } catch (e) {
+      // Column might already exist
+    }
+
+    // If old schema had contest_name, copy data to name
+    try {
+      await query(`UPDATE contests SET name = contest_name WHERE name = '' AND contest_name IS NOT NULL`);
+    } catch (e) {
+      // contest_name column might not exist
+    }
+
     // Create contest_entries table if not exists
     await query(`
       CREATE TABLE IF NOT EXISTS contest_entries (
