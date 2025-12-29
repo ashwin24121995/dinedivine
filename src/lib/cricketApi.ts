@@ -29,7 +29,11 @@ const BASE_URL = "https://api.cricapi.com/v1";
 
 // Get API key at runtime (not at build time)
 function getApiKey(): string {
-  return process.env.CRICKET_API_KEY || "";
+  const key = process.env.CRICKET_API_KEY;
+  if (!key) {
+    console.error("CRICKET_API_KEY environment variable is not set");
+  }
+  return key || "";
 }
 
 // Generic fetch function with error handling
@@ -37,7 +41,7 @@ async function fetchAPI<T>(endpoint: string, params: Record<string, string> = {}
   try {
     const apiKey = getApiKey();
     if (!apiKey) {
-      console.error("CRICKET_API_KEY is not configured");
+      console.error("CRICKET_API_KEY is not configured - returning null");
       return null;
     }
     
@@ -50,6 +54,8 @@ async function fetchAPI<T>(endpoint: string, params: Record<string, string> = {}
       }
     });
 
+    console.log(`Fetching: ${endpoint} with API key: ${apiKey.substring(0, 8)}...`);
+
     const fetchOptions: RequestInit = noCache 
       ? { cache: "no-store" }
       : { next: { revalidate: 30 } };
@@ -57,7 +63,7 @@ async function fetchAPI<T>(endpoint: string, params: Record<string, string> = {}
     const response = await fetch(url.toString(), fetchOptions);
 
     if (!response.ok) {
-      console.error(`API request failed: ${response.statusText}`);
+      console.error(`API request failed: ${response.status} ${response.statusText}`);
       return null;
     }
 
@@ -68,6 +74,7 @@ async function fetchAPI<T>(endpoint: string, params: Record<string, string> = {}
       return null;
     }
 
+    console.log(`Success: ${endpoint} returned ${Array.isArray(data.data) ? data.data.length : 1} items`);
     return data;
   } catch (error) {
     console.error(`Error fetching ${endpoint}:`, error);

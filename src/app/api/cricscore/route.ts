@@ -9,6 +9,22 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const status = searchParams.get("status"); // live, upcoming, completed, all
     const noCache = searchParams.get("nocache") === "true";
+    const debug = searchParams.get("debug") === "true";
+
+    // Check if API key is configured
+    const apiKeyConfigured = !!process.env.CRICKET_API_KEY;
+    
+    if (debug) {
+      return NextResponse.json({
+        success: true,
+        debug: {
+          apiKeyConfigured,
+          apiKeyPrefix: process.env.CRICKET_API_KEY?.substring(0, 8) || "NOT_SET",
+          nodeEnv: process.env.NODE_ENV,
+        },
+        timestamp: new Date().toISOString(),
+      });
+    }
 
     let data;
 
@@ -37,12 +53,18 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({
       success: true,
       data,
+      count: Array.isArray(data) ? data.length : undefined,
+      apiKeyConfigured,
       timestamp: new Date().toISOString(),
     });
   } catch (error) {
     console.error("Error in /api/cricscore:", error);
     return NextResponse.json(
-      { success: false, error: "Failed to fetch matches" },
+      { 
+        success: false, 
+        error: "Failed to fetch matches",
+        details: error instanceof Error ? error.message : "Unknown error"
+      },
       { status: 500 }
     );
   }
