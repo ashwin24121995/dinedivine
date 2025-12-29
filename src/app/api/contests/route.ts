@@ -9,8 +9,10 @@ interface Contest {
   name: string;
   entry_fee: number;
   prize_pool: number;
-  max_participants: number;
-  current_participants: number;
+  max_participants?: number;
+  current_participants?: number;
+  max_entries?: number;
+  current_entries?: number;
   status: string;
   created_at: string;
 }
@@ -34,9 +36,9 @@ export async function GET(request: NextRequest) {
 
     // Calculate spots left for each contest
     // Handle both old schema (max_entries) and new schema (max_participants)
-    const contestsWithSpots = contests.map((contest: Record<string, unknown>) => {
-      const maxParticipants = (contest.max_entries as number) || (contest.max_participants as number) || 100;
-      const currentParticipants = (contest.current_entries as number) || (contest.current_participants as number) || 0;
+    const contestsWithSpots = contests.map((contest) => {
+      const maxParticipants = contest.max_entries || contest.max_participants || 100;
+      const currentParticipants = contest.current_entries || contest.current_participants || 0;
       return {
         ...contest,
         max_participants: maxParticipants,
