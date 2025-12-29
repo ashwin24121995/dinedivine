@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getMatchInfo, getMatchSquad } from "@/lib/cricketApi";
 
+export const dynamic = "force-dynamic";
+
 export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
@@ -23,16 +25,14 @@ export async function GET(
     }
 
     let squad = null;
-    if (includeSquad && matchInfo.hasSquad) {
+    if (includeSquad) {
       squad = await getMatchSquad(id);
     }
 
     return NextResponse.json({
       success: true,
-      data: {
-        match: matchInfo,
-        squad: squad,
-      },
+      match: matchInfo,
+      squad: squad,
     });
   } catch (error) {
     console.error("Error in match detail API:", error);
