@@ -18,6 +18,7 @@ export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
     const status = searchParams.get("status"); // live, upcoming, completed, all
+    const matchId = searchParams.get("matchId"); // specific match ID
     const noCache = searchParams.get("nocache") === "true";
     const debug = searchParams.get("debug") === "true";
 
@@ -37,6 +38,29 @@ export async function GET(request: NextRequest) {
     }
 
     let data;
+
+    // If matchId is provided, fetch and filter for that specific match
+    if (matchId) {
+      const allMatches = await getCricScore(true); // Always get fresh data for specific match
+      const match = allMatches.find((m: CricScoreMatch) => m.id === matchId);
+      
+      if (match) {
+        return NextResponse.json({
+          success: true,
+          matches: [match],
+          count: 1,
+          apiKeyConfigured,
+          timestamp: new Date().toISOString(),
+        });
+      } else {
+        return NextResponse.json({
+          success: false,
+          error: "Match not found",
+          matches: [],
+          count: 0,
+        }, { status: 404 });
+      }
+    }
 
     switch (status) {
       case "live":
