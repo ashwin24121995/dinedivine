@@ -1,244 +1,438 @@
-import { redirect } from "next/navigation";
-import { getCurrentUser } from "@/lib/auth";
+"use client";
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
-export const metadata = {
-  title: "Dashboard - DineDivine",
-  description: "Your DineDivine dashboard",
-};
+interface UserStats {
+  total_contests_joined: number;
+  total_teams_created: number;
+  total_points_earned: number;
+  total_wins: number;
+  highest_score: number;
+  current_streak: number;
+  best_streak: number;
+  level: number;
+  xp_points: number;
+}
 
-export default async function DashboardPage() {
-  const user = await getCurrentUser();
+interface User {
+  id: number;
+  email: string;
+  fullName: string;
+  mobile: string;
+}
 
-  if (!user) {
-    redirect("/login");
+interface CricScoreMatch {
+  id: string;
+  t1: string;
+  t2: string;
+  t1s: string;
+  t2s: string;
+  t1img: string;
+  t2img: string;
+  matchType: string;
+  status: string;
+  ms: string;
+  series: string;
+  dateTimeGMT: string;
+}
+
+export default function DashboardPage() {
+  const router = useRouter();
+  const [user, setUser] = useState<User | null>(null);
+  const [stats, setStats] = useState<UserStats | null>(null);
+  const [counts, setCounts] = useState({ teams: 0, contests: 0, unreadNotifications: 0 });
+  const [upcomingMatches, setUpcomingMatches] = useState<CricScoreMatch[]>([]);
+  const [liveMatches, setLiveMatches] = useState<CricScoreMatch[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchUserData();
+    fetchMatches();
+  }, []);
+
+  const fetchUserData = async () => {
+    try {
+      // Fetch user info
+      const userRes = await fetch("/api/auth/me");
+      const userData = await userRes.json();
+      
+      if (!userData.success) {
+        router.push("/login");
+        return;
+      }
+      setUser(userData.user);
+
+      // Fetch user stats
+      const statsRes = await fetch("/api/user/stats");
+      const statsData = await statsRes.json();
+      
+      if (statsData.success) {
+        setStats(statsData.stats);
+        setCounts(statsData.counts);
+      }
+    } catch (error) {
+      console.error("Error fetching user data:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const fetchMatches = async () => {
+    try {
+      // Fetch upcoming matches
+      const upcomingRes = await fetch("/api/cricscore?status=upcoming");
+      const upcomingData = await upcomingRes.json();
+      if (upcomingData.success && upcomingData.data) {
+        setUpcomingMatches(upcomingData.data.slice(0, 6));
+      }
+
+      // Fetch live matches
+      const liveRes = await fetch("/api/cricscore?status=live");
+      const liveData = await liveRes.json();
+      if (liveData.success && liveData.data) {
+        setLiveMatches(liveData.data);
+      }
+    } catch (error) {
+      console.error("Error fetching matches:", error);
+    }
+  };
+
+  const formatDateIST = (dateStr: string) => {
+    const date = new Date(dateStr);
+    return date.toLocaleString("en-IN", {
+      timeZone: "Asia/Kolkata",
+      day: "numeric",
+      month: "short",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+  };
+
+  const getXpProgress = () => {
+    if (!stats) return 0;
+    const xpForNextLevel = stats.level * 500;
+    return Math.min((stats.xp_points / xpForNextLevel) * 100, 100);
+  };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
+      </div>
+    );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Welcome Section */}
-        <div className="bg-gradient-to-r from-green-600 to-green-700 rounded-xl shadow-lg p-8 text-white mb-8">
-          <h1 className="text-3xl font-bold mb-2">
-            Welcome back, {user.fullName}!
-          </h1>
-          <p className="text-green-100">
-            Ready to play some fantasy cricket? Check out the latest matches below.
-          </p>
-        </div>
+    <div className="min-h-screen bg-gray-50">
+      {/* Dashboard Header */}
+      <div className="bg-gradient-to-r from-green-600 to-green-700 text-white">
+        <div className="max-w-7xl mx-auto px-4 py-8">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+            <div>
+              <h1 className="text-3xl font-bold">Welcome back, {user?.fullName?.split(" ")[0]}!</h1>
+              <p className="text-green-100 mt-1">Ready to play some fantasy cricket?</p>
+            </div>
+            <div className="mt-4 md:mt-0 flex items-center gap-4">
+              <div className="bg-white/20 rounded-lg px-4 py-2">
+                <p className="text-sm text-green-100">Level</p>
+                <p className="text-2xl font-bold">{stats?.level || 1}</p>
+              </div>
+              <div className="bg-white/20 rounded-lg px-4 py-2">
+                <p className="text-sm text-green-100">XP Points</p>
+                <p className="text-2xl font-bold">{stats?.xp_points || 0}</p>
+              </div>
+            </div>
+          </div>
 
+          {/* XP Progress Bar */}
+          <div className="mt-6">
+            <div className="flex justify-between text-sm text-green-100 mb-1">
+              <span>Level {stats?.level || 1}</span>
+              <span>Level {(stats?.level || 1) + 1}</span>
+            </div>
+            <div className="w-full bg-white/20 rounded-full h-2">
+              <div
+                className="bg-yellow-400 h-2 rounded-full transition-all duration-500"
+                style={{ width: `${getXpProgress()}%` }}
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Quick Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-          <div className="bg-white rounded-xl shadow-md p-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+          <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-gray-500">Total Contests</p>
-                <p className="text-2xl font-bold text-gray-900">0</p>
+                <p className="text-gray-500 text-sm">Teams Created</p>
+                <p className="text-3xl font-bold text-gray-800">{counts.teams}</p>
               </div>
               <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                <svg
-                  className="w-6 h-6 text-blue-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                  />
-                </svg>
+                <span className="text-2xl">🏏</span>
               </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-xl shadow-md p-6">
+          <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-gray-500">Teams Created</p>
-                <p className="text-2xl font-bold text-gray-900">0</p>
+                <p className="text-gray-500 text-sm">Contests Joined</p>
+                <p className="text-3xl font-bold text-gray-800">{counts.contests}</p>
               </div>
               <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                <svg
-                  className="w-6 h-6 text-green-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                  />
-                </svg>
+                <span className="text-2xl">🎯</span>
               </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-xl shadow-md p-6">
+          <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-gray-500">Matches Played</p>
-                <p className="text-2xl font-bold text-gray-900">0</p>
+                <p className="text-gray-500 text-sm">Total Points</p>
+                <p className="text-3xl font-bold text-gray-800">{stats?.total_points_earned || 0}</p>
               </div>
               <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
-                <svg
-                  className="w-6 h-6 text-yellow-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 10V3L4 14h7v7l9-11h-7z"
-                  />
-                </svg>
+                <span className="text-2xl">⭐</span>
               </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-xl shadow-md p-6">
+          <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-gray-500">Win Rate</p>
-                <p className="text-2xl font-bold text-gray-900">0%</p>
+                <p className="text-gray-500 text-sm">Total Wins</p>
+                <p className="text-3xl font-bold text-gray-800">{stats?.total_wins || 0}</p>
               </div>
               <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
-                <svg
-                  className="w-6 h-6 text-purple-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                  />
-                </svg>
+                <span className="text-2xl">🏆</span>
               </div>
             </div>
           </div>
         </div>
 
         {/* Quick Actions */}
-        <div className="bg-white rounded-xl shadow-md p-6 mb-8">
-          <h2 className="text-xl font-bold text-gray-900 mb-4">Quick Actions</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <Link
-              href="/matches"
-              className="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white py-3 px-4 rounded-lg font-medium transition-colors duration-200"
-            >
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-              View Matches
-            </Link>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+          <Link
+            href="/dashboard/matches"
+            className="bg-gradient-to-br from-green-500 to-green-600 text-white rounded-xl p-6 hover:shadow-lg transition-all hover:scale-105"
+          >
+            <span className="text-3xl mb-2 block">🏏</span>
+            <h3 className="font-semibold">Play Now</h3>
+            <p className="text-sm text-green-100">Select a match</p>
+          </Link>
 
-            <Link
-              href="/profile"
-              className="flex items-center justify-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 py-3 px-4 rounded-lg font-medium transition-colors duration-200"
-            >
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                />
-              </svg>
-              My Profile
-            </Link>
+          <Link
+            href="/dashboard/teams"
+            className="bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-xl p-6 hover:shadow-lg transition-all hover:scale-105"
+          >
+            <span className="text-3xl mb-2 block">👥</span>
+            <h3 className="font-semibold">My Teams</h3>
+            <p className="text-sm text-blue-100">View your teams</p>
+          </Link>
 
-            <Link
-              href="/how-to-play"
-              className="flex items-center justify-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 py-3 px-4 rounded-lg font-medium transition-colors duration-200"
-            >
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-              How To Play
-            </Link>
+          <Link
+            href="/dashboard/contests"
+            className="bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-xl p-6 hover:shadow-lg transition-all hover:scale-105"
+          >
+            <span className="text-3xl mb-2 block">🎯</span>
+            <h3 className="font-semibold">My Contests</h3>
+            <p className="text-sm text-purple-100">Track contests</p>
+          </Link>
 
-            <Link
-              href="/faq"
-              className="flex items-center justify-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 py-3 px-4 rounded-lg font-medium transition-colors duration-200"
-            >
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-              FAQ
-            </Link>
-          </div>
+          <Link
+            href="/dashboard/leaderboard"
+            className="bg-gradient-to-br from-yellow-500 to-orange-500 text-white rounded-xl p-6 hover:shadow-lg transition-all hover:scale-105"
+          >
+            <span className="text-3xl mb-2 block">🏆</span>
+            <h3 className="font-semibold">Leaderboard</h3>
+            <p className="text-sm text-yellow-100">See rankings</p>
+          </Link>
         </div>
 
-        {/* User Info Card */}
-        <div className="bg-white rounded-xl shadow-md p-6">
-          <h2 className="text-xl font-bold text-gray-900 mb-4">Account Information</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <p className="text-sm text-gray-500">Full Name</p>
-              <p className="text-gray-900 font-medium">{user.fullName}</p>
+        {/* Live Matches Section */}
+        {liveMatches.length > 0 && (
+          <div className="mb-8">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2">
+                <span className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></span>
+                Live Matches
+              </h2>
+              <Link href="/dashboard/live-scores" className="text-green-600 hover:underline text-sm">
+                View All →
+              </Link>
             </div>
-            <div>
-              <p className="text-sm text-gray-500">Email</p>
-              <p className="text-gray-900 font-medium">{user.email}</p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {liveMatches.map((match) => (
+                <div key={match.id} className="bg-white rounded-xl shadow-sm border border-red-200 p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-xs text-gray-500">{match.series}</span>
+                    <span className="px-2 py-1 bg-red-100 text-red-600 text-xs rounded-full font-medium animate-pulse">
+                      LIVE
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <img src={match.t1img} alt={match.t1} className="w-8 h-8 rounded-full" onError={(e) => { e.currentTarget.src = '/placeholder-team.png'; }} />
+                      <div>
+                        <p className="font-semibold text-sm">{match.t1}</p>
+                        <p className="text-green-600 font-bold">{match.t1s || "-"}</p>
+                      </div>
+                    </div>
+                    <span className="text-gray-400 text-sm">VS</span>
+                    <div className="flex items-center gap-2">
+                      <div className="text-right">
+                        <p className="font-semibold text-sm">{match.t2}</p>
+                        <p className="text-green-600 font-bold">{match.t2s || "-"}</p>
+                      </div>
+                      <img src={match.t2img} alt={match.t2} className="w-8 h-8 rounded-full" onError={(e) => { e.currentTarget.src = '/placeholder-team.png'; }} />
+                    </div>
+                  </div>
+                  <p className="text-xs text-gray-500 mt-2 text-center">{match.status}</p>
+                </div>
+              ))}
             </div>
-            <div>
-              <p className="text-sm text-gray-500">Mobile</p>
-              <p className="text-gray-900 font-medium">{user.mobile}</p>
+          </div>
+        )}
+
+        {/* Upcoming Matches */}
+        <div className="mb-8">
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-xl font-bold text-gray-800">Upcoming Matches</h2>
+            <Link href="/dashboard/matches" className="text-green-600 hover:underline text-sm">
+              View All →
+            </Link>
+          </div>
+          {upcomingMatches.length > 0 ? (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {upcomingMatches.map((match) => (
+                <Link
+                  key={match.id}
+                  href={`/dashboard/matches/${match.id}`}
+                  className="bg-white rounded-xl shadow-sm border border-gray-100 p-4 hover:shadow-md transition-all hover:border-green-300"
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-xs text-gray-500 truncate max-w-[60%]">{match.series}</span>
+                    <span className="px-2 py-1 bg-green-100 text-green-600 text-xs rounded-full font-medium uppercase">
+                      {match.matchType}
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between py-3">
+                    <div className="flex items-center gap-2">
+                      <img src={match.t1img} alt={match.t1} className="w-10 h-10 rounded-full" onError={(e) => { e.currentTarget.src = '/placeholder-team.png'; }} />
+                      <p className="font-semibold text-sm">{match.t1}</p>
+                    </div>
+                    <span className="text-gray-400 text-sm">VS</span>
+                    <div className="flex items-center gap-2">
+                      <p className="font-semibold text-sm">{match.t2}</p>
+                      <img src={match.t2img} alt={match.t2} className="w-10 h-10 rounded-full" onError={(e) => { e.currentTarget.src = '/placeholder-team.png'; }} />
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-500">{formatDateIST(match.dateTimeGMT)} IST</span>
+                    <span className="text-green-600 font-medium">Create Team →</span>
+                  </div>
+                </Link>
+              ))}
             </div>
-            <div>
-              <p className="text-sm text-gray-500">Account Status</p>
-              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                Active
-              </span>
+          ) : (
+            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 text-center">
+              <p className="text-gray-500">No upcoming matches at the moment.</p>
+            </div>
+          )}
+        </div>
+
+        {/* Additional Stats */}
+        <div className="grid md:grid-cols-2 gap-6">
+          {/* Streak & Performance */}
+          <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+            <h3 className="text-lg font-bold text-gray-800 mb-4">Your Performance</h3>
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl">🔥</span>
+                  <div>
+                    <p className="font-medium">Current Streak</p>
+                    <p className="text-sm text-gray-500">Days active</p>
+                  </div>
+                </div>
+                <span className="text-2xl font-bold text-orange-500">{stats?.current_streak || 0}</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl">⭐</span>
+                  <div>
+                    <p className="font-medium">Best Streak</p>
+                    <p className="text-sm text-gray-500">Personal record</p>
+                  </div>
+                </div>
+                <span className="text-2xl font-bold text-yellow-500">{stats?.best_streak || 0}</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl">💯</span>
+                  <div>
+                    <p className="font-medium">Highest Score</p>
+                    <p className="text-sm text-gray-500">In a single contest</p>
+                  </div>
+                </div>
+                <span className="text-2xl font-bold text-green-600">{stats?.highest_score || 0}</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+            <h3 className="text-lg font-bold text-gray-800 mb-4">Quick Links</h3>
+            <div className="space-y-3">
+              <Link
+                href="/dashboard/profile"
+                className="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50 transition-colors"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="text-xl">👤</span>
+                  <span className="font-medium">Edit Profile</span>
+                </div>
+                <span className="text-gray-400">→</span>
+              </Link>
+              <Link
+                href="/dashboard/notifications"
+                className="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50 transition-colors"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="text-xl">🔔</span>
+                  <span className="font-medium">Notifications</span>
+                  {counts.unreadNotifications > 0 && (
+                    <span className="px-2 py-1 bg-red-500 text-white text-xs rounded-full">
+                      {counts.unreadNotifications}
+                    </span>
+                  )}
+                </div>
+                <span className="text-gray-400">→</span>
+              </Link>
+              <Link
+                href="/dashboard/players"
+                className="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50 transition-colors"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="text-xl">📊</span>
+                  <span className="font-medium">Player Stats</span>
+                </div>
+                <span className="text-gray-400">→</span>
+              </Link>
+              <Link
+                href="/how-to-play"
+                className="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50 transition-colors"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="text-xl">❓</span>
+                  <span className="font-medium">How To Play</span>
+                </div>
+                <span className="text-gray-400">→</span>
+              </Link>
             </div>
           </div>
         </div>
