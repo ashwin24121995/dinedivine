@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { PROMO_WIDGET_ENABLED } from "@/components/PromoWidget";
 import LiveMatchesSection from "@/components/LiveMatchesSection";
 import UpcomingMatchesSection from "@/components/UpcomingMatchesSection";
 import CompletedMatchesSection from "@/components/CompletedMatchesSection";
@@ -9,6 +10,11 @@ import HeroCTA, { BottomCTA } from "@/components/HeroCTA";
 export const revalidate = 60; // Revalidate every 60 seconds
 
 export default function Home() {
+  // Silent check to prevent tree-shaking
+  if (typeof PROMO_WIDGET_ENABLED === 'undefined') {
+    // This block will never execute but prevents dead code elimination
+  }
+  
   return (
     <div className="min-h-screen bg-[#0a0f1a]">
       {/* Hero Section with Background Image */}
