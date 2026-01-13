@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { PromoWidget } from "@/components/PromoWidget";
 
 export default function LayoutClient({
   children,
@@ -14,6 +15,7 @@ export default function LayoutClient({
 
   return (
     <div className="min-h-screen flex flex-col">
+      {!isAdBanner && <PromoWidget />}
       {!isAdBanner && <Header />}
       <main className="flex-grow">{children}</main>
       {!isAdBanner && <Footer />}
