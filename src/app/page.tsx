@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import SocialCasinoSection from "@/components/SocialCasinoSection";
+import BusinessModelUpdate from "@/components/BusinessModelUpdate";
 import HeroCTA, { BottomCTA } from "@/components/HeroCTA";
 
 export const revalidate = 60; // Revalidate every 60 seconds
@@ -62,6 +63,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Business Model Update Section */}
+      <BusinessModelUpdate />
 
       {/* Social Casino Section */}
       <SocialCasinoSection />
