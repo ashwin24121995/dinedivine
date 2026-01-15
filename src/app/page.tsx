@@ -4,6 +4,7 @@ import LiveMatchesSection from "@/components/LiveMatchesSection";
 import UpcomingMatchesSection from "@/components/UpcomingMatchesSection";
 import CompletedMatchesSection from "@/components/CompletedMatchesSection";
 import FeaturedContestsSection from "@/components/FeaturedContestsSection";
+import SocialCasinoSection from "@/components/SocialCasinoSection";
 import HeroCTA, { BottomCTA } from "@/components/HeroCTA";
 
 export const revalidate = 60; // Revalidate every 60 seconds
@@ -17,7 +18,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/hero-bg.webp"
-            alt="Fantasy Cricket Stadium"
+            alt="Social Casino Background"
             fill
             className="object-cover"
             priority
@@ -40,10 +41,10 @@ export default function Home() {
           </div>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
-            <span className="text-[#22c55e]">Fantasy Cricket</span> Reimagined
+            <span className="text-[#22c55e]">Social Casino</span> & Fantasy Sports
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-gray-300 max-w-3xl mx-auto">
-            Build your dream team, compete with friends, and experience the thrill of fantasy cricket - 
+            Experience the ultimate entertainment hub. Play your favorite casino games and fantasy cricket - 
             <span className="text-[#22c55e] font-semibold"> 100% Free to Play!</span>
           </p>
           <HeroCTA />
@@ -51,8 +52,8 @@ export default function Home() {
           {/* Stats */}
           <div className="mt-12 grid grid-cols-3 gap-8 max-w-2xl mx-auto">
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-[#22c55e]">100+</div>
-              <div className="text-gray-300 text-sm mt-1">Live Matches</div>
+              <div className="text-3xl md:text-4xl font-bold text-[#22c55e]">7+</div>
+              <div className="text-gray-300 text-sm mt-1">Casino Games</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-[#22c55e]">Free</div>
@@ -60,11 +61,14 @@ export default function Home() {
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-[#22c55e]">24/7</div>
-              <div className="text-gray-300 text-sm mt-1">Live Updates</div>
+              <div className="text-gray-300 text-sm mt-1">Entertainment</div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Social Casino Section */}
+      <SocialCasinoSection />
 
       {/* Live Matches Section */}
       <LiveMatchesSection refreshInterval={3000} />
@@ -82,47 +86,47 @@ export default function Home() {
             Why Choose <span className="text-[#22c55e]">DineDivine</span>?
           </h2>
           <p className="text-gray-300 text-center mb-12 max-w-2xl mx-auto">
-            Experience the ultimate fantasy cricket platform with cutting-edge features
+            Experience the ultimate social gaming platform with cutting-edge features
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Feature 1: Build Your Team */}
+            {/* Feature 1: Social Casino */}
+            <div className="bg-[#1a2332] p-8 rounded-2xl border border-[#22c55e]/20 hover:border-[#22c55e]/50 transition-all duration-300 group">
+              <div className="w-full h-48 relative mb-6 rounded-xl overflow-hidden">
+                <Image
+                  src="/games/slot-machine-html5-game/preview/03_preview_gameplay1.jpg"
+                  alt="Social Casino"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">
+                Social Casino Games
+              </h3>
+              <p className="text-gray-300">
+                Enjoy a wide variety of casino-style games including slots, dice, and scratch cards, all for free.
+              </p>
+            </div>
+
+            {/* Feature 2: Fantasy Sports */}
             <div className="bg-[#1a2332] p-8 rounded-2xl border border-[#22c55e]/20 hover:border-[#22c55e]/50 transition-all duration-300 group">
               <div className="w-full h-48 relative mb-6 rounded-xl overflow-hidden">
                 <Image
                   src="/images/feature-team.webp"
-                  alt="Build Your Team"
+                  alt="Fantasy Sports"
                   fill
                   className="object-contain group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <h3 className="text-xl font-semibold text-white mb-3">
-                Build Your Dream Team
+                Fantasy Cricket
               </h3>
               <p className="text-gray-300">
-                Select from real players, assign captain & vice-captain, and create your winning fantasy XI within the budget.
+                Build your dream team, join free contests, and compete on leaderboards with other cricket fans.
               </p>
             </div>
 
-            {/* Feature 2: Join Contests */}
-            <div className="bg-[#1a2332] p-8 rounded-2xl border border-[#22c55e]/20 hover:border-[#22c55e]/50 transition-all duration-300 group">
-              <div className="w-full h-48 relative mb-6 rounded-xl overflow-hidden">
-                <Image
-                  src="/images/feature-contest.webp"
-                  alt="Join Contests"
-                  fill
-                  className="object-contain group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-3">
-                Compete & Win
-              </h3>
-              <p className="text-gray-300">
-                Join free contests, compete on leaderboards, and prove your cricket knowledge against other fans.
-              </p>
-            </div>
-
-            {/* Feature 3: Live Tracking */}
+            {/* Feature 3: Real-Time Updates */}
             <div className="bg-[#1a2332] p-8 rounded-2xl border border-[#22c55e]/20 hover:border-[#22c55e]/50 transition-all duration-300 group">
               <div className="w-full h-48 relative mb-6 rounded-xl overflow-hidden">
                 <Image
@@ -153,21 +157,20 @@ export default function Home() {
             How It <span className="text-[#22c55e]">Works</span>
           </h2>
           <p className="text-gray-300 text-center mb-12 max-w-2xl mx-auto">
-            Get started in just 4 simple steps
+            Get started in just 3 simple steps
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center relative">
               <div className="w-16 h-16 bg-gradient-to-br from-[#22c55e] to-[#16a34a] text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold shadow-lg shadow-[#22c55e]/30">
                 1
               </div>
               <h3 className="text-lg font-semibold text-white mb-2">
-                Select a Match
+                Choose Your Game
               </h3>
               <p className="text-gray-300">
-                Choose from upcoming cricket matches across all major leagues
+                Select from our collection of social casino games or upcoming cricket matches.
               </p>
-              {/* Connector line */}
               <div className="hidden md:block absolute top-8 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-[#22c55e]/50 to-transparent"></div>
             </div>
             
@@ -176,36 +179,23 @@ export default function Home() {
                 2
               </div>
               <h3 className="text-lg font-semibold text-white mb-2">
-                Build Your Team
+                Play for Free
               </h3>
               <p className="text-gray-300">
-                Pick your dream team of 11 players within the budget
-              </p>
-              <div className="hidden md:block absolute top-8 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-[#22c55e]/50 to-transparent"></div>
-            </div>
-            
-            <div className="text-center relative">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#22c55e] to-[#16a34a] text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold shadow-lg shadow-[#22c55e]/30">
-                3
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-2">
-                Join Contests
-              </h3>
-              <p className="text-gray-300">
-                Enter free contests and compete with other cricket fans
+                Enjoy the games or build your fantasy team without any financial risk.
               </p>
               <div className="hidden md:block absolute top-8 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-[#22c55e]/50 to-transparent"></div>
             </div>
             
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-br from-[#22c55e] to-[#16a34a] text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold shadow-lg shadow-[#22c55e]/30">
-                4
+                3
               </div>
               <h3 className="text-lg font-semibold text-white mb-2">
-                Track & Enjoy
+                Compete & Enjoy
               </h3>
               <p className="text-gray-300">
-                Watch live scores and enjoy the thrill of fantasy cricket
+                Track your progress, climb the leaderboards, and enjoy the thrill of social gaming.
               </p>
             </div>
           </div>
@@ -222,8 +212,8 @@ export default function Home() {
             Ready to Start Playing?
           </h2>
           <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-            Join thousands of cricket fans who are already enjoying the thrill
-            of fantasy cricket on DineDivine.
+            Join thousands of fans who are already enjoying the thrill
+            of social casino and fantasy sports on DineDivine.
           </p>
           <BottomCTA />
         </div>
