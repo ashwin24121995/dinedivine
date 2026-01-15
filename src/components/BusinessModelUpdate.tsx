@@ -40,19 +40,19 @@ export default function BusinessModelUpdate() {
                   Regulatory Context: PROGA 2025
                 </h3>
                 <p className="text-sm">
-                  The Government of India has recently enacted the <span className="text-white italic">Promotion and Regulation of Online Gaming Act (PROGA) 2025</span>. This landmark legislation has implemented a comprehensive ban on Real Money Games (RMGs), including popular Social Casino Games and rummy platforms, to ensure consumer protection and mitigate financial risks.
+                  The Government of India has recently enacted the <span className="text-white italic">Promotion and Regulation of Online Gaming Act (PROGA) 2025</span>. This landmark legislation has implemented a comprehensive ban on Real Money Games (RMGs), including popular fantasy sports and rummy platforms, to ensure consumer protection and mitigate financial risks.
                 </p>
               </div>
 
               <p>
-                As a responsible corporate entity, <span className="text-white font-semibold">DineDivine Ventures Private Limited</span> fully respects and supports the rules and regulations set forth by the Indian Government. Consequently, we have made the strategic decision to <strong>completely discontinue our Social Casino Games services</strong> and pivot our business model toward <strong>Social Casino Games</strong>.
+                As a responsible corporate entity, <span className="text-white font-semibold">DineDivine Ventures Private Limited</span> fully respects and supports the rules and regulations set forth by the Indian Government. Consequently, we have made the strategic decision to <strong>completely discontinue our Fantasy Sports services</strong> and pivot our business model toward <strong>Social Casino Games</strong>.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                 <div className="bg-[#0f172a]/30 p-5 rounded-xl border border-white/5">
                   <h4 className="text-white font-semibold mb-2">What is Changing?</h4>
                   <ul className="list-disc list-inside space-y-1 text-sm">
-                    <li>Removal of all Social Casino contests</li>
+                    <li>Removal of all Fantasy Cricket contests</li>
                     <li>Discontinuation of match-based leaderboards</li>
                     <li>Shift to a 100% Social Casino focus</li>
                   </ul>
