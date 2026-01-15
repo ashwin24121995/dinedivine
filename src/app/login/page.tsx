@@ -294,7 +294,7 @@ export default function LoginPage() {
             </div>
             <div className="ml-3">
               <p className="text-sm text-[#22c55e]">
-                DineDivine is a <strong>free-to-play</strong> fantasy sports
+                DineDivine is a <strong>free-to-play</strong> Social Casino Games
                 platform. No real money is involved.
               </p>
             </div>

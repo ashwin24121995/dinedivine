@@ -14,11 +14,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DineDivine - Free To Play Fantasy Sports Platform",
+  title: "DineDivine - 100% Free Social Casino Games",
   description:
-    "DineDivine is the leading free-to-play entertainment platform for fantasy sports and social fun. Play fantasy cricket and enjoy the thrill of the game without any real money involvement.",
+    "DineDivine is the leading free-to-play entertainment platform for social casino games. Enjoy slots, dice, and wheels without any real money involvement.",
   keywords:
-    "fantasy sports, fantasy cricket, free to play, entertainment, games, DineDivine",
+    "social casino, free to play, entertainment, games, slots, dice game, DineDivine",
   authors: [{ name: "DINEDIVINE VENTURES PRIVATE LIMITED" }],
   icons: {
     icon: "/favicon.ico",
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
     apple: "/favicon.webp",
   },
   openGraph: {
-    title: "DineDivine - Free To Play Fantasy Sports Platform",
+    title: "DineDivine - 100% Free Social Casino Games",
     description:
-      "The leading free-to-play entertainment platform for fantasy sports and social fun.",
+      "The leading free-to-play entertainment platform for social casino games and social fun.",
     url: "https://www.dinedivinelive.com",
     siteName: "DineDivine",
     type: "website",

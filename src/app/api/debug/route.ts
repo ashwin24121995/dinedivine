@@ -10,7 +10,7 @@ export async function GET() {
       DATABASE_URL: !!process.env.DATABASE_URL,
       DATABASE_URL_PREFIX: process.env.DATABASE_URL?.substring(0, 20) || "NOT_SET",
       JWT_SECRET: !!process.env.JWT_SECRET,
-      CRICKET_API_KEY: !!process.env.CRICKET_API_KEY,
+      Casino_API_KEY: !!process.env.Casino_API_KEY,
       NODE_ENV: process.env.NODE_ENV,
     };
 

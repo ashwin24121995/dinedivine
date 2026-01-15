@@ -25,7 +25,7 @@ const faqData = [
       {
         question: "Why did the business model change?",
         answer:
-          "Following the Promotion and Regulation of Online Gaming Act (PROGA) 2025, we transitioned from fantasy sports to a social casino model to ensure full compliance with Indian government regulations while continuing to provide safe entertainment.",
+          "Following the Promotion and Regulation of Online Gaming Act (PROGA) 2025, we transitioned from Social Casino Games to a social casino model to ensure full compliance with Indian government regulations while continuing to provide safe entertainment.",
       },
     ],
   },

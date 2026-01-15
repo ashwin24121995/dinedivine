@@ -51,9 +51,9 @@ export default function MatchCard({ match }: MatchCardProps) {
             {formatMatchType(match.matchType)}
           </span>
         </div>
-        {match.fantasyEnabled && (
+        {match.SocialEnabled && (
           <span className="bg-yellow-400 text-amber-200 text-xs font-bold px-2 py-1 rounded">
-            FANTASY
+            Social
           </span>
         )}
       </div>
@@ -147,7 +147,7 @@ export default function MatchCard({ match }: MatchCardProps) {
       </div>
 
       {/* Action Button */}
-      {match.fantasyEnabled && status === "upcoming" && (
+      {match.SocialEnabled && status === "upcoming" && (
         <div className="px-4 pb-4">
           <Link
             href={`/contest/${match.id}`}

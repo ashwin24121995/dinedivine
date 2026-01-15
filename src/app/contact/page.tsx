@@ -319,7 +319,7 @@ export default function ContactPage() {
           </h2>
           <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
             Check out our FAQ section for answers to commonly asked questions
-            about DineDivine, fantasy cricket, and our platform.
+            about DineDivine, Social Casino, and our platform.
           </p>
           <Link
             href="/faq"

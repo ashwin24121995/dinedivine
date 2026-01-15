@@ -1,5 +1,5 @@
 // ============================================
-// Cricket API Types for DineDivine
+// Casino API Types for DineDivine
 // ============================================
 
 // ============================================
@@ -265,7 +265,7 @@ export interface Match {
   teamInfo: TeamInfo[];
   score?: Score[];
   series_id?: string;
-  fantasyEnabled?: boolean;
+  SocialEnabled?: boolean;
   bbbEnabled?: boolean;
   hasSquad?: boolean;
   matchStarted: boolean;
@@ -430,7 +430,7 @@ export interface MatchScorecard extends Match {
 }
 
 // ============================================
-// Fantasy Points Types
+// Social Points Types
 // ============================================
 
 export interface PlayerPoints {

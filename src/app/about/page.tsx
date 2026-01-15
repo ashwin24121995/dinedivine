@@ -43,7 +43,7 @@ export default function AboutPage() {
               </p>
               <p className="text-gray-300 leading-relaxed">
                 In 2025, following the enactment of the <strong>Promotion and Regulation of Online Gaming Act (PROGA)</strong>, 
-                we made the strategic decision to transition from fantasy sports to a pure social casino model. 
+                we made the strategic decision to transition from Social Casino Games to a pure social casino model. 
                 This shift reflects our unwavering commitment to following the rules and regulations of the 
                 Indian Government while continuing to provide high-quality entertainment to our community.
               </p>

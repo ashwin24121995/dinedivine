@@ -49,12 +49,12 @@ interface TeamPlayer {
   is_vice_captain: boolean;
 }
 
-// Fetch matches from Cricket API
+// Fetch matches from Casino API
 async function fetchMatches(): Promise<Match[]> {
   try {
-    const apiKey = process.env.CRICKET_API_KEY;
+    const apiKey = process.env.Casino_API_KEY;
     if (!apiKey) {
-      console.error("Cricket API key not configured");
+      console.error("Casino API key not configured");
       return [];
     }
 
@@ -101,7 +101,7 @@ async function autoCreateContests(matches: Match[]): Promise<number> {
             match.id,
             template.name,
             `${match.t1} vs ${match.t2}`,
-            match.series || "Cricket Match",
+            match.series || "Casino Match",
             match.matchType || "T20",
             match.t1,
             match.t2,

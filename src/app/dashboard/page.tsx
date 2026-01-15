@@ -165,7 +165,7 @@ export default function DashboardPage() {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between">
             <div>
               <h1 className="text-3xl font-bold">Welcome back, {user?.fullName?.split(" ")[0]}!</h1>
-              <p className="text-white/80 mt-1">Ready to play some fantasy cricket?</p>
+              <p className="text-white/80 mt-1">Ready to play some Social Casino?</p>
             </div>
             <div className="mt-4 md:mt-0 flex items-center gap-4">
               <div className="bg-[#1a2332]/20 rounded-lg px-4 py-2">
