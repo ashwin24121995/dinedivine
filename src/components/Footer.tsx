@@ -7,7 +7,6 @@ const Footer = () => {
   const quickLinks = [
     { href: "/about", label: "About Us" },
     { href: "/how-to-play", label: "How To Play" },
-    { href: "/fantasy-cricket", label: "Fantasy Cricket" },
     { href: "/faq", label: "FAQ" },
     { href: "/contact", label: "Contact Us" },
   ];
@@ -37,7 +36,7 @@ const Footer = () => {
               <h3 className="text-2xl font-bold text-[#22c55e]">DineDivine</h3>
             </div>
             <p className="text-gray-300 text-sm">
-              The Leading Entertainment Platform for Games & Social Fun. A free
+              The Leading Entertainment Platform for Social Casino Games & Fun. A free
               to play platform built for entertainment only.
             </p>
             <div className="text-gray-300 text-sm space-y-1">
@@ -123,8 +122,6 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-center text-white font-semibold text-sm">
             This platform is strictly for users aged 18 years and above.
-            Users from Telangana, Andhra Pradesh, Assam, and Odisha are not
-            allowed.
           </p>
         </div>
       </div>
@@ -136,15 +133,13 @@ const Footer = () => {
             DISCLAIMER
           </h5>
           <p className="text-gray-500 text-xs leading-relaxed">
-            DineDivine is a free-to-play fantasy sports platform designed purely
+            DineDivine is a free-to-play social casino platform designed purely
             for entertainment purposes. This platform does not involve any real
             money gaming, betting, or gambling. No real money rewards, cash
             prizes, or monetary returns are offered or implied. Users
             participate solely for entertainment and social engagement. By using
-            this platform, you acknowledge that you are 18 years of age or older
-            and are not accessing this service from Telangana, Andhra Pradesh,
-            Assam, or Odisha. DineDivine strictly adheres to all applicable
-            Indian laws and regulations governing fantasy sports platforms.
+            this platform, you acknowledge that you are 18 years of age or older.
+            DineDivine strictly adheres to all applicable Indian laws and regulations.
           </p>
         </div>
       </div>

@@ -46,10 +46,8 @@ const Header = () => {
 
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "/dashboard/matches", label: "Matches" },
     { href: "/about", label: "About Us" },
     { href: "/how-to-play", label: "How To Play" },
-    { href: "/fantasy-cricket", label: "Fantasy Cricket" },
     { href: "/responsible-gaming", label: "Responsible Gaming" },
     { href: "/fair-play", label: "Fair Play" },
     { href: "/faq", label: "FAQ" },
@@ -103,7 +101,7 @@ const Header = () => {
                 </Link>
                 <button
                   onClick={handleLogout}
-                  className="bg-red-900/200/20 text-red-400 px-4 py-2 rounded-lg hover:bg-red-900/200/30 border border-red-500/30 font-medium transition-colors duration-200"
+                  className="bg-red-900/20 text-red-400 px-4 py-2 rounded-lg hover:bg-red-900/30 border border-red-500/30 font-medium transition-colors duration-200"
                 >
                   Logout
                 </button>
@@ -181,7 +179,7 @@ const Header = () => {
                         handleLogout();
                         setIsMenuOpen(false);
                       }}
-                      className="bg-red-900/200/20 text-red-400 px-4 py-2 rounded-lg hover:bg-red-900/200/30 border border-red-500/30 font-medium text-center transition-colors duration-200"
+                      className="bg-red-900/20 text-red-400 px-4 py-2 rounded-lg hover:bg-red-900/30 border border-red-500/30 font-medium text-center transition-colors duration-200"
                     >
                       Logout
                     </button>

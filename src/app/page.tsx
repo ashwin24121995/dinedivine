@@ -1,9 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import LiveMatchesSection from "@/components/LiveMatchesSection";
-import UpcomingMatchesSection from "@/components/UpcomingMatchesSection";
-import CompletedMatchesSection from "@/components/CompletedMatchesSection";
-import FeaturedContestsSection from "@/components/FeaturedContestsSection";
 import SocialCasinoSection from "@/components/SocialCasinoSection";
 import HeroCTA, { BottomCTA } from "@/components/HeroCTA";
 
@@ -41,10 +37,10 @@ export default function Home() {
           </div>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
-            <span className="text-[#22c55e]">Social Casino</span> & Fantasy Sports
+            Premium <span className="text-[#22c55e]">Social Casino</span> Experience
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-gray-300 max-w-3xl mx-auto">
-            Experience the ultimate entertainment hub. Play your favorite casino games and fantasy cricket - 
+            Experience the ultimate entertainment hub. Play your favorite casino games including slots, dice, and scratch cards - 
             <span className="text-[#22c55e] font-semibold"> 100% Free to Play!</span>
           </p>
           <HeroCTA />
@@ -53,7 +49,7 @@ export default function Home() {
           <div className="mt-12 grid grid-cols-3 gap-8 max-w-2xl mx-auto">
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-[#22c55e]">7+</div>
-              <div className="text-gray-300 text-sm mt-1">Casino Games</div>
+              <div className="text-gray-300 text-sm mt-1">Premium Games</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-[#22c55e]">Free</div>
@@ -69,15 +65,6 @@ export default function Home() {
 
       {/* Social Casino Section */}
       <SocialCasinoSection />
-
-      {/* Live Matches Section */}
-      <LiveMatchesSection refreshInterval={3000} />
-
-      {/* Upcoming Matches Section */}
-      <UpcomingMatchesSection limit={6} />
-
-      {/* Featured Contests Section */}
-      <FeaturedContestsSection />
 
       {/* Features Section */}
       <section className="py-20 bg-[#111827]">
@@ -101,54 +88,51 @@ export default function Home() {
                 />
               </div>
               <h3 className="text-xl font-semibold text-white mb-3">
-                Social Casino Games
+                Diverse Game Library
               </h3>
               <p className="text-gray-300">
                 Enjoy a wide variety of casino-style games including slots, dice, and scratch cards, all for free.
               </p>
             </div>
 
-            {/* Feature 2: Fantasy Sports */}
+            {/* Feature 2: Immersive Experience */}
             <div className="bg-[#1a2332] p-8 rounded-2xl border border-[#22c55e]/20 hover:border-[#22c55e]/50 transition-all duration-300 group">
               <div className="w-full h-48 relative mb-6 rounded-xl overflow-hidden">
                 <Image
-                  src="/images/feature-team.webp"
-                  alt="Fantasy Sports"
+                  src="/games/lucky-wheels-html5-game/preview/03_preview_gameplay1.jpg"
+                  alt="Immersive Gameplay"
                   fill
-                  className="object-contain group-hover:scale-105 transition-transform duration-300"
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <h3 className="text-xl font-semibold text-white mb-3">
-                Fantasy Cricket
+                Immersive Gameplay
               </h3>
               <p className="text-gray-300">
-                Build your dream team, join free contests, and compete on leaderboards with other cricket fans.
+                High-quality graphics and smooth animations provide a premium casino experience right in your browser.
               </p>
             </div>
 
-            {/* Feature 3: Real-Time Updates */}
+            {/* Feature 3: No Risk */}
             <div className="bg-[#1a2332] p-8 rounded-2xl border border-[#22c55e]/20 hover:border-[#22c55e]/50 transition-all duration-300 group">
               <div className="w-full h-48 relative mb-6 rounded-xl overflow-hidden">
                 <Image
-                  src="/images/feature-live.webp"
-                  alt="Live Tracking"
+                  src="/games/dice-game-html5-game/preview/03_preview_gameplay1.jpg"
+                  alt="No Financial Risk"
                   fill
-                  className="object-contain group-hover:scale-105 transition-transform duration-300"
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <h3 className="text-xl font-semibold text-white mb-3">
-                Real-Time Updates
+                100% Free to Play
               </h3>
               <p className="text-gray-300">
-                Track live scores, player performance, and fantasy points as the match unfolds in real-time.
+                Play all your favorite games without any financial risk. Pure entertainment with no real money involved.
               </p>
             </div>
           </div>
         </div>
       </section>
-
-      {/* Completed Matches Section */}
-      <CompletedMatchesSection limit={6} />
 
       {/* How It Works Section */}
       <section className="py-20 bg-[#0a0f1a]">
@@ -169,7 +153,7 @@ export default function Home() {
                 Choose Your Game
               </h3>
               <p className="text-gray-300">
-                Select from our collection of social casino games or upcoming cricket matches.
+                Select from our collection of premium social casino games.
               </p>
               <div className="hidden md:block absolute top-8 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-[#22c55e]/50 to-transparent"></div>
             </div>
@@ -182,7 +166,7 @@ export default function Home() {
                 Play for Free
               </h3>
               <p className="text-gray-300">
-                Enjoy the games or build your fantasy team without any financial risk.
+                Enjoy the games instantly in your browser without any financial risk.
               </p>
               <div className="hidden md:block absolute top-8 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-[#22c55e]/50 to-transparent"></div>
             </div>
@@ -213,7 +197,7 @@ export default function Home() {
           </h2>
           <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
             Join thousands of fans who are already enjoying the thrill
-            of social casino and fantasy sports on DineDivine.
+            of social casino games on DineDivine.
           </p>
           <BottomCTA />
         </div>
