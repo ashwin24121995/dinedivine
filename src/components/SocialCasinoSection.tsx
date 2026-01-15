@@ -35,7 +35,7 @@ const GAMES = [
   {
     id: 'egypt-scratch',
     title: 'Egypt Scratch',
-    image: '/games/egypt-scratch-html5-game/preview/02_preview_landing.jpg',
+    image: '/games/egypt-scratch-html5-game/preview/03_preview_gameplay1.png',
     slug: 'egypt-scratch',
     description: 'Uncover ancient treasures in this scratch card game.'
   },

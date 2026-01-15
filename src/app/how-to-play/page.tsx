@@ -1,11 +1,10 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import AuthAwareCTA from "@/components/AuthAwareCTA";
 
 export const metadata: Metadata = {
   title: "How To Play - DineDivine",
   description:
-    "Learn how to play fantasy cricket on DineDivine. Step-by-step guide to creating your dream team, joining contests, and enjoying the game.",
+    "Learn how to play social casino games on DineDivine. Step-by-step guide to enjoying slots, dice, and scratch cards for free.",
 };
 
 export default function HowToPlayPage() {
@@ -16,184 +15,95 @@ export default function HowToPlayPage() {
       description:
         "Sign up for a free account on DineDivine. Registration is quick, easy, and completely free. You'll need to provide basic information and verify that you're 18 years or older.",
       icon: (
-        <svg
-          className="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-          />
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
         </svg>
       ),
     },
     {
       number: 2,
-      title: "Select a Match",
+      title: "Browse the Game Library",
       description:
-        "Browse through the list of upcoming cricket matches. Choose the match you want to play fantasy cricket for. You can see match details including teams, venue, and start time.",
+        "Explore our collection of premium social casino games. From classic slot machines to exciting scratch cards and dice games, there's something for everyone.",
       icon: (
-        <svg
-          className="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-          />
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
         </svg>
       ),
     },
     {
       number: 3,
-      title: "Build Your Fantasy Team",
+      title: "Select Your Game",
       description:
-        "Create your dream team of 11 players from both teams playing in the match. Select players based on their recent form, playing conditions, and your cricket knowledge.",
+        "Click on any game to start playing instantly. All games on DineDivine are 100% free to play, with no real money involved and no financial risk.",
       icon: (
-        <svg
-          className="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-          />
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5" />
         </svg>
       ),
     },
     {
       number: 4,
-      title: "Choose Captain & Vice-Captain",
+      title: "Enjoy the Experience",
       description:
-        "Select your Captain and Vice-Captain wisely. Your Captain earns 2x points while your Vice-Captain earns 1.5x points. These selections can make or break your fantasy team's performance.",
+        "Immerse yourself in high-quality graphics and smooth gameplay. Whether you're spinning the slots or scratching for a win, enjoy the thrill of the casino from your browser.",
       icon: (
-        <svg
-          className="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
-          />
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
     },
     {
       number: 5,
-      title: "Join a Contest",
+      title: "Track Your Progress",
       description:
-        "Enter free contests to compete with other fantasy cricket enthusiasts. All contests on DineDivine are completely free to join - no entry fees, no hidden charges.",
+        "Keep track of your wins and achievements within each game. Compete with friends and climb the social leaderboards to showcase your skills.",
       icon: (
-        <svg
-          className="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-          />
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002 2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
         </svg>
       ),
     },
     {
       number: 6,
-      title: "Watch & Enjoy",
+      title: "Play Responsibly",
       description:
-        "Once the match starts, watch your fantasy team score points based on real player performances. Track live scores, leaderboards, and enjoy the excitement of fantasy cricket!",
+        "While our games are free, we encourage responsible gaming. Set limits for yourself and enjoy the platform as a source of pure entertainment.",
       icon: (
-        <svg
-          className="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
-          />
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-          />
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
         </svg>
       ),
     },
   ];
 
-  const teamRules = [
+  const gameTypes = [
     {
-      category: "Wicket-Keepers",
-      min: 1,
-      max: 4,
-      description: "Select 1-4 wicket-keepers for your team",
+      category: "Slot Machines",
+      description: "Classic 3-reel and 5-reel slots with various themes and exciting bonus features.",
     },
     {
-      category: "Batsmen",
-      min: 3,
-      max: 6,
-      description: "Select 3-6 batsmen for your team",
+      category: "Dice Games",
+      description: "Test your luck with classic dice rolls and betting patterns in a social environment.",
     },
     {
-      category: "All-Rounders",
-      min: 1,
-      max: 4,
-      description: "Select 1-4 all-rounders for your team",
+      category: "Scratch Cards",
+      description: "Instant-win scratch cards with multiple themes like Egypt and Jungle adventures.",
     },
     {
-      category: "Bowlers",
-      min: 3,
-      max: 6,
-      description: "Select 3-6 bowlers for your team",
+      category: "Bingo Bash",
+      description: "Fast-paced bingo action where you can play multiple cards and aim for the jackpot.",
     },
-  ];
-
-  const pointsSystem = [
-    { action: "Run scored", points: "+1 point" },
-    { action: "Boundary (4 runs)", points: "+1 bonus point" },
-    { action: "Six (6 runs)", points: "+2 bonus points" },
-    { action: "Half-century (50 runs)", points: "+8 bonus points" },
-    { action: "Century (100 runs)", points: "+16 bonus points" },
-    { action: "Wicket taken", points: "+25 points" },
-    { action: "Maiden over", points: "+12 points" },
-    { action: "Catch taken", points: "+8 points" },
-    { action: "Stumping", points: "+12 points" },
-    { action: "Run out (direct)", points: "+12 points" },
-    { action: "Run out (indirect)", points: "+6 points" },
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#0a0f1a]">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-green-600 to-green-800 text-white py-16">
+      <section className="bg-gradient-to-br from-[#16a34a] to-[#22c55e] text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">How To Play</h1>
           <p className="text-xl text-green-100 max-w-3xl mx-auto">
-            New to fantasy cricket? Follow our simple step-by-step guide to
-            start playing and enjoying the game in minutes!
+            New to social casino games? Follow our simple guide to start playing and enjoying the thrill in minutes!
           </p>
         </div>
       </section>
@@ -213,24 +123,24 @@ export default function HowToPlayPage() {
                 }`}
               >
                 <div className="flex-shrink-0">
-                  <div className="w-24 h-24 bg-[#22c55e] rounded-full flex items-center justify-center text-white">
+                  <div className="w-24 h-24 bg-[#22c55e] rounded-full flex items-center justify-center text-white shadow-lg shadow-[#22c55e]/20">
                     {step.icon}
                   </div>
                 </div>
                 <div
-                  className={`flex-grow bg-[#1a2332] p-6 rounded-xl shadow-lg ${
+                  className={`flex-grow bg-[#1a2332] p-8 rounded-2xl border border-white/5 shadow-xl ${
                     index % 2 === 1 ? "md:text-right" : ""
                   }`}
                 >
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="bg-[#22c55e]/20 text-green-300 text-sm font-semibold px-3 py-1 rounded-full">
+                  <div className={`flex items-center gap-3 mb-4 ${index % 2 === 1 ? "md:justify-end" : ""}`}>
+                    <span className="bg-[#22c55e]/20 text-[#22c55e] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
                       Step {step.number}
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">
+                  <h3 className="text-2xl font-bold text-white mb-3">
                     {step.title}
                   </h3>
-                  <p className="text-gray-300">{step.description}</p>
+                  <p className="text-gray-400 leading-relaxed">{step.description}</p>
                 </div>
               </div>
             ))}
@@ -238,208 +148,56 @@ export default function HowToPlayPage() {
         </div>
       </section>
 
-      {/* Team Selection Rules */}
-      <section className="py-16 bg-[#0a0f1a]">
+      {/* Game Categories */}
+      <section className="py-16 bg-[#111827]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-white mb-4">
-            Team Selection Rules
+            Our Game Categories
           </h2>
-          <p className="text-center text-gray-300 mb-12 max-w-2xl mx-auto">
-            Build a balanced team of 11 players following these composition
-            rules. You can select players from both teams playing in the match.
+          <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+            Explore a variety of social casino games designed for pure entertainment and fun.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {teamRules.map((rule) => (
+            {gameTypes.map((type) => (
               <div
-                key={rule.category}
-                className="bg-[#1a2332] p-6 rounded-xl shadow-lg text-center"
+                key={type.category}
+                className="bg-[#1a2332] p-8 rounded-2xl border border-white/5 shadow-lg text-center hover:border-[#22c55e]/30 transition-colors"
               >
-                <h3 className="text-lg font-bold text-white mb-2">
-                  {rule.category}
+                <h3 className="text-xl font-bold text-white mb-4">
+                  {type.category}
                 </h3>
-                <div className="text-3xl font-bold text-[#22c55e] mb-2">
-                  {rule.min} - {rule.max}
-                </div>
-                <p className="text-gray-300 text-sm">{rule.description}</p>
+                <p className="text-gray-400 text-sm leading-relaxed">{type.description}</p>
               </div>
             ))}
           </div>
-          <div className="mt-8 bg-[#22c55e]/10 border border-green-500/30 p-6 rounded-xl">
-            <h4 className="font-semibold text-green-300 mb-2">
-              Important Notes:
+          <div className="mt-12 bg-[#22c55e]/10 border border-[#22c55e]/20 p-8 rounded-2xl text-center">
+            <h4 className="text-xl font-bold text-[#22c55e] mb-4">
+              Important Note:
             </h4>
-            <ul className="list-disc list-inside text-[#22c55e] space-y-1">
-              <li>You must select exactly 11 players for your team</li>
-              <li>
-                Maximum 7 players can be selected from a single playing team
-              </li>
-              <li>
-                Each player has a credit value - stay within the total credit
-                limit
-              </li>
-              <li>
-                You can create multiple teams for the same match to increase
-                your chances
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Points System */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-white mb-4">
-            Points System
-          </h2>
-          <p className="text-center text-gray-300 mb-12 max-w-2xl mx-auto">
-            Your fantasy team earns points based on the real-life performance
-            of your selected players. Here&apos;s how points are calculated:
-          </p>
-          <div className="max-w-2xl mx-auto">
-            <div className="bg-[#1a2332] rounded-xl shadow-lg overflow-hidden">
-              <table className="w-full">
-                <thead className="bg-[#22c55e] text-white">
-                  <tr>
-                    <th className="px-6 py-4 text-left">Player Action</th>
-                    <th className="px-6 py-4 text-right">Points</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-200">
-                  {pointsSystem.map((item, index) => (
-                    <tr
-                      key={index}
-                      className={index % 2 === 0 ? "bg-[#0a0f1a]" : "bg-[#1a2332]"}
-                    >
-                      <td className="px-6 py-4 text-white">{item.action}</td>
-                      <td className="px-6 py-4 text-right font-semibold text-[#22c55e]">
-                        {item.points}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <div className="mt-6 bg-amber-900/20 border border-amber-500/30 p-4 rounded-lg">
-              <p className="text-amber-300 text-sm">
-                <strong>Captain Bonus:</strong> Your Captain earns 2x points for
-                all actions.
-                <br />
-                <strong>Vice-Captain Bonus:</strong> Your Vice-Captain earns
-                1.5x points for all actions.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Tips Section */}
-      <section className="py-16 bg-[#0a0f1a]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-white mb-12">
-            Pro Tips for Success
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-[#1a2332] p-6 rounded-xl shadow-lg">
-              <div className="w-12 h-12 bg-[#22c55e]/20 rounded-full flex items-center justify-center mb-4">
-                <svg
-                  className="w-6 h-6 text-[#22c55e]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-lg font-bold text-white mb-2">
-                Check Player Form
-              </h3>
-              <p className="text-gray-300">
-                Always check recent performances of players before selecting
-                them. A player in good form is more likely to score points.
-              </p>
-            </div>
-            <div className="bg-[#1a2332] p-6 rounded-xl shadow-lg">
-              <div className="w-12 h-12 bg-[#22c55e]/20 rounded-full flex items-center justify-center mb-4">
-                <svg
-                  className="w-6 h-6 text-[#22c55e]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-lg font-bold text-white mb-2">
-                Consider Pitch Conditions
-              </h3>
-              <p className="text-gray-300">
-                Pitch conditions affect player performance. Select more spinners
-                on turning tracks and pacers on seaming pitches.
-              </p>
-            </div>
-            <div className="bg-[#1a2332] p-6 rounded-xl shadow-lg">
-              <div className="w-12 h-12 bg-[#22c55e]/20 rounded-full flex items-center justify-center mb-4">
-                <svg
-                  className="w-6 h-6 text-[#22c55e]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-lg font-bold text-white mb-2">
-                Choose Captain Wisely
-              </h3>
-              <p className="text-gray-300">
-                Your Captain earns double points. Pick a reliable performer who
-                is likely to have a significant impact on the match.
-              </p>
-            </div>
+            <p className="text-gray-300 max-w-3xl mx-auto">
+              DineDivine is a <strong>Social Casino</strong> platform. All games are 100% free to play. 
+              There is no real money involved, no betting, and no opportunity to win real money or prizes. 
+              Our platform is strictly for entertainment purposes only.
+            </p>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-[#22c55e] text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to Play?</h2>
-          <p className="text-green-100 text-lg mb-8 max-w-2xl mx-auto">
-            Now that you know how to play, it&apos;s time to put your cricket
-            knowledge to the test. Create your free account and start building
-            your dream team!
+      <section className="py-20">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            Ready to Start Your Social Gaming Journey?
+          </h2>
+          <p className="text-xl text-gray-400 mb-10">
+            Join thousands of players enjoying the best free-to-play casino games in India.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <AuthAwareCTA
-              loggedOutText="Create Free Account"
-              loggedOutHref="/register"
-              loggedInText="Go to Dashboard"
-              loggedInHref="/dashboard"
-              variant="primary"
-            />
-            <Link
-              href="/fantasy-cricket"
-              className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1a2332] hover:text-[#22c55e] transition-colors duration-200 text-lg"
-            >
-              Explore Fantasy Cricket
-            </Link>
-          </div>
+          <Link 
+            href="/"
+            className="inline-block bg-[#22c55e] hover:bg-[#16a34a] text-black font-bold py-4 px-10 rounded-full transition-all transform hover:scale-105 shadow-lg shadow-[#22c55e]/20"
+          >
+            Explore Games Now
+          </Link>
         </div>
       </section>
     </div>

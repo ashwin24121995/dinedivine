@@ -3,19 +3,19 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About Us - DineDivine",
   description:
-    "Learn about DineDivine, the leading free-to-play fantasy sports platform in India. Discover our mission, vision, and commitment to providing entertainment through fantasy cricket.",
+    "Learn about DineDivine, India's premier social casino platform. Discover our mission, vision, and commitment to providing safe, free-to-play entertainment in compliance with PROGA 2025.",
 };
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#0a0f1a]">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-green-600 to-green-800 text-white py-16">
+      <section className="bg-gradient-to-br from-[#16a34a] to-[#22c55e] text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">About Us</h1>
           <p className="text-xl text-green-100 max-w-3xl mx-auto">
             Discover the story behind DineDivine and our commitment to bringing
-            you the best fantasy sports entertainment experience.
+            you the best social casino entertainment experience.
           </p>
         </div>
       </section>
@@ -29,57 +29,50 @@ export default function AboutPage() {
                 Who We Are
               </h2>
               <p className="text-gray-300 mb-4 leading-relaxed">
-                DineDivine is a premier free-to-play fantasy sports platform
-                operated by <strong>DINEDIVINE VENTURES PRIVATE LIMITED</strong>
-                . We are dedicated to providing cricket enthusiasts across India
-                with an engaging and entertaining platform to showcase their
-                knowledge of the game.
+                DineDivine is a premier free-to-play social casino platform
+                operated by <strong>DINEDIVINE VENTURES PRIVATE LIMITED</strong>. 
+                We are dedicated to providing gaming enthusiasts across India
+                with an engaging and entertaining platform to enjoy classic casino-style games.
               </p>
               <p className="text-gray-300 mb-4 leading-relaxed">
                 Our platform is designed purely for entertainment purposes,
-                allowing users to create fantasy cricket teams, participate in
-                contests, and enjoy the thrill of the game without any monetary
-                involvement. We believe that the joy of cricket should be
+                allowing users to play slots, dice, and scratch card games without any monetary
+                involvement. We believe that the thrill of gaming should be
                 accessible to everyone, which is why our platform is completely
                 free to play.
               </p>
               <p className="text-gray-300 leading-relaxed">
-                Based in Gurgaon, Haryana, we operate in strict compliance with
-                all applicable Indian laws and regulations governing fantasy
-                sports platforms. Our commitment to responsible gaming and fair
-                play ensures a safe and enjoyable experience for all our users.
+                In 2025, following the enactment of the <strong>Promotion and Regulation of Online Gaming Act (PROGA)</strong>, 
+                we made the strategic decision to transition from fantasy sports to a pure social casino model. 
+                This shift reflects our unwavering commitment to following the rules and regulations of the 
+                Indian Government while continuing to provide high-quality entertainment to our community.
               </p>
             </div>
-            <div className="bg-[#22c55e]/10 p-8 rounded-2xl">
-              <h3 className="text-xl font-semibold text-green-300 mb-4">
+            <div className="bg-[#22c55e]/10 p-8 rounded-2xl border border-[#22c55e]/20">
+              <h3 className="text-xl font-semibold text-[#22c55e] mb-4">
                 Company Details
               </h3>
               <div className="space-y-3">
                 <div>
-                  <p className="text-sm text-gray-300">Company Name</p>
+                  <p className="text-sm text-gray-400">Company Name</p>
                   <p className="font-medium text-white">
                     DINEDIVINE VENTURES PRIVATE LIMITED
                   </p>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-300">CIN</p>
+                  <p className="text-sm text-gray-400">CIN</p>
                   <p className="font-medium text-white">
                     U56102HR2024PTC123713
                   </p>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-300">GST Number</p>
+                  <p className="text-sm text-gray-400">GST Number</p>
                   <p className="font-medium text-white">06AALCD0239Q1ZA</p>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-300">PAN Number</p>
-                  <p className="font-medium text-white">AALCD0239Q</p>
-                </div>
-                <div>
-                  <p className="text-sm text-gray-300">Registered Address</p>
+                  <p className="text-sm text-gray-400">Registered Address</p>
                   <p className="font-medium text-white">
-                    C/O PARDEEP SAGGAR, 20-P DSC, SEC-23A, Shivaji Nagar
-                    (Gurgaon), Shivaji Nagar, Gurgaon- 122001, Haryana, India
+                    First Floor, Sco 20P, Back Half, Sector 23A, HUDA Market, Gurugram, Haryana, 122017
                   </p>
                 </div>
               </div>
@@ -89,10 +82,10 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-16 bg-[#0a0f1a]">
+      <section className="py-16 bg-[#111827]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-[#1a2332] p-8 rounded-2xl shadow-lg">
+            <div className="bg-[#1a2332] p-8 rounded-2xl shadow-lg border border-white/5">
               <div className="w-16 h-16 bg-[#22c55e]/20 rounded-full flex items-center justify-center mb-6">
                 <svg
                   className="w-8 h-8 text-[#22c55e]"
@@ -112,14 +105,13 @@ export default function AboutPage() {
                 Our Mission
               </h3>
               <p className="text-gray-300 leading-relaxed">
-                To democratize fantasy sports entertainment by providing a
-                completely free platform where cricket fans can engage with the
-                sport they love. We aim to create an inclusive community where
-                knowledge and passion for cricket are celebrated, without any
-                financial barriers or risks.
+                To democratize social gaming entertainment by providing a
+                completely free platform where users can engage with high-quality casino-style games. 
+                We aim to create an inclusive community where passion for gaming is celebrated 
+                without any financial barriers or risks.
               </p>
             </div>
-            <div className="bg-[#1a2332] p-8 rounded-2xl shadow-lg">
+            <div className="bg-[#1a2332] p-8 rounded-2xl shadow-lg border border-white/5">
               <div className="w-16 h-16 bg-[#22c55e]/20 rounded-full flex items-center justify-center mb-6">
                 <svg
                   className="w-8 h-8 text-[#22c55e]"
@@ -145,12 +137,10 @@ export default function AboutPage() {
                 Our Vision
               </h3>
               <p className="text-gray-300 leading-relaxed">
-                To become India&apos;s most trusted and beloved free-to-play
-                fantasy sports platform. We envision a future where millions of
-                cricket enthusiasts come together on DineDivine to share their
-                passion, compete in friendly contests, and experience the
-                excitement of fantasy cricket in a safe and responsible
-                environment.
+                To become India's most trusted and beloved free-to-play
+                social casino platform. We envision a future where millions of
+                enthusiasts come together on DineDivine to enjoy the excitement 
+                of gaming in a safe, responsible, and fully compliant environment.
               </p>
             </div>
           </div>
@@ -183,7 +173,7 @@ export default function AboutPage() {
               <h3 className="text-xl font-semibold text-white mb-2">
                 Integrity
               </h3>
-              <p className="text-gray-300">
+              <p className="text-gray-400 text-sm">
                 We operate with complete transparency and honesty in all our
                 dealings.
               </p>
@@ -207,8 +197,8 @@ export default function AboutPage() {
               <h3 className="text-xl font-semibold text-white mb-2">
                 Accessibility
               </h3>
-              <p className="text-gray-300">
-                Free-to-play model ensures everyone can enjoy fantasy sports.
+              <p className="text-gray-400 text-sm">
+                Free-to-play model ensures everyone can enjoy social gaming.
               </p>
             </div>
             <div className="text-center">
@@ -230,8 +220,8 @@ export default function AboutPage() {
               <h3 className="text-xl font-semibold text-white mb-2">
                 Community
               </h3>
-              <p className="text-gray-300">
-                Building a vibrant community of passionate cricket enthusiasts.
+              <p className="text-gray-400 text-sm">
+                Building a vibrant community of passionate gaming enthusiasts.
               </p>
             </div>
             <div className="text-center">
@@ -251,69 +241,12 @@ export default function AboutPage() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">
-                Fair Play
+                Compliance
               </h3>
-              <p className="text-gray-300">
-                Ensuring a level playing field for all participants.
+              <p className="text-gray-400 text-sm">
+                Ensuring full adherence to government rules and regulations.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="py-16 bg-[#22c55e] text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Why Choose DineDivine?
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="text-4xl font-bold mb-2">100%</div>
-              <p className="text-green-100">Free To Play</p>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold mb-2">24/7</div>
-              <p className="text-green-100">Platform Availability</p>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold mb-2">Real-Time</div>
-              <p className="text-green-100">Live Score Updates</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Compliance Section */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-amber-900/20 border-l-4 border-amber-500 p-6 rounded-r-lg">
-            <h3 className="text-xl font-semibold text-amber-300 mb-3">
-              Legal Compliance & Restrictions
-            </h3>
-            <p className="text-amber-400 mb-4">
-              DineDivine operates in full compliance with Indian laws and
-              regulations. Please note the following important restrictions:
-            </p>
-            <ul className="list-disc list-inside text-amber-400 space-y-2">
-              <li>
-                Users must be <strong>18 years of age or older</strong> to use
-                this platform.
-              </li>
-              <li>
-                Users from <strong>Telangana, Andhra Pradesh, Assam, and Odisha</strong>{" "}
-                are not permitted to access or use this platform due to state
-                regulations.
-              </li>
-              <li>
-                This is a <strong>free-to-play platform</strong> with no real
-                money involvement.
-              </li>
-              <li>
-                No cash prizes, monetary rewards, or gambling activities are
-                offered.
-              </li>
-            </ul>
           </div>
         </div>
       </section>
