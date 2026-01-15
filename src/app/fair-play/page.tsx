@@ -2,17 +2,17 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Fair Play Policy - DineDivine",
+  title: "Fair Play Policy - DineDivine Social Casino",
   description:
-    "Learn about DineDivine's fair play policies. Our commitment to ensuring a level playing field for all fantasy cricket enthusiasts.",
+    "Learn about DineDivine's fair play policies. Our commitment to ensuring a level playing field and transparent game mechanics for all social casino games.",
 };
 
 export default function FairPlayPage() {
   const principles = [
     {
-      title: "Equal Opportunity",
+      title: "Random Number Generation (RNG)",
       description:
-        "Every user has an equal opportunity to participate and succeed on our platform. No user receives preferential treatment or unfair advantages.",
+        "All our social casino games (Slots, Wheels, Dice) use certified Random Number Generators to ensure every outcome is completely random and unbiased.",
       icon: (
         <svg
           className="w-8 h-8"
@@ -32,7 +32,7 @@ export default function FairPlayPage() {
     {
       title: "Transparency",
       description:
-        "Our scoring system, rules, and contest mechanics are clearly documented and available to all users. There are no hidden rules or secret algorithms.",
+        "Game rules, virtual point mechanics, and odds (where applicable) are clearly documented and available to all users. There are no hidden rules or secret algorithms.",
       icon: (
         <svg
           className="w-8 h-8"
@@ -56,9 +56,9 @@ export default function FairPlayPage() {
       ),
     },
     {
-      title: "Data Integrity",
+      title: "Equal Opportunity",
       description:
-        "All match data and player statistics are sourced from reliable, official sources. We ensure accuracy and consistency in all data displayed on our platform.",
+        "Every user has an equal chance of winning virtual points based on the game's mechanics. No user receives preferential treatment or unfair advantages.",
       icon: (
         <svg
           className="w-8 h-8"
@@ -76,9 +76,9 @@ export default function FairPlayPage() {
       ),
     },
     {
-      title: "Anti-Fraud Measures",
+      title: "Anti-Cheating Measures",
       description:
-        "We employ robust systems to detect and prevent fraudulent activities, multiple accounts, and any form of cheating or manipulation.",
+        "We employ robust systems to detect and prevent fraudulent activities, multiple accounts, and any form of cheating or manipulation of game outcomes.",
       icon: (
         <svg
           className="w-8 h-8"
@@ -101,41 +101,41 @@ export default function FairPlayPage() {
     {
       activity: "Multiple Accounts",
       description:
-        "Creating or operating multiple accounts to gain unfair advantages is strictly prohibited. Each user is allowed only one account.",
+        "Creating or operating multiple accounts to gain unfair advantages in leaderboards or virtual point accumulation is strictly prohibited. Each user is allowed only one account.",
     },
     {
       activity: "Collusion",
       description:
-        "Coordinating with other users to manipulate contest outcomes or share insider information is not allowed.",
+        "Coordinating with other users to manipulate game outcomes or share information to unfairly gain virtual points is not allowed.",
     },
     {
       activity: "Automated Tools",
       description:
-        "Using bots, scripts, or automated tools to create teams, join contests, or interact with the platform is prohibited.",
+        "Using bots, scripts, or automated tools to play games, spin wheels, or interact with the platform is strictly prohibited.",
     },
     {
-      activity: "Account Sharing",
+      activity: "Virtual Item Trading",
       description:
-        "Sharing your account credentials with others or allowing others to access your account is not permitted.",
+        "Attempting to sell, trade, or transfer virtual points, tokens, or accounts for real money or any real-world value is strictly prohibited.",
     },
     {
       activity: "Exploitation of Bugs",
       description:
-        "Intentionally exploiting any bugs, glitches, or vulnerabilities in the platform for personal advantage is prohibited.",
+        "Intentionally exploiting any bugs, glitches, or vulnerabilities in the game mechanics or platform for personal advantage is prohibited.",
     },
     {
       activity: "False Information",
       description:
-        "Providing false or misleading information during registration or at any other time is strictly prohibited.",
+        "Providing false or misleading information during registration or at any other time, especially for age or location verification, is strictly prohibited.",
     },
   ];
 
   const consequences = [
     "Warning and notification of the violation",
+    "Forfeiture of all accumulated virtual points and in-game items",
     "Temporary suspension of account access",
     "Permanent ban from the platform",
-    "Forfeiture of any contest standings or achievements",
-    "Legal action in cases of severe violations",
+    "Legal action in cases of severe violations (e.g., fraud, hacking)",
   ];
 
   return (
@@ -147,8 +147,8 @@ export default function FairPlayPage() {
             Fair Play Policy
           </h1>
           <p className="text-xl text-green-100 max-w-3xl mx-auto">
-            At DineDivine, we believe in fair competition. Our fair play
-            policies ensure that every user enjoys a level playing field.
+            Our fair play policies ensure a level playing field and transparent,
+            randomized game mechanics for all social casino games.
           </p>
         </div>
       </section>
@@ -161,17 +161,10 @@ export default function FairPlayPage() {
               Our Commitment to Fair Play
             </h2>
             <p className="text-gray-300 leading-relaxed mb-4">
-              DineDivine is committed to providing a fair and enjoyable fantasy
-              sports experience for all users. We have implemented
-              comprehensive policies and systems to ensure that every
-              participant has an equal opportunity to showcase their cricket
-              knowledge and skills.
+              DineDivine is committed to providing a fair, transparent, and enjoyable social casino experience for all users. We have implemented comprehensive policies and systems to ensure that every game outcome is determined by a certified Random Number Generator (RNG) and that all participants have an equal chance of accumulating virtual points.
             </p>
             <p className="text-gray-300 leading-relaxed">
-              Our fair play policy applies to all users and covers all aspects
-              of the platform, from account creation to contest participation.
-              By using DineDivine, you agree to abide by these policies and
-              contribute to a fair gaming environment.
+              Our fair play policy applies to all users and covers all aspects of the platform, from account creation to game participation. By using DineDivine, you agree to abide by these policies and contribute to a fair gaming environment.
             </p>
           </div>
         </div>
@@ -272,7 +265,7 @@ export default function FairPlayPage() {
               </h3>
               <p className="text-gray-300">
                 We verify user identities to prevent multiple accounts and
-                ensure each user is who they claim to be.
+                ensure each user is a unique individual, which is critical for fair leaderboard competition.
               </p>
             </div>
             <div className="text-center">
@@ -296,7 +289,7 @@ export default function FairPlayPage() {
               </h3>
               <p className="text-gray-300">
                 Our systems continuously monitor for suspicious activities,
-                unusual patterns, and potential violations.
+                unusual game patterns, and potential violations of our anti-cheating rules.
               </p>
             </div>
             <div className="text-center">
@@ -320,7 +313,7 @@ export default function FairPlayPage() {
               </h3>
               <p className="text-gray-300">
                 Our team manually reviews flagged accounts and activities to
-                ensure accurate enforcement of policies.
+                ensure accurate and fair enforcement of policies.
               </p>
             </div>
           </div>
@@ -342,7 +335,7 @@ export default function FairPlayPage() {
               <ol className="space-y-4">
                 {consequences.map((consequence, index) => (
                   <li key={index} className="flex items-start gap-4">
-                    <span className="w-8 h-8 bg-yellow-400 text-amber-200 rounded-full flex items-center justify-center font-bold flex-shrink-0">
+                    <span className="w-8 h-8 bg-yellow-400 text-amber-900 rounded-full flex items-center justify-center font-bold flex-shrink-0">
                       {index + 1}
                     </span>
                     <span className="text-amber-300 pt-1">{consequence}</span>
@@ -373,30 +366,6 @@ export default function FairPlayPage() {
                 Report Violation
               </Link>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Skill-Based Game */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-white mb-6">
-              Fantasy Cricket is a Game of Skill
-            </h2>
-            <p className="text-gray-300 leading-relaxed mb-4">
-              Fantasy cricket on DineDivine is a game of skill where success
-              depends on your knowledge of cricket, understanding of player
-              performance, and ability to analyze match conditions. Unlike games
-              of chance, your decisions directly impact your team&apos;s
-              performance.
-            </p>
-            <p className="text-gray-300 leading-relaxed">
-              We encourage all users to develop their skills, learn from
-              experienced players, and continuously improve their fantasy
-              cricket strategies. Remember, the goal is to have fun while
-              showcasing your cricket expertise!
-            </p>
           </div>
         </div>
       </section>

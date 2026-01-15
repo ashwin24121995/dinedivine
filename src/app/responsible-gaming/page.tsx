@@ -2,17 +2,17 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Responsible Gaming - DineDivine",
+  title: "Responsible Gaming - DineDivine Social Casino",
   description:
-    "Learn about responsible gaming practices at DineDivine. Our commitment to providing a safe, fair, and enjoyable free-to-play fantasy sports experience.",
+    "Learn about responsible gaming practices at DineDivine. Our commitment to providing a safe, fair, and enjoyable free-to-play social casino experience.",
 };
 
 export default function ResponsibleGamingPage() {
   const guidelines = [
     {
-      title: "Play for Entertainment",
+      title: "Play for Entertainment Only",
       description:
-        "Fantasy sports on DineDivine is designed purely for entertainment. Enjoy the game for the fun and excitement it brings, not as a source of income or reward.",
+        "Our social casino games are designed purely for fun. Treat the virtual points as a score, not as a currency. The goal is enjoyment, not financial gain.",
       icon: (
         <svg
           className="w-8 h-8"
@@ -32,7 +32,7 @@ export default function ResponsibleGamingPage() {
     {
       title: "Set Time Limits",
       description:
-        "Balance your gaming time with other activities. Set personal time limits for how long you spend on the platform each day.",
+        "Balance your gaming time with other activities. Set personal time limits for how long you spend on the platform each day to ensure a healthy lifestyle.",
       icon: (
         <svg
           className="w-8 h-8"
@@ -50,9 +50,9 @@ export default function ResponsibleGamingPage() {
       ),
     },
     {
-      title: "Keep It Social",
+      title: "Virtual Points Have No Value",
       description:
-        "Fantasy sports is more fun with friends. Use DineDivine as a way to connect with fellow cricket enthusiasts and enjoy healthy competition.",
+        "Understand that all in-game points, tokens, or virtual items have absolutely no real-world monetary value and cannot be exchanged for cash or prizes.",
       icon: (
         <svg
           className="w-8 h-8"
@@ -64,7 +64,7 @@ export default function ResponsibleGamingPage() {
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={2}
-            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8v8m0-8H9m3 0h3m-3 4H9m3 0h3m-3 4H9m3 0h3"
           />
         </svg>
       ),
@@ -72,7 +72,7 @@ export default function ResponsibleGamingPage() {
     {
       title: "Stay Informed",
       description:
-        "Understand how fantasy sports works before playing. Read our How To Play guide and familiarize yourself with the rules and scoring system.",
+        "Familiarize yourself with our Terms and Conditions and Fair Play Policy. Understand the rules of each game before you play.",
       icon: (
         <svg
           className="w-8 h-8"
@@ -92,29 +92,33 @@ export default function ResponsibleGamingPage() {
   ];
 
   const ageRestrictions = [
-    "Users must be 18 years of age or older to create an account",
-    "Age verification is required during the registration process",
-    "We reserve the right to request additional age verification at any time",
-    "Accounts found to be operated by minors will be immediately suspended",
-    "Parents and guardians should monitor their children's online activities",
+    "Users must be 18 years of age or older to create an account.",
+    "Age verification is required during the registration process.",
+    "We reserve the right to request additional age verification at any time.",
+    "Accounts found to be operated by minors will be immediately suspended.",
+    "Parents and guardians should monitor their children's online activities.",
   ];
 
   const geoRestrictions = [
     {
       state: "Telangana",
-      reason: "State regulations prohibit fantasy sports platforms",
+      reason: "State regulations prohibit certain online games.",
     },
     {
       state: "Andhra Pradesh",
-      reason: "State regulations prohibit fantasy sports platforms",
+      reason: "State regulations prohibit certain online games.",
     },
     {
       state: "Assam",
-      reason: "State regulations prohibit fantasy sports platforms",
+      reason: "State regulations prohibit certain online games.",
     },
     {
       state: "Odisha",
-      reason: "State regulations prohibit fantasy sports platforms",
+      reason: "State regulations prohibit certain online games.",
+    },
+    {
+      state: "All States",
+      reason: "The platform is 100% Free to Play and uses no real money.",
     },
   ];
 
@@ -127,9 +131,8 @@ export default function ResponsibleGamingPage() {
             Responsible Gaming
           </h1>
           <p className="text-xl text-green-100 max-w-3xl mx-auto">
-            At DineDivine, we are committed to promoting responsible gaming
-            practices and ensuring a safe, enjoyable experience for all our
-            users.
+            Our commitment to promoting a safe, fair, and enjoyable free-to-play
+            social casino experience for all users.
           </p>
         </div>
       </section>
@@ -142,11 +145,15 @@ export default function ResponsibleGamingPage() {
               Our Commitment to Responsible Gaming
             </h2>
             <p className="text-gray-300 leading-relaxed">
-              DineDivine is a free-to-play fantasy sports platform designed
-              purely for entertainment. We do not involve any real money gaming,
-              betting, or gambling activities. Our platform is built to provide
-              cricket fans with a fun and engaging way to enjoy the sport they
-              love, without any financial risks.
+              DineDivine is a **free-to-play social casino platform** designed
+              purely for entertainment. We strictly adhere to the principles of
+              responsible gaming by ensuring there is **NO real money gaming,
+              betting, or gambling activities** on our platform. Our games use
+              virtual, non-transferable points for scoring and fun only.
+            </p>
+            <p className="text-gray-300 leading-relaxed mt-4 font-semibold">
+              We operate in full compliance with the Promotion and Regulation of
+              Online Gaming Act (PROGA) 2025 and all other applicable Indian laws.
             </p>
           </div>
 
@@ -217,7 +224,7 @@ export default function ResponsibleGamingPage() {
                     d="M5 13l4 4L19 7"
                   />
                 </svg>
-                <span className="text-gray-300">Pure Entertainment Focus</span>
+                <span className="text-gray-300">Virtual Points Only</span>
               </div>
             </div>
           </div>
@@ -265,7 +272,8 @@ export default function ResponsibleGamingPage() {
               <p className="text-gray-300 mb-6 leading-relaxed">
                 DineDivine is strictly for users who are 18 years of age or
                 older. We take age verification seriously and have implemented
-                measures to prevent underage access to our platform.
+                measures to prevent underage access to our platform, in line with
+                Indian law.
               </p>
               <ul className="space-y-3">
                 {ageRestrictions.map((restriction, index) => (
@@ -292,7 +300,7 @@ export default function ResponsibleGamingPage() {
             <div>
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 bg-amber-900/30 rounded-full flex items-center justify-center">
-                  <svg
+                <svg
                     className="w-8 h-8 text-yellow-600"
                     fill="none"
                     stroke="currentColor"
@@ -313,13 +321,11 @@ export default function ResponsibleGamingPage() {
                   </svg>
                 </div>
                 <h2 className="text-3xl font-bold text-white">
-                  Geographic Restrictions
+                  Geographic Compliance
                 </h2>
               </div>
               <p className="text-gray-300 mb-6 leading-relaxed">
-                Due to state regulations, users from certain Indian states are
-                not permitted to access or use DineDivine. We comply with all
-                applicable laws and regulations.
+                We strictly comply with all state and national laws regarding online gaming. While our platform is free-to-play, we monitor and restrict access based on the latest legal requirements.
               </p>
               <div className="bg-amber-900/20 border border-amber-500/30 rounded-xl overflow-hidden">
                 <table className="w-full">
@@ -339,8 +345,8 @@ export default function ResponsibleGamingPage() {
                         <td className="px-4 py-3 text-white font-medium">
                           {restriction.state}
                         </td>
-                        <td className="px-4 py-3 text-red-600">
-                          Not Available
+                        <td className="px-4 py-3 text-green-400">
+                          {restriction.state === "All States" ? "Available (Free-to-Play)" : "Not Available for Real Money Games"}
                         </td>
                       </tr>
                     ))}
@@ -357,7 +363,7 @@ export default function ResponsibleGamingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-center text-white mb-6">
-              Self-Exclusion & Account Control
+              Account Control & Self-Exclusion
             </h2>
             <p className="text-center text-gray-300 mb-8">
               We believe users should have full control over their gaming
@@ -372,7 +378,7 @@ export default function ResponsibleGamingPage() {
                 <p className="text-gray-300">
                   Take a break from the platform for a specified period. Your
                   account will be temporarily suspended and you won&apos;t be
-                  able to participate in any contests during this time.
+                  able to participate in any games during this time.
                 </p>
               </div>
               <div className="bg-[#1a2332] p-6 rounded-xl shadow-lg">
@@ -424,7 +430,7 @@ export default function ResponsibleGamingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-center text-gray-300 text-sm">
             DineDivine operates in compliance with all applicable Indian laws
-            and regulations. We are committed to maintaining the highest
+            and regulations, including the Promotion and Regulation of Online Gaming Act (PROGA) 2025. We are committed to maintaining the highest
             standards of responsible gaming and user protection. For more
             information, please review our{" "}
             <Link href="/terms" className="text-[#22c55e] hover:underline">

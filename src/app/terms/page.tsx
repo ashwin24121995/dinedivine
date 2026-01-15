@@ -2,13 +2,13 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Terms and Conditions - DineDivine",
+  title: "Terms and Conditions - DineDivine Social Casino",
   description:
-    "Read the terms and conditions for using DineDivine, the free-to-play fantasy sports platform. Understand your rights and responsibilities as a user.",
+    "Read the terms and conditions for using DineDivine, the free-to-play social casino platform. Understand your rights and responsibilities as a user.",
 };
 
 export default function TermsPage() {
-  const lastUpdated = "December 2025";
+  const lastUpdated = "January 2026";
 
   return (
     <div className="min-h-screen">
@@ -49,10 +49,11 @@ export default function TermsPage() {
               </p>
               <div className="bg-[#22c55e]/10 border border-green-500/30 p-4 rounded-lg">
                 <p className="text-green-300 font-medium">
-                  DineDivine is a FREE-TO-PLAY fantasy sports platform designed
+                  DineDivine is a FREE-TO-PLAY social casino platform designed
                   purely for entertainment purposes. There is NO real money
                   involvement, NO cash prizes, and NO gambling or betting of any
-                  kind.
+                  kind. We operate in full compliance with the Promotion and
+                  Regulation of Online Gaming Act (PROGA) 2025.
                 </p>
               </div>
             </div>
@@ -69,8 +70,9 @@ export default function TermsPage() {
                 <li>Be at least 18 years of age</li>
                 <li>Be a resident of India</li>
                 <li>
-                  NOT be a resident of Telangana, Andhra Pradesh, Assam, or
-                  Odisha
+                  NOT be a resident of any state that prohibits online gaming,
+                  including but not limited to Telangana, Andhra Pradesh, Assam,
+                  and Odisha.
                 </li>
                 <li>Have the legal capacity to enter into a binding agreement</li>
                 <li>Not be prohibited from using the Platform under applicable laws</li>
@@ -79,7 +81,9 @@ export default function TermsPage() {
                 By using our Platform, you represent and warrant that you meet
                 all eligibility requirements. We reserve the right to verify
                 your eligibility at any time and suspend or terminate accounts
-                that do not meet these requirements.
+                that do not meet these requirements. This includes adherence to
+                all local and national laws, including the Promotion and
+                Regulation of Online Gaming Act (PROGA) 2025.
               </p>
             </div>
 
@@ -110,24 +114,22 @@ export default function TermsPage() {
             {/* Platform Services */}
             <div className="mb-12">
               <h2 className="text-2xl font-bold text-white mb-4">
-                4. Platform Services
+                4. Platform Services: Social Casino Games
               </h2>
               <p className="text-gray-300 leading-relaxed mb-4">
-                DineDivine provides a free-to-play fantasy sports platform where
-                users can:
+                DineDivine provides a free-to-play social casino platform where users can enjoy various casino-style games, including:
               </p>
               <ul className="list-disc list-inside text-gray-300 space-y-2 mb-4">
-                <li>Create virtual fantasy cricket teams</li>
-                <li>Participate in free contests</li>
-                <li>Track live scores and player performances</li>
-                <li>Compete on leaderboards with other users</li>
+                <li>Slot Machines, Lucky Wheels, and Dice Games</li>
+                <li>Instant-win Scratch Card games</li>
+                <li>Social leaderboards and community features</li>
               </ul>
               <div className="bg-amber-900/20 border border-amber-500/30 p-4 rounded-lg mb-4">
                 <p className="text-amber-300">
-                  <strong>Important:</strong> All services are provided free of
+                  <strong>Important:</strong> All games are provided free of
                   charge. There are no entry fees, no real money prizes, and no
                   monetary rewards. The Platform is designed solely for
-                  entertainment purposes.
+                  entertainment purposes and uses virtual, non-transferable points.
                 </p>
               </div>
             </div>
@@ -143,14 +145,15 @@ export default function TermsPage() {
               <ul className="list-disc list-inside text-gray-300 space-y-2 mb-4">
                 <li>Violate any applicable laws or regulations</li>
                 <li>Create multiple accounts or share accounts</li>
-                <li>Use automated tools, bots, or scripts</li>
-                <li>Attempt to manipulate contests or leaderboards</li>
+                <li>Use automated tools, bots, or scripts to play games</li>
+                <li>Attempt to manipulate game outcomes or leaderboards</li>
                 <li>Engage in collusion with other users</li>
                 <li>Harass, abuse, or harm other users</li>
                 <li>Post offensive, defamatory, or inappropriate content</li>
                 <li>Attempt to hack, disrupt, or compromise the Platform</li>
                 <li>Exploit bugs or vulnerabilities for unfair advantage</li>
                 <li>Impersonate others or provide false information</li>
+                <li>Attempt to transfer, sell, or trade virtual points or accounts</li>
               </ul>
               <p className="text-gray-300 leading-relaxed">
                 Violation of these rules may result in warnings, suspension, or
@@ -158,16 +161,29 @@ export default function TermsPage() {
               </p>
             </div>
 
-            {/* Intellectual Property */}
+            {/* Virtual Points and Items */}
             <div className="mb-12">
               <h2 className="text-2xl font-bold text-white mb-4">
-                6. Intellectual Property
+                6. Virtual Points and Items
               </h2>
               <p className="text-gray-300 leading-relaxed mb-4">
-                All content on the Platform, including but not limited to text,
-                graphics, logos, images, software, and design, is the property
-                of DINEDIVINE VENTURES PRIVATE LIMITED or its licensors and is
-                protected by intellectual property laws.
+                The Platform may use virtual points, tokens, or other in-game items ("Virtual Items"). You acknowledge and agree that:
+              </p>
+              <ul className="list-disc list-inside text-gray-300 space-y-2 mb-4">
+                <li>Virtual Items have no real-world monetary value.</li>
+                <li>Virtual Items are not transferable, redeemable, or exchangeable for real currency, goods, or services.</li>
+                <li>You do not "own" the Virtual Items; you are granted a limited, revocable license to use them within the Platform.</li>
+                <li>We reserve the right to manage, regulate, control, modify, or eliminate Virtual Items at our sole discretion.</li>
+              </ul>
+            </div>
+
+            {/* Intellectual Property (Renumbered) */}
+            <div className="mb-12">
+              <h2 className="text-2xl font-bold text-white mb-4">
+                7. Intellectual Property
+              </h2>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                All content on the Platform, including but not limited to game designs, graphics, logos, images, software, and design, is the property of DINEDIVINE VENTURES PRIVATE LIMITED or its licensors and is protected by intellectual property laws.
               </p>
               <p className="text-gray-300 leading-relaxed mb-4">
                 You are granted a limited, non-exclusive, non-transferable
@@ -182,10 +198,10 @@ export default function TermsPage() {
               </ul>
             </div>
 
-            {/* Disclaimers */}
+            {/* Disclaimers (Renumbered) */}
             <div className="mb-12">
               <h2 className="text-2xl font-bold text-white mb-4">
-                7. Disclaimers
+                8. Disclaimers
               </h2>
               <p className="text-gray-300 leading-relaxed mb-4">
                 The Platform is provided &quot;as is&quot; and &quot;as
@@ -199,16 +215,14 @@ export default function TermsPage() {
                 <li>The results obtained from using the Platform will be accurate</li>
               </ul>
               <p className="text-gray-300 leading-relaxed">
-                Match data and player statistics are sourced from third-party
-                providers. While we strive for accuracy, we do not guarantee the
-                completeness or accuracy of such data.
+                All games on the Platform are based on random number generation (RNG) and are for entertainment purposes only. We make no guarantees regarding the frequency of wins or the accumulation of Virtual Items.
               </p>
             </div>
 
-            {/* Limitation of Liability */}
+            {/* Limitation of Liability (Renumbered) */}
             <div className="mb-12">
               <h2 className="text-2xl font-bold text-white mb-4">
-                8. Limitation of Liability
+                9. Limitation of Liability
               </h2>
               <p className="text-gray-300 leading-relaxed mb-4">
                 To the maximum extent permitted by law, DINEDIVINE VENTURES
@@ -225,10 +239,10 @@ export default function TermsPage() {
               </ul>
             </div>
 
-            {/* Indemnification */}
+            {/* Indemnification (Renumbered) */}
             <div className="mb-12">
               <h2 className="text-2xl font-bold text-white mb-4">
-                9. Indemnification
+                10. Indemnification
               </h2>
               <p className="text-gray-300 leading-relaxed">
                 You agree to indemnify, defend, and hold harmless DINEDIVINE
@@ -240,10 +254,10 @@ export default function TermsPage() {
               </p>
             </div>
 
-            {/* Termination */}
+            {/* Termination (Renumbered) */}
             <div className="mb-12">
               <h2 className="text-2xl font-bold text-white mb-4">
-                10. Termination
+                11. Termination
               </h2>
               <p className="text-gray-300 leading-relaxed mb-4">
                 We reserve the right to suspend or terminate your account and
@@ -262,10 +276,10 @@ export default function TermsPage() {
               </p>
             </div>
 
-            {/* Modifications */}
+            {/* Modifications (Renumbered) */}
             <div className="mb-12">
               <h2 className="text-2xl font-bold text-white mb-4">
-                11. Modifications to Terms
+                12. Modifications to Terms
               </h2>
               <p className="text-gray-300 leading-relaxed">
                 We reserve the right to modify these Terms at any time.
@@ -276,10 +290,10 @@ export default function TermsPage() {
               </p>
             </div>
 
-            {/* Governing Law */}
+            {/* Governing Law (Renumbered) */}
             <div className="mb-12">
               <h2 className="text-2xl font-bold text-white mb-4">
-                12. Governing Law and Jurisdiction
+                13. Governing Law and Jurisdiction
               </h2>
               <p className="text-gray-300 leading-relaxed mb-4">
                 These Terms shall be governed by and construed in accordance
@@ -289,10 +303,10 @@ export default function TermsPage() {
               </p>
             </div>
 
-            {/* Dispute Resolution */}
+            {/* Dispute Resolution (Renumbered) */}
             <div className="mb-12">
               <h2 className="text-2xl font-bold text-white mb-4">
-                13. Dispute Resolution
+                14. Dispute Resolution
               </h2>
               <p className="text-gray-300 leading-relaxed">
                 Any dispute or claim arising out of or relating to these Terms
@@ -303,10 +317,10 @@ export default function TermsPage() {
               </p>
             </div>
 
-            {/* Severability */}
+            {/* Severability (Renumbered) */}
             <div className="mb-12">
               <h2 className="text-2xl font-bold text-white mb-4">
-                14. Severability
+                15. Severability
               </h2>
               <p className="text-gray-300 leading-relaxed">
                 If any provision of these Terms is found to be invalid or
@@ -316,10 +330,10 @@ export default function TermsPage() {
               </p>
             </div>
 
-            {/* Contact Information */}
+            {/* Contact Information (Renumbered) */}
             <div className="mb-12">
               <h2 className="text-2xl font-bold text-white mb-4">
-                15. Contact Information
+                16. Contact Information
               </h2>
               <p className="text-gray-300 leading-relaxed mb-4">
                 If you have any questions about these Terms, please contact us:
@@ -329,8 +343,7 @@ export default function TermsPage() {
                   <strong>DINEDIVINE VENTURES PRIVATE LIMITED</strong>
                 </p>
                 <p className="text-gray-300 mb-2">
-                  C/O PARDEEP SAGGAR, 20-P DSC, SEC-23A, Shivaji Nagar (Gurgaon),
-                  Shivaji Nagar, Gurgaon- 122001, Haryana, India
+                  First Floor, Sco 20P, Back Half, Sector 23A, HUDA Market, Gurugram, Haryana, 122017
                 </p>
                 <p className="text-gray-300 mb-2">
                   CIN: U56102HR2024PTC123713

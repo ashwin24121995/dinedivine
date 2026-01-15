@@ -2,13 +2,13 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - DineDivine",
+  title: "Privacy Policy - DineDivine Social Casino",
   description:
-    "Read DineDivine's privacy policy to understand how we collect, use, and protect your personal information on our free-to-play fantasy sports platform.",
+    "Read DineDivine's privacy policy to understand how we collect, use, and protect your personal information on our free-to-play social casino platform.",
 };
 
 export default function PrivacyPage() {
-  const lastUpdated = "December 2025";
+  const lastUpdated = "January 2026";
 
   return (
     <div className="min-h-screen">
@@ -36,15 +36,13 @@ export default function PrivacyPage() {
               <p className="text-gray-300 leading-relaxed mb-4">
                 DINEDIVINE VENTURES PRIVATE LIMITED (&quot;Company&quot;,
                 &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) operates the
-                DineDivine platform (the &quot;Platform&quot;). This Privacy
+                DineDivine platform (the &quot;Platform&quot;), a free-to-play social casino. This Privacy
                 Policy explains how we collect, use, disclose, and safeguard
                 your information when you use our Platform.
               </p>
               <p className="text-gray-300 leading-relaxed">
                 By using our Platform, you consent to the data practices
-                described in this Privacy Policy. If you do not agree with the
-                terms of this Privacy Policy, please do not access or use our
-                Platform.
+                described in this Privacy Policy. We are committed to protecting your privacy and handling your data in compliance with all applicable Indian laws, including the Information Technology Act, 2000.
               </p>
             </div>
 
@@ -64,25 +62,25 @@ export default function PrivacyPage() {
                 <li>Full name</li>
                 <li>Email address</li>
                 <li>Mobile phone number</li>
-                <li>Date of birth</li>
-                <li>State of residence</li>
+                <li>Date of birth (for age verification, 18+)</li>
+                <li>State of residence (for compliance purposes)</li>
                 <li>Username and password</li>
               </ul>
 
               <h3 className="text-xl font-semibold text-white mb-3">
-                2.2 Usage Information
+                2.2 Usage and Game Data
               </h3>
               <p className="text-gray-300 leading-relaxed mb-4">
                 We automatically collect certain information when you use our
-                Platform:
+                Platform and play our social casino games:
               </p>
               <ul className="list-disc list-inside text-gray-300 space-y-2 mb-6">
                 <li>Device information (type, operating system, browser)</li>
-                <li>IP address and location data</li>
+                <li>IP address and approximate location data</li>
                 <li>Pages visited and features used</li>
-                <li>Time spent on the Platform</li>
-                <li>Referring URLs</li>
-                <li>Contest participation and team selections</li>
+                <li>Time spent on the Platform and in specific games</li>
+                <li>Game history, including virtual points won/lost, spins, and game outcomes</li>
+                <li>Leaderboard participation and social interactions</li>
               </ul>
 
               <h3 className="text-xl font-semibold text-white mb-3">
@@ -105,16 +103,17 @@ export default function PrivacyPage() {
                 We use the collected information for the following purposes:
               </p>
               <ul className="list-disc list-inside text-gray-300 space-y-2">
-                <li>To create and manage your account</li>
-                <li>To provide and maintain our Platform services</li>
-                <li>To verify your identity and eligibility</li>
+                <li>To create and manage your account and verify age (18+)</li>
+                <li>To provide and maintain our Social Casino games and services</li>
+                <li>To personalize your gaming experience and track your progress</li>
+                <li>To display leaderboards and facilitate social competition</li>
                 <li>To communicate with you about your account and updates</li>
                 <li>To respond to your inquiries and support requests</li>
                 <li>To improve our Platform and user experience</li>
-                <li>To analyze usage patterns and trends</li>
-                <li>To detect and prevent fraud or abuse</li>
-                <li>To enforce our Terms and Conditions</li>
-                <li>To comply with legal obligations</li>
+                <li>To analyze usage patterns and trends for game optimization</li>
+                <li>To detect and prevent fraud, cheating, or abuse</li>
+                <li>To enforce our Terms and Conditions and Fair Play Policy</li>
+                <li>To comply with legal obligations, including age and location restrictions</li>
               </ul>
             </div>
 
@@ -136,17 +135,17 @@ export default function PrivacyPage() {
                 We may share information with trusted third-party service
                 providers who assist us in operating our Platform, such as
                 hosting providers, analytics services, and customer support
-                tools. These providers are bound by confidentiality agreements.
+                tools. These providers are bound by strict confidentiality agreements.
               </p>
 
               <h3 className="text-xl font-semibold text-white mb-3">
-                4.2 Legal Requirements
+                4.2 Legal Requirements and Compliance
               </h3>
               <p className="text-gray-300 leading-relaxed mb-4">
                 We may disclose your information if required by law, court
                 order, or government request, or if we believe disclosure is
                 necessary to protect our rights, your safety, or the safety of
-                others.
+                others. This includes compliance with the Promotion and Regulation of Online Gaming Act (PROGA) 2025.
               </p>
 
               <h3 className="text-xl font-semibold text-white mb-3">
@@ -169,11 +168,10 @@ export default function PrivacyPage() {
                 to protect your personal information, including:
               </p>
               <ul className="list-disc list-inside text-gray-300 space-y-2 mb-4">
-                <li>Encryption of data in transit and at rest</li>
-                <li>Secure server infrastructure</li>
-                <li>Regular security assessments and updates</li>
-                <li>Access controls and authentication measures</li>
-                <li>Employee training on data protection</li>
+                <li>Encryption of data in transit and at rest (SSL/TLS)</li>
+                <li>Secure server infrastructure and regular security audits</li>
+                <li>Access controls and multi-factor authentication measures</li>
+                <li>Employee training on data protection and privacy best practices</li>
               </ul>
               <p className="text-gray-300 leading-relaxed">
                 However, no method of transmission over the internet or
@@ -193,10 +191,9 @@ export default function PrivacyPage() {
                 retain information as necessary to:
               </p>
               <ul className="list-disc list-inside text-gray-300 space-y-2">
-                <li>Comply with legal obligations</li>
-                <li>Resolve disputes</li>
-                <li>Enforce our agreements</li>
-                <li>Maintain business records</li>
+                <li>Comply with legal obligations and regulatory requirements</li>
+                <li>Resolve disputes and enforce our agreements</li>
+                <li>Maintain accurate business records and historical game data</li>
               </ul>
             </div>
 
@@ -234,7 +231,7 @@ export default function PrivacyPage() {
                   </h4>
                   <p className="text-gray-300 text-sm">
                     You can request deletion of your personal information,
-                    subject to legal requirements.
+                    subject to legal and regulatory requirements.
                   </p>
                 </div>
                 <div className="bg-[#0a0f1a] p-4 rounded-lg">
@@ -243,7 +240,7 @@ export default function PrivacyPage() {
                   </h4>
                   <p className="text-gray-300 text-sm">
                     You can withdraw your consent for data processing at any
-                    time.
+                    time, where consent is the legal basis for processing.
                   </p>
                 </div>
               </div>
@@ -259,8 +256,8 @@ export default function PrivacyPage() {
                 8. Children&apos;s Privacy
               </h2>
               <p className="text-gray-300 leading-relaxed">
-                Our Platform is not intended for users under 18 years of age. We
-                do not knowingly collect personal information from children. If
+                Our Platform is strictly not intended for users under 18 years of age. We
+                do not knowingly collect personal information from minors. If
                 we discover that we have collected information from a minor, we
                 will delete it immediately. If you believe we have inadvertently
                 collected information from a minor, please contact us.
@@ -335,8 +332,7 @@ export default function PrivacyPage() {
                   <strong>DINEDIVINE VENTURES PRIVATE LIMITED</strong>
                 </p>
                 <p className="text-gray-300 mb-2">
-                  C/O PARDEEP SAGGAR, 20-P DSC, SEC-23A, Shivaji Nagar (Gurgaon),
-                  Shivaji Nagar, Gurgaon- 122001, Haryana, India
+                  First Floor, Sco 20P, Back Half, Sector 23A, HUDA Market, Gurugram, Haryana, 122017
                 </p>
                 <p className="text-gray-300 mb-2">
                   CIN: U56102HR2024PTC123713
