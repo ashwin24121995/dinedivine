@@ -4,45 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
-interface User {
-  id: number;
-  email: string;
-  fullName: string;
-  mobile: string;
-}
-
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [user, setUser] = useState<User | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    // Check if user is logged in
-    const checkAuth = async () => {
-      try {
-        const response = await fetch("/api/auth/me");
-        const data = await response.json();
-        if (data.success) {
-          setUser(data.user);
-        }
-      } catch {
-        setUser(null);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    checkAuth();
-  }, []);
-
-  const handleLogout = async () => {
-    try {
-      await fetch("/api/auth/logout", { method: "POST" });
-      setUser(null);
-      window.location.href = "/";
-    } catch {
-      console.error("Logout failed");
-    }
-  };
 
   const navLinks = [
     { href: "/", label: "Home" },
@@ -87,42 +50,7 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Auth Buttons - Desktop */}
-          <div className="hidden lg:flex items-center space-x-4">
-            {isLoading ? (
-              <div className="w-20 h-8 bg-gray-700 animate-pulse rounded-lg"></div>
-            ) : user ? (
-              <>
-                <Link
-                  href="/dashboard"
-                  className="text-[#22c55e] hover:text-[#4ade80] font-medium transition-colors duration-200"
-                >
-                  Dashboard
-                </Link>
-                <button
-                  onClick={handleLogout}
-                  className="bg-red-900/20 text-red-400 px-4 py-2 rounded-lg hover:bg-red-900/30 border border-red-500/30 font-medium transition-colors duration-200"
-                >
-                  Logout
-                </button>
-              </>
-            ) : (
-              <>
-                <Link
-                  href="/login"
-                  className="text-[#22c55e] hover:text-[#4ade80] font-medium transition-colors duration-200"
-                >
-                  Login
-                </Link>
-                <Link
-                  href="/register"
-                  className="bg-gradient-to-r from-[#22c55e] to-[#16a34a] text-white px-4 py-2 rounded-lg hover:shadow-lg hover:shadow-[#22c55e]/30 font-medium transition-all duration-200"
-                >
-                  Register
-                </Link>
-              </>
-            )}
-          </div>
+          {/* Auth Buttons - Removed for instant-play compliance */}
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden">
@@ -164,45 +92,7 @@ const Header = () => {
                   {link.label}
                 </Link>
               ))}
-              <div className="flex flex-col space-y-2 pt-4 border-t border-gray-700">
-                {user ? (
-                  <>
-                    <Link
-                      href="/dashboard"
-                      className="text-[#22c55e] hover:text-[#4ade80] font-medium py-2 transition-colors duration-200"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      Dashboard
-                    </Link>
-                    <button
-                      onClick={() => {
-                        handleLogout();
-                        setIsMenuOpen(false);
-                      }}
-                      className="bg-red-900/20 text-red-400 px-4 py-2 rounded-lg hover:bg-red-900/30 border border-red-500/30 font-medium text-center transition-colors duration-200"
-                    >
-                      Logout
-                    </button>
-                  </>
-                ) : (
-                  <>
-                    <Link
-                      href="/login"
-                      className="text-[#22c55e] hover:text-[#4ade80] font-medium py-2 transition-colors duration-200"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      Login
-                    </Link>
-                    <Link
-                      href="/register"
-                      className="bg-gradient-to-r from-[#22c55e] to-[#16a34a] text-white px-4 py-2 rounded-lg hover:shadow-lg font-medium text-center transition-all duration-200"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      Register
-                    </Link>
-                  </>
-                )}
-              </div>
+              {/* Auth buttons removed for instant-play compliance */}
             </nav>
           </div>
         )}
